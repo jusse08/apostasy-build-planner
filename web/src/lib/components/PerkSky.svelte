@@ -275,6 +275,8 @@
 	.frame.interactive {
 		position: absolute;
 		inset: 1rem 1rem 0;
+		width: auto;
+		height: auto;
 		display: grid;
 		place-items: center;
 	}
