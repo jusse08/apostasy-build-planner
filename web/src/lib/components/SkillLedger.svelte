@@ -2,6 +2,7 @@
 	import type { BuildEditor } from '#lib/editor.svelte.ts';
 	import { ATTRIBUTES, atLevel, stepCost } from '#lib/rules/engine.ts';
 	import type { SkillId } from '#lib/types.ts';
+	import type { Attachment } from 'svelte/attachments';
 
 	let { ed, onpick }: { ed: BuildEditor; onpick: (skill: SkillId) => void } = $props();
 
@@ -20,6 +21,21 @@
 
 	function canRaise(skill: SkillId): boolean {
 		return canBuy && st.skills[skill] < st.skillCap && st.skillPointsLeft >= stepCost(ed.game.leveling, st.skills[skill]);
+	}
+
+	// Wheel over a skill's bar, value or buttons raises (up) or lowers (down) it. Attached by hand
+	// because the listener must be non-passive to keep the ledger from scrolling meanwhile.
+	function wheel(skill: SkillId): Attachment<HTMLElement> {
+		return (node) => {
+			const on = (e: WheelEvent) => {
+				if (!e.deltaY) return;
+				e.preventDefault();
+				if (e.deltaY < 0 && canRaise(skill)) ed.addSkill(skill, 1);
+				if (e.deltaY > 0 && (plan?.skills[skill] ?? 0) > 0) ed.addSkill(skill, -1);
+			};
+			node.addEventListener('wheel', on, { passive: false });
+			return () => node.removeEventListener('wheel', on);
+		};
 	}
 </script>
 
@@ -66,18 +82,20 @@
 					{@const v = st.skills[id]}
 					<li class:bought={bought > 0} class:over={v > st.skillCap}>
 						<button class="name" onclick={() => onpick(id)}>{name(id)}</button>
-						<span class="bar" aria-hidden="true">
-							<i class="was" style="width: {v - bought}%"></i>
-							<i class="add" style="width: {bought}%"></i>
-							<b style="left: {st.skillCap}%"></b>
-						</span>
-						<span class="v num">{v}{#if bought}<small>+{bought}</small>{/if}</span>
-						{#if canBuy}
-							<span class="ctl">
-								<button onclick={() => ed.addSkill(id, -1)} disabled={!bought} aria-label="Lower {name(id)}">−</button>
-								<button onclick={() => ed.addSkill(id, 1)} disabled={!canRaise(id)} aria-label="Raise {name(id)}, costs {stepCost(ed.game.leveling, v)}">+</button>
+						<span class="dial" {@attach canBuy && wheel(id)}>
+							<span class="bar" aria-hidden="true">
+								<i class="was" style="width: {v - bought}%"></i>
+								<i class="add" style="width: {bought}%"></i>
+								<b style="left: {st.skillCap}%"></b>
 							</span>
-						{/if}
+							<span class="v num">{v}{#if bought}<small>+{bought}</small>{/if}</span>
+							{#if canBuy}
+								<span class="ctl">
+									<button onclick={() => ed.addSkill(id, -1)} disabled={!bought} aria-label="Lower {name(id)}">−</button>
+									<button onclick={() => ed.addSkill(id, 1)} disabled={!canRaise(id)} aria-label="Raise {name(id)}, costs {stepCost(ed.game.leveling, v)}">+</button>
+								</span>
+							{/if}
+						</span>
 					</li>
 				{/each}
 			</ul>
@@ -221,6 +239,11 @@
 		gap: 0.6rem;
 		align-items: center;
 		min-height: 1.75rem;
+	}
+
+	/* Groups the wheel target without adding a grid cell. */
+	.dial {
+		display: contents;
 	}
 
 	.name {
