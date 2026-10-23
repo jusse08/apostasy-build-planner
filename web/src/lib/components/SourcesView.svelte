@@ -154,10 +154,6 @@
 		cursor: pointer;
 	}
 
-	input {
-		accent-color: #d9c48a;
-	}
-
 	.name {
 		flex: 1;
 		color: var(--muted);

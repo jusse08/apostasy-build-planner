@@ -123,19 +123,107 @@ button.primary:hover:not(:disabled) {
 	background: rgba(217, 196, 138, 0.22);
 }
 
+/* Form controls drop every native look: flat translucent fields, taupe edges, gold when active. */
 input,
 select,
 textarea {
-	background: rgba(0, 0, 0, 0.6);
+	appearance: none;
+	background: var(--surface-2);
 	border: 1px solid var(--line-soft);
 	border-radius: 0;
 	padding: 0.35rem 0.55rem;
+	transition:
+		border-color 100ms,
+		background 100ms;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+	border-color: var(--line);
 }
 
 input:focus,
+select:focus,
 textarea:focus {
-	border-color: var(--line);
+	border-color: var(--aurora);
+	background: rgba(0, 0, 0, 0.5);
 	outline: none;
+}
+
+::placeholder {
+	color: var(--faint);
+	opacity: 1;
+}
+
+/* No resize grip: the field grows with its text where the browser can, otherwise it scrolls. */
+textarea {
+	display: block;
+	resize: none;
+	field-sizing: content;
+	min-height: 8rem;
+	max-height: 60vh;
+}
+
+input[type='number'] {
+	-moz-appearance: textfield;
+	text-align: center;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Checkbox: an empty taupe square, a gold-filled square with a dark tick when on. */
+input[type='checkbox'] {
+	flex: none;
+	width: 0.95rem;
+	height: 0.95rem;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	top: 0.12rem;
+	background: rgba(0, 0, 0, 0.4);
+	border-color: var(--line);
+	cursor: pointer;
+}
+
+input[type='checkbox']:checked {
+	background: var(--aurora);
+	border-color: var(--aurora);
+}
+
+input[type='checkbox']:checked::after {
+	content: '';
+	position: absolute;
+	left: 0.27rem;
+	top: 0.08rem;
+	width: 0.25rem;
+	height: 0.5rem;
+	border: solid var(--sky-deep);
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+}
+
+input[type='checkbox']:disabled {
+	opacity: 0.35;
+	cursor: default;
+}
+
+input[type='checkbox']:focus {
+	background: rgba(0, 0, 0, 0.4);
+}
+
+input[type='checkbox']:checked:focus {
+	background: var(--aurora);
+}
+
+input:-webkit-autofill {
+	-webkit-text-fill-color: var(--text);
+	-webkit-box-shadow: 0 0 0 100px #16171a inset;
+	caret-color: var(--text);
 }
 
 :focus-visible {

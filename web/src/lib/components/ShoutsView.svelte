@@ -162,10 +162,6 @@
 		color: var(--text);
 	}
 
-	input {
-		accent-color: #d9c48a;
-	}
-
 	input:disabled + span {
 		opacity: 0.5;
 	}
