@@ -7,6 +7,7 @@ build/
 *.sqlite-shm
 *.sqlite-wal
 .env
+/.claude/
 
 
 # Licensed font files used only to draw web/static/logo.svg; never commit them.

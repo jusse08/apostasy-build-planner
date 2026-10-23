@@ -1,10 +1,12 @@
-# Tests and builds on every push and PR; publishes main and v* tags.
+# Development CI on Forgejo. Stable releases are built by GitHub Actions.
 # Needs a Forgejo Actions runner with Docker available (label: docker).
-name: build
+name: Development build
 
 on:
   push:
+    branches: [dev]
   pull_request:
+    branches: [dev]
 
 jobs:
   test:
@@ -16,7 +18,7 @@ jobs:
           persist-credentials: false
       - run: npm ci
         working-directory: web
-      - run: npx svelte-kit sync && npx svelte-check --tsconfig ./tsconfig.json
+      - run: npm run check
         working-directory: web
       - run: npm test
         working-directory: web
@@ -65,13 +67,10 @@ jobs:
           tags: |
             type=raw,value=ci,enable=${{ forgejo.event_name == 'pull_request' }}
             type=ref,event=branch
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
             type=sha
-            type=raw,value=latest,enable=${{ forgejo.event_name == 'push' && forgejo.ref == 'refs/heads/main' }}
 
       - name: Log in to registry
-        if: forgejo.event_name == 'push' && (forgejo.ref == 'refs/heads/main' || startsWith(forgejo.ref, 'refs/tags/v'))
+        if: forgejo.event_name == 'push' && forgejo.ref == 'refs/heads/dev'
         uses: https://data.forgejo.org/docker/login-action@v3
         with:
           registry: ${{ steps.image.outputs.registry }}
@@ -83,6 +82,6 @@ jobs:
         with:
           context: .
           platforms: linux/amd64
-          push: ${{ forgejo.event_name == 'push' && (forgejo.ref == 'refs/heads/main' || startsWith(forgejo.ref, 'refs/tags/v')) }}
+          push: ${{ forgejo.event_name == 'push' && forgejo.ref == 'refs/heads/dev' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

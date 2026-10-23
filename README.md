@@ -34,14 +34,37 @@ With those set the app expects to be reached through the proxy; for direct `http
 
 Tests: `cd web && npm test` (rules engine against the real data).
 
+## Branches and remotes
+
+- `dev` is developed on Forgejo: `ssh://git@forgejo.jusse.dev:222/jusseee/ApoCharPlanner.git` (remote `forgejo`).
+- `main` is published on GitHub: `git@github.com:jusse08/apostasy-build-planner.git` (remote `github`).
+
+Both branches contain both workflow files. Forgejo runs `.forgejo/workflows/build.yml`
+for pushes and pull requests targeting `dev`. GitHub runs `.github/workflows/build.yml`
+for pushes and pull requests targeting `main`, and release tags matching `v*`.
+
+Work on `dev` and push with `git push forgejo dev`. To publish tested changes:
+
+```sh
+git switch main
+git merge dev
+# If documentation changed, resolve any README modify/delete conflicts by removing
+# those files from main; keep README files on dev only.
+git push github main
+git switch dev
+```
+
+The stable branch has no tracked README files or `.claude` files; GitHub CI checks
+this before publishing. README files remain on `dev` for development.
+When pulling changes from `main` back into `dev`, preserve those documentation files.
+
 ## Container image publishing
 
-Forgejo Actions runs checks, tests and a Docker build on every push and pull request.
-After successful tests, pushes to `main` and tags matching `v*` also publish the image.
-By default the image is `<forgejo-host>/<owner>/<repository>` (lowercase); for this
-repository: `forgejo.jusse.dev/jusseee/apocharplanner`.
+Both workflows run type checks, tests and a Docker build. Pull requests only validate
+the image; publishing happens after successful checks on branch pushes or release tags.
 
-Configure repository Actions secrets:
+Forgejo publishes development images to `forgejo.jusse.dev/jusseee/apocharplanner`
+with `:dev` and `:sha-<short-commit>` tags. Configure its Actions secrets:
 
 - `REGISTRY_USERNAME` — registry login.
 - `REGISTRY_TOKEN` — token with permission to push packages (`REGISTRY_PASSWORD` is also supported).
@@ -49,9 +72,11 @@ Configure repository Actions secrets:
 Optional Actions variables `REGISTRY` and `IMAGE_NAME` override the registry host and
 image path. The runner needs the `docker` label and access to Docker/Buildx.
 
-`main` publishes `:main`, `:latest` and `:sha-<short-commit>`.
+GitHub publishes stable images to `ghcr.io/jusse08/apostasy-build-planner`.
+Pushes to `main` publish `:main`, `:latest` and `:sha-<short-commit>`.
 A release tag such as `v1.2.3` publishes `:1.2.3`, `:1.2` and `:sha-<short-commit>`.
-Pull requests and other branches only build the image; they do not log in or push it.
+GitHub uses its automatic `GITHUB_TOKEN` with `packages: write`; no registry secret
+is needed there. Push release tags explicitly to GitHub (`git push github v1.2.3`).
 
 ## Updating game data
 
