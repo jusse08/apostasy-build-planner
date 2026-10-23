@@ -43,10 +43,11 @@ void Write(string name, JsonNode content)
     Console.WriteLine($"wrote {name} ({sw.Elapsed.TotalSeconds:F0}s)");
 }
 
-Write("perks.json", PerkExtractor.Extract(game, d));
+Write("perks.json", PerkExtractor.Extract(game, d, profile));
 Write("races.json", CharacterExtractor.Races(game, d));
 Write("classes.json", CharacterExtractor.Classes(game, d));
 Write("stones.json", CharacterExtractor.Stones(game, d));
 Write("religions.json", CharacterExtractor.Religions(game, d));
 Write("leveling.json", LevelingExtractor.Extract(game, profile, d));
-Write("shouts.json", ShoutExtractor.Extract(game, d));
+Write("shouts.json", ShoutExtractor.Extract(game, d, profile));
+Write("mods.json", ModPages.Extract(profile));

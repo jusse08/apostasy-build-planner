@@ -39,7 +39,56 @@
               "editorId": "APO_ClassAssassinPerk01",
               "name": "Brotherhood Tactics",
               "description": null,
-              "plugin": "NirnsChosen.esp"
+              "plugin": "NirnsChosen.esp",
+              "mechanics": [
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModPoisonDoseCount",
+                  "modification": "Add",
+                  "value": 2,
+                  "text": "Mod Poison Dose Count: Add 2"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModSpellMagnitude",
+                  "modification": "Multiply",
+                  "value": 2,
+                  "conditions": [
+                    {
+                      "fn": "IsSneaking",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1
+                    },
+                    {
+                      "fn": "GetIsObjectType",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "formType": "Potion"
+                      }
+                    },
+                    {
+                      "fn": "IsPoison",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1
+                    },
+                    {
+                      "fn": "GetDetected",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0
+                    }
+                  ],
+                  "text": "Mod Spell Magnitude: Multiply 2"
+                }
+              ]
             }
           }
         ]
@@ -50,7 +99,56 @@
           "editorId": "APO_ClassAssassinPerk01",
           "name": "Brotherhood Tactics",
           "description": null,
-          "plugin": "NirnsChosen.esp"
+          "plugin": "NirnsChosen.esp",
+          "mechanics": [
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModPoisonDoseCount",
+              "modification": "Add",
+              "value": 2,
+              "text": "Mod Poison Dose Count: Add 2"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSpellMagnitude",
+              "modification": "Multiply",
+              "value": 2,
+              "conditions": [
+                {
+                  "fn": "IsSneaking",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1
+                },
+                {
+                  "fn": "GetIsObjectType",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "formType": "Potion"
+                  }
+                },
+                {
+                  "fn": "IsPoison",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1
+                },
+                {
+                  "fn": "GetDetected",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0
+                }
+              ],
+              "text": "Mod Spell Magnitude: Multiply 2"
+            }
+          ]
         }
       ]
     },
@@ -93,7 +191,73 @@
               "editorId": "APO_ClassBarbarianPerk01",
               "name": "Berserker's Frenzy",
               "description": null,
-              "plugin": "Paragon - NirnsChosen.esp"
+              "plugin": "Paragon - NirnsChosen.esp",
+              "mechanics": [
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModPowerAttackStamina",
+                  "modification": "Multiply",
+                  "value": 0.8,
+                  "text": "Mod Power Attack Stamina: Multiply 0.8"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModIncomingSpellMagnitude",
+                  "modification": "Multiply",
+                  "value": 0.8,
+                  "conditions": [
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "ADA121:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_BowStaminaDrainKeyword"
+                      }
+                    }
+                  ],
+                  "text": "Mod Incoming Spell Magnitude: Multiply 0.8"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModSpellMagnitude",
+                  "modification": "Multiply",
+                  "value": 0.8,
+                  "conditions": [
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "ADA183:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_SprintStaminaKeyword"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "00025E:ParagonPerks.esp"
+                      },
+                      "argNames": {
+                        "keyword": "APO_VALOR_JumpStaminaDrainKeyword"
+                      }
+                    }
+                  ],
+                  "text": "Mod Spell Magnitude: Multiply 0.8"
+                }
+              ]
             }
           }
         ]
@@ -104,7 +268,73 @@
           "editorId": "APO_ClassBarbarianPerk01",
           "name": "Berserker's Frenzy",
           "description": null,
-          "plugin": "Paragon - NirnsChosen.esp"
+          "plugin": "Paragon - NirnsChosen.esp",
+          "mechanics": [
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModPowerAttackStamina",
+              "modification": "Multiply",
+              "value": 0.8,
+              "text": "Mod Power Attack Stamina: Multiply 0.8"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModIncomingSpellMagnitude",
+              "modification": "Multiply",
+              "value": 0.8,
+              "conditions": [
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "ADA121:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_BowStaminaDrainKeyword"
+                  }
+                }
+              ],
+              "text": "Mod Incoming Spell Magnitude: Multiply 0.8"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSpellMagnitude",
+              "modification": "Multiply",
+              "value": 0.8,
+              "conditions": [
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "ADA183:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_SprintStaminaKeyword"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "00025E:ParagonPerks.esp"
+                  },
+                  "argNames": {
+                    "keyword": "APO_VALOR_JumpStaminaDrainKeyword"
+                  }
+                }
+              ],
+              "text": "Mod Spell Magnitude: Multiply 0.8"
+            }
+          ]
         }
       ]
     },
@@ -147,7 +377,21 @@
               "editorId": "APO_ClassBardPerk01",
               "name": "Bardic Inspiration",
               "description": null,
-              "plugin": "NirnsChosen.esp"
+              "plugin": "NirnsChosen.esp",
+              "mechanics": [
+                {
+                  "type": "ability",
+                  "spell": {
+                    "formKey": "000972:NirnsChosen.esp",
+                    "editorId": "APO_ClassBardPerkCloak",
+                    "name": "Bardic Inspiration",
+                    "description": null,
+                    "plugin": "NirnsChosen.esp",
+                    "effects": []
+                  },
+                  "text": "Grants ability Bardic Inspiration"
+                }
+              ]
             }
           }
         ]
@@ -158,7 +402,21 @@
           "editorId": "APO_ClassBardPerk01",
           "name": "Bardic Inspiration",
           "description": null,
-          "plugin": "NirnsChosen.esp"
+          "plugin": "NirnsChosen.esp",
+          "mechanics": [
+            {
+              "type": "ability",
+              "spell": {
+                "formKey": "000972:NirnsChosen.esp",
+                "editorId": "APO_ClassBardPerkCloak",
+                "name": "Bardic Inspiration",
+                "description": null,
+                "plugin": "NirnsChosen.esp",
+                "effects": []
+              },
+              "text": "Grants ability Bardic Inspiration"
+            }
+          ]
         }
       ]
     },
@@ -201,7 +459,204 @@
               "editorId": "APO_ClassBattlemagePerk01",
               "name": "Magicka Battery",
               "description": null,
-              "plugin": "Paragon - NirnsChosen.esp"
+              "plugin": "Paragon - NirnsChosen.esp",
+              "mechanics": [
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModSpellMagnitude",
+                  "modification": "Multiply",
+                  "value": 0.75,
+                  "conditions": [
+                    {
+                      "fn": "GetEquippedItemType",
+                      "op": ">=",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "itemSource": "Left"
+                      }
+                    },
+                    {
+                      "fn": "GetEquippedItemType",
+                      "op": "<=",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 4,
+                      "args": {
+                        "itemSource": "Left"
+                      }
+                    },
+                    {
+                      "fn": "GetEquippedItemType",
+                      "op": ">=",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "itemSource": "Right"
+                      }
+                    },
+                    {
+                      "fn": "GetEquippedItemType",
+                      "op": "<=",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 4,
+                      "args": {
+                        "itemSource": "Right"
+                      }
+                    },
+                    {
+                      "fn": "GetIsID",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "object": "000CB9:NirnsChosen.esp"
+                      },
+                      "argNames": {
+                        "object": "Magicka Battery"
+                      }
+                    }
+                  ],
+                  "text": "Mod Spell Magnitude: Multiply 0.75"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModSpellMagnitude",
+                  "modification": "Multiply",
+                  "value": 1.5,
+                  "conditions": [
+                    {
+                      "fn": "IsPowerAttacking",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1
+                    },
+                    {
+                      "fn": "IsAttackType",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "000F54:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "PowerAttackBash"
+                      }
+                    },
+                    {
+                      "fn": "GetIsID",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "object": "000CB9:NirnsChosen.esp"
+                      },
+                      "argNames": {
+                        "object": "Magicka Battery"
+                      }
+                    }
+                  ],
+                  "text": "Mod Spell Magnitude: Multiply 1.5"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModSpellMagnitude",
+                  "modification": "Multiply",
+                  "value": 0.5,
+                  "conditions": [
+                    {
+                      "fn": "HasMagicEffectKeyword",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "000CD9:ParagonPerks.esp"
+                      },
+                      "argNames": {
+                        "keyword": "APO_VALOR_LowStaminaKeyword"
+                      }
+                    },
+                    {
+                      "fn": "GetIsID",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "object": "000CB9:NirnsChosen.esp"
+                      },
+                      "argNames": {
+                        "object": "Magicka Battery"
+                      }
+                    }
+                  ],
+                  "text": "Mod Spell Magnitude: Multiply 0.5"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ApplyCombatHitSpell",
+                  "spell": {
+                    "formKey": "000CB9:NirnsChosen.esp",
+                    "editorId": "APO_ClassBattlemageMagickaBatterySpell",
+                    "name": "Magicka Battery",
+                    "description": null,
+                    "plugin": "NirnsChosen.esp",
+                    "effects": []
+                  },
+                  "conditions": [
+                    {
+                      "fn": "HasMagicEffectKeyword",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "01EA72:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicArmorSpell"
+                      }
+                    }
+                  ],
+                  "text": "Apply Combat Hit Spell: cast Magicka Battery"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ApplyBashingSpell",
+                  "spell": {
+                    "formKey": "000CB9:NirnsChosen.esp",
+                    "editorId": "APO_ClassBattlemageMagickaBatterySpell",
+                    "name": "Magicka Battery",
+                    "description": null,
+                    "plugin": "NirnsChosen.esp",
+                    "effects": []
+                  },
+                  "conditions": [
+                    {
+                      "fn": "HasMagicEffectKeyword",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "01EA72:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicArmorSpell"
+                      }
+                    }
+                  ],
+                  "text": "Apply Bashing Spell: cast Magicka Battery"
+                }
+              ]
             }
           }
         ]
@@ -212,7 +667,204 @@
           "editorId": "APO_ClassBattlemagePerk01",
           "name": "Magicka Battery",
           "description": null,
-          "plugin": "Paragon - NirnsChosen.esp"
+          "plugin": "Paragon - NirnsChosen.esp",
+          "mechanics": [
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSpellMagnitude",
+              "modification": "Multiply",
+              "value": 0.75,
+              "conditions": [
+                {
+                  "fn": "GetEquippedItemType",
+                  "op": ">=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "itemSource": "Left"
+                  }
+                },
+                {
+                  "fn": "GetEquippedItemType",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 4,
+                  "args": {
+                    "itemSource": "Left"
+                  }
+                },
+                {
+                  "fn": "GetEquippedItemType",
+                  "op": ">=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "itemSource": "Right"
+                  }
+                },
+                {
+                  "fn": "GetEquippedItemType",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 4,
+                  "args": {
+                    "itemSource": "Right"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "000CB9:NirnsChosen.esp"
+                  },
+                  "argNames": {
+                    "object": "Magicka Battery"
+                  }
+                }
+              ],
+              "text": "Mod Spell Magnitude: Multiply 0.75"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSpellMagnitude",
+              "modification": "Multiply",
+              "value": 1.5,
+              "conditions": [
+                {
+                  "fn": "IsPowerAttacking",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1
+                },
+                {
+                  "fn": "IsAttackType",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "000F54:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "PowerAttackBash"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "000CB9:NirnsChosen.esp"
+                  },
+                  "argNames": {
+                    "object": "Magicka Battery"
+                  }
+                }
+              ],
+              "text": "Mod Spell Magnitude: Multiply 1.5"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSpellMagnitude",
+              "modification": "Multiply",
+              "value": 0.5,
+              "conditions": [
+                {
+                  "fn": "HasMagicEffectKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "000CD9:ParagonPerks.esp"
+                  },
+                  "argNames": {
+                    "keyword": "APO_VALOR_LowStaminaKeyword"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "000CB9:NirnsChosen.esp"
+                  },
+                  "argNames": {
+                    "object": "Magicka Battery"
+                  }
+                }
+              ],
+              "text": "Mod Spell Magnitude: Multiply 0.5"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ApplyCombatHitSpell",
+              "spell": {
+                "formKey": "000CB9:NirnsChosen.esp",
+                "editorId": "APO_ClassBattlemageMagickaBatterySpell",
+                "name": "Magicka Battery",
+                "description": null,
+                "plugin": "NirnsChosen.esp",
+                "effects": []
+              },
+              "conditions": [
+                {
+                  "fn": "HasMagicEffectKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "01EA72:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicArmorSpell"
+                  }
+                }
+              ],
+              "text": "Apply Combat Hit Spell: cast Magicka Battery"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ApplyBashingSpell",
+              "spell": {
+                "formKey": "000CB9:NirnsChosen.esp",
+                "editorId": "APO_ClassBattlemageMagickaBatterySpell",
+                "name": "Magicka Battery",
+                "description": null,
+                "plugin": "NirnsChosen.esp",
+                "effects": []
+              },
+              "conditions": [
+                {
+                  "fn": "HasMagicEffectKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "01EA72:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicArmorSpell"
+                  }
+                }
+              ],
+              "text": "Apply Bashing Spell: cast Magicka Battery"
+            }
+          ]
         }
       ]
     },
@@ -259,7 +911,164 @@
               "editorId": "APO_ClassCrusaderPerk01",
               "name": "Aura of Protection",
               "description": null,
-              "plugin": "NirnsChosen.esp"
+              "plugin": "NirnsChosen.esp",
+              "mechanics": [
+                {
+                  "type": "ability",
+                  "spell": {
+                    "formKey": "000959:NirnsChosen.esp",
+                    "editorId": "APO_ClassCrusaderPerkCloak",
+                    "name": "Aura of Protection",
+                    "description": null,
+                    "plugin": "NirnsChosen.esp",
+                    "effects": []
+                  },
+                  "text": "Grants ability Aura of Protection"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModIncomingSpellMagnitude",
+                  "modification": "Multiply",
+                  "value": 0.9,
+                  "conditions": [
+                    {
+                      "fn": "GetIsID",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "object": "07E8E4:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "object": "Blizzard"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "keyword": "0B62E4:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicCloak"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasSkill",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "actorValue": "Destruction"
+                      }
+                    },
+                    {
+                      "fn": "HasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "01CEAD:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicDamageFire"
+                      }
+                    },
+                    {
+                      "fn": "HasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "01CEAE:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicDamageFrost"
+                      }
+                    },
+                    {
+                      "fn": "HasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "01CEAF:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicDamageShock"
+                      }
+                    },
+                    {
+                      "fn": "HasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "ADA001:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_MagicDamagePoison"
+                      }
+                    },
+                    {
+                      "fn": "HasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "ADA002:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_MagicDamageSun"
+                      }
+                    },
+                    {
+                      "fn": "HasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "101BDE:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicVampireDrain"
+                      }
+                    },
+                    {
+                      "fn": "HasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "EA6002:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "DAR_UnspecificMagicDamage"
+                      }
+                    }
+                  ],
+                  "text": "Mod Incoming Spell Magnitude: Multiply 0.9"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModIncomingDamage",
+                  "modification": "Multiply",
+                  "value": 0.9,
+                  "text": "Mod Incoming Damage: Multiply 0.9"
+                }
+              ]
             }
           }
         ]
@@ -270,14 +1079,338 @@
           "editorId": "APO_ClassCrusaderPerk01",
           "name": "Aura of Protection",
           "description": null,
-          "plugin": "NirnsChosen.esp"
+          "plugin": "NirnsChosen.esp",
+          "mechanics": [
+            {
+              "type": "ability",
+              "spell": {
+                "formKey": "000959:NirnsChosen.esp",
+                "editorId": "APO_ClassCrusaderPerkCloak",
+                "name": "Aura of Protection",
+                "description": null,
+                "plugin": "NirnsChosen.esp",
+                "effects": []
+              },
+              "text": "Grants ability Aura of Protection"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModIncomingSpellMagnitude",
+              "modification": "Multiply",
+              "value": 0.9,
+              "conditions": [
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "object": "07E8E4:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "object": "Blizzard"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "keyword": "0B62E4:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicCloak"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasSkill",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "actorValue": "Destruction"
+                  }
+                },
+                {
+                  "fn": "HasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "01CEAD:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicDamageFire"
+                  }
+                },
+                {
+                  "fn": "HasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "01CEAE:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicDamageFrost"
+                  }
+                },
+                {
+                  "fn": "HasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "01CEAF:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicDamageShock"
+                  }
+                },
+                {
+                  "fn": "HasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "ADA001:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicDamagePoison"
+                  }
+                },
+                {
+                  "fn": "HasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "ADA002:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicDamageSun"
+                  }
+                },
+                {
+                  "fn": "HasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "101BDE:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicVampireDrain"
+                  }
+                },
+                {
+                  "fn": "HasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "EA6002:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "DAR_UnspecificMagicDamage"
+                  }
+                }
+              ],
+              "text": "Mod Incoming Spell Magnitude: Multiply 0.9"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModIncomingDamage",
+              "modification": "Multiply",
+              "value": 0.9,
+              "text": "Mod Incoming Damage: Multiply 0.9"
+            }
+          ]
         },
         {
           "formKey": "00095D:NirnsChosen.esp",
           "editorId": "APO_ClassCrusaderPerk02",
           "name": "Aura of Protection",
           "description": null,
-          "plugin": "NirnsChosen.esp"
+          "plugin": "NirnsChosen.esp",
+          "mechanics": [
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModIncomingDamage",
+              "modification": "Multiply",
+              "value": 0.9,
+              "conditions": [
+                {
+                  "fn": "IsHostileToActor",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "targetNpc": "000014:Skyrim.esm"
+                  }
+                }
+              ],
+              "text": "Mod Incoming Damage: Multiply 0.9"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModIncomingSpellMagnitude",
+              "modification": "Multiply",
+              "value": 0.9,
+              "conditions": [
+                {
+                  "fn": "IsHostileToActor",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "targetNpc": "000014:Skyrim.esm"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "object": "07E8E4:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "object": "Blizzard"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "keyword": "0B62E4:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicCloak"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasSkill",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "actorValue": "Destruction"
+                  }
+                },
+                {
+                  "fn": "HasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "01CEAD:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicDamageFire"
+                  }
+                },
+                {
+                  "fn": "HasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "01CEAE:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicDamageFrost"
+                  }
+                },
+                {
+                  "fn": "HasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "01CEAF:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicDamageShock"
+                  }
+                },
+                {
+                  "fn": "HasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "ADA001:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicDamagePoison"
+                  }
+                },
+                {
+                  "fn": "HasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "ADA002:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicDamageSun"
+                  }
+                },
+                {
+                  "fn": "HasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "101BDE:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicVampireDrain"
+                  }
+                },
+                {
+                  "fn": "HasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "EA6002:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "DAR_UnspecificMagicDamage"
+                  }
+                }
+              ],
+              "text": "Mod Incoming Spell Magnitude: Multiply 0.9"
+            }
+          ]
         }
       ]
     },
@@ -324,7 +1457,35 @@
           "editorId": "APO_ClassHeroPerk01",
           "name": "Himmel's Resolve",
           "description": null,
-          "plugin": "NirnsChosen.esp"
+          "plugin": "NirnsChosen.esp",
+          "mechanics": [
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModTargetStagger",
+              "modification": "Multiply",
+              "value": 1.25,
+              "conditions": [
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "object": "000007:Skyrim.esm"
+                  }
+                }
+              ],
+              "text": "Mod Target Stagger: Multiply 1.25"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModIncomingStagger",
+              "modification": "Multiply",
+              "value": 0.75,
+              "text": "Mod Incoming Stagger: Multiply 0.75"
+            }
+          ]
         }
       ]
     },
@@ -368,7 +1529,41 @@
               "editorId": "APO_ClassMagePerk01",
               "name": "Arcane Affinity",
               "description": null,
-              "plugin": "NirnsChosen.esp"
+              "plugin": "NirnsChosen.esp",
+              "mechanics": [
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModSpellCost",
+                  "modification": "Multiply",
+                  "value": 0.9,
+                  "conditions": [
+                    {
+                      "fn": "GetIsObjectType",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "formType": "Enchantment"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "keyword": "ADA010:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_MagicWeaponEnchantment"
+                      }
+                    }
+                  ],
+                  "text": "Mod Spell Cost: Multiply 0.9"
+                }
+              ]
             }
           }
         ]
@@ -379,7 +1574,41 @@
           "editorId": "APO_ClassMagePerk01",
           "name": "Arcane Affinity",
           "description": null,
-          "plugin": "NirnsChosen.esp"
+          "plugin": "NirnsChosen.esp",
+          "mechanics": [
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSpellCost",
+              "modification": "Multiply",
+              "value": 0.9,
+              "conditions": [
+                {
+                  "fn": "GetIsObjectType",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "formType": "Enchantment"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "keyword": "ADA010:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicWeaponEnchantment"
+                  }
+                }
+              ],
+              "text": "Mod Spell Cost: Multiply 0.9"
+            }
+          ]
         }
       ]
     },
@@ -425,7 +1654,246 @@
               "editorId": "APO_ClassMonkPerk01",
               "name": "Attenuation",
               "description": null,
-              "plugin": "NirnsChosen.esp"
+              "plugin": "NirnsChosen.esp",
+              "mechanics": [
+                {
+                  "type": "ability",
+                  "spell": {
+                    "formKey": "000CAC:NirnsChosen.esp",
+                    "editorId": "APO_ClassMonkAttenuationAbility",
+                    "name": "Attenuation",
+                    "description": null,
+                    "plugin": "NirnsChosen.esp",
+                    "effects": []
+                  },
+                  "text": "Grants ability Attenuation"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModSpellMagnitude",
+                  "modification": "MultiplyOnePlusAVMult",
+                  "value": 0.01,
+                  "actorValue": "ResistFire",
+                  "conditions": [
+                    {
+                      "fn": "GetActorValue",
+                      "op": ">=",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "actorValue": "ResistFire"
+                      }
+                    },
+                    {
+                      "fn": "GetActorValue",
+                      "op": "<",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 100,
+                      "args": {
+                        "actorValue": "ResistFire"
+                      }
+                    },
+                    {
+                      "fn": "GetIsID",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "object": "000CAF:NirnsChosen.esp"
+                      },
+                      "argNames": {
+                        "object": "Attenuation"
+                      }
+                    }
+                  ],
+                  "text": "Mod Spell Magnitude: MultiplyOnePlusAVMult ResistFire x 0.01"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModSpellMagnitude",
+                  "modification": "MultiplyOnePlusAVMult",
+                  "value": 0.01,
+                  "actorValue": "ResistFrost",
+                  "conditions": [
+                    {
+                      "fn": "GetActorValue",
+                      "op": ">=",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "actorValue": "ResistFrost"
+                      }
+                    },
+                    {
+                      "fn": "GetActorValue",
+                      "op": "<",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 100,
+                      "args": {
+                        "actorValue": "ResistFrost"
+                      }
+                    },
+                    {
+                      "fn": "GetIsID",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "object": "000CB1:NirnsChosen.esp"
+                      },
+                      "argNames": {
+                        "object": "Attenuation"
+                      }
+                    }
+                  ],
+                  "text": "Mod Spell Magnitude: MultiplyOnePlusAVMult ResistFrost x 0.01"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModSpellMagnitude",
+                  "modification": "MultiplyOnePlusAVMult",
+                  "value": 0.01,
+                  "actorValue": "ResistShock",
+                  "conditions": [
+                    {
+                      "fn": "GetActorValue",
+                      "op": ">=",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "actorValue": "ResistShock"
+                      }
+                    },
+                    {
+                      "fn": "GetActorValue",
+                      "op": "<",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 100,
+                      "args": {
+                        "actorValue": "ResistShock"
+                      }
+                    },
+                    {
+                      "fn": "GetIsID",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "object": "000CB3:NirnsChosen.esp"
+                      },
+                      "argNames": {
+                        "object": "Attenuation"
+                      }
+                    }
+                  ],
+                  "text": "Mod Spell Magnitude: MultiplyOnePlusAVMult ResistShock x 0.01"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModSpellMagnitude",
+                  "modification": "Multiply",
+                  "value": 2,
+                  "conditions": [
+                    {
+                      "fn": "GetActorValue",
+                      "op": ">=",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 100,
+                      "args": {
+                        "actorValue": "ResistFire"
+                      }
+                    },
+                    {
+                      "fn": "GetIsID",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "object": "000CAF:NirnsChosen.esp"
+                      },
+                      "argNames": {
+                        "object": "Attenuation"
+                      }
+                    }
+                  ],
+                  "text": "Mod Spell Magnitude: Multiply 2"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModSpellMagnitude",
+                  "modification": "Multiply",
+                  "value": 2,
+                  "conditions": [
+                    {
+                      "fn": "GetActorValue",
+                      "op": ">=",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 100,
+                      "args": {
+                        "actorValue": "ResistFrost"
+                      }
+                    },
+                    {
+                      "fn": "GetIsID",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "object": "000CB1:NirnsChosen.esp"
+                      },
+                      "argNames": {
+                        "object": "Attenuation"
+                      }
+                    }
+                  ],
+                  "text": "Mod Spell Magnitude: Multiply 2"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModSpellMagnitude",
+                  "modification": "Multiply",
+                  "value": 2,
+                  "conditions": [
+                    {
+                      "fn": "GetActorValue",
+                      "op": ">=",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 100,
+                      "args": {
+                        "actorValue": "ResistShock"
+                      }
+                    },
+                    {
+                      "fn": "GetIsID",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "object": "000CB3:NirnsChosen.esp"
+                      },
+                      "argNames": {
+                        "object": "Attenuation"
+                      }
+                    }
+                  ],
+                  "text": "Mod Spell Magnitude: Multiply 2"
+                }
+              ]
             }
           }
         ]
@@ -436,14 +1904,819 @@
           "editorId": "APO_ClassMonkPerk01",
           "name": "Attenuation",
           "description": null,
-          "plugin": "NirnsChosen.esp"
+          "plugin": "NirnsChosen.esp",
+          "mechanics": [
+            {
+              "type": "ability",
+              "spell": {
+                "formKey": "000CAC:NirnsChosen.esp",
+                "editorId": "APO_ClassMonkAttenuationAbility",
+                "name": "Attenuation",
+                "description": null,
+                "plugin": "NirnsChosen.esp",
+                "effects": []
+              },
+              "text": "Grants ability Attenuation"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSpellMagnitude",
+              "modification": "MultiplyOnePlusAVMult",
+              "value": 0.01,
+              "actorValue": "ResistFire",
+              "conditions": [
+                {
+                  "fn": "GetActorValue",
+                  "op": ">=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "actorValue": "ResistFire"
+                  }
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": "<",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 100,
+                  "args": {
+                    "actorValue": "ResistFire"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "000CAF:NirnsChosen.esp"
+                  },
+                  "argNames": {
+                    "object": "Attenuation"
+                  }
+                }
+              ],
+              "text": "Mod Spell Magnitude: MultiplyOnePlusAVMult ResistFire x 0.01"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSpellMagnitude",
+              "modification": "MultiplyOnePlusAVMult",
+              "value": 0.01,
+              "actorValue": "ResistFrost",
+              "conditions": [
+                {
+                  "fn": "GetActorValue",
+                  "op": ">=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "actorValue": "ResistFrost"
+                  }
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": "<",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 100,
+                  "args": {
+                    "actorValue": "ResistFrost"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "000CB1:NirnsChosen.esp"
+                  },
+                  "argNames": {
+                    "object": "Attenuation"
+                  }
+                }
+              ],
+              "text": "Mod Spell Magnitude: MultiplyOnePlusAVMult ResistFrost x 0.01"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSpellMagnitude",
+              "modification": "MultiplyOnePlusAVMult",
+              "value": 0.01,
+              "actorValue": "ResistShock",
+              "conditions": [
+                {
+                  "fn": "GetActorValue",
+                  "op": ">=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "actorValue": "ResistShock"
+                  }
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": "<",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 100,
+                  "args": {
+                    "actorValue": "ResistShock"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "000CB3:NirnsChosen.esp"
+                  },
+                  "argNames": {
+                    "object": "Attenuation"
+                  }
+                }
+              ],
+              "text": "Mod Spell Magnitude: MultiplyOnePlusAVMult ResistShock x 0.01"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSpellMagnitude",
+              "modification": "Multiply",
+              "value": 2,
+              "conditions": [
+                {
+                  "fn": "GetActorValue",
+                  "op": ">=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 100,
+                  "args": {
+                    "actorValue": "ResistFire"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "000CAF:NirnsChosen.esp"
+                  },
+                  "argNames": {
+                    "object": "Attenuation"
+                  }
+                }
+              ],
+              "text": "Mod Spell Magnitude: Multiply 2"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSpellMagnitude",
+              "modification": "Multiply",
+              "value": 2,
+              "conditions": [
+                {
+                  "fn": "GetActorValue",
+                  "op": ">=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 100,
+                  "args": {
+                    "actorValue": "ResistFrost"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "000CB1:NirnsChosen.esp"
+                  },
+                  "argNames": {
+                    "object": "Attenuation"
+                  }
+                }
+              ],
+              "text": "Mod Spell Magnitude: Multiply 2"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSpellMagnitude",
+              "modification": "Multiply",
+              "value": 2,
+              "conditions": [
+                {
+                  "fn": "GetActorValue",
+                  "op": ">=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 100,
+                  "args": {
+                    "actorValue": "ResistShock"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "000CB3:NirnsChosen.esp"
+                  },
+                  "argNames": {
+                    "object": "Attenuation"
+                  }
+                }
+              ],
+              "text": "Mod Spell Magnitude: Multiply 2"
+            }
+          ]
         },
         {
           "formKey": "000CAE:NirnsChosen.esp",
           "editorId": "APO_ClassMonkPerk02",
           "name": "Attenuation",
           "description": null,
-          "plugin": "NirnsChosen.esp"
+          "plugin": "NirnsChosen.esp",
+          "mechanics": [
+            {
+              "type": "entryPoint",
+              "entryPoint": "ApplyCombatHitSpell",
+              "spell": {
+                "formKey": "000CAF:NirnsChosen.esp",
+                "editorId": "APO_ClassMonkAttenuationFireSpell",
+                "name": "Attenuation",
+                "description": null,
+                "plugin": "NirnsChosen.esp",
+                "effects": []
+              },
+              "conditions": [
+                {
+                  "fn": "GetRandomPercent",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 10
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 25,
+                  "args": {
+                    "actorValue": "ResistFire"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "0001F4:Skyrim.esm"
+                  }
+                }
+              ],
+              "text": "Apply Combat Hit Spell: cast Attenuation"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ApplyCombatHitSpell",
+              "spell": {
+                "formKey": "000CB1:NirnsChosen.esp",
+                "editorId": "APO_ClassMonkAttenuationFrostSpell",
+                "name": "Attenuation",
+                "description": null,
+                "plugin": "NirnsChosen.esp",
+                "effects": []
+              },
+              "conditions": [
+                {
+                  "fn": "GetRandomPercent",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 10
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 25,
+                  "args": {
+                    "actorValue": "ResistFrost"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "0001F4:Skyrim.esm"
+                  }
+                }
+              ],
+              "text": "Apply Combat Hit Spell: cast Attenuation"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ApplyCombatHitSpell",
+              "spell": {
+                "formKey": "000CB3:NirnsChosen.esp",
+                "editorId": "APO_ClassMonkAttenuationShockSpell",
+                "name": "Attenuation",
+                "description": null,
+                "plugin": "NirnsChosen.esp",
+                "effects": []
+              },
+              "conditions": [
+                {
+                  "fn": "GetRandomPercent",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 10
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 25,
+                  "args": {
+                    "actorValue": "ResistShock"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "0001F4:Skyrim.esm"
+                  }
+                }
+              ],
+              "text": "Apply Combat Hit Spell: cast Attenuation"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ApplyCombatHitSpell",
+              "spell": {
+                "formKey": "000CAF:NirnsChosen.esp",
+                "editorId": "APO_ClassMonkAttenuationFireSpell",
+                "name": "Attenuation",
+                "description": null,
+                "plugin": "NirnsChosen.esp",
+                "effects": []
+              },
+              "conditions": [
+                {
+                  "fn": "GetRandomPercent",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 15
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": ">",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 25,
+                  "args": {
+                    "actorValue": "ResistFire"
+                  }
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 50,
+                  "args": {
+                    "actorValue": "ResistFire"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "0001F4:Skyrim.esm"
+                  }
+                }
+              ],
+              "text": "Apply Combat Hit Spell: cast Attenuation"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ApplyCombatHitSpell",
+              "spell": {
+                "formKey": "000CB1:NirnsChosen.esp",
+                "editorId": "APO_ClassMonkAttenuationFrostSpell",
+                "name": "Attenuation",
+                "description": null,
+                "plugin": "NirnsChosen.esp",
+                "effects": []
+              },
+              "conditions": [
+                {
+                  "fn": "GetRandomPercent",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 15
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": ">",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 25,
+                  "args": {
+                    "actorValue": "ResistFrost"
+                  }
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 50,
+                  "args": {
+                    "actorValue": "ResistFrost"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "0001F4:Skyrim.esm"
+                  }
+                }
+              ],
+              "text": "Apply Combat Hit Spell: cast Attenuation"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ApplyCombatHitSpell",
+              "spell": {
+                "formKey": "000CB3:NirnsChosen.esp",
+                "editorId": "APO_ClassMonkAttenuationShockSpell",
+                "name": "Attenuation",
+                "description": null,
+                "plugin": "NirnsChosen.esp",
+                "effects": []
+              },
+              "conditions": [
+                {
+                  "fn": "GetRandomPercent",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 15
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": ">",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 25,
+                  "args": {
+                    "actorValue": "ResistShock"
+                  }
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 50,
+                  "args": {
+                    "actorValue": "ResistShock"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "0001F4:Skyrim.esm"
+                  }
+                }
+              ],
+              "text": "Apply Combat Hit Spell: cast Attenuation"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ApplyCombatHitSpell",
+              "spell": {
+                "formKey": "000CAF:NirnsChosen.esp",
+                "editorId": "APO_ClassMonkAttenuationFireSpell",
+                "name": "Attenuation",
+                "description": null,
+                "plugin": "NirnsChosen.esp",
+                "effects": []
+              },
+              "conditions": [
+                {
+                  "fn": "GetRandomPercent",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 20
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": ">",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 50,
+                  "args": {
+                    "actorValue": "ResistFire"
+                  }
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 75,
+                  "args": {
+                    "actorValue": "ResistFire"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "0001F4:Skyrim.esm"
+                  }
+                }
+              ],
+              "text": "Apply Combat Hit Spell: cast Attenuation"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ApplyCombatHitSpell",
+              "spell": {
+                "formKey": "000CB1:NirnsChosen.esp",
+                "editorId": "APO_ClassMonkAttenuationFrostSpell",
+                "name": "Attenuation",
+                "description": null,
+                "plugin": "NirnsChosen.esp",
+                "effects": []
+              },
+              "conditions": [
+                {
+                  "fn": "GetRandomPercent",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 20
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": ">",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 50,
+                  "args": {
+                    "actorValue": "ResistFrost"
+                  }
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 75,
+                  "args": {
+                    "actorValue": "ResistFrost"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "0001F4:Skyrim.esm"
+                  }
+                }
+              ],
+              "text": "Apply Combat Hit Spell: cast Attenuation"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ApplyCombatHitSpell",
+              "spell": {
+                "formKey": "000CB3:NirnsChosen.esp",
+                "editorId": "APO_ClassMonkAttenuationShockSpell",
+                "name": "Attenuation",
+                "description": null,
+                "plugin": "NirnsChosen.esp",
+                "effects": []
+              },
+              "conditions": [
+                {
+                  "fn": "GetRandomPercent",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 20
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": ">",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 50,
+                  "args": {
+                    "actorValue": "ResistShock"
+                  }
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 75,
+                  "args": {
+                    "actorValue": "ResistShock"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "0001F4:Skyrim.esm"
+                  }
+                }
+              ],
+              "text": "Apply Combat Hit Spell: cast Attenuation"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ApplyCombatHitSpell",
+              "spell": {
+                "formKey": "000CAF:NirnsChosen.esp",
+                "editorId": "APO_ClassMonkAttenuationFireSpell",
+                "name": "Attenuation",
+                "description": null,
+                "plugin": "NirnsChosen.esp",
+                "effects": []
+              },
+              "conditions": [
+                {
+                  "fn": "GetRandomPercent",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 25
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": ">",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 75,
+                  "args": {
+                    "actorValue": "ResistFire"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "0001F4:Skyrim.esm"
+                  }
+                }
+              ],
+              "text": "Apply Combat Hit Spell: cast Attenuation"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ApplyCombatHitSpell",
+              "spell": {
+                "formKey": "000CB1:NirnsChosen.esp",
+                "editorId": "APO_ClassMonkAttenuationFrostSpell",
+                "name": "Attenuation",
+                "description": null,
+                "plugin": "NirnsChosen.esp",
+                "effects": []
+              },
+              "conditions": [
+                {
+                  "fn": "GetRandomPercent",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 25
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": ">",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 75,
+                  "args": {
+                    "actorValue": "ResistFrost"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "0001F4:Skyrim.esm"
+                  }
+                }
+              ],
+              "text": "Apply Combat Hit Spell: cast Attenuation"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ApplyCombatHitSpell",
+              "spell": {
+                "formKey": "000CB3:NirnsChosen.esp",
+                "editorId": "APO_ClassMonkAttenuationShockSpell",
+                "name": "Attenuation",
+                "description": null,
+                "plugin": "NirnsChosen.esp",
+                "effects": []
+              },
+              "conditions": [
+                {
+                  "fn": "GetRandomPercent",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 25
+                },
+                {
+                  "fn": "GetActorValue",
+                  "op": ">",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 75,
+                  "args": {
+                    "actorValue": "ResistShock"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "0001F4:Skyrim.esm"
+                  }
+                }
+              ],
+              "text": "Apply Combat Hit Spell: cast Attenuation"
+            }
+          ]
         }
       ]
     },
@@ -487,7 +2760,145 @@
               "editorId": "APO_ClassNightbladePerk01",
               "name": "Veil Touched",
               "description": null,
-              "plugin": "NirnsChosen.esp"
+              "plugin": "NirnsChosen.esp",
+              "mechanics": [
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModSneakAttackMult",
+                  "modification": "Multiply",
+                  "value": 1.25,
+                  "conditions": [
+                    {
+                      "fn": "HasMagicEffectKeyword",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "keyword": "ADA129:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_isThaumaturgyActive"
+                      }
+                    }
+                  ],
+                  "text": "Mod Sneak Attack Mult: Multiply 1.25"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModSpellMagnitude",
+                  "modification": "Multiply",
+                  "value": 1.25,
+                  "conditions": [
+                    {
+                      "fn": "HasMagicEffectKeyword",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "keyword": "ADA129:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_isThaumaturgyActive"
+                      }
+                    },
+                    {
+                      "fn": "IsSneaking",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "01CEAD:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicDamageFire"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "01CEAE:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicDamageFrost"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "01CEAF:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicDamageShock"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "ADA002:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_MagicDamageSun"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "ADA001:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_MagicDamagePoison"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "101BDE:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicVampireDrain"
+                      }
+                    },
+                    {
+                      "fn": "GetDetected",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0
+                    }
+                  ],
+                  "text": "Mod Spell Magnitude: Multiply 1.25"
+                }
+              ]
             }
           }
         ]
@@ -498,7 +2909,145 @@
           "editorId": "APO_ClassNightbladePerk01",
           "name": "Veil Touched",
           "description": null,
-          "plugin": "NirnsChosen.esp"
+          "plugin": "NirnsChosen.esp",
+          "mechanics": [
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSneakAttackMult",
+              "modification": "Multiply",
+              "value": 1.25,
+              "conditions": [
+                {
+                  "fn": "HasMagicEffectKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "keyword": "ADA129:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_isThaumaturgyActive"
+                  }
+                }
+              ],
+              "text": "Mod Sneak Attack Mult: Multiply 1.25"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSpellMagnitude",
+              "modification": "Multiply",
+              "value": 1.25,
+              "conditions": [
+                {
+                  "fn": "HasMagicEffectKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "keyword": "ADA129:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_isThaumaturgyActive"
+                  }
+                },
+                {
+                  "fn": "IsSneaking",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "01CEAD:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicDamageFire"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "01CEAE:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicDamageFrost"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "01CEAF:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicDamageShock"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "ADA002:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicDamageSun"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "ADA001:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicDamagePoison"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "101BDE:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicVampireDrain"
+                  }
+                },
+                {
+                  "fn": "GetDetected",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0
+                }
+              ],
+              "text": "Mod Spell Magnitude: Multiply 1.25"
+            }
+          ]
         }
       ]
     },
@@ -574,7 +3123,302 @@
               "editorId": "APO_ClassRoguePerk01",
               "name": "Opportunist",
               "description": null,
-              "plugin": "NirnsChosen.esp"
+              "plugin": "NirnsChosen.esp",
+              "mechanics": [
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModSpellMagnitude",
+                  "modification": "Multiply",
+                  "value": 1.5,
+                  "conditions": [
+                    {
+                      "fn": "HasMagicEffectKeyword",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "000CC1:NirnsChosen.esp"
+                      },
+                      "argNames": {
+                        "keyword": "APO_OpportunistActive"
+                      }
+                    },
+                    {
+                      "fn": "GetIsID",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "object": "07E8E4:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "object": "Blizzard"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "keyword": "0B62E4:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicCloak"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasSkill",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "actorValue": "Destruction"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "ADA001:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_MagicDamagePoison"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "ADA002:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_MagicDamageSun"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "101BDE:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicVampireDrain"
+                      }
+                    }
+                  ],
+                  "text": "Mod Spell Magnitude: Multiply 1.5"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModSpellMagnitude",
+                  "modification": "Multiply",
+                  "value": 1.5,
+                  "conditions": [
+                    {
+                      "fn": "HasMagicEffectKeyword",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "000CC1:NirnsChosen.esp"
+                      },
+                      "argNames": {
+                        "keyword": "APO_OpportunistActive"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "ADA119:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_MagicDamageBleed"
+                      }
+                    }
+                  ],
+                  "text": "Mod Spell Magnitude: Multiply 1.5"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "CalculateMyCriticalHitDamage",
+                  "modification": "Multiply",
+                  "value": 1.5,
+                  "conditions": [
+                    {
+                      "fn": "HasMagicEffectKeyword",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "000CC1:NirnsChosen.esp"
+                      },
+                      "argNames": {
+                        "keyword": "APO_OpportunistActive"
+                      }
+                    }
+                  ],
+                  "text": "Calculate My Critical Hit Damage: Multiply 1.5"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModAttackDamage",
+                  "modification": "Multiply",
+                  "value": 1.5,
+                  "conditions": [
+                    {
+                      "fn": "HasMagicEffectKeyword",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "000CC1:NirnsChosen.esp"
+                      },
+                      "argNames": {
+                        "keyword": "APO_OpportunistActive"
+                      }
+                    }
+                  ],
+                  "text": "Mod Attack Damage: Multiply 1.5"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ApplyWeaponSwingSpell",
+                  "spell": {
+                    "formKey": "000CBE:NirnsChosen.esp",
+                    "editorId": "APO_ClassRogueOpportunistSpell01",
+                    "name": "Opportunist",
+                    "description": null,
+                    "plugin": "NirnsChosen.esp",
+                    "effects": []
+                  },
+                  "conditions": [
+                    {
+                      "fn": "HasMagicEffectKeyword",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "keyword": "ADA178:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_MagicBecomeEthereal"
+                      }
+                    },
+                    {
+                      "fn": "HasMagicEffect",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "magicEffect": "000CC0:NirnsChosen.esp"
+                      }
+                    },
+                    {
+                      "fn": "GetRandomPercent",
+                      "op": "<=",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 5
+                    },
+                    {
+                      "fn": "IsPowerAttacking",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1
+                    },
+                    {
+                      "fn": "GetRandomPercent",
+                      "op": "<=",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 20
+                    }
+                  ],
+                  "text": "Apply Weapon Swing Spell: cast Opportunist"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ApplyWeaponSwingSpell",
+                  "spell": {
+                    "formKey": "000CBE:NirnsChosen.esp",
+                    "editorId": "APO_ClassRogueOpportunistSpell01",
+                    "name": "Opportunist",
+                    "description": null,
+                    "plugin": "NirnsChosen.esp",
+                    "effects": []
+                  },
+                  "conditions": [
+                    {
+                      "fn": "GetIsReference",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "target": "000014:Skyrim.esm"
+                      }
+                    },
+                    {
+                      "fn": "HasMagicEffect",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "magicEffect": "000CC0:NirnsChosen.esp"
+                      }
+                    },
+                    {
+                      "fn": "HasMagicEffectKeyword",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "keyword": "ADA178:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_MagicBecomeEthereal"
+                      }
+                    },
+                    {
+                      "fn": "ShouldAttackKill",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "targetNpc": "000014:Skyrim.esm"
+                      }
+                    }
+                  ],
+                  "text": "Apply Weapon Swing Spell: cast Opportunist"
+                }
+              ]
             }
           }
         ]
@@ -585,7 +3429,302 @@
           "editorId": "APO_ClassRoguePerk01",
           "name": "Opportunist",
           "description": null,
-          "plugin": "NirnsChosen.esp"
+          "plugin": "NirnsChosen.esp",
+          "mechanics": [
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSpellMagnitude",
+              "modification": "Multiply",
+              "value": 1.5,
+              "conditions": [
+                {
+                  "fn": "HasMagicEffectKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "000CC1:NirnsChosen.esp"
+                  },
+                  "argNames": {
+                    "keyword": "APO_OpportunistActive"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "object": "07E8E4:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "object": "Blizzard"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "keyword": "0B62E4:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicCloak"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasSkill",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "actorValue": "Destruction"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "ADA001:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicDamagePoison"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "ADA002:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicDamageSun"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "101BDE:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicVampireDrain"
+                  }
+                }
+              ],
+              "text": "Mod Spell Magnitude: Multiply 1.5"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSpellMagnitude",
+              "modification": "Multiply",
+              "value": 1.5,
+              "conditions": [
+                {
+                  "fn": "HasMagicEffectKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "000CC1:NirnsChosen.esp"
+                  },
+                  "argNames": {
+                    "keyword": "APO_OpportunistActive"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "ADA119:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicDamageBleed"
+                  }
+                }
+              ],
+              "text": "Mod Spell Magnitude: Multiply 1.5"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "CalculateMyCriticalHitDamage",
+              "modification": "Multiply",
+              "value": 1.5,
+              "conditions": [
+                {
+                  "fn": "HasMagicEffectKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "000CC1:NirnsChosen.esp"
+                  },
+                  "argNames": {
+                    "keyword": "APO_OpportunistActive"
+                  }
+                }
+              ],
+              "text": "Calculate My Critical Hit Damage: Multiply 1.5"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModAttackDamage",
+              "modification": "Multiply",
+              "value": 1.5,
+              "conditions": [
+                {
+                  "fn": "HasMagicEffectKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "000CC1:NirnsChosen.esp"
+                  },
+                  "argNames": {
+                    "keyword": "APO_OpportunistActive"
+                  }
+                }
+              ],
+              "text": "Mod Attack Damage: Multiply 1.5"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ApplyWeaponSwingSpell",
+              "spell": {
+                "formKey": "000CBE:NirnsChosen.esp",
+                "editorId": "APO_ClassRogueOpportunistSpell01",
+                "name": "Opportunist",
+                "description": null,
+                "plugin": "NirnsChosen.esp",
+                "effects": []
+              },
+              "conditions": [
+                {
+                  "fn": "HasMagicEffectKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "keyword": "ADA178:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicBecomeEthereal"
+                  }
+                },
+                {
+                  "fn": "HasMagicEffect",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "magicEffect": "000CC0:NirnsChosen.esp"
+                  }
+                },
+                {
+                  "fn": "GetRandomPercent",
+                  "op": "<=",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 5
+                },
+                {
+                  "fn": "IsPowerAttacking",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1
+                },
+                {
+                  "fn": "GetRandomPercent",
+                  "op": "<=",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 20
+                }
+              ],
+              "text": "Apply Weapon Swing Spell: cast Opportunist"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ApplyWeaponSwingSpell",
+              "spell": {
+                "formKey": "000CBE:NirnsChosen.esp",
+                "editorId": "APO_ClassRogueOpportunistSpell01",
+                "name": "Opportunist",
+                "description": null,
+                "plugin": "NirnsChosen.esp",
+                "effects": []
+              },
+              "conditions": [
+                {
+                  "fn": "GetIsReference",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "target": "000014:Skyrim.esm"
+                  }
+                },
+                {
+                  "fn": "HasMagicEffect",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "magicEffect": "000CC0:NirnsChosen.esp"
+                  }
+                },
+                {
+                  "fn": "HasMagicEffectKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "keyword": "ADA178:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicBecomeEthereal"
+                  }
+                },
+                {
+                  "fn": "ShouldAttackKill",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "targetNpc": "000014:Skyrim.esm"
+                  }
+                }
+              ],
+              "text": "Apply Weapon Swing Spell: cast Opportunist"
+            }
+          ]
         }
       ]
     },
@@ -671,7 +3810,68 @@
               "editorId": "APO_ClassSorcererPerk01",
               "name": "Artificer",
               "description": null,
-              "plugin": "NirnsChosen.esp"
+              "plugin": "NirnsChosen.esp",
+              "mechanics": [
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "AddLeveledListOnDeath",
+                  "conditions": [
+                    {
+                      "fn": "GetRandomPercent",
+                      "op": "<=",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 33
+                    }
+                  ],
+                  "text": "Add Leveled List On Death"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModSpellCost",
+                  "modification": "Multiply",
+                  "value": 0.75,
+                  "conditions": [
+                    {
+                      "fn": "GetIsObjectType",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "formType": "Enchantment"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "ADA010:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_MagicWeaponEnchantment"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "ADA120:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_MagicStaffEnchantment"
+                      }
+                    }
+                  ],
+                  "text": "Mod Spell Cost: Multiply 0.75"
+                }
+              ]
             }
           }
         ]
@@ -682,7 +3882,68 @@
           "editorId": "APO_ClassSorcererPerk01",
           "name": "Artificer",
           "description": null,
-          "plugin": "NirnsChosen.esp"
+          "plugin": "NirnsChosen.esp",
+          "mechanics": [
+            {
+              "type": "entryPoint",
+              "entryPoint": "AddLeveledListOnDeath",
+              "conditions": [
+                {
+                  "fn": "GetRandomPercent",
+                  "op": "<=",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 33
+                }
+              ],
+              "text": "Add Leveled List On Death"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSpellCost",
+              "modification": "Multiply",
+              "value": 0.75,
+              "conditions": [
+                {
+                  "fn": "GetIsObjectType",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "formType": "Enchantment"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "ADA010:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicWeaponEnchantment"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "ADA120:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicStaffEnchantment"
+                  }
+                }
+              ],
+              "text": "Mod Spell Cost: Multiply 0.75"
+            }
+          ]
         }
       ]
     },
@@ -725,7 +3986,96 @@
               "editorId": "APO_ClassSummonerPerk01",
               "name": "Binding Vow",
               "description": null,
-              "plugin": "NirnsChosen.esp"
+              "plugin": "NirnsChosen.esp",
+              "mechanics": [
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModCommandedActorLimit",
+                  "modification": "Add",
+                  "value": 1,
+                  "conditions": [
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "1091CF:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicSummonFamiliar"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "024823:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicSummonFire"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "024829:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicSummonFrost"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "02482A:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicSummonShock"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "02482B:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicSummonUndead"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "ADA006:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_MagicSummonReanimate"
+                      }
+                    }
+                  ],
+                  "text": "Mod Commanded Actor Limit: Add 1"
+                }
+              ]
             }
           }
         ]
@@ -736,7 +4086,96 @@
           "editorId": "APO_ClassSummonerPerk01",
           "name": "Binding Vow",
           "description": null,
-          "plugin": "NirnsChosen.esp"
+          "plugin": "NirnsChosen.esp",
+          "mechanics": [
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModCommandedActorLimit",
+              "modification": "Add",
+              "value": 1,
+              "conditions": [
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "1091CF:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicSummonFamiliar"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "024823:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicSummonFire"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "024829:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicSummonFrost"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "02482A:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicSummonShock"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "02482B:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicSummonUndead"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "ADA006:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicSummonReanimate"
+                  }
+                }
+              ],
+              "text": "Mod Commanded Actor Limit: Add 1"
+            }
+          ]
         }
       ]
     },
@@ -779,7 +4218,335 @@
               "editorId": "APO_ClassVagabondPerk01",
               "name": "Seasoned Veteran",
               "description": null,
-              "plugin": "NirnsChosen.esp"
+              "plugin": "NirnsChosen.esp",
+              "mechanics": [
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModIncomingDamage",
+                  "modification": "Multiply",
+                  "value": 0.75,
+                  "conditions": [
+                    {
+                      "fn": "IsBlocking",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1
+                    }
+                  ],
+                  "text": "Mod Incoming Damage: Multiply 0.75"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModIncomingSpellMagnitude",
+                  "modification": "Multiply",
+                  "value": 0.75,
+                  "conditions": [
+                    {
+                      "fn": "IsBlocking",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1
+                    },
+                    {
+                      "fn": "GetIsID",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "object": "07E8E4:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "object": "Blizzard"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "keyword": "0B62E4:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicCloak"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "01CEAD:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicDamageFire"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "01CEAE:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicDamageFrost"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "01CEAF:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicDamageShock"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "ADA001:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_MagicDamagePoison"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "ADA002:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_MagicDamageSun"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "101BDE:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicVampireDrain"
+                      }
+                    }
+                  ],
+                  "text": "Mod Incoming Spell Magnitude: Multiply 0.75"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModIncomingDamage",
+                  "modification": "Multiply",
+                  "value": 0.75,
+                  "conditions": [
+                    {
+                      "fn": "IsPowerAttacking",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1
+                    },
+                    {
+                      "fn": "IsAttacking",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1
+                    },
+                    {
+                      "fn": "GetEquippedItemType",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 7,
+                      "args": {
+                        "itemSource": "Right"
+                      }
+                    },
+                    {
+                      "fn": "GetEquippedItemType",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 12,
+                      "args": {
+                        "itemSource": "Right"
+                      }
+                    }
+                  ],
+                  "text": "Mod Incoming Damage: Multiply 0.75"
+                },
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModIncomingSpellMagnitude",
+                  "modification": "Multiply",
+                  "value": 0.75,
+                  "conditions": [
+                    {
+                      "fn": "IsPowerAttacking",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1
+                    },
+                    {
+                      "fn": "IsAttacking",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1
+                    },
+                    {
+                      "fn": "GetEquippedItemType",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 7,
+                      "args": {
+                        "itemSource": "Right"
+                      }
+                    },
+                    {
+                      "fn": "GetEquippedItemType",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 12,
+                      "args": {
+                        "itemSource": "Right"
+                      }
+                    },
+                    {
+                      "fn": "GetIsID",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "object": "07E8E4:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "object": "Blizzard"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "keyword": "0B62E4:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicCloak"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "01CEAD:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicDamageFire"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "01CEAE:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicDamageFrost"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "01CEAF:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicDamageShock"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "ADA001:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_MagicDamagePoison"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "ADA002:Update.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MAG_MagicDamageSun"
+                      }
+                    },
+                    {
+                      "fn": "EPMagic_SpellHasKeyword",
+                      "op": "==",
+                      "or": true,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "101BDE:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "MagicVampireDrain"
+                      }
+                    }
+                  ],
+                  "text": "Mod Incoming Spell Magnitude: Multiply 0.75"
+                }
+              ]
             }
           }
         ]
@@ -790,7 +4557,335 @@
           "editorId": "APO_ClassVagabondPerk01",
           "name": "Seasoned Veteran",
           "description": null,
-          "plugin": "NirnsChosen.esp"
+          "plugin": "NirnsChosen.esp",
+          "mechanics": [
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModIncomingDamage",
+              "modification": "Multiply",
+              "value": 0.75,
+              "conditions": [
+                {
+                  "fn": "IsBlocking",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1
+                }
+              ],
+              "text": "Mod Incoming Damage: Multiply 0.75"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModIncomingSpellMagnitude",
+              "modification": "Multiply",
+              "value": 0.75,
+              "conditions": [
+                {
+                  "fn": "IsBlocking",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "object": "07E8E4:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "object": "Blizzard"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "keyword": "0B62E4:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicCloak"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "01CEAD:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicDamageFire"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "01CEAE:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicDamageFrost"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "01CEAF:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicDamageShock"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "ADA001:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicDamagePoison"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "ADA002:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicDamageSun"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "101BDE:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicVampireDrain"
+                  }
+                }
+              ],
+              "text": "Mod Incoming Spell Magnitude: Multiply 0.75"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModIncomingDamage",
+              "modification": "Multiply",
+              "value": 0.75,
+              "conditions": [
+                {
+                  "fn": "IsPowerAttacking",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1
+                },
+                {
+                  "fn": "IsAttacking",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1
+                },
+                {
+                  "fn": "GetEquippedItemType",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 7,
+                  "args": {
+                    "itemSource": "Right"
+                  }
+                },
+                {
+                  "fn": "GetEquippedItemType",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 12,
+                  "args": {
+                    "itemSource": "Right"
+                  }
+                }
+              ],
+              "text": "Mod Incoming Damage: Multiply 0.75"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModIncomingSpellMagnitude",
+              "modification": "Multiply",
+              "value": 0.75,
+              "conditions": [
+                {
+                  "fn": "IsPowerAttacking",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1
+                },
+                {
+                  "fn": "IsAttacking",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1
+                },
+                {
+                  "fn": "GetEquippedItemType",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 7,
+                  "args": {
+                    "itemSource": "Right"
+                  }
+                },
+                {
+                  "fn": "GetEquippedItemType",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 12,
+                  "args": {
+                    "itemSource": "Right"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "object": "07E8E4:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "object": "Blizzard"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "keyword": "0B62E4:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicCloak"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "01CEAD:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicDamageFire"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "01CEAE:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicDamageFrost"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "01CEAF:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicDamageShock"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "ADA001:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicDamagePoison"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "ADA002:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicDamageSun"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "101BDE:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicVampireDrain"
+                  }
+                }
+              ],
+              "text": "Mod Incoming Spell Magnitude: Multiply 0.75"
+            }
+          ]
         }
       ]
     },
@@ -840,7 +4935,57 @@
           "editorId": "APO_ClassWitchHunterPerk01",
           "name": "Perfect Preparation",
           "description": null,
-          "plugin": "NirnsChosen.esp"
+          "plugin": "NirnsChosen.esp",
+          "mechanics": [
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSpellDuration",
+              "modification": "Multiply",
+              "value": 1.5,
+              "conditions": [
+                {
+                  "fn": "HasMagicEffectKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "keyword": "ADA129:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_isThaumaturgyActive"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "0F8A4E:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicAlchBeneficial"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 0,
+                  "args": {
+                    "keyword": "0FB98C:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicBlessing"
+                  }
+                }
+              ],
+              "text": "Mod Spell Duration: Multiply 1.5"
+            }
+          ]
         }
       ]
     }
@@ -853,6 +4998,6 @@
   "meta": {
     "profile": "Apostasy",
     "plugins": 3407,
-    "generatedAt": "2026-10-23T14:21:02.7659197Z"
+    "generatedAt": "2026-10-23T14:31:18.5842315Z"
   }
 }

@@ -488,6 +488,7 @@
   "questPerks": [
     {
       "id": "MQ104",
+      "name": "Dragon Rising",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -527,6 +528,7 @@
     },
     {
       "id": "MQ105Ustengrav",
+      "name": "The Horn of Jurgen Windcaller",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -566,6 +568,7 @@
     },
     {
       "id": "MQ203",
+      "name": "Alduin's Wall",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -605,6 +608,7 @@
     },
     {
       "id": "MQ205",
+      "name": "Elder Knowledge",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -644,6 +648,7 @@
     },
     {
       "id": "MQ305",
+      "name": "Dragonslayer",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -683,6 +688,7 @@
     },
     {
       "id": "MS05",
+      "name": "Tending the Flames",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -722,6 +728,7 @@
     },
     {
       "id": "TG09",
+      "name": "Darkness Returns",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -761,6 +768,7 @@
     },
     {
       "id": "TGLeadership",
+      "name": "Under New Management",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -800,6 +808,7 @@
     },
     {
       "id": "C03",
+      "name": "The Silver Hand",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -839,6 +848,7 @@
     },
     {
       "id": "C06",
+      "name": "Glory of the Dead",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -878,6 +888,7 @@
     },
     {
       "id": "MG06",
+      "name": "Revealing the Unseen",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -917,6 +928,7 @@
     },
     {
       "id": "MG08",
+      "name": "The Eye of Magnus",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -956,6 +968,7 @@
     },
     {
       "id": "DB05",
+      "name": "Bound Until Death",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -995,6 +1008,7 @@
     },
     {
       "id": "DB11",
+      "name": "Hail Sithis!",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -1034,6 +1048,7 @@
     },
     {
       "id": "DBDestroy_Optional",
+      "name": "Destroy the Dark Brotherhood!",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -1086,6 +1101,7 @@
     },
     {
       "id": "DA01",
+      "name": "The Black Star",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -1156,6 +1172,7 @@
     },
     {
       "id": "DA02",
+      "name": "Boethiah's Calling",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -1208,6 +1225,7 @@
     },
     {
       "id": "DA03",
+      "name": "A Daedra's Best Friend",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -1260,6 +1278,7 @@
     },
     {
       "id": "DA04",
+      "name": "Discerning the Transmundane",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -1312,6 +1331,7 @@
     },
     {
       "id": "DA05",
+      "name": "Ill Met By Moonlight",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -1382,6 +1402,7 @@
     },
     {
       "id": "DA06",
+      "name": "The Cursed Tribe",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -1434,6 +1455,7 @@
     },
     {
       "id": "DA07",
+      "name": "Pieces of the Past",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -1504,6 +1526,7 @@
     },
     {
       "id": "DA08",
+      "name": "The Whispering Door",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -1556,6 +1579,7 @@
     },
     {
       "id": "DA09",
+      "name": "The Break of Dawn",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -1608,6 +1632,7 @@
     },
     {
       "id": "DA10",
+      "name": "The House of Horrors",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -1660,6 +1685,7 @@
     },
     {
       "id": "DA11",
+      "name": "The Taste of Death",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -1712,6 +1738,7 @@
     },
     {
       "id": "DA13",
+      "name": "The Only Cure",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -1764,6 +1791,7 @@
     },
     {
       "id": "DA14",
+      "name": "A Night To Remember",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -1816,6 +1844,7 @@
     },
     {
       "id": "DA15",
+      "name": "The Mind of Madness",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -1868,6 +1897,7 @@
     },
     {
       "id": "DA16",
+      "name": "Waking Nightmare",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -1920,6 +1950,7 @@
     },
     {
       "id": "DLC1LD",
+      "name": "Lost to the Ages",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -1959,6 +1990,7 @@
     },
     {
       "id": "DLC1VQ05",
+      "name": "Beyond Death",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -1998,6 +2030,7 @@
     },
     {
       "id": "DLC1VQ08",
+      "name": "Kindred Judgment",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -2037,6 +2070,7 @@
     },
     {
       "id": "DLC2MQ02",
+      "name": "The Temple of Miraak",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -2076,6 +2110,7 @@
     },
     {
       "id": "DLC2MQ04",
+      "name": "The Path of Knowledge",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -2115,6 +2150,7 @@
     },
     {
       "id": "DLC2MQ06",
+      "name": "At the Summit of Apocrypha",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -2154,6 +2190,7 @@
     },
     {
       "id": "CWObj",
+      "name": "Liberation of Skyrim / Reunification of Skyrim",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -2193,6 +2230,7 @@
     },
     {
       "id": "CWSiegeObj",
+      "name": "Battle for Whiterun (Imperial or Stormcloak)",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -2232,6 +2270,7 @@
     },
     {
       "id": "dunHunterQST",
+      "name": "Kyne's Sacred Trials",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -2271,6 +2310,7 @@
     },
     {
       "id": "T03",
+      "name": "The Blessings of Nature",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -2310,6 +2350,7 @@
     },
     {
       "id": "MS11",
+      "name": "Blood on the Ice",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -2367,6 +2408,7 @@
     },
     {
       "id": "T02",
+      "name": "The Book of Love",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -2406,6 +2448,7 @@
     },
     {
       "id": "T01",
+      "name": "The Heart of Dibella",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -2445,6 +2488,7 @@
     },
     {
       "id": "MS02",
+      "name": "No One Escapes Cidhna Mine",
       "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
@@ -2502,6 +2546,7 @@
     },
     {
       "id": "WT_WTBarrowOfTheWyrm",
+      "name": "Barrow of the Wyrm",
       "plugin": "QAPP - Wyrmstooth Patch.esp",
       "quests": [
         {
@@ -2541,6 +2586,7 @@
     },
     {
       "id": "WT_WTUberEncounter",
+      "name": "Someone with Backbone",
       "plugin": "QAPP - Wyrmstooth Patch.esp",
       "quests": [
         {
@@ -2597,8 +2643,16 @@
     {
       "script": "DcdAlchAddPerkPointsScript",
       "points": 1,
-      "note": "Consuming this item (DAc0da).",
-      "sources": []
+      "note": "DAc0da reward.",
+      "sources": [
+        {
+          "type": "ingestible",
+          "formKey": "00CCEE:DAc0da.esm",
+          "editorId": "zDcdFoodCheeseWedge01_Perk",
+          "name": "Kagrenac Cheese Wedge",
+          "plugin": "DAc0da.esm"
+        }
+      ]
     },
     {
       "script": "CRBSQ01_TIF__0302299C",
@@ -2607,9 +2661,9 @@
       "sources": [
         {
           "type": "dialogue",
-          "formKey": "02299C:Unslaad.esm",
-          "editorId": null,
-          "name": null,
+          "formKey": "02299B:Unslaad.esm",
+          "editorId": "zzzCrbsq01UlB02T05",
+          "name": "Knowledge. (Perk Point +1)",
           "plugin": "Unslaad.esm"
         }
       ]
@@ -2618,32 +2672,47 @@
       "script": "aoMapConvertObjScript",
       "points": 1,
       "note": "One of the conversion choices (Vigilant).",
-      "sources": []
+      "sources": [
+        {
+          "type": "activator",
+          "formKey": "4E4953:Vigilant.esm",
+          "editorId": "zzzAoMAPConverterPious",
+          "name": "Horn of Stendarr",
+          "plugin": "Vigilant.esm"
+        },
+        {
+          "type": "activator",
+          "formKey": "4EA3D7:Vigilant.esm",
+          "editorId": "zzzAoMAPConverterRad01",
+          "name": "Chalice of Radiance",
+          "plugin": "Vigilant.esm"
+        },
+        {
+          "type": "activator",
+          "formKey": "4EA3DB:Vigilant.esm",
+          "editorId": "zzzAoMAPConverterRad02",
+          "name": "Chalice of Radiance",
+          "plugin": "Vigilant.esm"
+        },
+        {
+          "type": "activator",
+          "formKey": "4ED9F9:Vigilant.esm",
+          "editorId": "zzzCHAPConverterRad01",
+          "name": "Chalice of Radiance",
+          "plugin": "Vigilant.esm"
+        }
+      ]
     },
     {
       "script": "chAlchStatusUpEffectScript",
       "points": 1,
-      "note": "Status-up item of type 3 (Vigilant).",
+      "note": "Only the perk point variant of the status-up items (Vigilant).",
       "sources": [
-        {
-          "type": "item",
-          "formKey": "0E2592:Vigilant.esm",
-          "editorId": "zzzCHRelicPotionIncHealth",
-          "name": "Ashes of St. Sard",
-          "plugin": "Vigilant.esm"
-        },
         {
           "type": "spell",
           "formKey": "1EA213:Vigilant.esm",
           "editorId": "zzzCHBlackHandHealth",
           "name": "Black Hand Health",
-          "plugin": "Vigilant.esm"
-        },
-        {
-          "type": "item",
-          "formKey": "0E2593:Vigilant.esm",
-          "editorId": "zzzCHRelicPotionIncStamina",
-          "name": "Hide of Abbot Silorn",
           "plugin": "Vigilant.esm"
         },
         {
@@ -2654,24 +2723,10 @@
           "plugin": "Vigilant.esm"
         },
         {
-          "type": "item",
-          "formKey": "0E2595:Vigilant.esm",
-          "editorId": "zzzCHRelicPotionIncMagicka",
-          "name": "Bone of Jhunal",
-          "plugin": "Vigilant.esm"
-        },
-        {
           "type": "spell",
           "formKey": "1EA216:Vigilant.esm",
           "editorId": "zzzCHBlackHandMagicka",
           "name": "Black Hand Magicka",
-          "plugin": "Vigilant.esm"
-        },
-        {
-          "type": "item",
-          "formKey": "0E2597:Vigilant.esm",
-          "editorId": "zzzCHRelicPotionIncPerk",
-          "name": "Nail of St. Dulsa",
           "plugin": "Vigilant.esm"
         },
         {
@@ -2682,10 +2737,38 @@
           "plugin": "Vigilant.esm"
         },
         {
-          "type": "item",
+          "type": "ingestible",
+          "formKey": "0E2597:Vigilant.esm",
+          "editorId": "zzzCHRelicPotionIncPerk",
+          "name": "Nail of St. Dulsa",
+          "plugin": "Vigilant.esm"
+        },
+        {
+          "type": "ingestible",
           "formKey": "0E8D2F:Vigilant.esm",
           "editorId": "zzzCHRelicPotionIncDragonSouls",
           "name": "Dragon Soul Stone",
+          "plugin": "Vigilant.esm"
+        },
+        {
+          "type": "ingestible",
+          "formKey": "0E2592:Vigilant.esm",
+          "editorId": "zzzCHRelicPotionIncHealth",
+          "name": "Ashes of St. Sard",
+          "plugin": "Vigilant.esm"
+        },
+        {
+          "type": "ingestible",
+          "formKey": "0E2593:Vigilant.esm",
+          "editorId": "zzzCHRelicPotionIncStamina",
+          "name": "Hide of Abbot Silorn",
+          "plugin": "Vigilant.esm"
+        },
+        {
+          "type": "ingestible",
+          "formKey": "0E2595:Vigilant.esm",
+          "editorId": "zzzCHRelicPotionIncMagicka",
+          "name": "Bone of Jhunal",
           "plugin": "Vigilant.esm"
         }
       ]
@@ -2702,6 +2785,6 @@
   "meta": {
     "profile": "Apostasy",
     "plugins": 3407,
-    "generatedAt": "2026-10-23T14:21:02.7659197Z"
+    "generatedAt": "2026-10-23T14:31:18.5842315Z"
   }
 }

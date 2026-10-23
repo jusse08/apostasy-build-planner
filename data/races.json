@@ -245,7 +245,128 @@
                 "editorId": "APO_RacialImperialPerk01",
                 "name": "Red Diamond",
                 "description": null,
-                "plugin": "NirnsChosen.esp"
+                "plugin": "NirnsChosen.esp",
+                "mechanics": [
+                  {
+                    "type": "quest",
+                    "quest": "05F596:Skyrim.esm",
+                    "stage": 20,
+                    "text": "Sets stage 20 of Perks"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModBuyPrices",
+                    "modification": "Multiply",
+                    "value": 0.9,
+                    "conditions": [
+                      {
+                        "fn": "HasMagicEffectKeyword",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0,
+                        "args": {
+                          "keyword": "ADA129:Update.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MAG_isThaumaturgyActive"
+                        }
+                      }
+                    ],
+                    "text": "Mod Buy Prices: Multiply 0.9"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModSellPrices",
+                    "modification": "Multiply",
+                    "value": 1.1,
+                    "conditions": [
+                      {
+                        "fn": "HasMagicEffectKeyword",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0,
+                        "args": {
+                          "keyword": "ADA129:Update.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MAG_isThaumaturgyActive"
+                        }
+                      }
+                    ],
+                    "text": "Mod Sell Prices: Multiply 1.1"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModIngredientsHarvested",
+                    "modification": "Add",
+                    "value": 1,
+                    "conditions": [
+                      {
+                        "fn": "GetIsID",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "object": "0D8E7E:Skyrim.esm"
+                        }
+                      },
+                      {
+                        "fn": "GetIsID",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "object": "0D8E7D:Skyrim.esm"
+                        }
+                      },
+                      {
+                        "fn": "GetIsID",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "object": "0D790B:Skyrim.esm"
+                        }
+                      },
+                      {
+                        "fn": "GetIsID",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "object": "0D8E87:Skyrim.esm"
+                        }
+                      },
+                      {
+                        "fn": "GetIsID",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "object": "0D8E88:Skyrim.esm"
+                        }
+                      },
+                      {
+                        "fn": "GetIsID",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "object": "0D8E89:Skyrim.esm"
+                        }
+                      }
+                    ],
+                    "text": "Mod Ingredients Harvested: Add 1"
+                  }
+                ]
               }
             }
           ]
@@ -310,7 +431,16 @@
                 "editorId": "APO_RacialKhajiitPerk01",
                 "name": "Lunar Blessing",
                 "description": null,
-                "plugin": "NirnsChosen.esp"
+                "plugin": "NirnsChosen.esp",
+                "mechanics": [
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModFallingDamage",
+                    "modification": "Multiply",
+                    "value": 0.5,
+                    "text": "Mod Falling Damage: Multiply 0.5"
+                  }
+                ]
               }
             }
           ]
@@ -508,7 +638,63 @@
             "editorId": "APO_TraitAlertPerk",
             "name": "",
             "description": null,
-            "plugin": "Apostasy Framework.esp"
+            "plugin": "Apostasy Framework.esp",
+            "mechanics": [
+              {
+                "type": "ability",
+                "spell": {
+                  "formKey": "000827:Apostasy Framework.esp",
+                  "editorId": "APO_TraitAlertAb",
+                  "name": "Alert",
+                  "description": null,
+                  "plugin": "Apostasy Framework.esp",
+                  "effects": [
+                    {
+                      "name": "Alert",
+                      "description": "You take 50% less damage from Sneak Attacks.",
+                      "magnitude": 0,
+                      "duration": 0,
+                      "perk": {
+                        "formKey": "000821:Apostasy Framework.esp",
+                        "editorId": "APO_TraitAlertPerk",
+                        "name": "",
+                        "description": null,
+                        "plugin": "Apostasy Framework.esp",
+                        "mechanics": [
+                          {
+                            "type": "ability",
+                            "spell": {
+                              "formKey": "000827:Apostasy Framework.esp",
+                              "editorId": "APO_TraitAlertAb",
+                              "name": "Alert",
+                              "description": null,
+                              "plugin": "Apostasy Framework.esp",
+                              "effects": [
+                                {
+                                  "name": "Alert",
+                                  "description": "You take 50% less damage from Sneak Attacks.",
+                                  "magnitude": 0,
+                                  "duration": 0,
+                                  "perk": {
+                                    "formKey": "000821:Apostasy Framework.esp",
+                                    "editorId": "APO_TraitAlertPerk",
+                                    "name": "",
+                                    "description": null,
+                                    "plugin": "Apostasy Framework.esp"
+                                  }
+                                }
+                              ]
+                            },
+                            "text": "Grants ability Alert"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "text": "Grants ability Alert"
+              }
+            ]
           }
         }
       ]
@@ -530,7 +716,235 @@
             "editorId": "APO_TraitIntelligentPerk",
             "name": "",
             "description": null,
-            "plugin": "Apostasy Framework.esp"
+            "plugin": "Apostasy Framework.esp",
+            "mechanics": [
+              {
+                "type": "entryPoint",
+                "entryPoint": "ModIncomingSpellMagnitude",
+                "modification": "Multiply",
+                "value": 0.5,
+                "conditions": [
+                  {
+                    "fn": "HasMagicEffectKeyword",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "00084A:Apostasy Framework.esp"
+                    },
+                    "argNames": {
+                      "keyword": "APO_IntelligentTargetKeyword"
+                    }
+                  },
+                  {
+                    "fn": "EPMagic_SpellHasKeyword",
+                    "op": "==",
+                    "or": true,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "078098:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "keyword": "MagicInfluence"
+                    }
+                  },
+                  {
+                    "fn": "EPMagic_SpellHasKeyword",
+                    "op": "==",
+                    "or": true,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "0424EE:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "keyword": "MagicInfluenceCharm"
+                    }
+                  },
+                  {
+                    "fn": "EPMagic_SpellHasKeyword",
+                    "op": "==",
+                    "or": true,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "0424E0:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "keyword": "MagicInfluenceFear"
+                    }
+                  },
+                  {
+                    "fn": "EPMagic_SpellHasKeyword",
+                    "op": "==",
+                    "or": true,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "0C44B6:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "keyword": "MagicInfluenceFrenzy"
+                    }
+                  },
+                  {
+                    "fn": "EPMagic_SpellHasKeyword",
+                    "op": "==",
+                    "or": true,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "ADA005:Update.esm"
+                    },
+                    "argNames": {
+                      "keyword": "MAG_MagicInfluenceCommand"
+                    }
+                  },
+                  {
+                    "fn": "EPMagic_SpellHasKeyword",
+                    "op": "==",
+                    "or": true,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "ADA003:Update.esm"
+                    },
+                    "argNames": {
+                      "keyword": "MAG_MagicInfluenceParalysis"
+                    }
+                  },
+                  {
+                    "fn": "EPMagic_SpellHasKeyword",
+                    "op": "==",
+                    "or": true,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "ADA004:Update.esm"
+                    },
+                    "argNames": {
+                      "keyword": "MAG_MagicInfluenceSilence"
+                    }
+                  }
+                ],
+                "text": "Mod Incoming Spell Magnitude: Multiply 0.5"
+              },
+              {
+                "type": "entryPoint",
+                "entryPoint": "ModIncomingSpellDuration",
+                "modification": "Multiply",
+                "value": 0.5,
+                "conditions": [
+                  {
+                    "fn": "HasMagicEffectKeyword",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "00084A:Apostasy Framework.esp"
+                    },
+                    "argNames": {
+                      "keyword": "APO_IntelligentTargetKeyword"
+                    }
+                  },
+                  {
+                    "fn": "EPMagic_SpellHasKeyword",
+                    "op": "==",
+                    "or": true,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "078098:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "keyword": "MagicInfluence"
+                    }
+                  },
+                  {
+                    "fn": "EPMagic_SpellHasKeyword",
+                    "op": "==",
+                    "or": true,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "0424EE:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "keyword": "MagicInfluenceCharm"
+                    }
+                  },
+                  {
+                    "fn": "EPMagic_SpellHasKeyword",
+                    "op": "==",
+                    "or": true,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "0424E0:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "keyword": "MagicInfluenceFear"
+                    }
+                  },
+                  {
+                    "fn": "EPMagic_SpellHasKeyword",
+                    "op": "==",
+                    "or": true,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "0C44B6:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "keyword": "MagicInfluenceFrenzy"
+                    }
+                  },
+                  {
+                    "fn": "EPMagic_SpellHasKeyword",
+                    "op": "==",
+                    "or": true,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "ADA005:Update.esm"
+                    },
+                    "argNames": {
+                      "keyword": "MAG_MagicInfluenceCommand"
+                    }
+                  },
+                  {
+                    "fn": "EPMagic_SpellHasKeyword",
+                    "op": "==",
+                    "or": true,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "ADA003:Update.esm"
+                    },
+                    "argNames": {
+                      "keyword": "MAG_MagicInfluenceParalysis"
+                    }
+                  },
+                  {
+                    "fn": "EPMagic_SpellHasKeyword",
+                    "op": "==",
+                    "or": true,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "ADA004:Update.esm"
+                    },
+                    "argNames": {
+                      "keyword": "MAG_MagicInfluenceSilence"
+                    }
+                  }
+                ],
+                "text": "Mod Incoming Spell Duration: Multiply 0.5"
+              }
+            ]
           }
         }
       ]
@@ -552,7 +966,44 @@
             "editorId": "APO_TraitSunlightSensitivityPerk",
             "name": "",
             "description": null,
-            "plugin": "Apostasy Framework.esp"
+            "plugin": "Apostasy Framework.esp",
+            "mechanics": [
+              {
+                "type": "entryPoint",
+                "entryPoint": "ModIncomingSpellMagnitude",
+                "modification": "Multiply",
+                "value": 1.5,
+                "conditions": [
+                  {
+                    "fn": "HasMagicEffectKeyword",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "00084D:Apostasy Framework.esp"
+                    },
+                    "argNames": {
+                      "keyword": "APO_SunlightSensitivityKeyword"
+                    }
+                  },
+                  {
+                    "fn": "EPMagic_SpellHasKeyword",
+                    "op": "==",
+                    "or": true,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "ADA002:Update.esm"
+                    },
+                    "argNames": {
+                      "keyword": "MAG_MagicDamageSun"
+                    }
+                  }
+                ],
+                "text": "Mod Incoming Spell Magnitude: Multiply 1.5"
+              }
+            ]
           }
         }
       ]
@@ -574,7 +1025,57 @@
             "editorId": "APO_TraitLivingPerk",
             "name": "",
             "description": null,
-            "plugin": "Apostasy Framework.esp"
+            "plugin": "Apostasy Framework.esp",
+            "mechanics": [
+              {
+                "type": "entryPoint",
+                "entryPoint": "ModIncomingSpellMagnitude",
+                "modification": "Multiply",
+                "value": 0.5,
+                "conditions": [
+                  {
+                    "fn": "HasMagicEffectKeyword",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "00084E:Apostasy Framework.esp"
+                    },
+                    "argNames": {
+                      "keyword": "APO_LivingTargetKeyword"
+                    }
+                  },
+                  {
+                    "fn": "HasMagicEffectKeyword",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "keyword": "00084D:Apostasy Framework.esp"
+                    },
+                    "argNames": {
+                      "keyword": "APO_SunlightSensitivityKeyword"
+                    }
+                  },
+                  {
+                    "fn": "EPMagic_SpellHasKeyword",
+                    "op": "==",
+                    "or": true,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "ADA002:Update.esm"
+                    },
+                    "argNames": {
+                      "keyword": "MAG_MagicDamageSun"
+                    }
+                  }
+                ],
+                "text": "Mod Incoming Spell Magnitude: Multiply 0.5"
+              }
+            ]
           },
           "conditions": [
             {
@@ -611,7 +1112,57 @@
             "editorId": "APO_TraitNonLivingPerk",
             "name": "",
             "description": null,
-            "plugin": "Apostasy Framework.esp"
+            "plugin": "Apostasy Framework.esp",
+            "mechanics": [
+              {
+                "type": "entryPoint",
+                "entryPoint": "ModIncomingSpellMagnitude",
+                "modification": "Multiply",
+                "value": 0.5,
+                "conditions": [
+                  {
+                    "fn": "HasMagicEffectKeyword",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "00084F:Apostasy Framework.esp"
+                    },
+                    "argNames": {
+                      "keyword": "APO_NonlivingTargetKeyword"
+                    }
+                  },
+                  {
+                    "fn": "EPMagic_SpellHasKeyword",
+                    "op": "==",
+                    "or": true,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "ADA001:Update.esm"
+                    },
+                    "argNames": {
+                      "keyword": "MAG_MagicDamagePoison"
+                    }
+                  },
+                  {
+                    "fn": "EPMagic_SpellHasKeyword",
+                    "op": "==",
+                    "or": true,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "101BDE:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "keyword": "MagicVampireDrain"
+                    }
+                  }
+                ],
+                "text": "Mod Incoming Spell Magnitude: Multiply 0.5"
+              }
+            ]
           }
         }
       ]
@@ -633,7 +1184,8 @@
             "editorId": "APO_TraitRegenerativePerk",
             "name": "",
             "description": null,
-            "plugin": "Apostasy Framework.esp"
+            "plugin": "Apostasy Framework.esp",
+            "mechanics": []
           }
         }
       ]
@@ -642,6 +1194,6 @@
   "meta": {
     "profile": "Apostasy",
     "plugins": 3407,
-    "generatedAt": "2026-10-23T14:21:02.7659197Z"
+    "generatedAt": "2026-10-23T14:31:18.5842315Z"
   }
 }

@@ -74,9 +74,62 @@
           "editorId": "MAG_MeditationSubduePerk",
           "name": "Subdue Meditation Perk",
           "description": null,
-          "plugin": "Stormcrown.esp"
+          "plugin": "Stormcrown.esp",
+          "mechanics": [
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSpellMagnitude",
+              "modification": "Multiply",
+              "value": 2,
+              "conditions": [
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "08BB27:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "object": "Subdue"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "08BB28:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "object": "Subdue"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "08BB29:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "object": "Subdue"
+                  }
+                }
+              ],
+              "text": "Mod Spell Magnitude: Multiply 2"
+            }
+          ]
         },
-        "text": null
+        "text": null,
+        "unlocksEffects": [],
+        "description": "Subdue reduces enemy weapon damage by an additional 25%.",
+        "descriptionSource": "nexus"
       }
     },
     {
@@ -171,9 +224,13 @@
           "editorId": "MAG_MeditationIceFormPerk",
           "name": "Ice Form Meditation Perk",
           "description": null,
-          "plugin": "Stormcrown.esp"
+          "plugin": "Stormcrown.esp",
+          "mechanics": []
         },
-        "text": null
+        "text": null,
+        "unlocksEffects": [],
+        "description": "Ice From has a chance to encase enemies in ice for 10 seconds.",
+        "descriptionSource": "nexus"
       }
     },
     {
@@ -332,9 +389,13 @@
           "editorId": "MAG_MeditationKynesPeacePerk",
           "name": "Kyne's Peace Meditation Perk",
           "description": null,
-          "plugin": "Stormcrown.esp"
+          "plugin": "Stormcrown.esp",
+          "mechanics": []
         },
-        "text": null
+        "text": null,
+        "unlocksEffects": [],
+        "description": "Kyne’s Peace works on the undead, Daedra, and Dwarven automatons.",
+        "descriptionSource": "nexus"
       }
     },
     {
@@ -517,9 +578,13 @@
           "editorId": "MAG_MeditationMarkedForDeathPerk",
           "name": "Marked for Death Meditation Perk",
           "description": null,
-          "plugin": "Stormcrown.esp"
+          "plugin": "Stormcrown.esp",
+          "mechanics": []
         },
-        "text": null
+        "text": null,
+        "unlocksEffects": [],
+        "description": "Marked for Death reduces enemy Magic Resistance by up to 25%.",
+        "descriptionSource": "nexus"
       }
     },
     {
@@ -684,9 +749,13 @@
           "editorId": "MAG_MeditationAnimalAllyPerk",
           "name": "Animal Ally",
           "description": null,
-          "plugin": "Stormcrown.esp"
+          "plugin": "Stormcrown.esp",
+          "mechanics": []
         },
-        "text": null
+        "text": null,
+        "unlocksEffects": [],
+        "description": "Your Animal Ally's Armor Rating is increased by 150, and their Magic Resistance is increased by 25%.",
+        "descriptionSource": "nexus"
       }
     },
     {
@@ -781,9 +850,13 @@
           "editorId": "MAG_MeditationFrostBreathPerk",
           "name": "Frost Breath Meditation Perk",
           "description": null,
-          "plugin": "Stormcrown.esp"
+          "plugin": "Stormcrown.esp",
+          "mechanics": []
         },
-        "text": null
+        "text": null,
+        "unlocksEffects": [],
+        "description": "Frost Breath deals extra Stamina damage over 30 seconds.",
+        "descriptionSource": "nexus"
       }
     },
     {
@@ -948,9 +1021,13 @@
           "editorId": "MAG_MeditationSlowTimePerk",
           "name": "Slow Time Meditation Perk",
           "description": null,
-          "plugin": "Stormcrown.esp"
+          "plugin": "Stormcrown.esp",
+          "mechanics": []
         },
-        "text": null
+        "text": null,
+        "unlocksEffects": [],
+        "description": "Slow Time is twice as strong.",
+        "descriptionSource": "nexus"
       }
     },
     {
@@ -1503,9 +1580,13 @@
           "editorId": "MAG_MeditationDragonrendPerk",
           "name": "Dragonrend Meditation Perk",
           "description": null,
-          "plugin": "Stormcrown.esp"
+          "plugin": "Stormcrown.esp",
+          "mechanics": []
         },
-        "text": null
+        "text": null,
+        "unlocksEffects": [],
+        "description": "Dragonrend reduces Armor Rating by 150 and Magic Resistance by 25%.",
+        "descriptionSource": "nexus"
       }
     },
     {
@@ -1600,9 +1681,13 @@
           "editorId": "MAG_MeditationFireBreathPerk",
           "name": "Fire Breath Meditation Perk",
           "description": null,
-          "plugin": "Stormcrown.esp"
+          "plugin": "Stormcrown.esp",
+          "mechanics": []
         },
-        "text": null
+        "text": null,
+        "unlocksEffects": [],
+        "description": "Fire Breath ignites enemies and leaves a trail of fire on the ground.",
+        "descriptionSource": "nexus"
       }
     },
     {
@@ -1728,9 +1813,13 @@
           "editorId": "MAG_MeditationBecomeEtherealPerk",
           "name": "Become Ethereal Meditation Perk",
           "description": null,
-          "plugin": "Stormcrown.esp"
+          "plugin": "Stormcrown.esp",
+          "mechanics": []
         },
-        "text": null
+        "text": null,
+        "unlocksEffects": [],
+        "description": "Become Ethereal restores Health over time.",
+        "descriptionSource": "nexus"
       }
     },
     {
@@ -1919,9 +2008,134 @@
           "editorId": "MAG_MeditationUnrelentingForcePerk",
           "name": "Unrelenting Force Meditation Perk",
           "description": null,
-          "plugin": "Stormcrown.esp"
+          "plugin": "Stormcrown.esp",
+          "mechanics": [
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModAttackDamage",
+              "modification": "Multiply",
+              "value": 1.25,
+              "conditions": [
+                {
+                  "fn": "IsStaggered",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1
+                },
+                {
+                  "fn": "HasMagicEffectKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "000945:Stormcrown.esp"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicShoutOffBalance"
+                  }
+                }
+              ],
+              "text": "Mod Attack Damage: Multiply 1.25"
+            },
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSpellMagnitude",
+              "modification": "Multiply",
+              "value": 1.25,
+              "conditions": [
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "ADA138:Update.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_ShoutDamageKeyword"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasSkill",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "actorValue": "Destruction"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "01CEAD:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicDamageFire"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "01CEAE:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicDamageFrost"
+                  }
+                },
+                {
+                  "fn": "EPMagic_SpellHasKeyword",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "01CEAF:Skyrim.esm"
+                  },
+                  "argNames": {
+                    "keyword": "MagicDamageShock"
+                  }
+                },
+                {
+                  "fn": "IsStaggered",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1
+                },
+                {
+                  "fn": "HasMagicEffectKeyword",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "keyword": "000945:Stormcrown.esp"
+                  },
+                  "argNames": {
+                    "keyword": "MAG_MagicShoutOffBalance"
+                  }
+                }
+              ],
+              "text": "Mod Spell Magnitude: Multiply 1.25"
+            }
+          ]
         },
-        "text": null
+        "text": null,
+        "unlocksEffects": [],
+        "description": "Unrelenting Force deals additional damage and breaks through wards.",
+        "descriptionSource": "nexus"
       }
     },
     {
@@ -2016,9 +2230,62 @@
           "editorId": "MAG_MeditationDrainVitalityPerk",
           "name": "Drain Vitality Meditation Perk",
           "description": null,
-          "plugin": "Stormcrown.esp"
+          "plugin": "Stormcrown.esp",
+          "mechanics": [
+            {
+              "type": "entryPoint",
+              "entryPoint": "ModSpellMagnitude",
+              "modification": "Multiply",
+              "value": 2,
+              "conditions": [
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "008A61:Dawnguard.esm"
+                  },
+                  "argNames": {
+                    "object": "Drain Vitality"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": true,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "008A5F:Dawnguard.esm"
+                  },
+                  "argNames": {
+                    "object": "Drain Vitality"
+                  }
+                },
+                {
+                  "fn": "GetIsID",
+                  "op": "==",
+                  "or": false,
+                  "runOn": "Subject",
+                  "value": 1,
+                  "args": {
+                    "object": "008A5E:Dawnguard.esm"
+                  },
+                  "argNames": {
+                    "object": "Drain Vitality"
+                  }
+                }
+              ],
+              "text": "Mod Spell Magnitude: Multiply 2"
+            }
+          ]
         },
-        "text": null
+        "text": null,
+        "unlocksEffects": [],
+        "description": "Drain Vitality absorbs twice as much Health, Magicka, and Stamina.",
+        "descriptionSource": "nexus"
       }
     },
     {
@@ -2113,9 +2380,13 @@
           "editorId": "MAG_MeditationSoulTearPerk",
           "name": "Soul Tear Meditation Perk",
           "description": null,
-          "plugin": "Stormcrown.esp"
+          "plugin": "Stormcrown.esp",
+          "mechanics": []
         },
-        "text": null
+        "text": null,
+        "unlocksEffects": [],
+        "description": "Soul Tear deals extra damage over 10 seconds.",
+        "descriptionSource": "nexus"
       }
     },
     {
@@ -2316,9 +2587,13 @@
           "editorId": "MAG_MeditationBattleFuryPerk",
           "name": "Battle Fury Meditation Perk",
           "description": null,
-          "plugin": "Stormcrown.esp"
+          "plugin": "Stormcrown.esp",
+          "mechanics": []
         },
-        "text": null
+        "text": null,
+        "unlocksEffects": [],
+        "description": "Battle Fury increases the Armor Rating of all nearby allies by up to 150.",
+        "descriptionSource": "nexus"
       }
     },
     {
@@ -2395,9 +2670,13 @@
           "editorId": "MAG_MeditationCyclonePerk",
           "name": "Cyclone Meditation Perk",
           "description": null,
-          "plugin": "Stormcrown.esp"
+          "plugin": "Stormcrown.esp",
+          "mechanics": []
         },
-        "text": null
+        "text": null,
+        "unlocksEffects": [],
+        "description": "Cyclone deals extra damage over 10 seconds.",
+        "descriptionSource": "nexus"
       }
     },
     {
@@ -2474,9 +2753,13 @@
           "editorId": "MAG_MeditationDragonAspectPerk",
           "name": "Dragon Aspect Meditation Perk",
           "description": null,
-          "plugin": "Stormcrown.esp"
+          "plugin": "Stormcrown.esp",
+          "mechanics": []
         },
-        "text": null
+        "text": null,
+        "unlocksEffects": [],
+        "description": "Dragon Aspect does not trigger a Shout cooldown.",
+        "descriptionSource": "nexus"
       }
     },
     {
@@ -2903,9 +3186,13 @@
           "editorId": "MAG_MeditationLightningBreathPerk",
           "name": "Lightning Breath Meditation Perk",
           "description": null,
-          "plugin": "Stormcrown.esp"
+          "plugin": "Stormcrown.esp",
+          "mechanics": []
         },
-        "text": null
+        "text": null,
+        "unlocksEffects": [],
+        "description": "Lightning Breath deals extra Magicka damage over 30 seconds.",
+        "descriptionSource": "nexus"
       }
     },
     {
@@ -2982,10 +3269,31 @@
           "editorId": "MAG_MeditationPoisonBreathPerk",
           "name": "Poison Breath Meditation Perk",
           "description": null,
-          "plugin": "Stormcrown.esp"
+          "plugin": "Stormcrown.esp",
+          "mechanics": []
         },
-        "text": null
+        "text": null,
+        "unlocksEffects": [],
+        "description": "Poison Breath deals double damage to enemies who fall below half Health.",
+        "descriptionSource": "nexus"
       }
+    }
+  ],
+  "epistolaryAcumen": [
+    {
+      "name": "Dragonborn Force",
+      "description": "Dragon Aspect reduces incoming damage while power attacking, drawing a bow, or casting a spell by 25% .",
+      "source": "nexus"
+    },
+    {
+      "name": "Dragonborn Might",
+      "description": "Dragon Aspect increases your Armor Rating by an additional 100.",
+      "source": "nexus"
+    },
+    {
+      "name": "Dragonborn Soul",
+      "description": "Dragon Aspect increases your Fire, Frost, and Shock Resistance by 25%.",
+      "source": "nexus"
     }
   ],
   "dragonbornPerks": [
@@ -2995,6 +3303,7 @@
       "name": "Ancient Voice",
       "description": "Your Shouts have a 50% chance to stagger enemies.",
       "plugin": "Stormcrown.esp",
+      "mechanics": [],
       "nextPerk": "000811:Stormcrown.esp",
       "conditions": [
         {
@@ -3018,6 +3327,7 @@
       "name": "Ancient Voice",
       "description": "Your Shouts are guaranteed to stagger enemies.",
       "plugin": "Stormcrown.esp",
+      "mechanics": [],
       "nextPerk": null,
       "conditions": [
         {
@@ -3041,6 +3351,50 @@
       "name": "Deep Breath",
       "description": "Your Shouts have a 25% chance to deal double damage.",
       "plugin": "Stormcrown.esp",
+      "mechanics": [
+        {
+          "type": "entryPoint",
+          "entryPoint": "ModSpellMagnitude",
+          "modification": "Multiply",
+          "value": 2,
+          "conditions": [
+            {
+              "fn": "HasPerk",
+              "op": "==",
+              "or": false,
+              "runOn": "Subject",
+              "value": 0,
+              "args": {
+                "perk": "000813:Stormcrown.esp"
+              },
+              "argNames": {
+                "perk": "Deep Breath"
+              }
+            },
+            {
+              "fn": "EPMagic_SpellHasKeyword",
+              "op": "==",
+              "or": false,
+              "runOn": "Subject",
+              "value": 1,
+              "args": {
+                "keyword": "ADA138:Update.esm"
+              },
+              "argNames": {
+                "keyword": "MAG_ShoutDamageKeyword"
+              }
+            },
+            {
+              "fn": "GetRandomPercent",
+              "op": "<=",
+              "or": false,
+              "runOn": "Subject",
+              "value": 25
+            }
+          ],
+          "text": "Mod Spell Magnitude: Multiply 2"
+        }
+      ],
       "nextPerk": "000813:Stormcrown.esp",
       "conditions": [
         {
@@ -3064,6 +3418,37 @@
       "name": "Deep Breath",
       "description": "Your Shouts have a 50% chance to deal double damage.",
       "plugin": "Stormcrown.esp",
+      "mechanics": [
+        {
+          "type": "entryPoint",
+          "entryPoint": "ModSpellMagnitude",
+          "modification": "Multiply",
+          "value": 2,
+          "conditions": [
+            {
+              "fn": "EPMagic_SpellHasKeyword",
+              "op": "==",
+              "or": false,
+              "runOn": "Subject",
+              "value": 1,
+              "args": {
+                "keyword": "ADA138:Update.esm"
+              },
+              "argNames": {
+                "keyword": "MAG_ShoutDamageKeyword"
+              }
+            },
+            {
+              "fn": "GetRandomPercent",
+              "op": "<=",
+              "or": false,
+              "runOn": "Subject",
+              "value": 50
+            }
+          ],
+          "text": "Mod Spell Magnitude: Multiply 2"
+        }
+      ],
       "nextPerk": null,
       "conditions": [
         {
@@ -3087,6 +3472,43 @@
       "name": "Dragonborn",
       "description": "Your Shouts are 25% stronger.",
       "plugin": "Stormcrown.esp",
+      "mechanics": [
+        {
+          "type": "entryPoint",
+          "entryPoint": "ModSpellMagnitude",
+          "modification": "Multiply",
+          "value": 1.25,
+          "conditions": [
+            {
+              "fn": "HasPerk",
+              "op": "==",
+              "or": false,
+              "runOn": "Subject",
+              "value": 0,
+              "args": {
+                "perk": "00080D:Stormcrown.esp"
+              },
+              "argNames": {
+                "perk": "Dragonborn"
+              }
+            },
+            {
+              "fn": "EPMagic_SpellHasKeyword",
+              "op": "==",
+              "or": false,
+              "runOn": "Subject",
+              "value": 1,
+              "args": {
+                "keyword": "ADA138:Update.esm"
+              },
+              "argNames": {
+                "keyword": "MAG_ShoutDamageKeyword"
+              }
+            }
+          ],
+          "text": "Mod Spell Magnitude: Multiply 1.25"
+        }
+      ],
       "nextPerk": "00080D:Stormcrown.esp",
       "conditions": []
     },
@@ -3096,6 +3518,30 @@
       "name": "Dragonborn",
       "description": "Your Shouts are 50% stronger.",
       "plugin": "Stormcrown.esp",
+      "mechanics": [
+        {
+          "type": "entryPoint",
+          "entryPoint": "ModSpellMagnitude",
+          "modification": "Multiply",
+          "value": 1.5,
+          "conditions": [
+            {
+              "fn": "EPMagic_SpellHasKeyword",
+              "op": "==",
+              "or": false,
+              "runOn": "Subject",
+              "value": 1,
+              "args": {
+                "keyword": "ADA138:Update.esm"
+              },
+              "argNames": {
+                "keyword": "MAG_ShoutDamageKeyword"
+              }
+            }
+          ],
+          "text": "Mod Spell Magnitude: Multiply 1.5"
+        }
+      ],
       "nextPerk": null,
       "conditions": [
         {
@@ -3119,6 +3565,188 @@
       "name": "Dragon of the North",
       "description": "You resist 10% of incoming Poise damage, and take 10% less damage while staggered.",
       "plugin": "APO_Apostasy - Stormcrown Tweaks.esp",
+      "mechanics": [
+        {
+          "type": "entryPoint",
+          "entryPoint": "ModIncomingStagger",
+          "modification": "Multiply",
+          "value": 0.9,
+          "text": "Mod Incoming Stagger: Multiply 0.9"
+        },
+        {
+          "type": "entryPoint",
+          "entryPoint": "ModIncomingDamage",
+          "modification": "Multiply",
+          "value": 0.9,
+          "conditions": [
+            {
+              "fn": "IsStaggered",
+              "op": "==",
+              "or": true,
+              "runOn": "Subject",
+              "value": 1
+            },
+            {
+              "fn": "GetKnockedState",
+              "op": "==",
+              "or": false,
+              "runOn": "Subject",
+              "value": 1
+            }
+          ],
+          "text": "Mod Incoming Damage: Multiply 0.9"
+        },
+        {
+          "type": "entryPoint",
+          "entryPoint": "ModIncomingSpellMagnitude",
+          "modification": "Multiply",
+          "value": 0.9,
+          "conditions": [
+            {
+              "fn": "IsStaggered",
+              "op": "==",
+              "or": true,
+              "runOn": "Subject",
+              "value": 1
+            },
+            {
+              "fn": "GetKnockedState",
+              "op": "==",
+              "or": false,
+              "runOn": "Subject",
+              "value": 1
+            },
+            {
+              "fn": "GetIsID",
+              "op": "==",
+              "or": false,
+              "runOn": "Subject",
+              "value": 0,
+              "args": {
+                "object": "07E8E4:Skyrim.esm"
+              },
+              "argNames": {
+                "object": "Blizzard"
+              }
+            },
+            {
+              "fn": "EPMagic_SpellHasKeyword",
+              "op": "==",
+              "or": false,
+              "runOn": "Subject",
+              "value": 0,
+              "args": {
+                "keyword": "0B62E4:Skyrim.esm"
+              },
+              "argNames": {
+                "keyword": "MagicCloak"
+              }
+            },
+            {
+              "fn": "EPMagic_SpellHasSkill",
+              "op": "==",
+              "or": true,
+              "runOn": "Subject",
+              "value": 1,
+              "args": {
+                "actorValue": "Destruction"
+              }
+            },
+            {
+              "fn": "HasKeyword",
+              "op": "==",
+              "or": true,
+              "runOn": "Subject",
+              "value": 1,
+              "args": {
+                "keyword": "01CEAD:Skyrim.esm"
+              },
+              "argNames": {
+                "keyword": "MagicDamageFire"
+              }
+            },
+            {
+              "fn": "HasKeyword",
+              "op": "==",
+              "or": true,
+              "runOn": "Subject",
+              "value": 1,
+              "args": {
+                "keyword": "01CEAE:Skyrim.esm"
+              },
+              "argNames": {
+                "keyword": "MagicDamageFrost"
+              }
+            },
+            {
+              "fn": "HasKeyword",
+              "op": "==",
+              "or": true,
+              "runOn": "Subject",
+              "value": 1,
+              "args": {
+                "keyword": "01CEAF:Skyrim.esm"
+              },
+              "argNames": {
+                "keyword": "MagicDamageShock"
+              }
+            },
+            {
+              "fn": "HasKeyword",
+              "op": "==",
+              "or": true,
+              "runOn": "Subject",
+              "value": 1,
+              "args": {
+                "keyword": "ADA001:Update.esm"
+              },
+              "argNames": {
+                "keyword": "MAG_MagicDamagePoison"
+              }
+            },
+            {
+              "fn": "HasKeyword",
+              "op": "==",
+              "or": true,
+              "runOn": "Subject",
+              "value": 1,
+              "args": {
+                "keyword": "ADA002:Update.esm"
+              },
+              "argNames": {
+                "keyword": "MAG_MagicDamageSun"
+              }
+            },
+            {
+              "fn": "HasKeyword",
+              "op": "==",
+              "or": true,
+              "runOn": "Subject",
+              "value": 1,
+              "args": {
+                "keyword": "101BDE:Skyrim.esm"
+              },
+              "argNames": {
+                "keyword": "MagicVampireDrain"
+              }
+            },
+            {
+              "fn": "HasKeyword",
+              "op": "==",
+              "or": true,
+              "runOn": "Subject",
+              "value": 1,
+              "args": {
+                "keyword": "EA6002:Update.esm"
+              },
+              "argNames": {
+                "keyword": "DAR_UnspecificMagicDamage"
+              }
+            }
+          ],
+          "text": "Mod Incoming Spell Magnitude: Multiply 0.9"
+        }
+      ],
       "nextPerk": null,
       "conditions": [
         {
@@ -3142,6 +3770,53 @@
       "name": "Sharp Tongue",
       "description": "Your Shouts do 50% extra damage to enemies who fall below half Health.",
       "plugin": "Stormcrown.esp",
+      "mechanics": [
+        {
+          "type": "entryPoint",
+          "entryPoint": "ModSpellMagnitude",
+          "modification": "Multiply",
+          "value": 1.5,
+          "conditions": [
+            {
+              "fn": "HasPerk",
+              "op": "==",
+              "or": false,
+              "runOn": "Subject",
+              "value": 0,
+              "args": {
+                "perk": "000814:Stormcrown.esp"
+              },
+              "argNames": {
+                "perk": "Sharp Tongue"
+              }
+            },
+            {
+              "fn": "EPMagic_SpellHasKeyword",
+              "op": "==",
+              "or": false,
+              "runOn": "Subject",
+              "value": 1,
+              "args": {
+                "keyword": "ADA138:Update.esm"
+              },
+              "argNames": {
+                "keyword": "MAG_ShoutDamageKeyword"
+              }
+            },
+            {
+              "fn": "GetActorValuePercent",
+              "op": "<=",
+              "or": false,
+              "runOn": "Subject",
+              "value": 0.5,
+              "args": {
+                "actorValue": "Health"
+              }
+            }
+          ],
+          "text": "Mod Spell Magnitude: Multiply 1.5"
+        }
+      ],
       "nextPerk": "000814:Stormcrown.esp",
       "conditions": [
         {
@@ -3165,6 +3840,40 @@
       "name": "Sharp Tongue",
       "description": "Your Shouts do double damage to enemies who fall below half Health.",
       "plugin": "Stormcrown.esp",
+      "mechanics": [
+        {
+          "type": "entryPoint",
+          "entryPoint": "ModSpellMagnitude",
+          "modification": "Multiply",
+          "value": 2,
+          "conditions": [
+            {
+              "fn": "EPMagic_SpellHasKeyword",
+              "op": "==",
+              "or": false,
+              "runOn": "Subject",
+              "value": 1,
+              "args": {
+                "keyword": "ADA138:Update.esm"
+              },
+              "argNames": {
+                "keyword": "MAG_ShoutDamageKeyword"
+              }
+            },
+            {
+              "fn": "GetActorValuePercent",
+              "op": "<=",
+              "or": false,
+              "runOn": "Subject",
+              "value": 0.5,
+              "args": {
+                "actorValue": "Health"
+              }
+            }
+          ],
+          "text": "Mod Spell Magnitude: Multiply 2"
+        }
+      ],
       "nextPerk": null,
       "conditions": [
         {
@@ -3188,6 +3897,43 @@
       "name": "Sky Above",
       "description": "Your Shouts last 50% longer.",
       "plugin": "Stormcrown.esp",
+      "mechanics": [
+        {
+          "type": "entryPoint",
+          "entryPoint": "ModSpellDuration",
+          "modification": "Multiply",
+          "value": 1.5,
+          "conditions": [
+            {
+              "fn": "HasPerk",
+              "op": "==",
+              "or": false,
+              "runOn": "Subject",
+              "value": 0,
+              "args": {
+                "perk": "000810:Stormcrown.esp"
+              },
+              "argNames": {
+                "perk": "Sky Above"
+              }
+            },
+            {
+              "fn": "EPMagic_SpellHasKeyword",
+              "op": "==",
+              "or": false,
+              "runOn": "Subject",
+              "value": 1,
+              "args": {
+                "keyword": "ADA139:Update.esm"
+              },
+              "argNames": {
+                "keyword": "MAG_ShoutDurationKeyword"
+              }
+            }
+          ],
+          "text": "Mod Spell Duration: Multiply 1.5"
+        }
+      ],
       "nextPerk": "000810:Stormcrown.esp",
       "conditions": [
         {
@@ -3211,6 +3957,30 @@
       "name": "Sky Above",
       "description": "Your Shouts last twice as long.",
       "plugin": "Stormcrown.esp",
+      "mechanics": [
+        {
+          "type": "entryPoint",
+          "entryPoint": "ModSpellDuration",
+          "modification": "Multiply",
+          "value": 2,
+          "conditions": [
+            {
+              "fn": "EPMagic_SpellHasKeyword",
+              "op": "==",
+              "or": false,
+              "runOn": "Subject",
+              "value": 1,
+              "args": {
+                "keyword": "ADA139:Update.esm"
+              },
+              "argNames": {
+                "keyword": "MAG_ShoutDurationKeyword"
+              }
+            }
+          ],
+          "text": "Mod Spell Duration: Multiply 2"
+        }
+      ],
       "nextPerk": null,
       "conditions": [
         {
@@ -3234,6 +4004,20 @@
       "name": "Stormcrown",
       "description": "Your Shouts have a 25% chance to have no cooldown in combat.",
       "plugin": "Stormcrown.esp",
+      "mechanics": [
+        {
+          "type": "ability",
+          "spell": {
+            "formKey": "00081A:Stormcrown.esp",
+            "editorId": "MAG_PerkStormcrown",
+            "name": "Windcaller",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": []
+          },
+          "text": "Grants ability Windcaller"
+        }
+      ],
       "nextPerk": null,
       "conditions": [
         {
@@ -3257,6 +4041,30 @@
       "name": "Voice Within",
       "description": "Your Shouts are silent to others.",
       "plugin": "Stormcrown.esp",
+      "mechanics": [
+        {
+          "type": "entryPoint",
+          "entryPoint": "ModSpellCastingSoundEvent",
+          "modification": "Set",
+          "value": 0,
+          "conditions": [
+            {
+              "fn": "EPMagic_SpellHasKeyword",
+              "op": "==",
+              "or": false,
+              "runOn": "Subject",
+              "value": 1,
+              "args": {
+                "keyword": "046B99:Skyrim.esm"
+              },
+              "argNames": {
+                "keyword": "MagicShout"
+              }
+            }
+          ],
+          "text": "Mod Spell Casting Sound Event: Set 0"
+        }
+      ],
       "nextPerk": null,
       "conditions": [
         {
@@ -3280,6 +4088,20 @@
       "name": "Way of the Voice",
       "description": "Once an hour, when you fall below 25% Health, your Shout cooldown is reset, and your Shouts have no cooldown for 10 seconds.",
       "plugin": "Stormcrown.esp",
+      "mechanics": [
+        {
+          "type": "ability",
+          "spell": {
+            "formKey": "00081B:Stormcrown.esp",
+            "editorId": "MAG_PerkWayoftheVoice",
+            "name": "Way of the Voice Test",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": []
+          },
+          "text": "Grants ability Way of the Voice Test"
+        }
+      ],
       "nextPerk": null,
       "conditions": [
         {
@@ -3303,6 +4125,20 @@
       "name": "Windcaller",
       "description": "Your Shout cooldown is reduced by 25%.",
       "plugin": "Stormcrown.esp",
+      "mechanics": [
+        {
+          "type": "ability",
+          "spell": {
+            "formKey": "000816:Stormcrown.esp",
+            "editorId": "MAG_PerkWindcaller01",
+            "name": "Windcaller",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": []
+          },
+          "text": "Grants ability Windcaller"
+        }
+      ],
       "nextPerk": "000812:Stormcrown.esp",
       "conditions": [
         {
@@ -3326,6 +4162,20 @@
       "name": "Windcaller",
       "description": "Your Shout cooldown is reduced by 50%.",
       "plugin": "Stormcrown.esp",
+      "mechanics": [
+        {
+          "type": "ability",
+          "spell": {
+            "formKey": "000818:Stormcrown.esp",
+            "editorId": "MAG_PerkWindcaller02",
+            "name": "Windcaller",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": []
+          },
+          "text": "Grants ability Windcaller"
+        }
+      ],
       "nextPerk": null,
       "conditions": [
         {
@@ -3356,6 +4206,6 @@
   "meta": {
     "profile": "Apostasy",
     "plugins": 3407,
-    "generatedAt": "2026-10-23T14:21:02.7659197Z"
+    "generatedAt": "2026-10-23T14:31:18.5842315Z"
   }
 }

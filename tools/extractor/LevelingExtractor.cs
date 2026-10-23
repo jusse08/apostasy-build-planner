@@ -82,9 +82,17 @@ public static class LevelingExtractor
                     });
             }
             var id = mgef?.EditorID?.Replace("ANDR_QAPP_MGEF_", "");
+            var name = questRefs.FirstOrDefault()?["name"]?.ToString();
             arr.Add(new JsonObject
             {
                 ["id"] = id,
+                // Civil war quest names are text aliases filled at runtime; use GAMEPLAY.md's names.
+                ["name"] = id switch
+                {
+                    "CWObj" => "Liberation of Skyrim / Reunification of Skyrim",
+                    "CWSiegeObj" => "Battle for Whiterun (Imperial or Stormcloak)",
+                    _ => name,
+                },
                 ["plugin"] = from.FileName.String,
                 ["quests"] = questRefs,
                 ["conditions"] = Json.Conditions(e.Conditions.Concat(mgef?.Conditions ?? [])),
@@ -95,50 +103,74 @@ public static class LevelingExtractor
 
     // Scripts that call Game.AddPerkPoints outside Quests Award Perk Points, found by scanning every
     // .pex in the modlist's archives; amounts read from their bytecode.
-    private static readonly (string Script, int Points, string Note)[] PerkPointScripts =
+    private static readonly (string Script, string PluginPattern, int Points, string Note)[] PerkPointScripts =
     [
-        ("OghmaInfiniumScript", 2, "Reading the Oghma Infinium (Artificer), whichever path is chosen."),
-        ("DcdAlchAddPerkPointsScript", 1, "Consuming this item (DAc0da)."),
-        ("CRBSQ01_TIF__0302299C", 1, "Dialogue reward in Unslaad."),
-        ("aoMapConvertObjScript", 1, "One of the conversion choices (Vigilant)."),
-        ("chAlchStatusUpEffectScript", 1, "Status-up item of type 3 (Vigilant)."),
+        ("OghmaInfiniumScript", "^Artificer", 2, "Reading the Oghma Infinium (Artificer), whichever path is chosen."),
+        ("DcdAlchAddPerkPointsScript", "^DAc0da", 1, "DAc0da reward."),
+        ("CRBSQ01_TIF__0302299C", "^Unslaad", 1, "Dialogue reward in Unslaad."),
+        ("aoMapConvertObjScript", "^Vigilant", 1, "One of the conversion choices (Vigilant)."),
+        ("chAlchStatusUpEffectScript", "^Vigilant", 1, "Only the perk point variant of the status-up items (Vigilant)."),
     ];
 
+    private static int? TypeProperty(IAVirtualMachineAdapterGetter vmad, string script) =>
+        vmad.Scripts.FirstOrDefault(s => string.Equals(s.Name, script, StringComparison.OrdinalIgnoreCase))?
+            .Properties.OfType<IScriptIntPropertyGetter>().FirstOrDefault(p => p.Name == "Type")?.Data;
+
+    private static bool HasScript(IAVirtualMachineAdapterGetter? vmad, string script) =>
+        vmad?.Scripts.Any(s => string.Equals(s.Name, script, StringComparison.OrdinalIgnoreCase)) == true
+        || (vmad is IDialogResponsesAdapterGetter dr && string.Equals(dr.ScriptFragments?.FileName, script, StringComparison.OrdinalIgnoreCase))
+        || (vmad is IQuestAdapterGetter qa && string.Equals(qa.FileName, script, StringComparison.OrdinalIgnoreCase));
+
+    // Records of the owning plugins that carry the script (any record type), plus anything using a
+    // scripted magic effect (potions, scrolls, spells...) and the quest owning a scripted dialogue line.
     private static JsonArray ScriptedPerkPoints(GameData game)
     {
         var arr = new JsonArray();
-        var effects = game.Winning<IMagicEffectGetter>();
-        var books = game.Winning<IBookGetter>();
-        var responses = game.Winning<IDialogResponsesGetter>();
-        var ingestibles = game.Winning<IIngestibleGetter>();
-        var spells = game.Winning<ISpellGetter>();
-
-        static bool Has(IAVirtualMachineAdapterGetter? vmad, string script) =>
-            vmad?.Scripts.Any(s => string.Equals(s.Name, script, StringComparison.OrdinalIgnoreCase)) == true;
-
-        foreach (var (script, points, note) in PerkPointScripts)
+        foreach (var (script, pattern, points, note) in PerkPointScripts)
         {
+            var re = new System.Text.RegularExpressions.Regex(pattern, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+            var mods = game.Mods.Where(m => re.IsMatch(m.ModKey.FileName)).ToList();
             var sources = new JsonArray();
-            void Add(string type, Mutagen.Bethesda.Plugins.Records.IMajorRecordGetter r, Mutagen.Bethesda.Plugins.ModKey from) =>
+            var seen = new HashSet<string>();
+            void Add(string type, Mutagen.Bethesda.Plugins.Records.IMajorRecordGetter r, string plugin, string? extra = null)
+            {
+                if (!seen.Add(type + r.FormKey)) return;
                 sources.Add(new JsonObject
                 {
                     ["type"] = type,
                     ["formKey"] = Json.Key(r.FormKey),
                     ["editorId"] = r.EditorID,
-                    ["name"] = (r as Mutagen.Bethesda.Plugins.Aspects.INamedGetter)?.Name,
-                    ["plugin"] = from.FileName.String,
+                    ["name"] = (r as Mutagen.Bethesda.Plugins.Aspects.INamedGetter)?.Name ?? extra,
+                    ["plugin"] = plugin,
                 });
-
-            foreach (var (b, from) in books.Values.Where(b => Has(b.Record.VirtualMachineAdapter, script))) Add("book", b, from);
-            foreach (var (r, from) in responses.Values.Where(r =>
-                         r.Record.VirtualMachineAdapter?.ScriptFragments?.FileName.Equals(script, StringComparison.OrdinalIgnoreCase) == true
-                         || Has(r.Record.VirtualMachineAdapter, script)))
-                Add("dialogue", r, from);
-            foreach (var (m, _) in effects.Values.Where(m => Has(m.Record.VirtualMachineAdapter, script)))
-            {
-                foreach (var (i, from) in ingestibles.Values.Where(i => i.Record.Effects.Any(e => e.BaseEffect.FormKey == m.FormKey))) Add("item", i, from);
-                foreach (var (s, from) in spells.Values.Where(s => s.Record.Effects.Any(e => e.BaseEffect.FormKey == m.FormKey))) Add("spell", s, from);
             }
+
+            var scriptedEffects = new HashSet<Mutagen.Bethesda.Plugins.FormKey>();
+            foreach (var mod in mods)
+            {
+                foreach (var rec in mod.EnumerateMajorRecords())
+                {
+                    var vmad = rec.GetType().GetProperty("VirtualMachineAdapter")?.GetValue(rec) as IAVirtualMachineAdapterGetter;
+                    if (!HasScript(vmad, script)) continue;
+                    // Vigilant's status-up script handles several item kinds; Type 3 is the perk point one.
+                    if (rec is IMagicEffectGetter && TypeProperty(vmad!, script) is null or 3) scriptedEffects.Add(rec.FormKey);
+                    else if (rec is IMagicEffectGetter) continue;
+                    else if (rec is not IDialogResponsesGetter) Add(rec.Registration.Name.ToLowerInvariant(), rec, mod.ModKey.FileName);
+                }
+                foreach (var topic in mod.DialogTopics)
+                    foreach (var r in topic.Responses)
+                        if (HasScript(r.VirtualMachineAdapter, script))
+                            Add("dialogue", topic, mod.ModKey.FileName,
+                                $"{Json.Names.GetValueOrDefault(topic.Quest.FormKey)}: \"{topic.Name?.String}\"");
+            }
+            if (scriptedEffects.Count > 0)
+                foreach (var mod in mods)
+                    foreach (var rec in mod.EnumerateMajorRecords())
+                    {
+                        var effects = rec.GetType().GetProperty("Effects")?.GetValue(rec) as IEnumerable<IEffectGetter>;
+                        if (effects?.Any(e => scriptedEffects.Contains(e.BaseEffect.FormKey)) == true)
+                            Add(rec.Registration.Name.ToLowerInvariant(), rec, mod.ModKey.FileName);
+                    }
 
             arr.Add(new JsonObject { ["script"] = script, ["points"] = points, ["note"] = note, ["sources"] = sources });
         }

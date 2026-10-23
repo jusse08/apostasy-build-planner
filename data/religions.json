@@ -224,7 +224,21 @@
               "editorId": "APO_AltarBenevolentHealthPerk",
               "name": "Fortify Health",
               "description": null,
-              "plugin": "Archon.esp"
+              "plugin": "Archon.esp",
+              "mechanics": [
+                {
+                  "type": "ability",
+                  "spell": {
+                    "formKey": "000812:Archon.esp",
+                    "editorId": "APO_AltarBenevolentHealth",
+                    "name": "Fortify Health",
+                    "description": null,
+                    "plugin": "Archon.esp",
+                    "effects": []
+                  },
+                  "text": "Grants ability Fortify Health"
+                }
+              ]
             }
           }
         ]
@@ -616,7 +630,21 @@
               "editorId": "APO_AltarBenevolentMagickaPerk",
               "name": "Fortify Magicka",
               "description": null,
-              "plugin": "Archon.esp"
+              "plugin": "Archon.esp",
+              "mechanics": [
+                {
+                  "type": "ability",
+                  "spell": {
+                    "formKey": "000815:Archon.esp",
+                    "editorId": "APO_AltarBenevolentMagicka",
+                    "name": "Fortify Magicka",
+                    "description": null,
+                    "plugin": "Archon.esp",
+                    "effects": []
+                  },
+                  "text": "Grants ability Fortify Magicka"
+                }
+              ]
             }
           }
         ]
@@ -850,7 +878,21 @@
               "editorId": "APO_AltarBenevolentStaminaPerk",
               "name": "Fortify Stamina",
               "description": null,
-              "plugin": "Archon.esp"
+              "plugin": "Archon.esp",
+              "mechanics": [
+                {
+                  "type": "ability",
+                  "spell": {
+                    "formKey": "000818:Archon.esp",
+                    "editorId": "APO_AltarBenevolentStamina",
+                    "name": "Fortify Stamina",
+                    "description": null,
+                    "plugin": "Archon.esp",
+                    "effects": []
+                  },
+                  "text": "Grants ability Fortify Stamina"
+                }
+              ]
             }
           }
         ]
@@ -1860,7 +1902,21 @@
               "editorId": "APO_AltarMalevolentMagickaPerk",
               "name": "Fortify Magicka",
               "description": null,
-              "plugin": "Archon.esp"
+              "plugin": "Archon.esp",
+              "mechanics": [
+                {
+                  "type": "ability",
+                  "spell": {
+                    "formKey": "000CB1:Archon.esp",
+                    "editorId": "APO_AltarMalevolentMagicka",
+                    "name": "Fortify Magicka",
+                    "description": null,
+                    "plugin": "Archon.esp",
+                    "effects": []
+                  },
+                  "text": "Grants ability Fortify Magicka"
+                }
+              ]
             }
           }
         ]
@@ -2043,7 +2099,21 @@
               "editorId": "APO_AltarMalevolentStaminaPerk",
               "name": "Fortify Stamina",
               "description": null,
-              "plugin": "Archon.esp"
+              "plugin": "Archon.esp",
+              "mechanics": [
+                {
+                  "type": "ability",
+                  "spell": {
+                    "formKey": "000CB2:Archon.esp",
+                    "editorId": "APO_AltarMalevolentStamina",
+                    "name": "Fortify Stamina",
+                    "description": null,
+                    "plugin": "Archon.esp",
+                    "effects": []
+                  },
+                  "text": "Grants ability Fortify Stamina"
+                }
+              ]
             }
           }
         ]
@@ -2377,7 +2447,16 @@
               "editorId": "APO_ChampionClavicusVileSummonPerk",
               "name": "Champion of Clavicus Vile",
               "description": null,
-              "plugin": "Archon.esp"
+              "plugin": "Archon.esp",
+              "mechanics": [
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "ModCommandedActorLimit",
+                  "modification": "Add",
+                  "value": 1,
+                  "text": "Mod Commanded Actor Limit: Add 1"
+                }
+              ]
             },
             "conditions": [
               {
@@ -3042,7 +3121,21 @@
               "editorId": "APO_AltarMalevolentStaminaPerk",
               "name": "Fortify Stamina",
               "description": null,
-              "plugin": "Archon.esp"
+              "plugin": "Archon.esp",
+              "mechanics": [
+                {
+                  "type": "ability",
+                  "spell": {
+                    "formKey": "000CB2:Archon.esp",
+                    "editorId": "APO_AltarMalevolentStamina",
+                    "name": "Fortify Stamina",
+                    "description": null,
+                    "plugin": "Archon.esp",
+                    "effects": []
+                  },
+                  "text": "Grants ability Fortify Stamina"
+                }
+              ]
             }
           }
         ]
@@ -3384,7 +3477,21 @@
               "editorId": "APO_AltarMalevolentHealthPerk",
               "name": "Fortify Health",
               "description": null,
-              "plugin": "Archon.esp"
+              "plugin": "Archon.esp",
+              "mechanics": [
+                {
+                  "type": "ability",
+                  "spell": {
+                    "formKey": "000CB0:Archon.esp",
+                    "editorId": "APO_AltarMalevolentHealth",
+                    "name": "Fortify Health",
+                    "description": null,
+                    "plugin": "Archon.esp",
+                    "effects": []
+                  },
+                  "text": "Grants ability Fortify Health"
+                }
+              ]
             }
           }
         ]
@@ -3769,7 +3876,21 @@
               "editorId": "APO_AltarMalevolentMagickaPerk",
               "name": "Fortify Magicka",
               "description": null,
-              "plugin": "Archon.esp"
+              "plugin": "Archon.esp",
+              "mechanics": [
+                {
+                  "type": "ability",
+                  "spell": {
+                    "formKey": "000CB1:Archon.esp",
+                    "editorId": "APO_AltarMalevolentMagicka",
+                    "name": "Fortify Magicka",
+                    "description": null,
+                    "plugin": "Archon.esp",
+                    "effects": []
+                  },
+                  "text": "Grants ability Fortify Magicka"
+                }
+              ]
             }
           }
         ]
@@ -4090,7 +4211,76 @@
               "editorId": "APO_ChampionNamiraCannibalPerk",
               "name": "Cannibalism",
               "description": "Allows feeding from corpses.",
-              "plugin": "Archon.esp"
+              "plugin": "Archon.esp",
+              "mechanics": [
+                {
+                  "type": "entryPoint",
+                  "entryPoint": "Activate",
+                  "conditions": [
+                    {
+                      "fn": "GetEquipped",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "itemOrList": "02C37B:Skyrim.esm"
+                      }
+                    },
+                    {
+                      "fn": "HasSpell",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0,
+                      "args": {
+                        "spell": "0EE5C5:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "spell": "Namira's Rot"
+                      }
+                    },
+                    {
+                      "fn": "GetIsID",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "object": "000007:Skyrim.esm"
+                      }
+                    },
+                    {
+                      "fn": "HasBeenEaten",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 0
+                    },
+                    {
+                      "fn": "HasKeyword",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1,
+                      "args": {
+                        "keyword": "013794:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "keyword": "ActorTypeNPC"
+                      }
+                    },
+                    {
+                      "fn": "GetDead",
+                      "op": "==",
+                      "or": false,
+                      "runOn": "Subject",
+                      "value": 1
+                    }
+                  ],
+                  "text": "Activate"
+                }
+              ]
             },
             "conditions": [
               {
@@ -4644,7 +4834,21 @@
               "editorId": "APO_AltarMalevolentHealthPerk",
               "name": "Fortify Health",
               "description": null,
-              "plugin": "Archon.esp"
+              "plugin": "Archon.esp",
+              "mechanics": [
+                {
+                  "type": "ability",
+                  "spell": {
+                    "formKey": "000CB0:Archon.esp",
+                    "editorId": "APO_AltarMalevolentHealth",
+                    "name": "Fortify Health",
+                    "description": null,
+                    "plugin": "Archon.esp",
+                    "effects": []
+                  },
+                  "text": "Grants ability Fortify Health"
+                }
+              ]
             }
           }
         ]
@@ -4986,7 +5190,21 @@
               "editorId": "APO_AltarBenevolentMagickaPerk",
               "name": "Fortify Magicka",
               "description": null,
-              "plugin": "Archon.esp"
+              "plugin": "Archon.esp",
+              "mechanics": [
+                {
+                  "type": "ability",
+                  "spell": {
+                    "formKey": "000815:Archon.esp",
+                    "editorId": "APO_AltarBenevolentMagicka",
+                    "name": "Fortify Magicka",
+                    "description": null,
+                    "plugin": "Archon.esp",
+                    "effects": []
+                  },
+                  "text": "Grants ability Fortify Magicka"
+                }
+              ]
             }
           }
         ]
@@ -5459,6 +5677,6 @@
   "meta": {
     "profile": "Apostasy",
     "plugins": 3407,
-    "generatedAt": "2026-10-23T14:21:02.7659197Z"
+    "generatedAt": "2026-10-23T14:31:18.5842315Z"
   }
 }

@@ -74,7 +74,8 @@
                 "editorId": "styy_dummyPerkLadyStone",
                 "name": "Lady's Favor",
                 "description": null,
-                "plugin": "StonesOfSacrifice - Lady's mortality.esp"
+                "plugin": "StonesOfSacrifice - Lady's mortality.esp",
+                "mechanics": []
               }
             }
           ]
@@ -103,7 +104,364 @@
                 "editorId": "APO_doomLordPerk01",
                 "name": "Rally",
                 "description": null,
-                "plugin": "Paragon - StonesOfSacrifice.esp"
+                "plugin": "Paragon - StonesOfSacrifice.esp",
+                "mechanics": [
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModSpellMagnitude",
+                    "modification": "Multiply",
+                    "value": 0.5,
+                    "conditions": [
+                      {
+                        "fn": "HasMagicEffectKeyword",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "000CD9:ParagonPerks.esp"
+                        },
+                        "argNames": {
+                          "keyword": "APO_VALOR_LowStaminaKeyword"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasKeyword",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "000A44:StonesOfSacrifice.esp"
+                        },
+                        "argNames": {
+                          "keyword": "APO_doomLordRallyKeyword"
+                        }
+                      }
+                    ],
+                    "text": "Mod Spell Magnitude: Multiply 0.5"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModSpellMagnitude",
+                    "modification": "Multiply",
+                    "value": 0.75,
+                    "conditions": [
+                      {
+                        "fn": "GetEquippedItemType",
+                        "op": ">",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0,
+                        "args": {
+                          "itemSource": "Left"
+                        }
+                      },
+                      {
+                        "fn": "GetEquippedItemType",
+                        "op": "<=",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 4,
+                        "args": {
+                          "itemSource": "Left"
+                        }
+                      },
+                      {
+                        "fn": "GetEquippedItemType",
+                        "op": ">",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0,
+                        "args": {
+                          "itemSource": "Right"
+                        }
+                      },
+                      {
+                        "fn": "GetEquippedItemType",
+                        "op": "<=",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 4,
+                        "args": {
+                          "itemSource": "Right"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasKeyword",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "000A44:StonesOfSacrifice.esp"
+                        },
+                        "argNames": {
+                          "keyword": "APO_doomLordRallyKeyword"
+                        }
+                      }
+                    ],
+                    "text": "Mod Spell Magnitude: Multiply 0.75"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModSpellMagnitude",
+                    "modification": "Multiply",
+                    "value": 1.5,
+                    "conditions": [
+                      {
+                        "fn": "IsPowerAttacking",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasKeyword",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "000A44:StonesOfSacrifice.esp"
+                        },
+                        "argNames": {
+                          "keyword": "APO_doomLordRallyKeyword"
+                        }
+                      }
+                    ],
+                    "text": "Mod Spell Magnitude: Multiply 1.5"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ApplyCombatHitSpell",
+                    "spell": {
+                      "formKey": "000C59:StonesOfSacrifice.esp",
+                      "editorId": "APO_doomLordRallySpell02",
+                      "name": "Rally",
+                      "description": null,
+                      "plugin": "Paragon - StonesOfSacrifice.esp",
+                      "effects": []
+                    },
+                    "conditions": [
+                      {
+                        "fn": "HasMagicEffect",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "magicEffect": "000B50:StonesOfSacrifice.esp"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "01E713:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "WeapTypeDagger"
+                        }
+                      },
+                      {
+                        "fn": "GetPlayerTeammate",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0
+                      }
+                    ],
+                    "text": "Apply Combat Hit Spell: cast Rally"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ApplyCombatHitSpell",
+                    "spell": {
+                      "formKey": "000C5A:StonesOfSacrifice.esp",
+                      "editorId": "APO_doomLordRallySpell03",
+                      "name": "Rally",
+                      "description": null,
+                      "plugin": "StonesOfSacrifice.esp",
+                      "effects": []
+                    },
+                    "conditions": [
+                      {
+                        "fn": "HasMagicEffect",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "magicEffect": "000B50:StonesOfSacrifice.esp"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "06D931:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "WeapTypeGreatsword"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "06D932:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "WeapTypeBattleaxe"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "06D930:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "WeapTypeWarhammer"
+                        }
+                      },
+                      {
+                        "fn": "GetPlayerTeammate",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0
+                      }
+                    ],
+                    "text": "Apply Combat Hit Spell: cast Rally"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ApplyCombatHitSpell",
+                    "spell": {
+                      "formKey": "000C59:StonesOfSacrifice.esp",
+                      "editorId": "APO_doomLordRallySpell02",
+                      "name": "Rally",
+                      "description": null,
+                      "plugin": "Paragon - StonesOfSacrifice.esp",
+                      "effects": []
+                    },
+                    "conditions": [
+                      {
+                        "fn": "HasMagicEffect",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "magicEffect": "000B50:StonesOfSacrifice.esp"
+                        }
+                      },
+                      {
+                        "fn": "GetEquipped",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "itemOrList": "0001F4:Skyrim.esm"
+                        }
+                      },
+                      {
+                        "fn": "GetPlayerTeammate",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0
+                      }
+                    ],
+                    "text": "Apply Combat Hit Spell: cast Rally"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ApplyCombatHitSpell",
+                    "spell": {
+                      "formKey": "000A40:StonesOfSacrifice.esp",
+                      "editorId": "APO_doomLordRallySpell01",
+                      "name": "Rally",
+                      "description": null,
+                      "plugin": "Paragon - StonesOfSacrifice.esp",
+                      "effects": []
+                    },
+                    "conditions": [
+                      {
+                        "fn": "HasMagicEffect",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "magicEffect": "000B50:StonesOfSacrifice.esp"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "01E711:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "WeapTypeSword"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "01E712:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "WeapTypeWarAxe"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "01E714:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "WeapTypeMace"
+                        }
+                      },
+                      {
+                        "fn": "GetPlayerTeammate",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0
+                      }
+                    ],
+                    "text": "Apply Combat Hit Spell: cast Rally"
+                  }
+                ]
               }
             }
           ]
@@ -154,7 +512,169 @@
                 "editorId": "APO_doomMagePerk01",
                 "name": "Arcane Mastery",
                 "description": null,
-                "plugin": "StonesOfSacrifice.esp"
+                "plugin": "StonesOfSacrifice.esp",
+                "mechanics": [
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModIncomingDamage",
+                    "modification": "Multiply",
+                    "value": 1.5,
+                    "conditions": [
+                      {
+                        "fn": "IsCasting",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1
+                      },
+                      {
+                        "fn": "IsDualCasting",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1
+                      }
+                    ],
+                    "text": "Mod Incoming Damage: Multiply 1.5"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModIncomingSpellMagnitude",
+                    "modification": "Multiply",
+                    "value": 1.5,
+                    "conditions": [
+                      {
+                        "fn": "IsCasting",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1
+                      },
+                      {
+                        "fn": "IsDualCasting",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1
+                      },
+                      {
+                        "fn": "GetIsID",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0,
+                        "args": {
+                          "object": "07E8E4:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "object": "Blizzard"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasKeyword",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0,
+                        "args": {
+                          "keyword": "0B62E4:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MagicCloak"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasSkill",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "actorValue": "Destruction"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "01CEAD:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MagicDamageFire"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "01CEAE:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MagicDamageFrost"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "01CEAF:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MagicDamageShock"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "ADA001:Update.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MAG_MagicDamagePoison"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "ADA002:Update.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MAG_MagicDamageSun"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "101BDE:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MagicVampireDrain"
+                        }
+                      }
+                    ],
+                    "text": "Mod Incoming Spell Magnitude: Multiply 1.5"
+                  }
+                ]
               }
             }
           ]
@@ -183,7 +703,415 @@
                 "editorId": "APO_doomRitualPerk01Alt",
                 "name": "Elder Knowledge",
                 "description": null,
-                "plugin": "APO_Apostasy - Controller.esp"
+                "plugin": "APO_Apostasy - Controller.esp",
+                "mechanics": [
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModSpellMagnitude",
+                    "modification": "Multiply",
+                    "value": 1.5,
+                    "conditions": [
+                      {
+                        "fn": "GetIsObjectType",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "formType": "Enchantment"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "ADA120:Update.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MAG_MagicStaffEnchantment"
+                        }
+                      },
+                      {
+                        "fn": "IsInList",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "formList": "0000BA:ParagonPerks.esp"
+                        }
+                      },
+                      {
+                        "fn": "GetIsObjectType",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "formType": "Scroll"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasSkill",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "actorValue": "Destruction"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasSkill",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "actorValue": "Restoration"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasSkill",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "actorValue": "Illusion"
+                        }
+                      }
+                    ],
+                    "text": "Mod Spell Magnitude: Multiply 1.5"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModSpellMagnitude",
+                    "modification": "Multiply",
+                    "value": 0.5,
+                    "conditions": [
+                      {
+                        "fn": "GetIsObjectType",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0,
+                        "args": {
+                          "formType": "Enchantment"
+                        }
+                      },
+                      {
+                        "fn": "IsInList",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0,
+                        "args": {
+                          "formList": "0000BA:ParagonPerks.esp"
+                        }
+                      },
+                      {
+                        "fn": "GetIsObjectType",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0,
+                        "args": {
+                          "formType": "Scroll"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasSkill",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "actorValue": "Destruction"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasSkill",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "actorValue": "Restoration"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasSkill",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "actorValue": "Illusion"
+                        }
+                      }
+                    ],
+                    "text": "Mod Spell Magnitude: Multiply 0.5"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModSpellDuration",
+                    "modification": "Multiply",
+                    "value": 2,
+                    "conditions": [
+                      {
+                        "fn": "GetIsObjectType",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "formType": "Enchantment"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "ADA120:Update.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MAG_MagicStaffEnchantment"
+                        }
+                      },
+                      {
+                        "fn": "IsInList",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "formList": "0000BA:ParagonPerks.esp"
+                        }
+                      },
+                      {
+                        "fn": "GetIsObjectType",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "formType": "Scroll"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasSkill",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "actorValue": "Alteration"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasSkill",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "actorValue": "Conjuration"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasSkill",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "actorValue": "Illusion"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "27401D:MysticismMagic.esp"
+                        },
+                        "argNames": {
+                          "keyword": "MAG_MagicAttunementSpell"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "3D6898:MysticismMagic.esp"
+                        },
+                        "argNames": {
+                          "keyword": "MAG_MagicRegenSpell"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "0BD83F:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MagicTurnUndead"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "0B62E4:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MagicCloak"
+                        }
+                      }
+                    ],
+                    "text": "Mod Spell Duration: Multiply 2"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModSpellDuration",
+                    "modification": "Multiply",
+                    "value": 0.5,
+                    "conditions": [
+                      {
+                        "fn": "GetIsObjectType",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0,
+                        "args": {
+                          "formType": "Enchantment"
+                        }
+                      },
+                      {
+                        "fn": "IsInList",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0,
+                        "args": {
+                          "formList": "0000BA:ParagonPerks.esp"
+                        }
+                      },
+                      {
+                        "fn": "GetIsObjectType",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0,
+                        "args": {
+                          "formType": "Scroll"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasSkill",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "actorValue": "Alteration"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasSkill",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "actorValue": "Conjuration"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasSkill",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "actorValue": "Illusion"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "27401D:MysticismMagic.esp"
+                        },
+                        "argNames": {
+                          "keyword": "MAG_MagicAttunementSpell"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "3D6898:MysticismMagic.esp"
+                        },
+                        "argNames": {
+                          "keyword": "MAG_MagicRegenSpell"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "0BD83F:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MagicTurnUndead"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "0B62E4:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MagicCloak"
+                        }
+                      }
+                    ],
+                    "text": "Mod Spell Duration: Multiply 0.5"
+                  }
+                ]
               }
             }
           ]
@@ -212,7 +1140,21 @@
                 "editorId": "APO_doomSerpentPerk01",
                 "name": "Star Cursed",
                 "description": null,
-                "plugin": "StonesOfSacrifice.esp"
+                "plugin": "StonesOfSacrifice.esp",
+                "mechanics": [
+                  {
+                    "type": "ability",
+                    "spell": {
+                      "formKey": "000C52:StonesOfSacrifice.esp",
+                      "editorId": "APO_doomSerpentCloakAbility",
+                      "name": "Star Cursed",
+                      "description": null,
+                      "plugin": "StonesOfSacrifice.esp",
+                      "effects": []
+                    },
+                    "text": "Grants ability Star Cursed"
+                  }
+                ]
               }
             }
           ]
@@ -249,7 +1191,281 @@
                 "editorId": "APO_doomShadowPerk01",
                 "name": "Assassin's Mark",
                 "description": null,
-                "plugin": "StonesOfSacrifice - Dodge Addon.esp"
+                "plugin": "StonesOfSacrifice - Dodge Addon.esp",
+                "mechanics": [
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModBashingDamage",
+                    "modification": "Multiply",
+                    "value": 0.5,
+                    "text": "Mod Bashing Damage: Multiply 0.5"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModPercentBlocked",
+                    "modification": "Multiply",
+                    "value": 0.5,
+                    "text": "Mod Percent Blocked: Multiply 0.5"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModSpellMagnitude",
+                    "modification": "Multiply",
+                    "value": 1.5,
+                    "conditions": [
+                      {
+                        "fn": "IsPowerAttacking",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasKeyword",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "000803:StonesOfSacrifice - Dodge Addon.esp"
+                        },
+                        "argNames": {
+                          "keyword": "APO_doomShadowAssassinsMarkKeyword"
+                        }
+                      }
+                    ],
+                    "text": "Mod Spell Magnitude: Multiply 1.5"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ApplyCombatHitSpell",
+                    "spell": {
+                      "formKey": "000805:StonesOfSacrifice - Dodge Addon.esp",
+                      "editorId": "APO_doomShadowAssassinMarkSpell02",
+                      "name": "Assassin's Mark",
+                      "description": null,
+                      "plugin": "StonesOfSacrifice - Dodge Addon.esp",
+                      "effects": []
+                    },
+                    "conditions": [
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "01E713:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "WeapTypeDagger"
+                        }
+                      },
+                      {
+                        "fn": "GetPlayerTeammate",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0
+                      },
+                      {
+                        "fn": "HasMagicEffect",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "magicEffect": "000801:StonesOfSacrifice - Dodge Addon.esp"
+                        }
+                      }
+                    ],
+                    "text": "Apply Combat Hit Spell: cast Assassin's Mark"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ApplyCombatHitSpell",
+                    "spell": {
+                      "formKey": "000806:StonesOfSacrifice - Dodge Addon.esp",
+                      "editorId": "APO_doomShadowAssassinMarkSpell03",
+                      "name": "Assassin's Mark",
+                      "description": null,
+                      "plugin": "StonesOfSacrifice - Dodge Addon.esp",
+                      "effects": []
+                    },
+                    "conditions": [
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "06D931:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "WeapTypeGreatsword"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "06D932:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "WeapTypeBattleaxe"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "06D930:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "WeapTypeWarhammer"
+                        }
+                      },
+                      {
+                        "fn": "GetPlayerTeammate",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0
+                      },
+                      {
+                        "fn": "HasMagicEffect",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "magicEffect": "000801:StonesOfSacrifice - Dodge Addon.esp"
+                        }
+                      }
+                    ],
+                    "text": "Apply Combat Hit Spell: cast Assassin's Mark"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ApplyCombatHitSpell",
+                    "spell": {
+                      "formKey": "000805:StonesOfSacrifice - Dodge Addon.esp",
+                      "editorId": "APO_doomShadowAssassinMarkSpell02",
+                      "name": "Assassin's Mark",
+                      "description": null,
+                      "plugin": "StonesOfSacrifice - Dodge Addon.esp",
+                      "effects": []
+                    },
+                    "conditions": [
+                      {
+                        "fn": "GetEquipped",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "itemOrList": "0001F4:Skyrim.esm"
+                        }
+                      },
+                      {
+                        "fn": "GetPlayerTeammate",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0
+                      },
+                      {
+                        "fn": "HasMagicEffect",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "magicEffect": "000801:StonesOfSacrifice - Dodge Addon.esp"
+                        }
+                      }
+                    ],
+                    "text": "Apply Combat Hit Spell: cast Assassin's Mark"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ApplyCombatHitSpell",
+                    "spell": {
+                      "formKey": "000804:StonesOfSacrifice - Dodge Addon.esp",
+                      "editorId": "APO_doomShadowAssassinMarkSpell01",
+                      "name": "Assassin's Mark",
+                      "description": null,
+                      "plugin": "StonesOfSacrifice - Dodge Addon.esp",
+                      "effects": []
+                    },
+                    "conditions": [
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "01E711:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "WeapTypeSword"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "01E712:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "WeapTypeWarAxe"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "01E714:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "WeapTypeMace"
+                        }
+                      },
+                      {
+                        "fn": "GetPlayerTeammate",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0
+                      },
+                      {
+                        "fn": "HasMagicEffect",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "magicEffect": "000801:StonesOfSacrifice - Dodge Addon.esp"
+                        }
+                      }
+                    ],
+                    "text": "Apply Combat Hit Spell: cast Assassin's Mark"
+                  }
+                ]
               }
             }
           ]
@@ -278,7 +1494,69 @@
                 "editorId": "APO_doomSteedPerk01",
                 "name": "Charioteer",
                 "description": null,
-                "plugin": "StonesOfSacrifice.esp"
+                "plugin": "StonesOfSacrifice.esp",
+                "mechanics": [
+                  {
+                    "type": "ability",
+                    "spell": {
+                      "formKey": "000935:StonesOfSacrifice.esp",
+                      "editorId": "APO_doomSteedSpell01",
+                      "name": "Charioteer",
+                      "description": null,
+                      "plugin": "StonesOfSacrifice.esp",
+                      "effects": []
+                    },
+                    "text": "Grants ability Charioteer"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModAttackDamage",
+                    "modification": "Multiply",
+                    "value": 0.5,
+                    "conditions": [
+                      {
+                        "fn": "GetActorValue",
+                        "op": "<=",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 5,
+                        "args": {
+                          "actorValue": "Stamina"
+                        }
+                      }
+                    ],
+                    "text": "Mod Attack Damage: Multiply 0.5"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModSpellCost",
+                    "modification": "Multiply",
+                    "value": 2,
+                    "conditions": [
+                      {
+                        "fn": "GetActorValue",
+                        "op": "<=",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 5,
+                        "args": {
+                          "actorValue": "Stamina"
+                        }
+                      },
+                      {
+                        "fn": "GetIsObjectType",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0,
+                        "args": {
+                          "formType": "Enchantment"
+                        }
+                      }
+                    ],
+                    "text": "Mod Spell Cost: Multiply 2"
+                  }
+                ]
               }
             }
           ]
@@ -307,7 +1585,99 @@
                 "editorId": "APO_doomThiefPerk01",
                 "name": "Fortune and Folly",
                 "description": null,
-                "plugin": "StonesOfSacrifice.esp"
+                "plugin": "StonesOfSacrifice.esp",
+                "mechanics": [
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModBuyPrices",
+                    "modification": "Multiply",
+                    "value": 1.25,
+                    "text": "Mod Buy Prices: Multiply 1.25"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModSellPrices",
+                    "modification": "Multiply",
+                    "value": 0.75,
+                    "text": "Mod Sell Prices: Multiply 0.75"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModIngredientsHarvested",
+                    "modification": "Add",
+                    "value": 1,
+                    "conditions": [
+                      {
+                        "fn": "GetRandomPercent",
+                        "op": "<=",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 50
+                      },
+                      {
+                        "fn": "GetIsID",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "object": "0D8E7E:Skyrim.esm"
+                        }
+                      },
+                      {
+                        "fn": "GetIsID",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "object": "0D8E7D:Skyrim.esm"
+                        }
+                      },
+                      {
+                        "fn": "GetIsID",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "object": "0D790B:Skyrim.esm"
+                        }
+                      },
+                      {
+                        "fn": "GetIsID",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "object": "0D8E87:Skyrim.esm"
+                        }
+                      },
+                      {
+                        "fn": "GetIsID",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "object": "0D8E88:Skyrim.esm"
+                        }
+                      },
+                      {
+                        "fn": "GetIsID",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "object": "0D8E89:Skyrim.esm"
+                        }
+                      }
+                    ],
+                    "text": "Mod Ingredients Harvested: Add 1"
+                  }
+                ]
               }
             }
           ]
@@ -358,7 +1728,139 @@
                 "editorId": "APO_doomWarriorPerk01",
                 "name": "Warwyrd",
                 "description": null,
-                "plugin": "StonesOfSacrifice.esp"
+                "plugin": "StonesOfSacrifice.esp",
+                "mechanics": [
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModIncomingSpellMagnitude",
+                    "modification": "Multiply",
+                    "value": 0.9,
+                    "conditions": [
+                      {
+                        "fn": "GetIsID",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0,
+                        "args": {
+                          "object": "07E8E4:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "object": "Blizzard"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasKeyword",
+                        "op": "==",
+                        "or": false,
+                        "runOn": "Subject",
+                        "value": 0,
+                        "args": {
+                          "keyword": "0B62E4:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MagicCloak"
+                        }
+                      },
+                      {
+                        "fn": "EPMagic_SpellHasSkill",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "actorValue": "Destruction"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "01CEAD:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MagicDamageFire"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "01CEAE:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MagicDamageFrost"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "01CEAF:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MagicDamageShock"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "ADA001:Update.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MAG_MagicDamagePoison"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "ADA002:Update.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MAG_MagicDamageSun"
+                        }
+                      },
+                      {
+                        "fn": "HasKeyword",
+                        "op": "==",
+                        "or": true,
+                        "runOn": "Subject",
+                        "value": 1,
+                        "args": {
+                          "keyword": "101BDE:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "keyword": "MagicVampireDrain"
+                        }
+                      }
+                    ],
+                    "text": "Mod Incoming Spell Magnitude: Multiply 0.9"
+                  },
+                  {
+                    "type": "entryPoint",
+                    "entryPoint": "ModIncomingDamage",
+                    "modification": "Multiply",
+                    "value": 0.9,
+                    "text": "Mod Incoming Damage: Multiply 0.9"
+                  }
+                ]
               }
             },
             {
@@ -375,6 +1877,6 @@
   "meta": {
     "profile": "Apostasy",
     "plugins": 3407,
-    "generatedAt": "2026-10-23T14:21:02.7659197Z"
+    "generatedAt": "2026-10-23T14:31:18.5842315Z"
   }
 }

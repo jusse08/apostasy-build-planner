@@ -10,7 +10,57 @@ namespace Extractor;
 /// </summary>
 public static class PerkExtractor
 {
-    public static JsonObject Extract(GameData game, Describe d)
+    // Custom Skills Framework (old .NET Script Framework format) trees, e.g. Stormcrown's Dragonborn tree.
+    private static IEnumerable<(string Id, JsonObject Tree, List<FormKey> Perks)> CustomSkillTrees(Mo2Profile profile)
+    {
+        foreach (var file in profile.ResolveFiles(@"netscriptframework\plugins", "customskill.*.config.txt"))
+        {
+            var kv = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            foreach (var raw in File.ReadLines(file))
+            {
+                var line = raw.Trim();
+                if (line.Length == 0 || line[0] == '#') continue;
+                var eq = line.IndexOf('=');
+                if (eq > 0) kv[line[..eq].Trim()] = line[(eq + 1)..].Trim().Trim('"');
+            }
+            var id = Path.GetFileName(file).Split('.')[1];
+            var nodes = new JsonArray();
+            var perks = new List<FormKey>();
+            for (var i = 0; i < 128; i++)
+            {
+                if (!kv.TryGetValue($"Node{i}.Enable", out var en) || en != "true") continue;
+                string? perkKey = null;
+                if (kv.TryGetValue($"Node{i}.PerkFile", out var pf) && kv.TryGetValue($"Node{i}.PerkId", out var pid))
+                {
+                    var fk = new FormKey(ModKey.FromFileName(pf), Convert.ToUInt32(pid, 16) & 0xFFFFFF);
+                    perks.Add(fk);
+                    perkKey = Json.Key(fk);
+                }
+                float F(string k) => kv.TryGetValue($"Node{i}.{k}", out var v) && float.TryParse(v, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out var f) ? f : 0;
+                var links = kv.TryGetValue($"Node{i}.Links", out var l) && l.Length > 0
+                    ? l.Split(',').Select(s => (JsonNode)int.Parse(s.Trim())).ToArray() : [];
+                nodes.Add(new JsonObject
+                {
+                    ["index"] = i, ["perk"] = perkKey,
+                    ["gridX"] = (int)F("GridX"), ["gridY"] = (int)F("GridY"), ["x"] = F("X"), ["y"] = F("Y"),
+                    ["links"] = new JsonArray(links),
+                });
+            }
+            yield return (id, new JsonObject
+            {
+                ["id"] = "CustomSkill." + id,
+                ["skill"] = null,
+                ["formKey"] = null,
+                ["name"] = kv.GetValueOrDefault("Name") ?? id,
+                ["description"] = kv.GetValueOrDefault("Description"),
+                ["plugin"] = kv.GetValueOrDefault("PerkPointsFile"),
+                ["customSkill"] = true,
+                ["nodes"] = nodes,
+            }, perks);
+        }
+    }
+
+    public static JsonObject Extract(GameData game, Describe d, Mo2Profile profile)
     {
         var avifs = game.Winning<IActorValueInformationGetter>();
         var perks = game.Winning<IPerkGetter>();
@@ -47,6 +97,12 @@ public static class PerkExtractor
                 ["plugin"] = from.FileName.String,
                 ["nodes"] = nodes,
             });
+        }
+
+        foreach (var (_, tree, treePerks) in CustomSkillTrees(profile))
+        {
+            trees.Add(tree);
+            foreach (var p in treePerks) wanted.Enqueue(p);
         }
 
         // Walk rank chains (NextPerk) and HasPerk prerequisites so the web app can resolve them.

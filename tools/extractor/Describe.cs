@@ -57,6 +57,8 @@ public sealed class Describe
         _ => null,
     };
 
+    public string? EffectName(FormKey mgef) => _effects.TryGetValue(mgef, out var m) ? m.Record.Name?.String : null;
+
     public float? Global(string editorId) => _globalsByEditorId.TryGetValue(editorId, out var v) ? v : null;
 
     public ISpellGetter? SpellByEditorId(string editorId) =>
@@ -141,11 +143,13 @@ public sealed class Describe
         return result;
     }
 
+    private int _depth;
+
     public JsonObject? Perk(FormKey key)
     {
         if (!_perks.TryGetValue(key, out var entry)) return null;
         var (perk, from) = entry;
-        return new JsonObject
+        var o = new JsonObject
         {
             ["formKey"] = Json.Key(key),
             ["editorId"] = perk.EditorID,
@@ -153,5 +157,77 @@ public sealed class Describe
             ["description"] = Text(perk.Description?.String),
             ["plugin"] = from.FileName.String,
         };
+        // Mechanics behind the text; for perks without a description this is all there is.
+        if (_depth < 2)
+        {
+            _depth++;
+            try { o["mechanics"] = PerkMechanics(perk); }
+            finally { _depth--; }
+        }
+        return o;
+    }
+
+    /// <summary>Perk entry points / abilities as data plus a readable line each.</summary>
+    public JsonArray PerkMechanics(IPerkGetter perk)
+    {
+        var arr = new JsonArray();
+        foreach (var e in perk.Effects)
+        {
+            JsonObject o;
+            switch (e)
+            {
+                case IPerkAbilityEffectGetter a:
+                    var spell = Spell(a.Ability.FormKey);
+                    o = new JsonObject { ["type"] = "ability", ["spell"] = spell, ["text"] = $"Grants ability {spell?["name"]}" };
+                    break;
+                case IPerkQuestEffectGetter q:
+                    o = new JsonObject
+                    {
+                        ["type"] = "quest", ["quest"] = Json.Key(q.Quest), ["stage"] = q.Stage,
+                        ["text"] = $"Sets stage {q.Stage} of {Json.Names.GetValueOrDefault(q.Quest.FormKey) ?? Json.Key(q.Quest.FormKey)}",
+                    };
+                    break;
+                case IAPerkEntryPointEffectGetter ep:
+                    var point = ep.EntryPoint.ToString();
+                    var readable = System.Text.RegularExpressions.Regex.Replace(point, "(?<=[a-z])(?=[A-Z])", " ");
+                    o = new JsonObject { ["type"] = "entryPoint", ["entryPoint"] = point };
+                    string detail = "";
+                    switch (ep)
+                    {
+                        case IPerkEntryPointModifyValueGetter mv:
+                            o["modification"] = mv.Modification.ToString(); o["value"] = mv.Value;
+                            detail = $"{mv.Modification} {Num(mv.Value ?? 0)}";
+                            break;
+                        case IPerkEntryPointModifyActorValueGetter mav:
+                            o["modification"] = mav.Modification.ToString(); o["value"] = mav.Value; o["actorValue"] = mav.ActorValue.ToString();
+                            detail = $"{mav.Modification} {mav.ActorValue} x {Num(mav.Value)}";
+                            break;
+                        case IPerkEntryPointModifyValuesGetter mvs:
+                            o["modification"] = mvs.Modification.ToString(); o["value"] = mvs.Value; o["value2"] = mvs.Value2;
+                            detail = $"{mvs.Modification} {Num(mvs.Value ?? 0)}, {Num(mvs.Value2 ?? 0)}";
+                            break;
+                        case IPerkEntryPointAddRangeToValueGetter r:
+                            o["from"] = r.From; o["to"] = r.To; detail = $"add {Num(r.From)}..{Num(r.To)}";
+                            break;
+                        case IPerkEntryPointSelectSpellGetter ss:
+                            var s = Spell(ss.Spell.FormKey); o["spell"] = s; detail = $"cast {s?["name"]}";
+                            break;
+                        case IPerkEntryPointAddActivateChoiceGetter ac:
+                            if (!ac.Spell.IsNull) { var acs = Spell(ac.Spell.FormKey); o["spell"] = acs; detail = $"activate choice {acs?["name"]}"; }
+                            break;
+                        case IPerkEntryPointSetTextGetter st:
+                            o["value"] = st.Text?.String; detail = st.Text?.String ?? "";
+                            break;
+                    }
+                    var conds = ep.Conditions.SelectMany(pc => pc.Conditions).ToList();
+                    if (conds.Count > 0) o["conditions"] = Json.Conditions(conds);
+                    o["text"] = $"{readable}: {detail}".TrimEnd(' ', ':');
+                    break;
+                default:
+                    continue;
+            }
+            arr.Add(o);
+        }
+        return arr;
     }
 }

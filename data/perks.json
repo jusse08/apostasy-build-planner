@@ -3207,6 +3207,134 @@
           "links": []
         }
       ]
+    },
+    {
+      "id": "CustomSkill.dragonborn",
+      "skill": null,
+      "formKey": null,
+      "name": "Dragonborn",
+      "description": "New perks become available after consuming dragon souls. Each new perk requires more dragon souls.",
+      "plugin": "Stormcrown.esp",
+      "customSkill": true,
+      "nodes": [
+        {
+          "index": 0,
+          "perk": null,
+          "gridX": 0,
+          "gridY": 0,
+          "x": 0,
+          "y": 0,
+          "links": [
+            1
+          ]
+        },
+        {
+          "index": 1,
+          "perk": "00080F:Stormcrown.esp",
+          "gridX": 0,
+          "gridY": 0,
+          "x": 1.47,
+          "y": -0.4,
+          "links": [
+            2,
+            4,
+            9
+          ]
+        },
+        {
+          "index": 2,
+          "perk": "000825:Stormcrown.esp",
+          "gridX": 0,
+          "gridY": 0,
+          "x": 1.47,
+          "y": 0.2,
+          "links": []
+        },
+        {
+          "index": 4,
+          "perk": "00081D:Stormcrown.esp",
+          "gridX": 0,
+          "gridY": 0,
+          "x": -0.18,
+          "y": 0,
+          "links": [
+            5
+          ]
+        },
+        {
+          "index": 5,
+          "perk": "000F1C:Stormcrown.esp",
+          "gridX": 0,
+          "gridY": 0,
+          "x": -1.12,
+          "y": 0.8,
+          "links": [
+            6
+          ]
+        },
+        {
+          "index": 6,
+          "perk": "000F19:Stormcrown.esp",
+          "gridX": 0,
+          "gridY": 0,
+          "x": -1.2,
+          "y": 2.2,
+          "links": [
+            7
+          ]
+        },
+        {
+          "index": 7,
+          "perk": "00081E:Stormcrown.esp",
+          "gridX": 0,
+          "gridY": 0,
+          "x": 0.3,
+          "y": 3,
+          "links": []
+        },
+        {
+          "index": 9,
+          "perk": "000824:Stormcrown.esp",
+          "gridX": 0,
+          "gridY": 0,
+          "x": 3.18,
+          "y": 0,
+          "links": [
+            10
+          ]
+        },
+        {
+          "index": 10,
+          "perk": "000830:Stormcrown.esp",
+          "gridX": 0,
+          "gridY": 0,
+          "x": 4.12,
+          "y": 0.8,
+          "links": [
+            11
+          ]
+        },
+        {
+          "index": 11,
+          "perk": "00082D:Stormcrown.esp",
+          "gridX": 0,
+          "gridY": 0,
+          "x": 4.15,
+          "y": 2.2,
+          "links": [
+            12
+          ]
+        },
+        {
+          "index": 12,
+          "perk": "000C3F:Stormcrown.esp",
+          "gridX": 0,
+          "gridY": 0,
+          "x": 2.6,
+          "y": 3,
+          "links": []
+        }
+      ]
     }
   ],
   "perks": {
@@ -11844,6 +11972,242 @@
         }
       ]
     },
+    "00080F:Stormcrown.esp": {
+      "editorId": "MAG_Dragonborn01",
+      "name": "Dragonborn",
+      "description": "Your Shouts are 25% stronger.",
+      "plugin": "Stormcrown.esp",
+      "playable": true,
+      "hidden": false,
+      "numRanks": 1,
+      "nextPerk": "00080D:Stormcrown.esp",
+      "conditions": []
+    },
+    "000825:Stormcrown.esp": {
+      "editorId": "MAG_DragonoftheNorth",
+      "name": "Dragon of the North",
+      "description": "You resist 10% of incoming Poise damage, and take 10% less damage while staggered.",
+      "plugin": "APO_Apostasy - Stormcrown Tweaks.esp",
+      "playable": true,
+      "hidden": false,
+      "numRanks": 1,
+      "nextPerk": null,
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "00080F:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Dragonborn"
+          }
+        }
+      ]
+    },
+    "00081D:Stormcrown.esp": {
+      "editorId": "MAG_DeepBreath01",
+      "name": "Deep Breath",
+      "description": "Your Shouts have a 25% chance to deal double damage.",
+      "plugin": "Stormcrown.esp",
+      "playable": true,
+      "hidden": false,
+      "numRanks": 1,
+      "nextPerk": "000813:Stormcrown.esp",
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "00080F:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Dragonborn"
+          }
+        }
+      ]
+    },
+    "000F1C:Stormcrown.esp": {
+      "editorId": "MAG_AncientVoice01",
+      "name": "Ancient Voice",
+      "description": "Your Shouts have a 50% chance to stagger enemies.",
+      "plugin": "Stormcrown.esp",
+      "playable": true,
+      "hidden": false,
+      "numRanks": 1,
+      "nextPerk": "000811:Stormcrown.esp",
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "00081D:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Deep Breath"
+          }
+        }
+      ]
+    },
+    "000F19:Stormcrown.esp": {
+      "editorId": "MAG_SharpTongue01",
+      "name": "Sharp Tongue",
+      "description": "Your Shouts do 50% extra damage to enemies who fall below half Health.",
+      "plugin": "Stormcrown.esp",
+      "playable": true,
+      "hidden": false,
+      "numRanks": 1,
+      "nextPerk": "000814:Stormcrown.esp",
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "000F1C:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Ancient Voice"
+          }
+        }
+      ]
+    },
+    "00081E:Stormcrown.esp": {
+      "editorId": "MAG_Stormcrown",
+      "name": "Stormcrown",
+      "description": "Your Shouts have a 25% chance to have no cooldown in combat.",
+      "plugin": "Stormcrown.esp",
+      "playable": true,
+      "hidden": false,
+      "numRanks": 1,
+      "nextPerk": null,
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "000F19:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Sharp Tongue"
+          }
+        }
+      ]
+    },
+    "000824:Stormcrown.esp": {
+      "editorId": "MAG_SkyAbove01",
+      "name": "Sky Above",
+      "description": "Your Shouts last 50% longer.",
+      "plugin": "Stormcrown.esp",
+      "playable": true,
+      "hidden": false,
+      "numRanks": 1,
+      "nextPerk": "000810:Stormcrown.esp",
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "00080F:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Dragonborn"
+          }
+        }
+      ]
+    },
+    "000830:Stormcrown.esp": {
+      "editorId": "MAG_VoiceWithin",
+      "name": "Voice Within",
+      "description": "Your Shouts are silent to others.",
+      "plugin": "Stormcrown.esp",
+      "playable": true,
+      "hidden": false,
+      "numRanks": 1,
+      "nextPerk": null,
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "000824:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Sky Above"
+          }
+        }
+      ]
+    },
+    "00082D:Stormcrown.esp": {
+      "editorId": "MAG_Windcaller01",
+      "name": "Windcaller",
+      "description": "Your Shout cooldown is reduced by 25%.",
+      "plugin": "Stormcrown.esp",
+      "playable": true,
+      "hidden": false,
+      "numRanks": 1,
+      "nextPerk": "000812:Stormcrown.esp",
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "000830:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Voice Within"
+          }
+        }
+      ]
+    },
+    "000C3F:Stormcrown.esp": {
+      "editorId": "MAG_WayoftheVoice",
+      "name": "Way of the Voice",
+      "description": "Once an hour, when you fall below 25% Health, your Shout cooldown is reset, and your Shouts have no cooldown for 10 seconds.",
+      "plugin": "Stormcrown.esp",
+      "playable": true,
+      "hidden": false,
+      "numRanks": 1,
+      "nextPerk": null,
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "00082D:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Windcaller"
+          }
+        }
+      ]
+    },
     "000826:APO_Apostasy - Sacrilege Rebalance.esp": {
       "editorId": "SQL_PerkTree_Perk_VampireLord_Caster_02_Hemomancer",
       "name": "Hemomancer",
@@ -15238,12 +15602,162 @@
           }
         }
       ]
+    },
+    "00080D:Stormcrown.esp": {
+      "editorId": "MAG_Dragonborn02",
+      "name": "Dragonborn",
+      "description": "Your Shouts are 50% stronger.",
+      "plugin": "Stormcrown.esp",
+      "playable": true,
+      "hidden": false,
+      "numRanks": 1,
+      "nextPerk": null,
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "00080F:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Dragonborn"
+          }
+        }
+      ]
+    },
+    "000813:Stormcrown.esp": {
+      "editorId": "MAG_DeepBreath02",
+      "name": "Deep Breath",
+      "description": "Your Shouts have a 50% chance to deal double damage.",
+      "plugin": "Stormcrown.esp",
+      "playable": true,
+      "hidden": false,
+      "numRanks": 1,
+      "nextPerk": null,
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "00081D:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Deep Breath"
+          }
+        }
+      ]
+    },
+    "000811:Stormcrown.esp": {
+      "editorId": "MAG_AncientVoice02",
+      "name": "Ancient Voice",
+      "description": "Your Shouts are guaranteed to stagger enemies.",
+      "plugin": "Stormcrown.esp",
+      "playable": true,
+      "hidden": false,
+      "numRanks": 1,
+      "nextPerk": null,
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "000F1C:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Ancient Voice"
+          }
+        }
+      ]
+    },
+    "000814:Stormcrown.esp": {
+      "editorId": "MAG_SharpTongue02",
+      "name": "Sharp Tongue",
+      "description": "Your Shouts do double damage to enemies who fall below half Health.",
+      "plugin": "Stormcrown.esp",
+      "playable": true,
+      "hidden": false,
+      "numRanks": 1,
+      "nextPerk": null,
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "000F19:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Sharp Tongue"
+          }
+        }
+      ]
+    },
+    "000810:Stormcrown.esp": {
+      "editorId": "MAG_SkyAbove02",
+      "name": "Sky Above",
+      "description": "Your Shouts last twice as long.",
+      "plugin": "Stormcrown.esp",
+      "playable": true,
+      "hidden": false,
+      "numRanks": 1,
+      "nextPerk": null,
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "000824:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Sky Above"
+          }
+        }
+      ]
+    },
+    "000812:Stormcrown.esp": {
+      "editorId": "MAG_Windcaller02",
+      "name": "Windcaller",
+      "description": "Your Shout cooldown is reduced by 50%.",
+      "plugin": "Stormcrown.esp",
+      "playable": true,
+      "hidden": false,
+      "numRanks": 1,
+      "nextPerk": null,
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "00082D:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Windcaller"
+          }
+        }
+      ]
     }
   },
   "globals": {},
   "meta": {
     "profile": "Apostasy",
     "plugins": 3407,
-    "generatedAt": "2026-10-23T14:21:02.7659197Z"
+    "generatedAt": "2026-10-23T14:31:18.5842315Z"
   }
 }

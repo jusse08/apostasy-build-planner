@@ -23,6 +23,18 @@ public sealed class Mo2Profile
     public string? ResolveFile(string relativePath) =>
         SearchDirs.Select(d => Path.Combine(d, relativePath)).FirstOrDefault(File.Exists);
 
+    /// <summary>Winning files matching a pattern in a Data-relative folder (one per file name).</summary>
+    public IEnumerable<string> ResolveFiles(string relativeDir, string pattern)
+    {
+        var seen = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        foreach (var dir in SearchDirs.Select(d => Path.Combine(d, relativeDir)).Where(Directory.Exists))
+            foreach (var f in Directory.EnumerateFiles(dir, pattern))
+                if (seen.Add(Path.GetFileName(f))) yield return f;
+    }
+
+    /// <summary>Enabled mod folders (highest priority first), excluding overwrite and the game.</summary>
+    public IEnumerable<string> ModDirs => SearchDirs.Skip(1).SkipLast(1);
+
     public static Mo2Profile Load(string instanceDir, string profileName)
     {
         var profileDir = Path.Combine(instanceDir, "profiles", profileName);
