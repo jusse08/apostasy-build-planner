@@ -35,6 +35,25 @@ With those set the app expects to be reached through the proxy; for direct `http
 
 Tests: `cd web && npm test` (rules engine against the real data).
 
+## Container image publishing
+
+Forgejo Actions runs checks, tests and a Docker build on every push and pull request.
+After successful tests, pushes to `main` and tags matching `v*` also publish the image.
+By default the image is `<forgejo-host>/<owner>/<repository>` (lowercase); for this
+repository: `forgejo.jusse.dev/jusseee/apocharplanner`.
+
+Configure repository Actions secrets:
+
+- `REGISTRY_USERNAME` — registry login.
+- `REGISTRY_TOKEN` — token with permission to push packages (`REGISTRY_PASSWORD` is also supported).
+
+Optional Actions variables `REGISTRY` and `IMAGE_NAME` override the registry host and
+image path. The runner needs the `docker` label and access to Docker/Buildx.
+
+`main` publishes `:main`, `:latest` and `:sha-<short-commit>`.
+A release tag such as `v1.2.3` publishes `:1.2.3`, `:1.2` and `:sha-<short-commit>`.
+Pull requests and other branches only build the image; they do not log in or push it.
+
 ## Updating game data
 
 Run on the machine with Apostasy installed (needs .NET 10 SDK):

@@ -1,4 +1,4 @@
-# Runs the rules engine tests and builds the Docker image on every push.
+# Tests and builds on every push and PR; publishes main and v* tags.
 # Needs a Forgejo Actions runner with Docker available (label: docker).
 name: build
 
@@ -11,7 +11,9 @@ jobs:
     runs-on: docker
     container: node:24-slim
     steps:
-      - uses: actions/checkout@v4
+      - uses: https://data.forgejo.org/actions/checkout@v6
+        with:
+          persist-credentials: false
       - run: npm ci
         working-directory: web
       - run: npx svelte-kit sync && npx svelte-check --tsconfig ./tsconfig.json
@@ -23,5 +25,64 @@ jobs:
     runs-on: docker
     needs: test
     steps:
-      - uses: actions/checkout@v4
-      - run: docker build -t apo-char-planner:${{ github.sha }} .
+      - name: Checkout
+        uses: https://data.forgejo.org/actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Buildx
+        uses: https://github.com/docker/setup-buildx-action@v3
+
+      - name: Resolve image coordinates
+        id: image
+        shell: bash
+        env:
+          SERVER_URL: ${{ forgejo.server_url }}
+          REPOSITORY: ${{ forgejo.repository }}
+          REGISTRY_OVERRIDE: ${{ vars.REGISTRY }}
+          IMAGE_OVERRIDE: ${{ vars.IMAGE_NAME }}
+        run: |
+          registry="${REGISTRY_OVERRIDE:-${SERVER_URL#https://}}"
+          registry="${registry#http://}"
+          registry="${registry%%/*}"
+          registry="$(printf '%s' "$registry" | tr '[:upper:]' '[:lower:]')"
+          image="$(printf '%s' "${IMAGE_OVERRIDE:-${REPOSITORY}}" | tr '[:upper:]' '[:lower:]')"
+          if [[ "$image" == "$registry/"* ]]; then
+            image="${image#"$registry/"}"
+          fi
+          test -n "$registry"
+          test -n "$image"
+          output_file="${FORGEJO_OUTPUT:-$GITHUB_OUTPUT}"
+          echo "registry=$registry" >> "$output_file"
+          echo "image=$image" >> "$output_file"
+
+      - name: Docker metadata
+        id: meta
+        uses: https://data.forgejo.org/docker/metadata-action@v5
+        with:
+          images: ${{ steps.image.outputs.registry }}/${{ steps.image.outputs.image }}
+          flavor: latest=false
+          tags: |
+            type=raw,value=ci,enable=${{ forgejo.event_name == 'pull_request' }}
+            type=ref,event=branch
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=sha
+            type=raw,value=latest,enable=${{ forgejo.event_name == 'push' && forgejo.ref == 'refs/heads/main' }}
+
+      - name: Log in to registry
+        if: forgejo.event_name == 'push' && (forgejo.ref == 'refs/heads/main' || startsWith(forgejo.ref, 'refs/tags/v'))
+        uses: https://data.forgejo.org/docker/login-action@v3
+        with:
+          registry: ${{ steps.image.outputs.registry }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_TOKEN || secrets.REGISTRY_PASSWORD }}
+
+      - name: Build and publish image
+        uses: https://data.forgejo.org/docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64
+          push: ${{ forgejo.event_name == 'push' && (forgejo.ref == 'refs/heads/main' || startsWith(forgejo.ref, 'refs/tags/v')) }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
