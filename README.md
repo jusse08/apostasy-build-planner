@@ -61,7 +61,7 @@ Run on the machine with Apostasy installed (needs .NET 10 SDK):
 cd tools/extractor
 dotnet run -c Release -- "C:\Games\Apostasy" Apostasy
 cd ../..
-cd web && npm run fonts
+cd web && npm run fonts && npm run sky
 ```
 
 Extractor arguments: MO2 instance folder, profile name, optional output folder (defaults to `data/`).
@@ -70,6 +70,8 @@ Reading all ~3400 plugins takes about 1.5–2 minutes. Commit `data/` and rebuil
 
 `npm run fonts` copies Futura Book BT (Untarnished UI's font) from the install into `web/static/fonts`;
 without it the UI falls back to Jost.
+`npm run sky` converts the perk menu art of Skyrim SE Skill Interface Re-Texture (stars, lines, nebula) into
+`web/static/sky`; the PNGs are committed like the font.
 
 Skill ids everywhere are Papyrus actor value names (`OneHanded`, `Marksman`, `Speechcraft`, ...).
 Apostasy repurposes `Lockpicking` as Hand to Hand and `Pickpocket` as Security.

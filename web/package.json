@@ -11,7 +11,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test": "vitest run",
-		"fonts": "node scripts/copy-fonts.mjs"
+		"fonts": "node scripts/copy-fonts.mjs",
+		"sky": "node scripts/copy-sky.mjs"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-node": "^6.0.0",

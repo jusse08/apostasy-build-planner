@@ -2,12 +2,14 @@
 	import type { BuildEditor } from '#lib/editor.svelte.ts';
 	import { perkStatus, rankChain } from '#lib/rules/engine.ts';
 	import type { FormKey, Tree, TreeNode } from '#lib/types.ts';
-	import PerkDetail from './PerkDetail.svelte';
+	import PerkPanel from './PerkPanel.svelte';
 	import PerkSky from './PerkSky.svelte';
 
 	let { ed, treeId = $bindable() }: { ed: BuildEditor; treeId: string } = $props();
 
 	let selected = $state<FormKey | null>(null);
+	let hovered = $state<FormKey | null>(null);
+	let allNames = $state(false);
 	let tree = $derived(ed.game.trees.find((t) => t.id === treeId) ?? ed.game.trees[0]);
 
 	// The skills menu horizon: the three classic groups, then the separate trees.
@@ -20,6 +22,11 @@
 		groups.map((g) => ({ label: g.label, trees: g.skills.map((s) => ed.game.trees.find((t) => t.skill === s)).filter((t): t is Tree => !!t) }))
 	);
 	let extra = $derived(ed.game.trees.filter((t) => t.kind !== 'skill'));
+
+	// The game's nebula panorama runs blue (magic), red (combat), green (stealth); face the tree's part of it.
+	let nebulaX = $derived(
+		{ Combat: '50%', Stealth: '100%', Magic: '0%' }[groups.find((g) => g.skills.includes(tree.skill ?? ''))?.label ?? ''] ?? '30%'
+	);
 
 	function takenIn(t: Tree): number {
 		let n = 0;
@@ -49,11 +56,12 @@
 	$effect(() => {
 		void tree.id; // reset the selection when switching trees
 		selected = null;
+		hovered = null;
 	});
 </script>
 
 <div class="perks">
-	<section class="sky-wrap">
+	<section class="sky-wrap" style="--nebula-x: {nebulaX}">
 		<header class="caption">
 			<h2>{tree.name}</h2>
 			{#if tree.skill}
@@ -72,10 +80,20 @@
 				{tree}
 				{nodeInfo}
 				{selected}
+				{allNames}
 				onselect={(n) => (selected = n.perk)}
+				onhover={(n) => (hovered = n?.perk ?? null)}
 				ontake={(n) => ed.takeNode(n.perk!)}
 				ondrop={(n) => ed.dropNode(n.perk!)}
 			/>
+		</div>
+
+		<div class="caption-panel" aria-live="polite">
+			{#if hovered ?? selected}
+				{#key hovered ?? selected}<PerkPanel {ed} first={(hovered ?? selected)!} preview={!!hovered && hovered !== selected} />{/key}
+			{:else}
+				<p class="hint">Pick a star to read the perk. Perks you take are placed at level {ed.level}.</p>
+			{/if}
 		</div>
 
 		<p class="legend">
@@ -85,7 +103,8 @@
 			<span><i class="ring wolf"></i>Wolf stance</span>
 			<span><i class="ring hawk"></i>Hawk stance</span>
 			<span><i class="ring bear"></i>Bear stance</span>
-			<span class="keys">Double-click or Enter takes a perk, right-click or Delete removes it</span>
+			<label class="names"><input type="checkbox" bind:checked={allNames} />All names</label>
+			<span class="keys">Double-click or Enter takes a perk, right-click or Delete removes it. Wheel zooms, drag moves the sky.</span>
 		</p>
 
 		<nav class="horizon" aria-label="Perk trees">
@@ -122,36 +141,57 @@
 		</nav>
 	</section>
 
-	<aside class="side">
-		{#if selected}
-			{#key selected}<PerkDetail {ed} first={selected} />{/key}
-		{:else}
-			<div class="empty">
-				<p>Pick a star to read the perk, its ranks and what it needs.</p>
-				<p class="muted">
-					Perks you take are placed at level {ed.level}. Move along the level strip above to plan another level.
-				</p>
-			</div>
-		{/if}
-	</aside>
 </div>
 
 <style>
 	.perks {
-		display: grid;
-		grid-template-columns: minmax(0, 1fr) 24rem;
 		height: 100%;
-		min-height: 0;
+		overflow-y: auto;
 	}
 
 	.sky-wrap {
 		position: relative;
 		display: grid;
-		grid-template-rows: minmax(0, 1fr) auto auto;
-		min-height: 0;
-		background:
-			radial-gradient(ellipse 55% 45% at 55% 42%, rgba(160, 150, 130, 0.1), transparent 70%),
-			rgba(0, 0, 0, 0.55);
+		grid-template-rows: minmax(0, 1fr) auto auto auto;
+		min-height: 100%;
+		isolation: isolate;
+		background: rgba(0, 0, 0, 0.6);
+	}
+
+	/* The game's nebula, dimmed and desaturated so it sits behind the stars like the rest of the UI. */
+	.sky-wrap::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		background: url('/sky/nebula.png') var(--nebula-x) 40% / auto 135% no-repeat;
+		opacity: 0.3;
+		filter: saturate(0.55);
+		transition: background-position 600ms ease-out;
+		mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, #000 30%, transparent 85%);
+	}
+
+	.caption-panel {
+		min-height: 10rem;
+		padding: 0.6rem 1.8rem 0.4rem;
+		display: grid;
+		align-content: start;
+		background: linear-gradient(transparent, rgba(0, 0, 0, 0.45));
+	}
+
+	.hint {
+		text-align: center;
+		color: var(--muted);
+		font-size: var(--t-sm);
+		margin-top: 1.4rem;
+	}
+
+	.names {
+		display: inline-flex;
+		gap: 0.4rem;
+		align-items: baseline;
+		cursor: pointer;
+		margin-left: 0.6rem;
 	}
 
 	.caption {
@@ -163,7 +203,7 @@
 	}
 
 	.caption h2 {
-		font-size: 3.4rem;
+		font-size: 2.4rem;
 		font-weight: 400;
 		color: var(--text);
 		letter-spacing: 0.02em;
@@ -186,9 +226,10 @@
 		max-width: 34ch;
 	}
 
+	/* The tree measures this box to decide how far to shrink, so it must not size itself to the tree. */
 	.canvas {
-		min-height: 0;
-		padding: 1rem 1rem 0;
+		position: relative;
+		min-height: 22rem;
 	}
 
 	.legend {
@@ -314,31 +355,8 @@
 		vertical-align: 0.1em;
 	}
 
-	.side {
-		background: var(--surface);
-		padding: 1.6rem 1.5rem;
-		overflow-y: auto;
-	}
-
-	.empty {
-		display: grid;
-		gap: 0.8rem;
-		font-family: var(--serif);
-		font-size: var(--t-lg);
-		line-height: 1.5;
-	}
-
-	.empty .muted {
-		font-size: var(--t-md);
-	}
 
 	@media (max-width: 1100px) {
-		.perks {
-			grid-template-columns: minmax(0, 1fr);
-		}
-		.sky-wrap {
-			min-height: 640px;
-		}
 		.horizon {
 			grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 		}
