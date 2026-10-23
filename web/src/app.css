@@ -1,0 +1,181 @@
+/*
+ * Styled after Untarnished UI (the modlist's interface replacer): flat, translucent black panels,
+ * warm taupe separators (#918A81), white text, white-alpha highlights, Futura Book BT.
+ * The constellations stay the one luminous thing on screen.
+ */
+
+@font-face {
+	font-family: 'Futura Book BT';
+	src: url('/fonts/FuturaBookBT.ttf') format('truetype');
+	font-display: swap;
+}
+
+:root {
+	--sky: #101113; /* page backdrop */
+	--sky-deep: #0a0b0d; /* behind the constellations */
+	--surface: rgba(0, 0, 0, 0.68); /* Untarnished window background #000000AD */
+	--surface-2: rgba(255, 255, 255, 0.06); /* widget background #FFFFFF10 */
+	--hover: rgba(255, 255, 255, 0.1); /* highlight #FFFFFF19 */
+	--selected: rgba(255, 255, 255, 0.15); /* selected #FFFFFF26 */
+	--line: rgba(145, 138, 129, 0.68); /* separator #918A81AD */
+	--line-soft: rgba(145, 138, 129, 0.28);
+	--text: #ffffff;
+	--muted: rgba(255, 255, 255, 0.62); /* disabled text alpha 0.62 */
+	--faint: rgba(255, 255, 255, 0.3);
+	--aurora: #d9c48a; /* takeable now: pale gold */
+	--starlight: #fff4d6; /* taken: warm white */
+	--gold: #fdd835; /* Untarnished player-name gold, used sparingly */
+	--error: #e57373;
+	--wolf: #c9906f;
+	--hawk: #8fb0d6;
+	--bear: #b5a27c;
+
+	--serif: 'Futura Book BT', 'Jost', 'Futura', sans-serif;
+	--sans: 'Futura Book BT', 'Jost', 'Futura', sans-serif;
+
+	--t-xs: 0.78rem;
+	--t-sm: 0.88rem;
+	--t-md: 1rem;
+	--t-lg: 1.2rem;
+	--t-xl: 1.6rem;
+	--t-xxl: 2.6rem;
+
+	--radius: 0;
+	color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	color: var(--text);
+	font-family: var(--sans);
+	font-size: 16px;
+	line-height: 1.45;
+	letter-spacing: 0.01em;
+	-webkit-font-smoothing: antialiased;
+	/* A dim, blurred scene behind the menus, like Untarnished's Gaussian-blur backdrop. */
+	background:
+		radial-gradient(ellipse 70% 50% at 70% 20%, rgba(120, 112, 98, 0.18), transparent 70%),
+		radial-gradient(ellipse 60% 60% at 15% 85%, rgba(70, 86, 110, 0.2), transparent 70%),
+		var(--sky);
+	background-attachment: fixed;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--serif);
+	font-weight: 400;
+	line-height: 1.15;
+	margin: 0;
+	letter-spacing: 0.02em;
+}
+
+p {
+	margin: 0;
+}
+
+a {
+	color: var(--text);
+}
+
+button,
+input,
+select,
+textarea {
+	font: inherit;
+	color: inherit;
+	letter-spacing: inherit;
+}
+
+button {
+	cursor: pointer;
+	background: transparent;
+	border: 1px solid var(--line);
+	border-radius: 0;
+	padding: 0.35rem 0.9rem;
+	transition: background 100ms;
+}
+
+button:hover:not(:disabled) {
+	background: var(--hover);
+}
+
+button:disabled {
+	opacity: 0.35;
+	cursor: default;
+}
+
+button.primary {
+	background: var(--selected);
+	border-color: var(--aurora);
+	color: var(--starlight);
+}
+
+button.primary:hover:not(:disabled) {
+	background: rgba(217, 196, 138, 0.22);
+}
+
+input,
+select,
+textarea {
+	background: rgba(0, 0, 0, 0.6);
+	border: 1px solid var(--line-soft);
+	border-radius: 0;
+	padding: 0.35rem 0.55rem;
+}
+
+input:focus,
+textarea:focus {
+	border-color: var(--line);
+	outline: none;
+}
+
+:focus-visible {
+	outline: 1px solid var(--starlight);
+	outline-offset: 2px;
+}
+
+/* Untarnished separator: a taupe rule that fades out at both ends. */
+.rule {
+	height: 1px;
+	border: none;
+	margin: 0;
+	background: linear-gradient(90deg, transparent, var(--line) 18%, var(--line) 82%, transparent);
+}
+
+.num {
+	font-variant-numeric: tabular-nums;
+}
+
+.muted {
+	color: var(--muted);
+}
+
+.error-text {
+	color: var(--error);
+}
+
+::selection {
+	background: rgba(217, 196, 138, 0.35);
+}
+
+* {
+	scrollbar-color: #4f4f4f transparent;
+	scrollbar-width: thin;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation: none !important;
+		transition: none !important;
+	}
+}

@@ -1,0 +1,20 @@
+{
+  "_comment": "Hand-maintained facts that are not in the plugins. Sources are listed per entry.",
+  "paragon": {
+    "source": "https://www.nexusmods.com/skyrimspecialedition/mods/120398",
+    "defaultPerks": ["Critical Charge", "Critical Rush", "Arcane Blacksmith", "Eagle Eye", "Sweep", "Power Bash", "Physician"],
+    "notes": [
+      "Combat trees use stances (Stances NG): Wolf builds bleeding, Hawk builds critical hits, Bear builds armor shred and poise.",
+      "Armor perks only need a chest piece of the matching armor type.",
+      "Unarmed (Hand to Hand) perks need both hands free.",
+      "Alchemy Intensity and Concentration scale in steps every 10 skill levels.",
+      "Sneaking costs Stamina based on worn armor; daggers have the highest base sneak attack multiplier.",
+      "Running out of Stamina applies an exhaustion debuff for 10 seconds or until half Stamina is back.",
+      "The author aimed for about 60-70 perks by level 50, enough to finish roughly five trees."
+    ]
+  },
+  "questNames": {
+    "CWObj": "Liberation of Skyrim / Reunification of Skyrim",
+    "CWSiegeObj": "Battle for Whiterun (Imperial or Stormcloak)"
+  }
+}
