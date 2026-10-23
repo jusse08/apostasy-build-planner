@@ -11,7 +11,8 @@
 		interactive?: boolean;
 		/** Name every star, not only taken, available, selected and hovered ones. */
 		allNames?: boolean;
-		onselect?: (node: TreeNode) => void;
+		/** A star was clicked, or null for a click on empty sky. */
+		onselect?: (node: TreeNode | null) => void;
 		onhover?: (node: TreeNode | null) => void;
 		ontake?: (node: TreeNode) => void;
 		ondrop?: (node: TreeNode) => void;
@@ -156,6 +157,10 @@
 		}
 	}
 
+	function deselectOnEmpty(e: MouseEvent) {
+		if (!(e.target as Element).closest('.star')) onselect?.(null);
+	}
+
 	function resetOnEmpty(e: MouseEvent) {
 		if (!(e.target as Element).closest('.star')) view = { z: 1, x: 0, y: 0 };
 	}
@@ -185,6 +190,7 @@
 	onpointerup={interactive ? up : undefined}
 	onpointercancel={interactive ? up : undefined}
 	onclickcapture={swallowAfterDrag}
+	onclick={interactive ? deselectOnEmpty : undefined}
 	ondblclick={interactive ? resetOnEmpty : undefined}
 >
 	<svg
@@ -244,13 +250,7 @@
 				onkeydown={(e) => onkey(e, n)}
 			>
 				<circle r="20" class="hit" />
-				{#if perk?.stance}
-					<circle r="12" class="stance {perk.stance.toLowerCase()}" />
-				{/if}
 				<image href="/sky/stars.png" x={-size / 2} y={-size / 2} width={size} height={size} class="sprite" />
-				{#if s.status === 'available'}
-					<circle r="5.5" class="ring" />
-				{/if}
 				{#if s.ranks > 1}
 					{#each Array(s.ranks) as _, i}
 						<circle cx={(i - (s.ranks - 1) / 2) * 6} cy="15" r="1.7" class="pip" class:on={i < s.taken} />
@@ -340,9 +340,21 @@
 		filter: grayscale(1);
 	}
 
+	/* Takeable stars breathe with a warm glow, the way the game highlights them. */
 	.available .sprite {
-		opacity: 0.85;
-		filter: grayscale(0.4);
+		animation: breathe 2.4s ease-in-out infinite;
+	}
+
+	@keyframes breathe {
+		0%,
+		100% {
+			opacity: 0.8;
+			filter: grayscale(0.3) drop-shadow(0 0 1px rgba(217, 196, 138, 0.3));
+		}
+		50% {
+			opacity: 1;
+			filter: grayscale(0) drop-shadow(0 0 5px rgba(217, 196, 138, 0.85));
+		}
 	}
 
 	.taken .sprite {
@@ -361,34 +373,10 @@
 		filter: none;
 	}
 
-	.ring {
-		fill: none;
-		stroke: var(--aurora);
-		stroke-width: 1.2;
-	}
-
-	.selected .hit,
 	.star:focus-visible .hit {
 		stroke: var(--aurora);
 		stroke-width: 1;
 		stroke-dasharray: 2 4;
-	}
-
-	.stance {
-		fill: none;
-		stroke-width: 1;
-		stroke-dasharray: 1 3;
-		stroke-linecap: round;
-	}
-
-	.stance.wolf {
-		stroke: var(--wolf);
-	}
-	.stance.hawk {
-		stroke: var(--hawk);
-	}
-	.stance.bear {
-		stroke: var(--bear);
 	}
 
 	.pip {
@@ -409,7 +397,7 @@
 		pointer-events: none;
 		paint-order: stroke;
 		stroke: rgba(10, 11, 13, 0.85);
-		stroke-width: 3px;
+		stroke-width: 1.5px;
 		stroke-linejoin: round;
 		opacity: 0;
 		transition: opacity 150ms;
@@ -449,8 +437,12 @@
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.taken .sprite {
+		.taken .sprite,
+		.available .sprite {
 			animation: none;
+		}
+		.available .sprite {
+			filter: drop-shadow(0 0 4px rgba(217, 196, 138, 0.7));
 		}
 	}
 </style>

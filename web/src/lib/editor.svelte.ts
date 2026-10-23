@@ -1,5 +1,5 @@
 import { api } from '#lib/api.ts';
-import { emptyLevel, rankChain, simulate, type Simulation } from '#lib/rules/engine.ts';
+import { emptyLevel, perkStatus, rankChain, simulate, type Simulation } from '#lib/rules/engine.ts';
 import type { Attribute, BuildRecord, BuildState, FormKey, GameModel, LevelPlan, SkillId } from '#lib/types.ts';
 
 export type SaveStatus = 'saved' | 'pending' | 'saving' | 'error';
@@ -17,6 +17,13 @@ export class BuildEditor {
 	sim: Simulation = $derived.by(() => simulate(this.game, this.build));
 	current = $derived(this.sim.levels[this.level - 1] ?? this.sim.levels.at(-1)!);
 	before = $derived(this.level > 1 ? this.sim.levels[this.level - 2] : null);
+	/** Last open level: the stored one, but never below a level that already has choices (older builds). */
+	reached = $derived.by(() => {
+		const planned = Object.entries(this.build.levels)
+			.filter(([, p]) => p.perks.length || p.attribute || Object.keys(p.skills).length)
+			.map(([l]) => Number(l));
+		return Math.min(this.build.targetLevel, Math.max(this.build.reachedLevel ?? 2, 2, ...planned));
+	});
 
 	private timer: ReturnType<typeof setTimeout> | null = null;
 
@@ -25,7 +32,8 @@ export class BuildEditor {
 		this.id = record.id;
 		this.name = record.name;
 		this.build = record.state;
-		this.level = Math.min(2, record.state.targetLevel);
+		// Without a race and class there is nothing to plan yet: start at character creation.
+		this.level = record.state.race && record.state.class ? this.reached : 1;
 	}
 
 	private plan(level: number): LevelPlan {
@@ -59,7 +67,21 @@ export class BuildEditor {
 	}
 
 	setLevel(level: number) {
-		this.level = Math.max(1, Math.min(this.build.targetLevel, level));
+		this.level = Math.max(1, Math.min(this.reached, level));
+	}
+
+	/** Next level: moves within the open ones, past the last it levels up. */
+	nextLevel() {
+		if (this.level < this.reached) this.setLevel(this.level + 1);
+		else this.levelUp();
+	}
+
+	/** Opens the next level and moves to it. */
+	levelUp() {
+		if (this.reached >= this.build.targetLevel) return;
+		this.build.reachedLevel = this.reached + 1;
+		this.level = this.build.reachedLevel;
+		this.changed();
 	}
 
 	/** Buy (+) or refund (-) skill increases at the current level. */
@@ -83,10 +105,22 @@ export class BuildEditor {
 		return this.sim.takenAt.get(key);
 	}
 
+	/** Perk points left at the current level for a node's tree; only skill trees spend them. */
+	perksLeft(first: FormKey): number {
+		if (this.game.perks[first]?.treeKind !== 'skill') return Infinity;
+		return this.current.perkPointsTotal - this.current.perkPointsSpent;
+	}
+
+	/** Next untaken rank of a tree node, if its requirements are met and a perk point is free now. */
+	takeable(first: FormKey): FormKey | null {
+		const next = rankChain(this.game, first).find((k) => this.takenAt(k) === undefined);
+		if (!next || this.perksLeft(first) <= 0) return null;
+		return perkStatus(this.game, this.sim, next, this.level) === 'available' ? next : null;
+	}
+
 	/** Takes the next untaken rank of a tree node at the current level. */
 	takeNode(first: FormKey) {
-		const chain = rankChain(this.game, first);
-		const next = chain.find((k) => this.takenAt(k) === undefined);
+		const next = this.takeable(first);
 		if (!next) return;
 		this.plan(this.level).perks.push(next);
 		this.changed();

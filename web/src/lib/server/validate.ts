@@ -23,6 +23,7 @@ export async function readBuild(request: Request): Promise<{ name: string; state
 		stone: typeof s.stone === 'string' ? s.stone : null,
 		deity: typeof s.deity === 'string' ? s.deity : null,
 		targetLevel: Math.max(1, Math.min(81, Math.floor(Number(s.targetLevel) || 30))),
+		reachedLevel: Math.max(1, Math.min(81, Math.floor(Number(s.reachedLevel) || 2))),
 		levels: s.levels as BuildState['levels'],
 		perkSources: Array.isArray(s.perkSources) ? s.perkSources.filter((x) => typeof x === 'string') : [],
 		shoutWords: Object.fromEntries(

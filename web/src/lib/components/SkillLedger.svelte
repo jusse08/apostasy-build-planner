@@ -6,6 +6,12 @@
 
 	let { ed, onpick }: { ed: BuildEditor; onpick: (skill: SkillId) => void } = $props();
 
+	let who = $derived(
+		[ed.game.races.find((r) => r.id === ed.build.race)?.name, ed.game.classes.find((c) => c.id === ed.build.class)?.name]
+			.filter(Boolean)
+			.join(' ')
+	);
+
 	const groups: { label: string; skills: SkillId[] }[] = [
 		{ label: 'Combat', skills: ['OneHanded', 'TwoHanded', 'Marksman', 'Block', 'HeavyArmor', 'Smithing'] },
 		{ label: 'Stealth', skills: ['LightArmor', 'Sneak', 'Lockpicking', 'Pickpocket', 'Speechcraft', 'Alchemy'] },
@@ -41,8 +47,14 @@
 
 <aside class="ledger">
 	<header>
-		<p class="lvl"><span class="word">Level</span> <span class="num">{ed.level}</span></p>
-		<p class="xp num">{st.xpTotal.toLocaleString('en-US')} XP from level 1</p>
+		<div class="ident">
+			<input class="title" value={ed.name} oninput={(e) => ed.rename(e.currentTarget.value)} aria-label="Build name" />
+			<p class="who">{who || 'No race or class yet'}</p>
+		</div>
+		<div class="where">
+			<p class="lvl"><span class="word">Level</span> <span class="num">{ed.level}</span></p>
+			<p class="xp num">{st.xpTotal.toLocaleString('en-US')} XP</p>
+		</div>
 	</header>
 
 	<div class="budget">
@@ -111,6 +123,47 @@
 </aside>
 
 <style>
+	/* Build name on the left, the level being planned on the right. */
+	header {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding-bottom: 0.9rem;
+		border-bottom: 1px solid var(--line-soft);
+	}
+
+	.ident {
+		display: grid;
+		gap: 0.1rem;
+		flex: 1;
+		min-width: 0;
+	}
+
+	.where {
+		text-align: right;
+		white-space: nowrap;
+	}
+
+	.title {
+		font-family: var(--serif);
+		font-size: var(--t-lg);
+		background: none;
+		border-color: transparent;
+		padding: 0.1rem 0.3rem;
+		margin-left: -0.3rem;
+		width: calc(100% + 0.3rem);
+	}
+
+	.title:hover,
+	.title:focus {
+		border-color: var(--line);
+	}
+
+	.who {
+		font-size: var(--t-xs);
+		color: var(--muted);
+	}
+
 	.ledger {
 		display: grid;
 		gap: 1.1rem;

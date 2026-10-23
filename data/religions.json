@@ -922,7 +922,7 @@
                 "runOn": "Subject",
                 "value": 24,
                 "args": {
-                  "miscStat": "-1977287198"
+                  "miscStat": "LocationsDiscovered"
                 }
               },
               {
@@ -932,7 +932,7 @@
                 "runOn": "Subject",
                 "value": 60,
                 "args": {
-                  "miscStat": "-1977287198"
+                  "miscStat": "LocationsDiscovered"
                 }
               }
             ]
@@ -950,7 +950,7 @@
                 "runOn": "Subject",
                 "value": 59,
                 "args": {
-                  "miscStat": "-1977287198"
+                  "miscStat": "LocationsDiscovered"
                 }
               },
               {
@@ -960,7 +960,7 @@
                 "runOn": "Subject",
                 "value": 100,
                 "args": {
-                  "miscStat": "-1977287198"
+                  "miscStat": "LocationsDiscovered"
                 }
               }
             ]
@@ -978,7 +978,7 @@
                 "runOn": "Subject",
                 "value": 99,
                 "args": {
-                  "miscStat": "-1977287198"
+                  "miscStat": "LocationsDiscovered"
                 }
               },
               {
@@ -988,7 +988,7 @@
                 "runOn": "Subject",
                 "value": 150,
                 "args": {
-                  "miscStat": "-1977287198"
+                  "miscStat": "LocationsDiscovered"
                 }
               }
             ]
@@ -1006,7 +1006,7 @@
                 "runOn": "Subject",
                 "value": 149,
                 "args": {
-                  "miscStat": "-1977287198"
+                  "miscStat": "LocationsDiscovered"
                 }
               }
             ]
@@ -1100,7 +1100,7 @@
                 "runOn": "Subject",
                 "value": 4,
                 "args": {
-                  "miscStat": "-1438366059"
+                  "miscStat": "DungeonsCleared"
                 }
               },
               {
@@ -1110,7 +1110,7 @@
                 "runOn": "Subject",
                 "value": 10,
                 "args": {
-                  "miscStat": "-1438366059"
+                  "miscStat": "DungeonsCleared"
                 }
               }
             ]
@@ -1128,7 +1128,7 @@
                 "runOn": "Subject",
                 "value": 9,
                 "args": {
-                  "miscStat": "-1438366059"
+                  "miscStat": "DungeonsCleared"
                 }
               },
               {
@@ -1138,7 +1138,7 @@
                 "runOn": "Subject",
                 "value": 25,
                 "args": {
-                  "miscStat": "-1438366059"
+                  "miscStat": "DungeonsCleared"
                 }
               }
             ]
@@ -1156,7 +1156,7 @@
                 "runOn": "Subject",
                 "value": 24,
                 "args": {
-                  "miscStat": "-1438366059"
+                  "miscStat": "DungeonsCleared"
                 }
               },
               {
@@ -1166,7 +1166,7 @@
                 "runOn": "Subject",
                 "value": 40,
                 "args": {
-                  "miscStat": "-1438366059"
+                  "miscStat": "DungeonsCleared"
                 }
               }
             ]
@@ -1184,7 +1184,7 @@
                 "runOn": "Subject",
                 "value": 39,
                 "args": {
-                  "miscStat": "-1438366059"
+                  "miscStat": "DungeonsCleared"
                 }
               }
             ]
@@ -1338,7 +1338,7 @@
                 "runOn": "Subject",
                 "value": 1,
                 "args": {
-                  "miscStat": "-1456433137"
+                  "miscStat": "DaedraKilled"
                 }
               },
               {
@@ -1348,7 +1348,7 @@
                 "runOn": "Subject",
                 "value": 6,
                 "args": {
-                  "miscStat": "-1456433137"
+                  "miscStat": "DaedraKilled"
                 }
               }
             ]
@@ -1366,7 +1366,7 @@
                 "runOn": "Subject",
                 "value": 5,
                 "args": {
-                  "miscStat": "-1456433137"
+                  "miscStat": "DaedraKilled"
                 }
               },
               {
@@ -1376,7 +1376,7 @@
                 "runOn": "Subject",
                 "value": 12,
                 "args": {
-                  "miscStat": "-1456433137"
+                  "miscStat": "DaedraKilled"
                 }
               }
             ]
@@ -1394,7 +1394,7 @@
                 "runOn": "Subject",
                 "value": 11,
                 "args": {
-                  "miscStat": "-1456433137"
+                  "miscStat": "DaedraKilled"
                 }
               },
               {
@@ -1404,7 +1404,7 @@
                 "runOn": "Subject",
                 "value": 20,
                 "args": {
-                  "miscStat": "-1456433137"
+                  "miscStat": "DaedraKilled"
                 }
               }
             ]
@@ -1422,7 +1422,7 @@
                 "runOn": "Subject",
                 "value": 19,
                 "args": {
-                  "miscStat": "-1456433137"
+                  "miscStat": "DaedraKilled"
                 }
               }
             ]
@@ -1744,7 +1744,7 @@
                 "runOn": "Subject",
                 "value": 49,
                 "args": {
-                  "miscStat": "-311816462"
+                  "miscStat": "Barters"
                 }
               },
               {
@@ -1754,7 +1754,7 @@
                 "runOn": "Subject",
                 "value": 100,
                 "args": {
-                  "miscStat": "-311816462"
+                  "miscStat": "Barters"
                 }
               }
             ]
@@ -1772,7 +1772,7 @@
                 "runOn": "Subject",
                 "value": 99,
                 "args": {
-                  "miscStat": "-311816462"
+                  "miscStat": "Barters"
                 }
               },
               {
@@ -1782,7 +1782,7 @@
                 "runOn": "Subject",
                 "value": 250,
                 "args": {
-                  "miscStat": "-311816462"
+                  "miscStat": "Barters"
                 }
               }
             ]
@@ -1800,7 +1800,7 @@
                 "runOn": "Subject",
                 "value": 249,
                 "args": {
-                  "miscStat": "-311816462"
+                  "miscStat": "Barters"
                 }
               },
               {
@@ -1810,7 +1810,7 @@
                 "runOn": "Subject",
                 "value": 500,
                 "args": {
-                  "miscStat": "-311816462"
+                  "miscStat": "Barters"
                 }
               }
             ]
@@ -1828,7 +1828,7 @@
                 "runOn": "Subject",
                 "value": 499,
                 "args": {
-                  "miscStat": "-311816462"
+                  "miscStat": "Barters"
                 }
               }
             ]
@@ -1954,7 +1954,7 @@
                 "runOn": "Subject",
                 "value": 24,
                 "args": {
-                  "miscStat": "-1488142717"
+                  "miscStat": "SoulGemsUsed"
                 }
               },
               {
@@ -1964,7 +1964,7 @@
                 "runOn": "Subject",
                 "value": 50,
                 "args": {
-                  "miscStat": "-1488142717"
+                  "miscStat": "SoulGemsUsed"
                 }
               }
             ]
@@ -1982,7 +1982,7 @@
                 "runOn": "Subject",
                 "value": 49,
                 "args": {
-                  "miscStat": "-1488142717"
+                  "miscStat": "SoulGemsUsed"
                 }
               },
               {
@@ -1992,7 +1992,7 @@
                 "runOn": "Subject",
                 "value": 100,
                 "args": {
-                  "miscStat": "-1488142717"
+                  "miscStat": "SoulGemsUsed"
                 }
               }
             ]
@@ -2010,7 +2010,7 @@
                 "runOn": "Subject",
                 "value": 99,
                 "args": {
-                  "miscStat": "-1488142717"
+                  "miscStat": "SoulGemsUsed"
                 }
               },
               {
@@ -2020,7 +2020,7 @@
                 "runOn": "Subject",
                 "value": 175,
                 "args": {
-                  "miscStat": "-1488142717"
+                  "miscStat": "SoulGemsUsed"
                 }
               }
             ]
@@ -2038,7 +2038,7 @@
                 "runOn": "Subject",
                 "value": 174,
                 "args": {
-                  "miscStat": "-1488142717"
+                  "miscStat": "SoulGemsUsed"
                 }
               }
             ]
@@ -2153,7 +2153,7 @@
                 "runOn": "Subject",
                 "value": 39,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               },
               {
@@ -2163,7 +2163,7 @@
                 "runOn": "Subject",
                 "value": 100,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               }
             ]
@@ -2181,7 +2181,7 @@
                 "runOn": "Subject",
                 "value": 99,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               },
               {
@@ -2191,7 +2191,7 @@
                 "runOn": "Subject",
                 "value": 175,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               }
             ]
@@ -2209,7 +2209,7 @@
                 "runOn": "Subject",
                 "value": 174,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               },
               {
@@ -2219,7 +2219,7 @@
                 "runOn": "Subject",
                 "value": 350,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               }
             ]
@@ -2237,7 +2237,7 @@
                 "runOn": "Subject",
                 "value": 349,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               }
             ]
@@ -2545,7 +2545,7 @@
                 "runOn": "Subject",
                 "value": 4,
                 "args": {
-                  "miscStat": "-860269874"
+                  "miscStat": "BooksRead"
                 }
               },
               {
@@ -2555,7 +2555,7 @@
                 "runOn": "Subject",
                 "value": 20,
                 "args": {
-                  "miscStat": "-860269874"
+                  "miscStat": "BooksRead"
                 }
               }
             ]
@@ -2573,7 +2573,7 @@
                 "runOn": "Subject",
                 "value": 19,
                 "args": {
-                  "miscStat": "-860269874"
+                  "miscStat": "BooksRead"
                 }
               },
               {
@@ -2583,7 +2583,7 @@
                 "runOn": "Subject",
                 "value": 40,
                 "args": {
-                  "miscStat": "-860269874"
+                  "miscStat": "BooksRead"
                 }
               }
             ]
@@ -2601,7 +2601,7 @@
                 "runOn": "Subject",
                 "value": 39,
                 "args": {
-                  "miscStat": "-860269874"
+                  "miscStat": "BooksRead"
                 }
               },
               {
@@ -2611,7 +2611,7 @@
                 "runOn": "Subject",
                 "value": 75,
                 "args": {
-                  "miscStat": "-860269874"
+                  "miscStat": "BooksRead"
                 }
               }
             ]
@@ -2629,7 +2629,7 @@
                 "runOn": "Subject",
                 "value": 74,
                 "args": {
-                  "miscStat": "-860269874"
+                  "miscStat": "BooksRead"
                 }
               }
             ]
@@ -2958,7 +2958,7 @@
                 "runOn": "Subject",
                 "value": 1,
                 "args": {
-                  "miscStat": "-1456433137"
+                  "miscStat": "DaedraKilled"
                 }
               },
               {
@@ -2968,7 +2968,7 @@
                 "runOn": "Subject",
                 "value": 6,
                 "args": {
-                  "miscStat": "-1456433137"
+                  "miscStat": "DaedraKilled"
                 }
               }
             ]
@@ -2986,7 +2986,7 @@
                 "runOn": "Subject",
                 "value": 5,
                 "args": {
-                  "miscStat": "-1456433137"
+                  "miscStat": "DaedraKilled"
                 }
               },
               {
@@ -2996,7 +2996,7 @@
                 "runOn": "Subject",
                 "value": 12,
                 "args": {
-                  "miscStat": "-1456433137"
+                  "miscStat": "DaedraKilled"
                 }
               }
             ]
@@ -3014,7 +3014,7 @@
                 "runOn": "Subject",
                 "value": 11,
                 "args": {
-                  "miscStat": "-1456433137"
+                  "miscStat": "DaedraKilled"
                 }
               },
               {
@@ -3024,7 +3024,7 @@
                 "runOn": "Subject",
                 "value": 20,
                 "args": {
-                  "miscStat": "-1456433137"
+                  "miscStat": "DaedraKilled"
                 }
               }
             ]
@@ -3042,7 +3042,7 @@
                 "runOn": "Subject",
                 "value": 19,
                 "args": {
-                  "miscStat": "-1456433137"
+                  "miscStat": "DaedraKilled"
                 }
               }
             ]
@@ -3179,7 +3179,7 @@
                 "runOn": "Subject",
                 "value": 39,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               },
               {
@@ -3189,7 +3189,7 @@
                 "runOn": "Subject",
                 "value": 100,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               }
             ]
@@ -3207,7 +3207,7 @@
                 "runOn": "Subject",
                 "value": 99,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               },
               {
@@ -3217,7 +3217,7 @@
                 "runOn": "Subject",
                 "value": 175,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               }
             ]
@@ -3235,7 +3235,7 @@
                 "runOn": "Subject",
                 "value": 174,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               },
               {
@@ -3245,7 +3245,7 @@
                 "runOn": "Subject",
                 "value": 350,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               }
             ]
@@ -3263,7 +3263,7 @@
                 "runOn": "Subject",
                 "value": 349,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               }
             ]
@@ -3353,7 +3353,7 @@
                 "runOn": "Subject",
                 "value": 39,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               },
               {
@@ -3363,7 +3363,7 @@
                 "runOn": "Subject",
                 "value": 100,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               }
             ]
@@ -3381,7 +3381,7 @@
                 "runOn": "Subject",
                 "value": 99,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               },
               {
@@ -3391,7 +3391,7 @@
                 "runOn": "Subject",
                 "value": 175,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               }
             ]
@@ -3409,7 +3409,7 @@
                 "runOn": "Subject",
                 "value": 174,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               },
               {
@@ -3419,7 +3419,7 @@
                 "runOn": "Subject",
                 "value": 350,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               }
             ]
@@ -3437,7 +3437,7 @@
                 "runOn": "Subject",
                 "value": 349,
                 "args": {
-                  "miscStat": "-232095437"
+                  "miscStat": "PeopleKilled"
                 }
               }
             ]
@@ -3535,7 +3535,7 @@
                 "runOn": "Subject",
                 "value": 1,
                 "args": {
-                  "miscStat": "-746821367"
+                  "miscStat": "Murders"
                 }
               },
               {
@@ -3545,7 +3545,7 @@
                 "runOn": "Subject",
                 "value": 6,
                 "args": {
-                  "miscStat": "-746821367"
+                  "miscStat": "Murders"
                 }
               }
             ]
@@ -3563,7 +3563,7 @@
                 "runOn": "Subject",
                 "value": 5,
                 "args": {
-                  "miscStat": "-746821367"
+                  "miscStat": "Murders"
                 }
               },
               {
@@ -3573,7 +3573,7 @@
                 "runOn": "Subject",
                 "value": 12,
                 "args": {
-                  "miscStat": "-746821367"
+                  "miscStat": "Murders"
                 }
               }
             ]
@@ -3591,7 +3591,7 @@
                 "runOn": "Subject",
                 "value": 11,
                 "args": {
-                  "miscStat": "-746821367"
+                  "miscStat": "Murders"
                 }
               },
               {
@@ -3601,7 +3601,7 @@
                 "runOn": "Subject",
                 "value": 20,
                 "args": {
-                  "miscStat": "-746821367"
+                  "miscStat": "Murders"
                 }
               }
             ]
@@ -3619,7 +3619,7 @@
                 "runOn": "Subject",
                 "value": 19,
                 "args": {
-                  "miscStat": "-746821367"
+                  "miscStat": "Murders"
                 }
               }
             ]
@@ -3938,7 +3938,7 @@
                 "runOn": "Subject",
                 "value": 19,
                 "args": {
-                  "miscStat": "-1026956749"
+                  "miscStat": "SoulsTrapped"
                 }
               },
               {
@@ -3948,7 +3948,7 @@
                 "runOn": "Subject",
                 "value": 40,
                 "args": {
-                  "miscStat": "-1026956749"
+                  "miscStat": "SoulsTrapped"
                 }
               }
             ]
@@ -3966,7 +3966,7 @@
                 "runOn": "Subject",
                 "value": 39,
                 "args": {
-                  "miscStat": "-1026956749"
+                  "miscStat": "SoulsTrapped"
                 }
               },
               {
@@ -3976,7 +3976,7 @@
                 "runOn": "Subject",
                 "value": 60,
                 "args": {
-                  "miscStat": "-1026956749"
+                  "miscStat": "SoulsTrapped"
                 }
               }
             ]
@@ -3994,7 +3994,7 @@
                 "runOn": "Subject",
                 "value": 59,
                 "args": {
-                  "miscStat": "-1026956749"
+                  "miscStat": "SoulsTrapped"
                 }
               },
               {
@@ -4004,7 +4004,7 @@
                 "runOn": "Subject",
                 "value": 100,
                 "args": {
-                  "miscStat": "-1026956749"
+                  "miscStat": "SoulsTrapped"
                 }
               }
             ]
@@ -4022,7 +4022,7 @@
                 "runOn": "Subject",
                 "value": 99,
                 "args": {
-                  "miscStat": "-1026956749"
+                  "miscStat": "SoulsTrapped"
                 }
               }
             ]
@@ -4127,7 +4127,7 @@
                 "runOn": "Subject",
                 "value": 1,
                 "args": {
-                  "miscStat": "-746821367"
+                  "miscStat": "Murders"
                 }
               },
               {
@@ -4137,7 +4137,7 @@
                 "runOn": "Subject",
                 "value": 6,
                 "args": {
-                  "miscStat": "-746821367"
+                  "miscStat": "Murders"
                 }
               }
             ]
@@ -4155,7 +4155,7 @@
                 "runOn": "Subject",
                 "value": 5,
                 "args": {
-                  "miscStat": "-746821367"
+                  "miscStat": "Murders"
                 }
               },
               {
@@ -4165,7 +4165,7 @@
                 "runOn": "Subject",
                 "value": 12,
                 "args": {
-                  "miscStat": "-746821367"
+                  "miscStat": "Murders"
                 }
               }
             ]
@@ -4183,7 +4183,7 @@
                 "runOn": "Subject",
                 "value": 11,
                 "args": {
-                  "miscStat": "-746821367"
+                  "miscStat": "Murders"
                 }
               },
               {
@@ -4193,7 +4193,7 @@
                 "runOn": "Subject",
                 "value": 20,
                 "args": {
-                  "miscStat": "-746821367"
+                  "miscStat": "Murders"
                 }
               }
             ]
@@ -4211,7 +4211,7 @@
                 "runOn": "Subject",
                 "value": 19,
                 "args": {
-                  "miscStat": "-746821367"
+                  "miscStat": "Murders"
                 }
               }
             ]
@@ -4367,7 +4367,7 @@
                 "runOn": "Subject",
                 "value": 9,
                 "args": {
-                  "miscStat": "-222641612"
+                  "miscStat": "PocketsPicked"
                 }
               },
               {
@@ -4377,7 +4377,7 @@
                 "runOn": "Subject",
                 "value": 25,
                 "args": {
-                  "miscStat": "-222641612"
+                  "miscStat": "PocketsPicked"
                 }
               }
             ]
@@ -4395,7 +4395,7 @@
                 "runOn": "Subject",
                 "value": 24,
                 "args": {
-                  "miscStat": "-222641612"
+                  "miscStat": "PocketsPicked"
                 }
               },
               {
@@ -4405,7 +4405,7 @@
                 "runOn": "Subject",
                 "value": 50,
                 "args": {
-                  "miscStat": "-222641612"
+                  "miscStat": "PocketsPicked"
                 }
               }
             ]
@@ -4423,7 +4423,7 @@
                 "runOn": "Subject",
                 "value": 49,
                 "args": {
-                  "miscStat": "-222641612"
+                  "miscStat": "PocketsPicked"
                 }
               },
               {
@@ -4433,7 +4433,7 @@
                 "runOn": "Subject",
                 "value": 100,
                 "args": {
-                  "miscStat": "-222641612"
+                  "miscStat": "PocketsPicked"
                 }
               }
             ]
@@ -4451,7 +4451,7 @@
                 "runOn": "Subject",
                 "value": 99,
                 "args": {
-                  "miscStat": "-222641612"
+                  "miscStat": "PocketsPicked"
                 }
               }
             ]
@@ -4903,7 +4903,7 @@
                 "runOn": "Subject",
                 "value": 5,
                 "args": {
-                  "miscStat": "-1839835289"
+                  "miscStat": "WingsPlucked"
                 }
               },
               {
@@ -4913,7 +4913,7 @@
                 "runOn": "Subject",
                 "value": 12,
                 "args": {
-                  "miscStat": "-1839835289"
+                  "miscStat": "WingsPlucked"
                 }
               }
             ]
@@ -4931,7 +4931,7 @@
                 "runOn": "Subject",
                 "value": 11,
                 "args": {
-                  "miscStat": "-1839835289"
+                  "miscStat": "WingsPlucked"
                 }
               },
               {
@@ -4941,7 +4941,7 @@
                 "runOn": "Subject",
                 "value": 36,
                 "args": {
-                  "miscStat": "-1839835289"
+                  "miscStat": "WingsPlucked"
                 }
               }
             ]
@@ -4959,7 +4959,7 @@
                 "runOn": "Subject",
                 "value": 35,
                 "args": {
-                  "miscStat": "-1839835289"
+                  "miscStat": "WingsPlucked"
                 }
               },
               {
@@ -4969,7 +4969,7 @@
                 "runOn": "Subject",
                 "value": 72,
                 "args": {
-                  "miscStat": "-1839835289"
+                  "miscStat": "WingsPlucked"
                 }
               }
             ]
@@ -4987,7 +4987,7 @@
                 "runOn": "Subject",
                 "value": 71,
                 "args": {
-                  "miscStat": "-1839835289"
+                  "miscStat": "WingsPlucked"
                 }
               }
             ]
@@ -5064,7 +5064,7 @@
                 "runOn": "Subject",
                 "value": 24,
                 "args": {
-                  "miscStat": "-1488142717"
+                  "miscStat": "SoulGemsUsed"
                 }
               },
               {
@@ -5074,7 +5074,7 @@
                 "runOn": "Subject",
                 "value": 50,
                 "args": {
-                  "miscStat": "-1488142717"
+                  "miscStat": "SoulGemsUsed"
                 }
               }
             ]
@@ -5092,7 +5092,7 @@
                 "runOn": "Subject",
                 "value": 49,
                 "args": {
-                  "miscStat": "-1488142717"
+                  "miscStat": "SoulGemsUsed"
                 }
               },
               {
@@ -5102,7 +5102,7 @@
                 "runOn": "Subject",
                 "value": 100,
                 "args": {
-                  "miscStat": "-1488142717"
+                  "miscStat": "SoulGemsUsed"
                 }
               }
             ]
@@ -5120,7 +5120,7 @@
                 "runOn": "Subject",
                 "value": 99,
                 "args": {
-                  "miscStat": "-1488142717"
+                  "miscStat": "SoulGemsUsed"
                 }
               },
               {
@@ -5130,7 +5130,7 @@
                 "runOn": "Subject",
                 "value": 175,
                 "args": {
-                  "miscStat": "-1488142717"
+                  "miscStat": "SoulGemsUsed"
                 }
               }
             ]
@@ -5148,7 +5148,7 @@
                 "runOn": "Subject",
                 "value": 174,
                 "args": {
-                  "miscStat": "-1488142717"
+                  "miscStat": "SoulGemsUsed"
                 }
               }
             ]
@@ -5581,7 +5581,7 @@
                 "runOn": "Subject",
                 "value": 19,
                 "args": {
-                  "miscStat": "-1252602798"
+                  "miscStat": "SneakAttacks"
                 }
               },
               {
@@ -5591,7 +5591,7 @@
                 "runOn": "Subject",
                 "value": 50,
                 "args": {
-                  "miscStat": "-1252602798"
+                  "miscStat": "SneakAttacks"
                 }
               }
             ]
@@ -5609,7 +5609,7 @@
                 "runOn": "Subject",
                 "value": 49,
                 "args": {
-                  "miscStat": "-1252602798"
+                  "miscStat": "SneakAttacks"
                 }
               },
               {
@@ -5619,7 +5619,7 @@
                 "runOn": "Subject",
                 "value": 90,
                 "args": {
-                  "miscStat": "-1252602798"
+                  "miscStat": "SneakAttacks"
                 }
               }
             ]
@@ -5637,7 +5637,7 @@
                 "runOn": "Subject",
                 "value": 89,
                 "args": {
-                  "miscStat": "-1252602798"
+                  "miscStat": "SneakAttacks"
                 }
               },
               {
@@ -5647,7 +5647,7 @@
                 "runOn": "Subject",
                 "value": 150,
                 "args": {
-                  "miscStat": "-1252602798"
+                  "miscStat": "SneakAttacks"
                 }
               }
             ]
@@ -5665,7 +5665,7 @@
                 "runOn": "Subject",
                 "value": 149,
                 "args": {
-                  "miscStat": "-1252602798"
+                  "miscStat": "SneakAttacks"
                 }
               }
             ]
@@ -5707,6 +5707,6 @@
   "meta": {
     "profile": "Apostasy",
     "plugins": 3407,
-    "generatedAt": "2026-10-23T20:23:09.9441900Z"
+    "generatedAt": "2026-10-23T21:09:49.8574984Z"
   }
 }

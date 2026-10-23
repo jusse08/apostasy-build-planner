@@ -11,7 +11,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>Apostasy planner</title>
+	<title>Apostasy Build Planner</title>
 </svelte:head>
 
 {@render children()}

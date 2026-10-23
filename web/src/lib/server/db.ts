@@ -56,8 +56,12 @@ function toRecord(row: Row): BuildRecord {
 	};
 }
 
-export function listBuilds(): BuildSummary[] {
-	const rows = open().prepare('SELECT * FROM builds ORDER BY updated_at DESC').all() as unknown as Row[];
+/** Summaries of the given builds only: there is no way to list everyone's builds. */
+export function listBuilds(ids: string[]): BuildSummary[] {
+	if (!ids.length) return [];
+	const rows = open()
+		.prepare(`SELECT * FROM builds WHERE id IN (${ids.map(() => '?').join(', ')}) ORDER BY updated_at DESC`)
+		.all(...ids) as unknown as Row[];
 	return rows.map((r) => {
 		const s = JSON.parse(r.state) as BuildState;
 		return { id: r.id, name: r.name, race: s.race, class: s.class, targetLevel: s.targetLevel, updatedAt: r.updated_at };

@@ -9,8 +9,7 @@
 		{ id: 'guild', label: 'Guilds and the civil war' },
 		{ id: 'side', label: 'Side quests' },
 		{ id: 'dlc', label: 'Dawnguard, Dragonborn and Wyrmstooth' },
-		{ id: 'other', label: 'Items and other sources' },
-		{ id: 'daedric', label: 'Daedric quests' }
+		{ id: 'other', label: 'Items and other sources' }
 	];
 
 	let total = $derived(
@@ -38,25 +37,21 @@
 
 	<div class="cols">
 		{#each groups as g (g.id)}
-			{@const items = ed.game.perkSources.filter((s) => s.group === g.id)}
+			<!-- Awards the modlist switches off (Daedric quests) aren't worth showing. -->
+			{@const items = ed.game.perkSources.filter((s) => s.group === g.id && s.enabled)}
 			{#if items.length}
 				<section>
 					<div class="head">
 						<h3>{g.label}</h3>
-						{#if g.id !== 'daedric'}
-							<button class="mini" onclick={() => setAll(g.id, true)}>All</button>
-							<button class="mini" onclick={() => setAll(g.id, false)}>None</button>
-						{/if}
+						<button class="mini" onclick={() => setAll(g.id, true)}>All</button>
+						<button class="mini" onclick={() => setAll(g.id, false)}>None</button>
 					</div>
-					{#if g.id === 'daedric'}
-						<p class="note">Apostasy turns these awards off in Quests Award Perk Points.</p>
-					{/if}
 					<ul>
 						{#each items as s (s.id)}
 							{@const on = ed.build.perkSources.includes(s.id)}
-							<li class:off={!s.enabled} class:on>
+							<li class:on>
 								<label>
-									<input type="checkbox" checked={on} disabled={!s.enabled} onchange={() => ed.toggleSource(s.id)} />
+									<input type="checkbox" checked={on} onchange={() => ed.toggleSource(s.id)} />
 									<span class="name">{s.name}</span>
 									<span class="pts num">+{s.points}</span>
 								</label>
@@ -141,10 +136,6 @@
 
 	li:hover {
 		background: linear-gradient(90deg, transparent, var(--hover) 10%, var(--hover) 90%, transparent);
-	}
-
-	li.off {
-		opacity: 0.45;
 	}
 
 	label {

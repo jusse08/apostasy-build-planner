@@ -66,7 +66,6 @@
 			<h2>{tree.name}</h2>
 			{#if tree.skill}
 				<p class="value num">{ed.current.skills[tree.skill]}<span> / {ed.current.skillCap}</span></p>
-				<p class="sub">skill at level {ed.level} and its cap</p>
 			{:else if tree.kind === 'dragonborn'}
 				<p class="sub">Bought with absorbed dragon souls, not perk points.</p>
 			{:else}
@@ -81,7 +80,7 @@
 				{nodeInfo}
 				{selected}
 				{allNames}
-				onselect={(n) => (selected = n.perk)}
+				onselect={(n) => (selected = n?.perk ?? null)}
 				onhover={(n) => (hovered = n?.perk ?? null)}
 				ontake={(n) => ed.takeNode(n.perk!)}
 				ondrop={(n) => ed.dropNode(n.perk!)}
@@ -91,20 +90,17 @@
 		<div class="caption-panel" aria-live="polite">
 			{#if hovered ?? selected}
 				{#key hovered ?? selected}<PerkPanel {ed} first={(hovered ?? selected)!} preview={!!hovered && hovered !== selected} />{/key}
-			{:else}
-				<p class="hint">Pick a star to read the perk. Perks you take are placed at level {ed.level}.</p>
 			{/if}
 		</div>
 
 		<p class="legend">
-			<span><i class="dot taken"></i>taken</span>
-			<span><i class="dot available"></i>available now</span>
-			<span><i class="dot locked"></i>locked</span>
-			<span><i class="ring wolf"></i>Wolf stance</span>
-			<span><i class="ring hawk"></i>Hawk stance</span>
-			<span><i class="ring bear"></i>Bear stance</span>
 			<label class="names"><input type="checkbox" bind:checked={allNames} />All names</label>
-			<span class="keys">Double-click or Enter takes a perk, right-click or Delete removes it. Wheel zooms, drag moves the sky.</span>
+			<span class="keys" title="Keyboard: Enter takes the focused perk, Delete removes it.">
+				<span><i class="icon" style="--icon: url(/icons/mouse1.png)"></i><i class="icon" style="--icon: url(/icons/mouse1.png)"></i> take</span>
+				<span><i class="icon" style="--icon: url(/icons/mouse2.png)"></i> remove</span>
+				<span><i class="icon wide" style="--icon: url(/icons/wheel.png)"></i> zoom</span>
+				<span><i class="icon" style="--icon: url(/icons/mouse1.png)"></i> drag to move</span>
+			</span>
 		</p>
 
 		<nav class="horizon" aria-label="Perk trees">
@@ -171,19 +167,14 @@
 		mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, #000 30%, transparent 85%);
 	}
 
+	/* Fixed height: the sky measures the space left, so a longer description must not resize it. */
 	.caption-panel {
-		min-height: 10rem;
+		height: 12rem;
+		overflow-y: auto;
 		padding: 0.6rem 1.8rem 0.4rem;
 		display: grid;
 		align-content: start;
 		background: linear-gradient(transparent, rgba(0, 0, 0, 0.45));
-	}
-
-	.hint {
-		text-align: center;
-		color: var(--muted);
-		font-size: var(--t-sm);
-		margin-top: 1.4rem;
 	}
 
 	.names {
@@ -242,41 +233,32 @@
 	}
 
 	.keys {
+		display: flex;
+		gap: 1.1rem;
 		margin-left: auto;
 	}
 
-	.dot,
-	.ring {
-		display: inline-block;
-		width: 9px;
-		height: 9px;
-		border-radius: 50%;
-		margin-right: 0.35rem;
-		vertical-align: -1px;
+	.keys > span {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.3rem;
 	}
-	.dot.taken {
-		background: var(--starlight);
-		box-shadow: 0 0 6px var(--starlight);
+
+	.keys .icon {
+		width: 2.3em;
+		height: 2.3em;
+		vertical-align: middle;
 	}
-	.dot.available {
-		border: 2px solid var(--aurora);
+
+	/* The wheel image is 133x66 where the others are square: same height, its own width. */
+	.keys .icon.wide {
+		width: calc(2.3em * 133 / 66);
 	}
-	.dot.locked {
-		background: #6f6b65;
-		transform: scale(0.7);
+
+	.keys .icon + .icon {
+		margin-left: -0.3rem;
 	}
-	.ring {
-		border: 1px dotted;
-	}
-	.ring.wolf {
-		border-color: var(--wolf);
-	}
-	.ring.hawk {
-		border-color: var(--hawk);
-	}
-	.ring.bear {
-		border-color: var(--bear);
-	}
+
 
 	.horizon {
 		display: grid;

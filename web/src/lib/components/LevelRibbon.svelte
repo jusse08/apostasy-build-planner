@@ -7,31 +7,44 @@
 </script>
 
 <nav class="ribbon" aria-label="Levels">
-	<button class="step" onclick={() => ed.setLevel(ed.level - 1)} disabled={ed.level <= 1} aria-label="Previous level">‹</button>
+	<button class="step" onclick={() => ed.setLevel(ed.level - 1)} disabled={ed.level <= 1} aria-label="Previous level"
+		><i class="icon" style="--icon: url(/icons/stepper-left.png)"></i></button
+	>
 	<ol>
 		{#each levels as st (st.level)}
 			{@const plan = ed.build.levels[st.level]}
 			{@const perks = plan?.perks.length ?? 0}
+			{@const next = st.level === ed.reached + 1}
 			<li>
 				<button
 					class="cell"
+					class:next
+					class:closed={st.level > ed.reached}
+					disabled={st.level > ed.reached + 1}
+					title={next ? `Level up to ${st.level}` : undefined}
 					class:current={st.level === ed.level}
 					class:issue={st.issues.length > 0}
 					class:planned={perks > 0 || Object.keys(plan?.skills ?? {}).length > 0}
-					onclick={() => ed.setLevel(st.level)}
-					aria-label="Level {st.level}{st.issues.length ? ', has problems' : ''}"
+					onclick={() => (next ? ed.levelUp() : ed.setLevel(st.level))}
+					aria-label={next ? `Level up to ${st.level}` : `Level ${st.level}${st.issues.length ? ', has problems' : ''}`}
 					aria-current={st.level === ed.level ? 'step' : undefined}
 				>
 					<span class="n num">{st.level}</span>
-					<span class="dots" aria-hidden="true">{#each Array(Math.min(perks, 3)) as _}<i></i>{/each}</span>
 				</button>
 			</li>
 		{/each}
 	</ol>
-	<button class="step" onclick={() => ed.setLevel(ed.level + 1)} disabled={ed.level >= ed.build.targetLevel} aria-label="Next level">›</button>
-	<label class="target">
-		<span>Plan to level</span>
+	<button
+		class="step"
+		onclick={() => ed.nextLevel()}
+		disabled={ed.level >= ed.build.targetLevel}
+		aria-label={ed.level < ed.reached ? 'Next level' : 'Level up'}
+		title={ed.level < ed.reached ? 'Next level' : 'Level up'}
+		><i class="icon" style="--icon: url(/icons/stepper-right.png)"></i></button
+	>
+	<label class="target" title="Plan to level">
 		<input
+			aria-label="Plan to level"
 			type="number"
 			min="1"
 			max="81"
@@ -54,8 +67,8 @@
 	.step {
 		background: none;
 		border: none;
-		font-size: 1.3rem;
-		line-height: 1;
+		font-size: 0.8rem;
+		display: flex;
 		color: var(--muted);
 		padding: 0.2rem 0.4rem;
 	}
@@ -68,7 +81,6 @@
 		overflow-x: auto;
 		flex: 1;
 		min-width: 0;
-		scrollbar-width: thin;
 	}
 
 	.cell {
@@ -76,7 +88,7 @@
 		display: grid;
 		justify-items: center;
 		min-width: 2rem;
-		padding: 0.25rem 0.2rem 0.3rem;
+		padding: 0.4rem 0.2rem;
 		background: none;
 		border: none;
 		border-radius: 0;
@@ -90,6 +102,26 @@
 
 	.cell.planned {
 		color: var(--text);
+	}
+
+	.cell.closed {
+		color: rgba(255, 255, 255, 0.15);
+		cursor: default;
+	}
+
+	/* The first closed level is the "level up" button. */
+	.cell.next {
+		color: var(--muted);
+		cursor: pointer;
+		box-shadow: inset 0 0 0 1px var(--line-soft);
+	}
+
+	.cell.next .n::before {
+		content: '+';
+	}
+
+	.cell.next:hover {
+		color: var(--gold);
 	}
 
 	.cell.current {
@@ -106,19 +138,6 @@
 		color: var(--error);
 	}
 
-	.dots {
-		display: flex;
-		gap: 2px;
-		height: 4px;
-		margin-top: 2px;
-	}
-
-	.dots i {
-		width: 4px;
-		height: 4px;
-		border-radius: 50%;
-		background: var(--starlight);
-	}
 
 
 	.target {

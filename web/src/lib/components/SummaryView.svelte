@@ -1,56 +1,145 @@
 <script lang="ts">
 	import type { BuildEditor } from '#lib/editor.svelte.ts';
+	import { rankChain, skillName } from '#lib/rules/engine.ts';
+	import type { FormKey } from '#lib/types.ts';
 
-	let { ed, ongoto }: { ed: BuildEditor; ongoto: (level: number) => void } = $props();
+	let { ed, ongoto }: { ed: BuildEditor; ongoto: (level: number, tree?: string) => void } = $props();
 
-	let last = $derived(ed.sim.levels.at(-1)!);
-	let byLevel = $derived(
-		ed.sim.levels
-			.map((st) => ({ level: st.level, perks: ed.build.levels[st.level]?.perks ?? [], issues: st.issues }))
-			.filter((x) => x.perks.length || x.issues.length)
+	// The whole open plan, independently of the level being edited.
+	let last = $derived(ed.sim.levels[ed.reached - 1]);
+	let issues = $derived(ed.sim.issues.filter((i) => i.level <= last.level));
+	let race = $derived(ed.game.races.find((r) => r.id === ed.build.race));
+	let cls = $derived(ed.game.classes.find((c) => c.id === ed.build.class));
+	let stone = $derived(ed.game.stones.find((s) => s.id === ed.build.stone));
+	let deity = $derived(ed.game.deities.find((d) => d.id === ed.build.deity));
+	let topSkills = $derived(
+		[...ed.game.skills]
+			.filter((s) => last.skills[s.id] > ed.game.leveling.classSkill.base)
+			.sort((a, b) => last.skills[b.id] - last.skills[a.id])
+			.slice(0, 6)
 	);
-	let topSkills = $derived([...ed.game.skills].sort((a, b) => last.skills[b.id] - last.skills[a.id]));
+	let byLevel = $derived(ed.sim.levels.filter((st) => st.level <= last.level));
+	let shouts = $derived(ed.game.shouts.filter((s) => (ed.build.shoutWords[s.id] ?? 0) > 0));
 	let meditations = $derived(ed.game.shouts.filter((s) => s.meditation && ed.build.meditations.includes(s.id)));
+
+	let ranks = $derived.by(() => {
+		const labels = new Map<FormKey, string>();
+		for (const tree of ed.game.trees) {
+			for (const node of tree.nodes) {
+				if (!node.perk) continue;
+				const chain = rankChain(ed.game, node.perk);
+				chain.forEach((key, i) => labels.set(key,
+					`${ed.game.perks[key].name}${chain.length > 1 ? ` ${i + 1}/${chain.length}` : ''}`));
+			}
+		}
+		return labels;
+	});
+
+	let perkGroups = $derived.by(() => {
+		const shown = new Set<FormKey>();
+		const groups = ed.game.trees.map((tree) => {
+			const perks = tree.nodes.flatMap((node) => {
+				if (!node.perk) return [];
+				const chain = rankChain(ed.game, node.perk);
+				const taken = chain.filter((key) => last.perksTaken.has(key) && !shown.has(key));
+				if (!taken.length) return [];
+				taken.forEach((key) => shown.add(key));
+				return [{
+					key: node.perk,
+					name: ed.game.perks[node.perk].name,
+					rank: chain.length > 1 ? `${taken.length}/${chain.length}` : ''
+				}];
+			});
+			return { id: tree.id, name: tree.name, perks };
+		}).filter((group) => group.perks.length);
+		const other = [...last.perksTaken].filter((key) => !shown.has(key)).map((key) => ({
+			key, name: ed.game.perks[key]?.name ?? key, rank: ''
+		}));
+		if (other.length) groups.push({ id: 'other', name: 'Other perks', perks: other });
+		return groups;
+	});
+
+	function perkLabel(key: FormKey): string {
+		return ranks.get(key) ?? ed.game.perks[key]?.name ?? key;
+	}
+
+	function treeFor(perk?: FormKey, skill?: string): string | undefined {
+		return (perk ? ed.game.perks[perk]?.tree : null)
+			?? ed.game.skills.find((s) => s.id === skill)?.tree;
+	}
 </script>
 
 <div class="summary">
-	<section class="status">
-		<h2>At level {last.level}</h2>
-		{#if ed.sim.issues.length === 0}
-			<p class="ok">The build adds up: every level has the points it spends and every perk's requirements are met.</p>
-		{:else}
-			<p class="error-text">{ed.sim.issues.length} {ed.sim.issues.length === 1 ? 'problem' : 'problems'} to fix. Click a level to jump there.</p>
-		{/if}
-		<p class="num facts">
-			<span><strong>{last.perkPointsSpent}</strong> of {last.perkPointsTotal} perk points used</span>
-			<span>{last.perkPointsTotal - ed.sim.bonusPerkPoints} from levels, {ed.sim.bonusPerkPoints} from quests and abilities</span>
-			<span><strong>{last.skillPointsLeft}</strong> skill points unspent</span>
+	<header>
+		<p class="eyebrow num">Build overview · through level {last.level}</p>
+		<h2>{ed.name}</h2>
+		<p class="identity">
+			<span><span class="muted">Race</span> {race?.name ?? 'Not chosen'}</span>
+			<span><span class="muted">Class</span> {cls?.name ?? 'Not chosen'}</span>
+			<span><span class="muted">Stone</span> {stone?.name ?? 'Not chosen'}</span>
+			<span><span class="muted">Deity</span> {deity?.name ?? 'Not chosen'}</span>
 		</p>
-	</section>
+		{#if topSkills.length}
+			<p class="main-skills num"><span class="muted">Main skills</span> {topSkills.map((s) => `${s.name} ${last.skills[s.id]}`).join(' · ')}</p>
+		{/if}
+	</header>
 	<hr class="rule" />
+
+	<section class="status" aria-label="Build validation">
+		{#if issues.length === 0}
+			<p class="ok">No planning problems through level {last.level}.</p>
+		{:else}
+			<p class="error-text">{issues.length} {issues.length === 1 ? 'problem' : 'problems'} to fix. Follow the marked levels below.</p>
+		{/if}
+	</section>
 
 	<div class="cols">
 		<section>
-			<h3>Skills</h3>
-			<ul class="skills num">
-				{#each topSkills as s (s.id)}
-					<li><span>{s.name}</span><span class="bar"><i style="width: {last.skills[s.id]}%"></i></span><span>{last.skills[s.id]}</span></li>
-				{/each}
-			</ul>
+			<h3>Perks by tree</h3>
+			{#if perkGroups.length === 0}
+				<p class="muted">No perks planned yet.</p>
+			{:else}
+				<dl class="trees">
+					{#each perkGroups as group (group.id)}
+						<div>
+							<dt>{group.name}</dt>
+							<dd>
+								{#each group.perks as perk, i (perk.key)}
+									{#if i}, {/if}<span>{perk.name}{#if perk.rank}<span class="rank num">&nbsp;{perk.rank}</span>{/if}</span>
+								{/each}
+							</dd>
+						</div>
+					{/each}
+				</dl>
+			{/if}
 		</section>
 
 		<section>
 			<h3>Level by level</h3>
-			{#if byLevel.length === 0}
-				<p class="muted">No perks yet. Open Perks and pick a level on the strip at the top.</p>
-			{/if}
 			<ol class="timeline">
 				{#each byLevel as row (row.level)}
-					<li>
-						<button class="lvl num" onclick={() => ongoto(row.level)}>{row.level}</button>
+					{@const plan = ed.build.levels[row.level]}
+					{@const firstIssue = row.issues[0]}
+					<li class:problem={row.issues.length > 0}>
+						<button class="lvl num"
+							aria-label={`Go to level ${row.level}${row.issues.length ? ', has planning problems' : ''}`}
+							onclick={() => ongoto(row.level, treeFor(firstIssue?.perk, firstIssue?.skill) ?? treeFor(plan?.perks[0]))}
+						>{row.level}</button>
 						<div>
-							{#if row.perks.length}<p>{row.perks.map((k) => ed.game.perks[k]?.name ?? k).join(', ')}</p>{/if}
-							{#each row.issues as i}<p class="error-text small">{i.message}</p>{/each}
+							{#if row.level === 1}<p class="muted">Character creation</p>{/if}
+							{#if plan?.perks.length}<p>{plan.perks.map(perkLabel).join(', ')}</p>{/if}
+							{#if plan?.attribute || Object.keys(plan?.skills ?? {}).length}
+								<p class="muted small num">
+									{[plan?.attribute,
+										...Object.entries(plan?.skills ?? {}).map(([skill, gain]) => `${skillName(ed.game, skill)} +${gain}`)
+									].filter(Boolean).join(' · ')}
+								</p>
+							{:else if row.level > 1 && !plan?.perks.length}
+								<p class="muted small">No choices planned.</p>
+							{/if}
+							{#each row.issues as issue}
+								<button class="issue small" onclick={() => ongoto(row.level, treeFor(issue.perk, issue.skill))}>{issue.message}</button>
+							{/each}
 						</div>
 					</li>
 				{/each}
@@ -58,25 +147,37 @@
 		</section>
 	</div>
 
-	{#if meditations.length}
-		<section>
-			<h3>Meditations · {meditations.length} of {ed.game.maxMeditations}</h3>
-			<ul class="meds">
-				{#each meditations as s (s.id)}
-					<li><span>{s.name}</span><span class="muted">{s.meditation}</span></li>
-				{/each}
-			</ul>
-		</section>
+	{#if shouts.length || meditations.length}
+		<hr class="rule" />
+		<div class="cols">
+			{#if shouts.length}
+				<section>
+					<h3>Shouts</h3>
+					<ul class="shout-list">
+						{#each shouts as shout (shout.id)}
+							<li>{shout.name} <span class="muted num">{ed.build.shoutWords[shout.id]}/{shout.words.length} words</span></li>
+						{/each}
+					</ul>
+				</section>
+			{/if}
+			{#if meditations.length}
+				<section>
+					<h3>Meditations · {meditations.length} of {ed.game.maxMeditations}</h3>
+					<ul class="meds">
+						{#each meditations as shout (shout.id)}
+							<li><p>{shout.name}</p><p class="muted">{shout.meditation}</p></li>
+						{/each}
+					</ul>
+				</section>
+			{/if}
+		</div>
 	{/if}
 
-	<section>
-		<h3>Notes</h3>
-		<textarea
-			rows="6"
-			value={ed.build.notes}
+	<section class="notes">
+		<h3><label for="build-notes">Notes</label></h3>
+		<textarea id="build-notes" rows="6" value={ed.build.notes}
 			oninput={(e) => ed.set('notes', e.currentTarget.value)}
-			placeholder="Play style, quest order, gear to look for"
-		></textarea>
+			placeholder="Play style, quest order, gear to look for"></textarea>
 	</section>
 </div>
 
@@ -89,126 +190,83 @@
 		gap: 1.4rem;
 		align-content: start;
 		background: rgba(0, 0, 0, 0.35);
+		overflow-wrap: anywhere;
+	}
+
+	.eyebrow {
+		color: var(--muted);
+		font-size: var(--t-sm);
+		margin-bottom: 0.4rem;
 	}
 
 	h2 {
 		font-size: var(--t-xxl);
-		margin-bottom: 0.5rem;
+		margin-bottom: 0.8rem;
 	}
 
 	h3 {
-		font-size: var(--t-xs);
-		letter-spacing: 0.08em;
-		color: var(--faint);
-		margin-bottom: 0.6rem;
-	}
-
-	.ok {
-		color: var(--aurora);
-	}
-
-	.facts {
-		display: flex;
-		align-items: baseline;
-		flex-wrap: wrap;
-		gap: 0.4rem 1.6rem;
-		margin-top: 0.6rem;
-		color: var(--muted);
 		font-size: var(--t-sm);
+		letter-spacing: 0.06em;
+		color: var(--muted);
+		margin-bottom: 0.85rem;
 	}
 
-	.facts strong {
-		color: var(--text);
-		font-weight: 400;
-		font-size: var(--t-lg);
-	}
+	.identity { display: flex; flex-wrap: wrap; gap: 0.35rem 1.4rem; }
+	.identity .muted { margin-right: 0.3rem; }
+	.main-skills { margin-top: 0.65rem; font-size: var(--t-sm); }
+	.main-skills > span { margin-right: 0.5rem; }
+	.ok, .rank { color: var(--aurora); }
+	.status, .small { font-size: var(--t-sm); }
 
 	.cols {
 		display: grid;
-		grid-template-columns: minmax(16rem, 26rem) minmax(0, 1fr);
-		gap: 3rem;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+		gap: 2.5rem;
+		max-width: 78rem;
 	}
 
-	.skills {
+	.trees { margin: 0; display: grid; gap: 1rem; }
+	.trees dt { color: var(--starlight); margin-bottom: 0.2rem; }
+	.trees dd { margin: 0; color: var(--muted); line-height: 1.65; }
+	.rank { white-space: nowrap; }
+
+	.timeline, .shout-list, .meds {
 		list-style: none;
 		padding: 0;
 		margin: 0;
 		display: grid;
-		gap: 0.25rem;
-		font-size: var(--t-sm);
-	}
-
-	.skills li {
-		display: grid;
-		grid-template-columns: 8.5rem 1fr 2.2rem;
-		gap: 0.7rem;
-		align-items: center;
-	}
-
-	.skills li span:last-child {
-		text-align: right;
-	}
-
-	.bar {
-		height: 3px;
-		background: rgba(255, 255, 255, 0.08);
-	}
-
-	.bar i {
-		display: block;
-		height: 100%;
-		background: var(--starlight);
-	}
-
-	.timeline {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		display: grid;
-		gap: 0.45rem;
+		gap: 0.65rem;
 	}
 
 	.timeline li {
 		display: grid;
-		grid-template-columns: 2.8rem 1fr;
+		grid-template-columns: 2.8rem minmax(0, 1fr);
 		gap: 0.7rem;
 		align-items: baseline;
 	}
 
-	.lvl {
-		padding: 0.05rem 0.4rem;
-		border-color: var(--line-soft);
-	}
-
-	.small {
-		font-size: var(--t-sm);
-	}
-
-	.meds {
-		list-style: none;
+	.lvl { padding: 0.05rem 0.4rem; border-color: var(--line-soft); }
+	.problem .lvl { color: var(--error); border-color: var(--error); }
+	.issue {
+		display: block;
+		text-align: left;
+		color: var(--error);
 		padding: 0;
-		margin: 0;
-		display: grid;
-		gap: 0.3rem;
-		font-size: var(--t-sm);
-		max-width: 60rem;
+		border: 0;
+		margin-top: 0.2rem;
 	}
+	.issue:hover { text-decoration: underline; }
+	.shout-list, .meds { font-size: var(--t-sm); }
+	.shout-list .muted { margin-left: 0.4rem; white-space: nowrap; }
+	.meds { gap: 0.8rem; }
+	.notes { max-width: 78rem; }
+	textarea { width: 100%; line-height: 1.5; }
 
-	.meds li {
-		display: grid;
-		grid-template-columns: 11rem 1fr;
-		gap: 0.7rem;
+	@media (max-width: 1200px) {
+		.cols { grid-template-columns: minmax(0, 1fr); gap: 1.8rem; }
 	}
-
-	textarea {
-		width: 100%;
-		max-width: 60rem;
-		line-height: 1.5;
-	}
-
-	@media (max-width: 900px) {
-		.cols {
-			grid-template-columns: 1fr;
-		}
+	@media (max-width: 600px) {
+		.summary { padding: 1.3rem 1rem 2rem; height: auto; }
+		h2 { font-size: var(--t-xl); }
 	}
 </style>

@@ -171,6 +171,8 @@ export interface BuildState {
 	stone: string | null;
 	deity: string | null;
 	targetLevel: number;
+	/** Highest level opened so far; levels are opened one at a time with "level up". */
+	reachedLevel: number;
 	levels: Record<number, LevelPlan>;
 	perkSources: string[]; // ids of quests / items whose perk points are counted
 	shoutWords: Record<string, number>; // shout id -> words learned (0-3, learned in order)

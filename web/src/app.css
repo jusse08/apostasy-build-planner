@@ -10,6 +10,13 @@
 	font-display: swap;
 }
 
+/* The logo's face, for headings: short titles only, lowercase letters are small caps. */
+@font-face {
+	font-family: 'Trajan Pro';
+	src: url('/fonts/TrajanPro.otf') format('opentype');
+	font-display: swap;
+}
+
 :root {
 	--sky: #101113; /* page backdrop */
 	--sky-deep: #0a0b0d; /* behind the constellations */
@@ -26,12 +33,10 @@
 	--starlight: #fff4d6; /* taken: warm white */
 	--gold: #fdd835; /* Untarnished player-name gold, used sparingly */
 	--error: #e57373;
-	--wolf: #c9906f;
-	--hawk: #8fb0d6;
-	--bear: #b5a27c;
 
 	--serif: 'Futura Book BT', 'Jost', 'Futura', sans-serif;
 	--sans: 'Futura Book BT', 'Jost', 'Futura', sans-serif;
+	--display: 'Trajan Pro', 'Futura Book BT', 'Jost', serif;
 
 	--t-xs: 0.78rem;
 	--t-sm: 0.88rem;
@@ -71,7 +76,7 @@ body {
 h1,
 h2,
 h3 {
-	font-family: var(--serif);
+	font-family: var(--display);
 	font-weight: 400;
 	line-height: 1.15;
 	margin: 0;
@@ -220,6 +225,16 @@ input[type='checkbox']:checked:focus {
 	background: var(--aurora);
 }
 
+/* An Untarnished icon in the current text colour: <i class="icon" style="--icon: url(/icons/wheel.png)"></i> */
+.icon {
+	display: inline-block;
+	width: 1.25em;
+	height: 1.25em;
+	vertical-align: -0.3em;
+	background: currentColor;
+	mask: var(--icon) center / contain no-repeat;
+}
+
 input:-webkit-autofill {
 	-webkit-text-fill-color: var(--text);
 	-webkit-box-shadow: 0 0 0 100px #16171a inset;
@@ -255,9 +270,32 @@ input:-webkit-autofill {
 	background: rgba(217, 196, 138, 0.35);
 }
 
-* {
-	scrollbar-color: #4f4f4f transparent;
-	scrollbar-width: thin;
+/* Thin taupe rail like Untarnished's separators, no arrow buttons. Chromium ignores the
+   ::-webkit-scrollbar rules once scrollbar-color is set, so that is kept for other browsers. */
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+	background: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background: var(--line-soft);
+	border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: var(--line);
+}
+::-webkit-scrollbar-button {
+	display: none;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+	* {
+		scrollbar-color: var(--line-soft) transparent;
+		scrollbar-width: thin;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {

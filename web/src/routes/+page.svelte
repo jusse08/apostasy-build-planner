@@ -1,23 +1,22 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { api, loadGame } from '#lib/api.ts';
-	import PerkSky from '#lib/components/PerkSky.svelte';
+	import Credits from '#lib/components/Credits.svelte';
+	import { forgetBuild, myBuildIds } from '#lib/myBuilds.ts';
 	import { newBuildState } from '#lib/rules/engine.ts';
 	import type { BuildSummary, GameModel } from '#lib/types.ts';
 
-	let builds = $state<BuildSummary[] | null>(null);
+	let builds = $state<BuildSummary[]>([]);
 	let game = $state<GameModel | null>(null);
 	let error = $state<string | null>(null);
 	let name = $state('');
 	let creating = $state(false);
 
 	$effect(() => {
-		api.list().then((b) => (builds = b)).catch((e) => (error = e.message));
+		const ids = myBuildIds();
+		if (ids.length) api.list(ids).then((b) => (builds = b)).catch((e) => (error = e.message));
 		loadGame().then((g) => (game = g)).catch((e) => (error = e.message));
 	});
-
-	// One real constellation as the page's picture: Stormcrown's Dragonborn tree.
-	let tree = $derived(game?.trees.find((t) => t.kind === 'dragonborn') ?? game?.trees[0] ?? null);
 
 	async function create(e: SubmitEvent) {
 		e.preventDefault();
@@ -32,102 +31,143 @@
 	}
 
 	async function remove(b: BuildSummary) {
-		if (!confirm(`Delete “${b.name}”? This can't be undone.`)) return;
-		await api.remove(b.id);
-		builds = builds?.filter((x) => x.id !== b.id) ?? null;
+		try {
+			await api.remove(b.id);
+		} catch (err) {
+			error = (err as Error).message;
+			return;
+		}
+		forgetBuild(b.id);
+		builds = builds.filter((x) => x.id !== b.id);
 	}
+
+	// Star dust over the nebula, the same recipe as the perk sky; fixed seed so it never shifts.
+	let seed = 7;
+	const rnd = () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 2 ** 32);
+	const dust = Array.from({ length: 260 }, () => ({
+		x: rnd() * 1600,
+		y: rnd() * 1000,
+		r: rnd() < 0.08 ? 1.1 : 0.4 + rnd() * 0.4,
+		o: 0.15 + rnd() * 0.45
+	}));
 
 	const raceName = (id: string | null) => game?.races.find((r) => r.id === id)?.name;
 	const className = (id: string | null) => game?.classes.find((c) => c.id === id)?.name;
 	const date = (iso: string) => new Date(iso).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' });
 </script>
 
-<main>
-	<section class="intro">
-		<div class="copy">
-			<h1>Apostasy character planner</h1>
-			<hr class="rule" />
-			<p class="lede">
-				Plan a character level by level: race, class, standing stone, deity, skills and perks. The planner counts
-				points by the modlist's own rules and shows where a build doesn't add up.
-			</p>
-			<form onsubmit={create}>
-				<input bind:value={name} placeholder="Build name" aria-label="Build name" maxlength="120" />
-				<button class="primary" disabled={creating}>Create build</button>
-			</form>
-			{#if error}<p class="error-text">{error}</p>{/if}
-		</div>
-		{#if game && tree}
-			<figure class="picture" aria-hidden="true">
-				<PerkSky
-					{game}
-					{tree}
-					interactive={false}
-					nodeInfo={(n) => ({ status: n.index % 3 === 0 ? 'available' : n.index % 2 ? 'taken' : 'locked', taken: n.index % 2, ranks: 1, required: null })}
-				/>
-			</figure>
-		{/if}
-	</section>
+<svelte:head><title>Apostasy Build Planner</title></svelte:head>
 
-	<section class="builds">
-		<h2>Builds</h2>
-		{#if builds === null}
-			<p class="muted">Loading…</p>
-		{:else if builds.length === 0}
-			<p class="muted">No builds yet. Create one above; everyone on the network will see it here.</p>
-		{:else}
-			<ul>
-				{#each builds as b (b.id)}
-					<li>
-						<a href="/b/{b.id}" class="name">{b.name}</a>
-						<span class="what">{[raceName(b.race), className(b.class)].filter(Boolean).join(' ') || 'No race or class yet'}</span>
-						<span class="num level">to level {b.targetLevel}</span>
-						<span class="when">{date(b.updatedAt)}</span>
-						<button class="ghost" onclick={() => remove(b)} aria-label="Delete {b.name}">Delete</button>
-					</li>
-				{/each}
-			</ul>
+<div class="sky" aria-hidden="true">
+	<svg viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+		{#each dust as d}<circle cx={d.x} cy={d.y} r={d.r} opacity={d.o} />{/each}
+	</svg>
+</div>
+
+<div class="page">
+	<main class:alone={!builds.length}>
+		<h1><img src="/logo-full.svg" alt="The Elder Scrolls V: Skyrim. Apostasy Build Planner" /></h1>
+
+		<form onsubmit={create}>
+			<input bind:value={name} placeholder="Build name" aria-label="Build name" maxlength="120" />
+			<button class="primary" disabled={creating}>Create build</button>
+		</form>
+		{#if error}<p class="error-text">{error}</p>{/if}
+
+		{#if builds.length}
+			<section class="builds">
+				<h2>Your builds</h2>
+				<ul>
+					{#each builds as b (b.id)}
+						<li>
+							<a href="/b/{b.id}" class="name">{b.name}</a>
+							<span class="what">{[raceName(b.race), className(b.class)].filter(Boolean).join(' ') || 'No race or class yet'}</span>
+							<span class="num level">to level {b.targetLevel}</span>
+							<span class="when">{date(b.updatedAt)}</span>
+							<button class="ghost" onclick={() => remove(b)} aria-label="Delete {b.name}">Delete</button>
+						</li>
+					{/each}
+				</ul>
+			</section>
 		{/if}
-	</section>
-</main>
+	</main>
+
+	<Credits />
+</div>
 
 <style>
+	/* The perk sky's backdrop: darkened, with the game's nebula dimmed and desaturated. */
+	.sky {
+		position: fixed;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.6);
+		pointer-events: none;
+	}
+
+	.sky::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: url('/sky/nebula.png') 50% 40% / auto 135% no-repeat;
+		opacity: 0.3;
+		filter: saturate(0.55);
+		mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, #000 30%, transparent 85%);
+	}
+
+	.sky svg {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.sky circle {
+		fill: #f3efe6;
+	}
+
 	main {
+		position: relative;
+		display: grid;
+		justify-items: center;
+		align-content: start;
+		gap: 2.6rem;
+		width: 100%;
 		max-width: 1120px;
+		flex: 1;
 		margin: 0 auto;
-		padding: 4rem 1.5rem;
+		padding: 18vh 1.5rem 4rem;
 	}
 
-	.intro {
-		display: grid;
-		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-		gap: 2.5rem;
-		align-items: center;
-		min-height: 50vh;
+	/* Page column: content fills the screen, the credits sit at the bottom. */
+	.page {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
 	}
 
-	.copy {
-		display: grid;
-		gap: 1.2rem;
+
+	/* Nothing listed: logo and form sit in the middle of the screen. */
+	main.alone {
+		align-content: center;
+		padding-top: 4rem;
 	}
 
 	h1 {
-		font-size: 3rem;
-		max-width: 13ch;
+		margin: 0;
+		width: min(560px, 100%);
 	}
 
-	.lede {
-		font-size: var(--t-lg);
-		line-height: 1.6;
-		color: var(--muted);
-		max-width: 44ch;
+	h1 img {
+		display: block;
+		width: 100%;
+		height: auto;
 	}
 
 	form {
 		display: flex;
 		gap: 0.5rem;
-		margin-top: 0.8rem;
-		max-width: 30rem;
+		width: min(30rem, 100%);
 	}
 
 	form input {
@@ -135,14 +175,9 @@
 		padding: 0.55rem 0.75rem;
 	}
 
-	.picture {
-		margin: 0;
-		height: 400px;
-		background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(0, 0, 0, 0.55), transparent 75%);
-	}
-
 	.builds {
-		margin-top: 3rem;
+		justify-self: stretch;
+		margin-top: 2rem;
 		background: var(--surface);
 		padding: 1.6rem 1.8rem;
 	}
@@ -199,12 +234,8 @@
 	}
 
 	@media (max-width: 760px) {
-		.intro {
-			grid-template-columns: 1fr;
-			min-height: 0;
-		}
-		.picture {
-			height: 280px;
+		main {
+			padding-top: 10vh;
 		}
 		li {
 			grid-template-columns: 1fr auto;

@@ -92,6 +92,11 @@ public static class Json
                 _ => FormLinkOrIndex(v),
             };
             if (p.Name == "ActorValue" && Skills.Normalize(v?.ToString()) is { } skill) node = skill;
+            // Misc stat ids are name hashes; those above int.MaxValue arrive as negative numbers.
+            if (v is Enum ms && ms.GetType() == typeof(MiscStatEnum) && !Enum.IsDefined(ms.GetType(), ms)
+                && Enum.ToObject(typeof(MiscStatEnum), unchecked((uint)Convert.ToInt64(ms))) is { } named
+                && Enum.IsDefined(typeof(MiscStatEnum), named))
+                node = named.ToString();
             if (node != null) o[LowerFirst(p.Name)] = node;
         }
         return o;

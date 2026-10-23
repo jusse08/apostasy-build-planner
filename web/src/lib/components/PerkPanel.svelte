@@ -16,10 +16,7 @@
 	let perk = $derived(ed.game.perks[shown]);
 	let req = $derived(evalConditions(ed.game, perk.conditions, ed.current.skills, ed.current.perksTaken));
 	let nextStatus = $derived(nextRank ? perkStatus(ed.game, ed.sim, nextRank, ed.level) : null);
-	// Only skill tree perks spend character perk points.
-	let perksLeft = $derived(
-		head.treeKind === 'skill' ? ed.current.perkPointsTotal - ed.current.perkPointsSpent : Infinity
-	);
+	let perksLeft = $derived(ed.perksLeft(first));
 	let takenAt = $derived(chain.map((k) => ed.takenAt(k)).filter((l): l is number => l !== undefined));
 </script>
 
@@ -29,7 +26,6 @@
 	</h3>
 	<p class="text">{perk.description ?? 'The game has no description for this perk.'}</p>
 	<p class="meta">
-		{#if head.stance}<span class="stance {head.stance.toLowerCase()}">{head.stance} stance</span>{/if}
 		{#if nextRank && perk.conditions.length}
 			<span class="req">
 				Requires
@@ -49,17 +45,15 @@
 	</p>
 	{#if !preview}
 		<p class="actions">
-			{#if nextRank}
-				<button class="primary" disabled={perksLeft <= 0 || nextStatus !== 'available'} onclick={() => ed.takeNode(first)}>
+			{#if ed.takeable(first)}
+				<button class="primary" onclick={() => ed.takeNode(first)}>
 					Take {chain.length > 1 ? `rank ${taken + 1}` : 'perk'} at level {ed.level}
 				</button>
 			{/if}
 			{#if lastTaken}
 				<button onclick={() => ed.dropNode(first)}>Remove {chain.length > 1 ? `rank ${taken}` : 'perk'}</button>
 			{/if}
-			{#if nextRank && nextStatus !== 'available'}
-				<span class="why">Requirements aren't met at level {ed.level} yet.</span>
-			{:else if nextRank && perksLeft <= 0}
+			{#if nextRank && nextStatus === 'available' && perksLeft <= 0}
 				<span class="why">No free perk points at level {ed.level}.</span>
 			{/if}
 		</p>
@@ -109,16 +103,6 @@
 	}
 	.req span.unknown {
 		color: var(--muted);
-	}
-
-	.stance.wolf {
-		color: var(--wolf);
-	}
-	.stance.hawk {
-		color: var(--hawk);
-	}
-	.stance.bear {
-		color: var(--bear);
 	}
 
 	.link {

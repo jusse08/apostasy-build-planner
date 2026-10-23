@@ -21,7 +21,8 @@ async function call<T>(fetcher: typeof fetch, url: string, init?: RequestInit): 
 }
 
 export const api = {
-	list: (f: typeof fetch = fetch) => call<BuildSummary[]>(f, '/api/builds'),
+	list: (ids: string[], f: typeof fetch = fetch) =>
+		call<BuildSummary[]>(f, `/api/builds?ids=${ids.map(encodeURIComponent).join(',')}`),
 	get: (id: string, f: typeof fetch = fetch) => call<BuildRecord>(f, `/api/builds/${id}`),
 	create: (name: string, state: BuildState) =>
 		call<BuildRecord>(fetch, '/api/builds', { method: 'POST', body: JSON.stringify({ name, state }) }),

@@ -11,7 +11,8 @@ import type {
 	LevelPlan,
 	Leveling,
 	Perk,
-	SkillId
+	SkillId,
+	Spell
 } from '#lib/types.ts';
 
 export const ATTRIBUTES: Attribute[] = ['Health', 'Magicka', 'Stamina'];
@@ -27,6 +28,7 @@ export function newBuildState(): BuildState {
 		stone: null,
 		deity: null,
 		targetLevel: 30,
+		reachedLevel: 2,
 		levels: {},
 		perkSources: [],
 		shoutWords: {},
@@ -224,7 +226,7 @@ export function describeCondition(game: GameModel, c: Condition): string {
 	if (c.fn === 'HasPerk') {
 		const key = String(c.args?.perk ?? '');
 		const name = game.perks[key]?.name ?? c.argNames?.perk ?? key;
-		return v >= 1 && c.op === '==' ? `Has ${name}` : `Lacks ${name}`;
+		return v >= 1 && c.op === '==' ? name : `no ${name}`;
 	}
 	if (c.fn === 'GetQuestCompleted' && yes !== null) {
 		return `${yes ? 'Complete' : "Don't complete"} ${argName(c, 'quest')}`;
@@ -287,6 +289,57 @@ export function describeConditionGroup(game: GameModel, group: Condition[]): Con
 	if (group.every((c) => c.fn === 'GetQuestCompleted' && asksYes(c) === true))
 		return { text: 'Complete one of:', options: group.map((c) => ({ text: argName(c, 'quest') })) };
 	return { text: 'One of:', options: group.map(line) };
+}
+
+// Misc stats (the game's General Stats page) in words, plural, as "N+ <stat>" reads.
+const MISC_STATS: Record<string, string> = {
+	QuestsCompleted: 'quests completed',
+	UndeadKilled: 'undead killed',
+	Persuasions: 'persuasions',
+	SpellsLearned: 'spells learned',
+	LocationsDiscovered: 'locations discovered',
+	DungeonsCleared: 'dungeons cleared',
+	DaedraKilled: 'daedra killed',
+	DragonSoulsCollected: 'dragon souls absorbed',
+	Barters: 'barters',
+	SoulGemsUsed: 'soul gems used',
+	PeopleKilled: 'people killed',
+	BooksRead: 'books read',
+	CreaturesKilled: 'creatures killed',
+	Murders: 'murders',
+	SoulsTrapped: 'souls trapped',
+	PocketsPicked: 'pockets picked',
+	AutomationsKilled: 'Dwarven automatons killed',
+	BrawlsWon: 'brawls won',
+	WingsPlucked: 'wings plucked',
+	SneakAttacks: 'sneak attacks'
+};
+
+export function miscStatName(stat: string): string {
+	return MISC_STATS[stat] ?? stat.replace(/(?<=[a-z])(?=[A-Z])/g, ' ').toLowerCase();
+}
+
+export interface StatTier {
+	/** Lowest stat value the tier needs. */
+	from: number;
+	stat: string;
+	text: string;
+}
+
+/**
+ * Tiers of a spell whose effects switch on by a misc stat (Archon's Acolyte: "more than 4
+ * quests completed, less than 10"), lowest first. Empty when the effects aren't built that way.
+ */
+export function statTiers(spell: Spell | null): StatTier[] {
+	const tiers: StatTier[] = [];
+	for (const e of spell?.effects ?? []) {
+		const low = e.conditions?.find((c) => c.fn === 'GetPCMiscStat' && (c.op === '>' || c.op === '>='));
+		const text = e.description ?? e.perk?.description;
+		if (!low || !text) return [];
+		const from = (low.value ?? 0) + (low.op === '>' ? 1 : 0);
+		tiers.push({ from, stat: miscStatName(String(low.args?.miscStat ?? '')), text });
+	}
+	return tiers.sort((x, y) => x.from - y.from);
 }
 
 export function evalCondition(

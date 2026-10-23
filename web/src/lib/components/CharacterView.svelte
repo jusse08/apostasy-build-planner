@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { BuildEditor } from '#lib/editor.svelte.ts';
-	import { describeConditionGroup, groupConditions, skillName, startingSkills } from '#lib/rules/engine.ts';
+	import { describeConditionGroup, groupConditions, skillName, startingSkills, statTiers } from '#lib/rules/engine.ts';
 	import SpellText from './SpellText.svelte';
 
 	let { ed }: { ed: BuildEditor } = $props();
@@ -21,8 +21,12 @@
 	let stone = $derived(g.stones.find((s) => s.id === ed.build.stone));
 	let deity = $derived(g.deities.find((d) => d.id === ed.build.deity));
 	let start = $derived(startingSkills(g, ed.build));
+	let acolyte = $derived(statTiers(deity?.acolyte ?? null));
 	let deityGroups = $derived([...new Set(g.deities.map((d) => d.group))]);
 	let cs = $derived(g.leveling.classSkill);
+
+	// Race and class are picked once, at character creation; stone and deity change during play.
+	let locked = $derived((part === 'race' || part === 'class') && ed.level !== 1);
 
 	function chosenName(p: Part): string | undefined {
 		return { race: race?.name, class: cls?.name, stone: stone?.name, deity: deity?.name }[p];
@@ -55,10 +59,16 @@
 					</ul>
 				{/each}
 			{:else}
+				{#if locked}
+					<p class="locked">
+						Chosen at character creation.
+						<button class="link" onclick={() => ed.setLevel(1)}>Go to level 1</button> to change it.
+					</p>
+				{/if}
 				<ul>
 					{#each part === 'race' ? g.races : part === 'class' ? g.classes : g.stones as o (o.id)}
 						<li>
-							<button class:on={o.id === ed.build[part]} onclick={() => pick(part, o.id)}>
+							<button class:on={o.id === ed.build[part]} disabled={locked} onclick={() => pick(part, o.id)}>
 								{o.name}{#if 'warnings' in o && o.warnings.length}<span class="flag" title="The class script differs from its description">!</span>{/if}
 							</button>
 						</li>
@@ -76,10 +86,10 @@
 						{#if race.startingPerkPoints}<span class="gold">+{race.startingPerkPoints} perk point at start</span>{/if}
 					</p>
 					<hr class="rule" />
-					{#each race.abilities as a (a.formKey)}<SpellText spell={a} />{/each}
+					{#each race.abilities as a (a.formKey)}<SpellText spell={a} hideEmpty />{/each}
 					{#if cls}
 						<p class="note">
-							Racial skill bonuses ({Object.entries(race.skillBoosts).map(([k, v]) => `${skillName(g, k)} +${v}`).join(', ')}) are overwritten by the class script at level 1.
+							Racial skill bonuses are overwritten by the class script at level 1.
 						</p>
 					{/if}
 					<p class="lore">{race.description}</p>
@@ -112,7 +122,7 @@
 					<h2>{stone.name}</h2>
 					<p class="lore">{stone.description}</p>
 					<hr class="rule" />
-					{#each stone.abilities as a (a.formKey)}<SpellText spell={a} />{/each}
+					{#each stone.abilities as a (a.formKey)}<SpellText spell={a} hideEmpty />{/each}
 				{:else}
 					<p class="empty">Every Stones of Sacrifice stone has a blessing and a price. Choose one to see both.</p>
 				{/if}
@@ -127,8 +137,16 @@
 				</div>
 				<div class="tier">
 					<h3>Acolyte</h3>
-					<p class="when">Grows with the number of quests completed.</p>
-					<SpellText spell={deity.acolyte} showName={false} />
+					{#if acolyte.length}
+						<p class="when">Grows with {acolyte[0].stat}, as counted on the General Stats page.</p>
+						<dl class="tiers">
+							{#each acolyte as t}
+								<div><dt class="num">{t.from}+</dt><dd>{t.text}</dd></div>
+							{/each}
+						</dl>
+					{:else}
+						<SpellText spell={deity.acolyte} showName={false} />
+					{/if}
 				</div>
 				<div class="tier">
 					<h3>Champion</h3>
@@ -244,8 +262,35 @@
 		color: var(--muted);
 	}
 
-	.options button:hover {
+	.options button:hover:not(:disabled) {
 		color: var(--text);
+	}
+
+	.options button:disabled {
+		cursor: default;
+		opacity: 0.45;
+	}
+
+	.options button.on:disabled {
+		opacity: 1;
+	}
+
+	.locked {
+		padding: 0 1.4rem 0.8rem;
+		font-size: var(--t-sm);
+		color: var(--muted);
+		line-height: 1.5;
+	}
+
+	.options .locked .link {
+		display: inline;
+		width: auto;
+		padding: 0;
+		font-size: inherit;
+		color: var(--gold);
+		background: none;
+		text-decoration: underline;
+		text-underline-offset: 2px;
 	}
 
 	.options button.on {
@@ -343,6 +388,24 @@
 	.tier {
 		display: grid;
 		gap: 0.3rem;
+	}
+
+	.tiers {
+		display: grid;
+		gap: 0.3rem;
+		margin: 0;
+		line-height: 1.5;
+	}
+
+	.tiers div {
+		display: grid;
+		grid-template-columns: 3.2rem 1fr;
+		align-items: baseline;
+	}
+
+	.tiers dt {
+		color: var(--gold);
+		font-size: var(--t-sm);
 	}
 
 	.req {

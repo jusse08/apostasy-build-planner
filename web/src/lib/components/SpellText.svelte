@@ -1,7 +1,16 @@
 <script lang="ts">
 	import type { Spell } from '#lib/types.ts';
 
-	let { spell, showName = true }: { spell: Spell | null; showName?: boolean } = $props();
+	let {
+		spell,
+		showName = true,
+		hideEmpty = false
+	}: {
+		spell: Spell | null;
+		showName?: boolean;
+		/** Render nothing for a spell with no text, such as a hidden helper ability. */
+		hideEmpty?: boolean;
+	} = $props();
 
 	// Effects without text are usually hidden helpers; keep the ones a player would read.
 	let lines = $derived(
@@ -11,7 +20,7 @@
 	);
 </script>
 
-{#if spell}
+{#if spell && !(hideEmpty && !spell.description && !lines.length)}
 	<div class="spell">
 		{#if showName && spell.name}<p class="name">{spell.name}</p>{/if}
 		{#if spell.description}<p>{spell.description}</p>{/if}

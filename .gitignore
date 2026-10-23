@@ -8,3 +8,6 @@ build/
 *.sqlite-wal
 .env
 
+
+# Licensed font files used only to draw web/static/logo.svg; never commit them.
+/fonts/
