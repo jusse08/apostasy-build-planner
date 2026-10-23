@@ -1,0 +1,858 @@
+{
+  "classes": [
+    {
+      "id": "Assassin",
+      "name": "Assassin",
+      "description": "A remorseless killer trained in the use of poisons and specializes in stealth.\r\n\r\nAssassins have a major skill bonus to Alchemy and minor skill bonuses to Archery, Light Armor, Security, Sneak, and One-Handed.\r\nAssassins begin the game with Light Armor, a Dagger, a Long Bow, and some weak poisons.\r\n\r\nAssassins gain the Brotherhood Tactics ability, increasing poison uses and bolstering the effectiveness of poisons delivered by sneak attacks.",
+      "majorSkill": "Alchemy",
+      "minorSkills": [
+        "LightArmor",
+        "OneHanded",
+        "Marksman",
+        "Pickpocket",
+        "Sneak"
+      ],
+      "scriptProperties": {
+        "MajorSkill": "Alchemy",
+        "MinorSkill1": "LightArmor",
+        "MinorSkill2": "OneHanded",
+        "MinorSkill3": "Marksman",
+        "MinorSkill4": "Pickpocket",
+        "MinorSkill5": "Sneak"
+      },
+      "warnings": [],
+      "startingGear": "Light Armor, a Dagger, a Long Bow, and some weak poisons",
+      "ability": {
+        "formKey": "000A68:NirnsChosen.esp",
+        "editorId": "APO_ClassAbilityAssassin",
+        "name": "Assassin",
+        "description": null,
+        "plugin": "NirnsChosen.esp",
+        "effects": [
+          {
+            "name": "Brotherhood Tactics",
+            "description": "Your poisons last for 2 additional hits, and poisons delivered by sneak attacks are twice as strong.",
+            "magnitude": 0,
+            "duration": 0,
+            "perk": {
+              "formKey": "000954:NirnsChosen.esp",
+              "editorId": "APO_ClassAssassinPerk01",
+              "name": "Brotherhood Tactics",
+              "description": null,
+              "plugin": "NirnsChosen.esp"
+            }
+          }
+        ]
+      },
+      "perks": [
+        {
+          "formKey": "000954:NirnsChosen.esp",
+          "editorId": "APO_ClassAssassinPerk01",
+          "name": "Brotherhood Tactics",
+          "description": null,
+          "plugin": "NirnsChosen.esp"
+        }
+      ]
+    },
+    {
+      "id": "Barbarian",
+      "name": "Barbarian",
+      "description": "A violent and short-tempered individual, frequently choosing to settle disputes through the glory of combat.\r\n\r\nBarbarians have a major skill bonus to Light Armor and minor skill bonuses to Archery, Block, Hand to Hand, Smithing, and Two-Handed.\r\nBarbarians begin the game with Light Armor, a Warhammer, and a Long Bow.\r\n\r\nBarbarians gain the Berserker's Frenzy ability, allowing them to spend less Stamina while power attacking or drawing a bow.",
+      "majorSkill": "LightArmor",
+      "minorSkills": [
+        "TwoHanded",
+        "Marksman",
+        "Block",
+        "Smithing",
+        "Lockpicking"
+      ],
+      "scriptProperties": {
+        "MajorSkill": "LightArmor",
+        "MinorSkill1": "TwoHanded",
+        "MinorSkill2": "Marksman",
+        "MinorSkill3": "Block",
+        "MinorSkill4": "Smithing",
+        "MinorSkill5": "Lockpicking"
+      },
+      "warnings": [],
+      "startingGear": "Light Armor, a Warhammer, and a Long Bow",
+      "ability": {
+        "formKey": "000A6A:NirnsChosen.esp",
+        "editorId": "APO_ClassAbilityBarbarian",
+        "name": "Barbarian",
+        "description": null,
+        "plugin": "NirnsChosen.esp",
+        "effects": [
+          {
+            "name": "Berserker's Frenzy",
+            "description": "You spend 20% less Stamina when power attacking, drawing a bow, jumping, or sprinting.",
+            "magnitude": 20,
+            "duration": 0,
+            "perk": {
+              "formKey": "00095E:NirnsChosen.esp",
+              "editorId": "APO_ClassBarbarianPerk01",
+              "name": "Berserker's Frenzy",
+              "description": null,
+              "plugin": "Paragon - NirnsChosen.esp"
+            }
+          }
+        ]
+      },
+      "perks": [
+        {
+          "formKey": "00095E:NirnsChosen.esp",
+          "editorId": "APO_ClassBarbarianPerk01",
+          "name": "Berserker's Frenzy",
+          "description": null,
+          "plugin": "Paragon - NirnsChosen.esp"
+        }
+      ]
+    },
+    {
+      "id": "Bard",
+      "name": "Bard",
+      "description": "A master of song and speech, a charismatic individual who always gets their way.\r\n\r\nBards have a major skill bonus to Speech and minor skill bonuses to Alchemy, Illusion, Light Armor, Security, and One-Handed.\r\nBards begin the game with Light Armor, a Sword, Calm, and Healing.\r\n\r\nBards gain the Bardic Inspiration ability, fortifying the attributes of nearby allies.",
+      "majorSkill": "Speechcraft",
+      "minorSkills": [
+        "LightArmor",
+        "OneHanded",
+        "Pickpocket",
+        "Alchemy",
+        "Illusion"
+      ],
+      "scriptProperties": {
+        "MajorSkill": "Speechcraft",
+        "MinorSkill1": "LightArmor",
+        "MinorSkill2": "OneHanded",
+        "MinorSkill3": "Pickpocket",
+        "MinorSkill4": "Alchemy",
+        "MinorSkill5": "Illusion"
+      },
+      "warnings": [],
+      "startingGear": "Light Armor, a Sword, Calm, and Healing",
+      "ability": {
+        "formKey": "000A6B:NirnsChosen.esp",
+        "editorId": "APO_ClassAbilityBard",
+        "name": "Bard",
+        "description": null,
+        "plugin": "NirnsChosen.esp",
+        "effects": [
+          {
+            "name": "Bardic Inspiration",
+            "description": "Nearby allies have their Health, Magicka, and Stamina increased by 50.",
+            "magnitude": 0,
+            "duration": 0,
+            "perk": {
+              "formKey": "000971:NirnsChosen.esp",
+              "editorId": "APO_ClassBardPerk01",
+              "name": "Bardic Inspiration",
+              "description": null,
+              "plugin": "NirnsChosen.esp"
+            }
+          }
+        ]
+      },
+      "perks": [
+        {
+          "formKey": "000971:NirnsChosen.esp",
+          "editorId": "APO_ClassBardPerk01",
+          "name": "Bardic Inspiration",
+          "description": null,
+          "plugin": "NirnsChosen.esp"
+        }
+      ]
+    },
+    {
+      "id": "Battlemage",
+      "name": "Battlemage",
+      "description": "A versatile fighter, proficient with both spell and blade.\r\n\r\nBattlemages have a major skill bonus to Alteration and minor skill bonuses to Conjuration, Destruction, Enchanting, Heavy Armor, and One-Handed.\r\nBattlemages begin the game with Heavy Armor, a War Axe, Flames, Healing, Oakflesh, and Soul Trap.\r\n\r\nBattlemages gain the Magicka Battery ability, allowing them restore Magicka with their melee attacks while under the effects of an armor spell.",
+      "majorSkill": "Alteration",
+      "minorSkills": [
+        "OneHanded",
+        "HeavyArmor",
+        "Conjuration",
+        "Destruction",
+        "Enchanting"
+      ],
+      "scriptProperties": {
+        "MajorSkill": "Alteration",
+        "MinorSkill1": "OneHanded",
+        "MinorSkill2": "HeavyArmor",
+        "MinorSkill3": "Conjuration",
+        "MinorSkill4": "Destruction",
+        "MinorSkill5": "Enchanting"
+      },
+      "warnings": [],
+      "startingGear": "Heavy Armor, a War Axe, Flames, Healing, Oakflesh, and Soul Trap",
+      "ability": {
+        "formKey": "000A6C:NirnsChosen.esp",
+        "editorId": "APO_ClassAbilityBattlemage",
+        "name": "Battlemage",
+        "description": null,
+        "plugin": "NirnsChosen.esp",
+        "effects": [
+          {
+            "name": "Magicka Battery",
+            "description": "Your melee attacks and bashes restore Magicka while under the effects of an armor spell.",
+            "magnitude": 0,
+            "duration": 0,
+            "perk": {
+              "formKey": "000CB8:NirnsChosen.esp",
+              "editorId": "APO_ClassBattlemagePerk01",
+              "name": "Magicka Battery",
+              "description": null,
+              "plugin": "Paragon - NirnsChosen.esp"
+            }
+          }
+        ]
+      },
+      "perks": [
+        {
+          "formKey": "000CB8:NirnsChosen.esp",
+          "editorId": "APO_ClassBattlemagePerk01",
+          "name": "Magicka Battery",
+          "description": null,
+          "plugin": "Paragon - NirnsChosen.esp"
+        }
+      ]
+    },
+    {
+      "id": "Crusader",
+      "name": "Crusader",
+      "description": "A holy, or unholy, knight skilled in both martial and magical disciplines.\r\n\r\nCrusaders have a major skill bonus to Restoration and minor skill bonuses to Block, Destruction, Heavy Armor, Smithing, and One-Handed.\r\nCrusaders begin the game with Heavy Armor, a Mace, Flames, and Healing.\r\n\r\nCrusaders gain the Aura of Protection ability, reducing damage taken for both themselves and their allies.",
+      "majorSkill": null,
+      "minorSkills": [
+        "OneHanded",
+        "Block",
+        "Smithing",
+        "HeavyArmor",
+        "Restoration"
+      ],
+      "scriptProperties": {
+        "MajorSkill": "",
+        "MinorSkill1": "OneHanded",
+        "MinorSkill2": "Block",
+        "MinorSkill3": "Smithing",
+        "MinorSkill4": "HeavyArmor",
+        "MinorSkill5": "Restoration"
+      },
+      "warnings": [
+        "Description says major skill Restoration, script gives none.",
+        "Description lists minor skill Destruction, script does not raise it.",
+        "Script raises Restoration as a minor skill, description does not list it."
+      ],
+      "startingGear": "Heavy Armor, a Mace, Flames, and Healing",
+      "ability": {
+        "formKey": "000A6D:NirnsChosen.esp",
+        "editorId": "APO_ClassAbilityCrusader",
+        "name": "Crusader",
+        "description": null,
+        "plugin": "NirnsChosen.esp",
+        "effects": [
+          {
+            "name": "Aura of Protection",
+            "description": "You and nearby allies resist 10% of incoming weapon and spell damage.",
+            "magnitude": 0,
+            "duration": 0,
+            "perk": {
+              "formKey": "000957:NirnsChosen.esp",
+              "editorId": "APO_ClassCrusaderPerk01",
+              "name": "Aura of Protection",
+              "description": null,
+              "plugin": "NirnsChosen.esp"
+            }
+          }
+        ]
+      },
+      "perks": [
+        {
+          "formKey": "000957:NirnsChosen.esp",
+          "editorId": "APO_ClassCrusaderPerk01",
+          "name": "Aura of Protection",
+          "description": null,
+          "plugin": "NirnsChosen.esp"
+        },
+        {
+          "formKey": "00095D:NirnsChosen.esp",
+          "editorId": "APO_ClassCrusaderPerk02",
+          "name": "Aura of Protection",
+          "description": null,
+          "plugin": "NirnsChosen.esp"
+        }
+      ]
+    },
+    {
+      "id": "Hero",
+      "name": "Hero",
+      "description": "A kind, virtuous adventurer who has traveled far and wide in search of new foes and evils.\r\n\r\nHeroes have a major skill bonus to Heavy Armor and minor skill bonuses to Alchemy, Block, Smithing, Speech, and Two-Handed.\r\nHeroes begin the game with Heavy Armor, a Greatsword, a Sword, and a Shield.\r\n\r\nHeroes gain the Himmel's Resolve ability, reducing the incoming poise damage and allowing them to inflict more poise damage.",
+      "majorSkill": "HeavyArmor",
+      "minorSkills": [
+        "TwoHanded",
+        "Block",
+        "Smithing",
+        "Alchemy",
+        "Speechcraft"
+      ],
+      "scriptProperties": {
+        "MajorSkill": "HeavyArmor",
+        "MinorSkill1": "TwoHanded",
+        "MinorSkill2": "Block",
+        "MinorSkill3": "Smithing",
+        "MinorSkill4": "Alchemy",
+        "MinorSkill5": "Speechcraft"
+      },
+      "warnings": [],
+      "startingGear": "Heavy Armor, a Greatsword, a Sword, and a Shield",
+      "ability": {
+        "formKey": "000A6E:NirnsChosen.esp",
+        "editorId": "APO_ClassAbilityHero",
+        "name": "Hero",
+        "description": null,
+        "plugin": "NirnsChosen.esp",
+        "effects": [
+          {
+            "name": "Himmel's Resolve",
+            "description": "You resist 20% of incoming poise damage and deal 25% more poise damage.",
+            "magnitude": 0,
+            "duration": 0
+          }
+        ]
+      },
+      "perks": [
+        {
+          "formKey": "000CB5:NirnsChosen.esp",
+          "editorId": "APO_ClassHeroPerk01",
+          "name": "Himmel's Resolve",
+          "description": null,
+          "plugin": "NirnsChosen.esp"
+        }
+      ]
+    },
+    {
+      "id": "Mage",
+      "name": "Mage",
+      "description": "A master of the arcane, capable of solving any problem with a little bit of magic.\r\n\r\nMages have a major skill bonus to Destruction and minor skill bonuses to Alteration, Conjuration, Enchanting, Illusion, and Restoration.\r\nMages begin the game with Robes and basic spells for all schools.\r\n\r\nMages gain the Arcane Affinity ability, increasing their Magicka Regeneration and reducing the cost of their spells.",
+      "majorSkill": "Destruction",
+      "minorSkills": [
+        "Alteration",
+        "Conjuration",
+        "Illusion",
+        "Restoration"
+      ],
+      "scriptProperties": {
+        "MajorSkill": "Destruction",
+        "MinorSkill1": "Alteration",
+        "MinorSkill2": "",
+        "MinorSkill3": "Conjuration",
+        "MinorSkill4": "Illusion",
+        "MinorSkill5": "Restoration"
+      },
+      "warnings": [
+        "Description lists minor skill Enchanting, script does not raise it."
+      ],
+      "startingGear": "Robes and basic spells for all schools",
+      "ability": {
+        "formKey": "000A6F:NirnsChosen.esp",
+        "editorId": "APO_ClassAbilityMage",
+        "name": "Mage",
+        "description": null,
+        "plugin": "NirnsChosen.esp",
+        "effects": [
+          {
+            "name": "Arcane Affinity",
+            "description": "Your spells and enchantments cost 10% less, and your Magicka Regeneration is increased by 50%.",
+            "magnitude": 50,
+            "duration": 0,
+            "perk": {
+              "formKey": "000955:NirnsChosen.esp",
+              "editorId": "APO_ClassMagePerk01",
+              "name": "Arcane Affinity",
+              "description": null,
+              "plugin": "NirnsChosen.esp"
+            }
+          }
+        ]
+      },
+      "perks": [
+        {
+          "formKey": "000955:NirnsChosen.esp",
+          "editorId": "APO_ClassMagePerk01",
+          "name": "Arcane Affinity",
+          "description": null,
+          "plugin": "NirnsChosen.esp"
+        }
+      ]
+    },
+    {
+      "id": "Monk",
+      "name": "Monk",
+      "description": "An unarmed fighter and specialist who is able to manipulate their energy to enhance their strikes.\r\n\r\nMonks have a major skill bonus to Hand to Hand and minor skill bonuses to Alteration, Archery, Restoration, Security, and Speech.\r\nMonks begin the game with Robes, a Long Bow, Oakflesh, and Healing.\r\n\r\nMonks gain the Attenuation ability, allowing them to deal additional damage with their unarmed strikes based on their resistances.",
+      "majorSkill": "Lockpicking",
+      "minorSkills": [
+        "Marksman",
+        "Pickpocket",
+        "Sneak",
+        "Alteration",
+        "Restoration"
+      ],
+      "scriptProperties": {
+        "MajorSkill": "Lockpicking",
+        "MinorSkill1": "Marksman",
+        "MinorSkill2": "Pickpocket",
+        "MinorSkill3": "Sneak",
+        "MinorSkill4": "Alteration",
+        "MinorSkill5": "Restoration"
+      },
+      "warnings": [
+        "Description lists minor skill Speechcraft, script does not raise it.",
+        "Script raises Sneak as a minor skill, description does not list it."
+      ],
+      "startingGear": "Robes, a Long Bow, Oakflesh, and Healing",
+      "ability": {
+        "formKey": "000A70:NirnsChosen.esp",
+        "editorId": "APO_ClassAbilityMonk",
+        "name": "Monk",
+        "description": null,
+        "plugin": "NirnsChosen.esp",
+        "effects": [
+          {
+            "name": "Attenuation",
+            "description": "Your unarmed attacks have a chance to deal additional elemental damage based on your resistances.",
+            "magnitude": 0,
+            "duration": 0,
+            "perk": {
+              "formKey": "000CAB:NirnsChosen.esp",
+              "editorId": "APO_ClassMonkPerk01",
+              "name": "Attenuation",
+              "description": null,
+              "plugin": "NirnsChosen.esp"
+            }
+          }
+        ]
+      },
+      "perks": [
+        {
+          "formKey": "000CAB:NirnsChosen.esp",
+          "editorId": "APO_ClassMonkPerk01",
+          "name": "Attenuation",
+          "description": null,
+          "plugin": "NirnsChosen.esp"
+        },
+        {
+          "formKey": "000CAE:NirnsChosen.esp",
+          "editorId": "APO_ClassMonkPerk02",
+          "name": "Attenuation",
+          "description": null,
+          "plugin": "NirnsChosen.esp"
+        }
+      ]
+    },
+    {
+      "id": "Nightblade",
+      "name": "Nightblade",
+      "description": "An cunning opportunist who has learned to wield both spell and blade.\r\n\r\nNightblades have a major skill bonus to Illusion and minor skill bonuses to Alchemy, Destruction, Light Armor, One-Handed, and Sneak.\r\nNightblades begin the game with Light Armor, a Dagger, Calm, and Flames.\r\n\r\nNightblades gain the Veil Touched ability, increasing their movement speed while sneaking and increasing the damage they deal with sneak attacks.",
+      "majorSkill": "Illusion",
+      "minorSkills": [
+        "LightArmor",
+        "OneHanded",
+        "Sneak",
+        "Destruction"
+      ],
+      "scriptProperties": {
+        "MajorSkill": "Illusion",
+        "MinorSkill1": "LightArmor",
+        "MinorSkill2": "OneHanded",
+        "MinorSkill3": "Sneak",
+        "MinorSkill4": "Destruction",
+        "MinorSkill5": ""
+      },
+      "warnings": [
+        "Description lists minor skill Alchemy, script does not raise it."
+      ],
+      "startingGear": "Light Armor, a Dagger, Calm, and Flames",
+      "ability": {
+        "formKey": "000A71:NirnsChosen.esp",
+        "editorId": "APO_ClassAbilityNightblade",
+        "name": "Nightblade",
+        "description": null,
+        "plugin": "NirnsChosen.esp",
+        "effects": [
+          {
+            "name": "Veil Touched",
+            "description": "You move 20% faster while sneaking and deal 25% extra damage with sneak attacks.",
+            "magnitude": 0,
+            "duration": 0,
+            "perk": {
+              "formKey": "000962:NirnsChosen.esp",
+              "editorId": "APO_ClassNightbladePerk01",
+              "name": "Veil Touched",
+              "description": null,
+              "plugin": "NirnsChosen.esp"
+            }
+          }
+        ]
+      },
+      "perks": [
+        {
+          "formKey": "000962:NirnsChosen.esp",
+          "editorId": "APO_ClassNightbladePerk01",
+          "name": "Veil Touched",
+          "description": null,
+          "plugin": "NirnsChosen.esp"
+        }
+      ]
+    },
+    {
+      "id": "Prisoner",
+      "name": "Prisoner",
+      "description": "An individual with no past to speak of, a complete enigma.\r\nPrisoners begin the game with no starting skill bonuses or equipment, other than a Rusted Mace, Flames, and Healing.\r\n\r\nPrisoners gain the Manifest Destiny ability, granting 1 additional perk point.",
+      "majorSkill": null,
+      "minorSkills": [],
+      "scriptProperties": {
+        "MajorSkill": "",
+        "MinorSkill1": "",
+        "MinorSkill2": "",
+        "MinorSkill3": "",
+        "MinorSkill4": "",
+        "MinorSkill5": ""
+      },
+      "warnings": [],
+      "startingGear": "no starting skill bonuses or equipment, other than a Rusted Mace, Flames, and Healing",
+      "ability": {
+        "formKey": "000A64:NirnsChosen.esp",
+        "editorId": "APO_ClassAbilityPrisoner",
+        "name": "Prisoner",
+        "description": null,
+        "plugin": "NirnsChosen.esp",
+        "effects": [
+          {
+            "name": "Manifest Destiny",
+            "description": "You start with 1 additional Perk point.",
+            "magnitude": 0,
+            "duration": 0
+          }
+        ]
+      },
+      "perks": []
+    },
+    {
+      "id": "Rogue",
+      "name": "Rogue",
+      "description": "A resourceful and cunning combatant, experienced in both duels and diplomacy.\r\n\r\nRogues have a major skill bonus to One-Handed and minor skill bonuses to Block, Light Armor, Security, Sneak, and Speech.\r\nRogues begin the game with Light Armor and a Sword.\r\n\r\nRogues gain the Opportunist ability, giving them a chance to become intangible during incoming melee attacks and gain the upper hand in combat.",
+      "majorSkill": "OneHanded",
+      "minorSkills": [
+        "LightArmor",
+        "Speechcraft",
+        "Block",
+        "Pickpocket",
+        "Sneak"
+      ],
+      "scriptProperties": {
+        "MajorSkill": "OneHanded",
+        "MinorSkill1": "LightArmor",
+        "MinorSkill2": "Speechcraft",
+        "MinorSkill3": "Block",
+        "MinorSkill4": "Pickpocket",
+        "MinorSkill5": "Sneak"
+      },
+      "warnings": [],
+      "startingGear": "Light Armor and a Sword",
+      "ability": {
+        "formKey": "000A72:NirnsChosen.esp",
+        "editorId": "APO_ClassAbilityRogue",
+        "name": "Rogue",
+        "description": null,
+        "plugin": "NirnsChosen.esp",
+        "effects": [
+          {
+            "name": "Opportunist",
+            "description": "You have a chance to become intangible for 3 seconds during incoming melee attacks. You deal 50% more damage while intangible.",
+            "magnitude": 0,
+            "duration": 0,
+            "perk": {
+              "formKey": "000CBD:NirnsChosen.esp",
+              "editorId": "APO_ClassRoguePerk01",
+              "name": "Opportunist",
+              "description": null,
+              "plugin": "NirnsChosen.esp"
+            }
+          }
+        ]
+      },
+      "perks": [
+        {
+          "formKey": "000CBD:NirnsChosen.esp",
+          "editorId": "APO_ClassRoguePerk01",
+          "name": "Opportunist",
+          "description": null,
+          "plugin": "NirnsChosen.esp"
+        }
+      ]
+    },
+    {
+      "id": "Soldier",
+      "name": "Soldier",
+      "description": "A versatile, weapons-oriented fighter skilled in all martial disciplines.\r\n\r\nSoldiers have a major skill bonus to Block and minor skill bonuses to Archery, Heavy Armor, One-Handed, Smithing, and Two-Handed.\r\nSoldiers begin the game with Heavy Armor, a War Axe, a Long Bow, and a Shield.\r\n\r\nSoldiers gain the Martial Training ability, increasing their Health and Stamina Regeneration.",
+      "majorSkill": null,
+      "minorSkills": [
+        "OneHanded",
+        "Marksman",
+        "Block",
+        "Smithing",
+        "HeavyArmor"
+      ],
+      "scriptProperties": {
+        "MajorSkill": "",
+        "MinorSkill1": "OneHanded",
+        "MinorSkill2": "Marksman",
+        "MinorSkill3": "Block",
+        "MinorSkill4": "Smithing",
+        "MinorSkill5": "HeavyArmor"
+      },
+      "warnings": [
+        "Description says major skill Block, script gives none.",
+        "Description lists minor skill TwoHanded, script does not raise it.",
+        "Script raises Block as a minor skill, description does not list it."
+      ],
+      "startingGear": "Heavy Armor, a War Axe, a Long Bow, and a Shield",
+      "ability": {
+        "formKey": "000A73:NirnsChosen.esp",
+        "editorId": "APO_ClassAbilitySoldier",
+        "name": "Soldier",
+        "description": null,
+        "plugin": "NirnsChosen.esp",
+        "effects": [
+          {
+            "name": "Martial Training",
+            "description": "Your Health and Stamina Regeneration is increased by 50%.",
+            "magnitude": 50,
+            "duration": 0
+          }
+        ]
+      },
+      "perks": []
+    },
+    {
+      "id": "Sorcerer",
+      "name": "Sorcerer",
+      "description": "An expert in magical objects and items, but typically not a primary spell-caster.\r\n\r\nSorcerers have a major skill bonus to Enchanting and minor skill bonuses to Alteration, Conjuration, Destruction, Heavy Armor, and Restoration.\r\nSorcerers begin the game with Heavy Armor, a Staff of Flames, Healing, and Soul Trap.\r\n\r\nSorcerers gain the Artificer ability, allowing them to use enchanted items for longer and find more scrolls in their travels.",
+      "majorSkill": "Enchanting",
+      "minorSkills": [
+        "HeavyArmor",
+        "Alteration",
+        "Conjuration",
+        "Destruction",
+        "Restoration"
+      ],
+      "scriptProperties": {
+        "MajorSkill": "Enchanting",
+        "MinorSkill1": "HeavyArmor",
+        "MinorSkill2": "Alteration",
+        "MinorSkill3": "Conjuration",
+        "MinorSkill4": "Destruction",
+        "MinorSkill5": "Restoration"
+      },
+      "warnings": [],
+      "startingGear": "Heavy Armor, a Staff of Flames, Healing, and Soul Trap",
+      "ability": {
+        "formKey": "000A74:NirnsChosen.esp",
+        "editorId": "APO_ClassAbilitySorcerer",
+        "name": "Sorcerer",
+        "description": null,
+        "plugin": "NirnsChosen.esp",
+        "effects": [
+          {
+            "name": "Artificer",
+            "description": "Your enchantments cost 25% less, and you find uncommon scrolls much more often.",
+            "magnitude": 0,
+            "duration": 0,
+            "perk": {
+              "formKey": "00096E:NirnsChosen.esp",
+              "editorId": "APO_ClassSorcererPerk01",
+              "name": "Artificer",
+              "description": null,
+              "plugin": "NirnsChosen.esp"
+            }
+          }
+        ]
+      },
+      "perks": [
+        {
+          "formKey": "00096E:NirnsChosen.esp",
+          "editorId": "APO_ClassSorcererPerk01",
+          "name": "Artificer",
+          "description": null,
+          "plugin": "NirnsChosen.esp"
+        }
+      ]
+    },
+    {
+      "id": "Summoner",
+      "name": "Summoner",
+      "description": "A individual capable of summoning powerful entities or reanimating the undead to do their bidding.\r\n\r\nSummoners have a major skill bonus to Conjuration and minor skill bonuses to Alchemy, Alteration, Destruction, Restoration, and Sneak.\r\nSummoners begin the game with Robes, Flames, Healing, Conjure Spectral Wolf, and Raise Zombie.\r\n\r\nSummoners gain the Binding Vow ability, allowing them to control an additional summon or zombie",
+      "majorSkill": "Conjuration",
+      "minorSkills": [
+        "Sneak",
+        "Alchemy",
+        "Alteration",
+        "Destruction",
+        "Restoration"
+      ],
+      "scriptProperties": {
+        "MajorSkill": "Conjuration",
+        "MinorSkill1": "Sneak",
+        "MinorSkill2": "Alchemy",
+        "MinorSkill3": "Alteration",
+        "MinorSkill4": "Destruction",
+        "MinorSkill5": "Restoration"
+      },
+      "warnings": [],
+      "startingGear": "Robes, Flames, Healing, Conjure Spectral Wolf, and Raise Zombie",
+      "ability": {
+        "formKey": "000A75:NirnsChosen.esp",
+        "editorId": "APO_ClassAbilitySummoner",
+        "name": "Summoner",
+        "description": null,
+        "plugin": "NirnsChosen.esp",
+        "effects": [
+          {
+            "name": "Binding Vow",
+            "description": "You can summon or reanimate 1 additional minion.",
+            "magnitude": 0,
+            "duration": 0,
+            "perk": {
+              "formKey": "00096A:NirnsChosen.esp",
+              "editorId": "APO_ClassSummonerPerk01",
+              "name": "Binding Vow",
+              "description": null,
+              "plugin": "NirnsChosen.esp"
+            }
+          }
+        ]
+      },
+      "perks": [
+        {
+          "formKey": "00096A:NirnsChosen.esp",
+          "editorId": "APO_ClassSummonerPerk01",
+          "name": "Binding Vow",
+          "description": null,
+          "plugin": "NirnsChosen.esp"
+        }
+      ]
+    },
+    {
+      "id": "Vagabond",
+      "name": "Vagabond",
+      "description": "One who was banished, exiled, or maybe just wandered a little too far from home.\r\n\r\nVagabonds have a major skill bonus to Two-Handed and minor skill bonuses to Archery, Block, Heavy Armor, Security, and Smithing.\r\nVagabonds begin the game with Heavy Armor, a Battleaxe, and a Long Bow.\r\n\r\nVagabonds gain the Seasoned Veteran ability, reducing the damage taken while power attacking, drawing a bow, or blocking.",
+      "majorSkill": "TwoHanded",
+      "minorSkills": [
+        "Marksman",
+        "Block",
+        "Smithing",
+        "HeavyArmor",
+        "Pickpocket"
+      ],
+      "scriptProperties": {
+        "MajorSkill": "TwoHanded",
+        "MinorSkill1": "Marksman",
+        "MinorSkill2": "Block",
+        "MinorSkill3": "Smithing",
+        "MinorSkill4": "HeavyArmor",
+        "MinorSkill5": "Pickpocket"
+      },
+      "warnings": [],
+      "startingGear": "Heavy Armor, a Battleaxe, and a Long Bow",
+      "ability": {
+        "formKey": "000A76:NirnsChosen.esp",
+        "editorId": "APO_ClassAbilityVagabond",
+        "name": "Vagabond",
+        "description": null,
+        "plugin": "NirnsChosen.esp",
+        "effects": [
+          {
+            "name": "Seasoned Veteran",
+            "description": "You resist 25% of incoming weapon and spell damage when power attacking, drawing a bow, or blocking.",
+            "magnitude": 0,
+            "duration": 0,
+            "perk": {
+              "formKey": "000960:NirnsChosen.esp",
+              "editorId": "APO_ClassVagabondPerk01",
+              "name": "Seasoned Veteran",
+              "description": null,
+              "plugin": "NirnsChosen.esp"
+            }
+          }
+        ]
+      },
+      "perks": [
+        {
+          "formKey": "000960:NirnsChosen.esp",
+          "editorId": "APO_ClassVagabondPerk01",
+          "name": "Seasoned Veteran",
+          "description": null,
+          "plugin": "NirnsChosen.esp"
+        }
+      ]
+    },
+    {
+      "id": "WitchHunter",
+      "name": "Witch Hunter",
+      "description": "A individual dedicated to hunting those who wield dangerous magic.\r\n\r\nWitch Hunters have a major skill bonus to Archery and minor skill bonuses to Alchemy, Conjuration, Enchanting, Heavy Armor, and Two-Handed.\r\nWitch Hunters begin the game with Robes, a Greatsword, a Long Bow, and Conjure Familiar.\r\n\r\nWitch Hunters gain the Perfect Preparation ability, increasing the duration of their potions and allowing them to absorb incoming spells.",
+      "majorSkill": "Marksman",
+      "minorSkills": [
+        "TwoHanded",
+        "Sneak",
+        "Alchemy",
+        "Conjuration",
+        "Enchanting"
+      ],
+      "scriptProperties": {
+        "MajorSkill": "Marksman",
+        "MinorSkill1": "TwoHanded",
+        "MinorSkill2": "Sneak",
+        "MinorSkill3": "Alchemy",
+        "MinorSkill4": "Conjuration",
+        "MinorSkill5": "Enchanting"
+      },
+      "warnings": [
+        "Description lists minor skill HeavyArmor, script does not raise it.",
+        "Script raises Sneak as a minor skill, description does not list it."
+      ],
+      "startingGear": "Robes, a Greatsword, a Long Bow, and Conjure Familiar",
+      "ability": {
+        "formKey": "000A77:NirnsChosen.esp",
+        "editorId": "APO_ClassAbilityWitchHunter",
+        "name": "Witch Hunter",
+        "description": null,
+        "plugin": "NirnsChosen.esp",
+        "effects": [
+          {
+            "name": "Perfect Preparation",
+            "description": "Your potions last 50% longer, and you have a 10% chance to absorb the Magicka from incoming spells.",
+            "magnitude": 0,
+            "duration": 0
+          }
+        ]
+      },
+      "perks": [
+        {
+          "formKey": "000968:NirnsChosen.esp",
+          "editorId": "APO_ClassWitchHunterPerk01",
+          "name": "Perfect Preparation",
+          "description": null,
+          "plugin": "NirnsChosen.esp"
+        }
+      ]
+    }
+  ],
+  "skillBonus": {
+    "base": 10,
+    "major": 10,
+    "minor": 5
+  },
+  "meta": {
+    "profile": "Apostasy",
+    "plugins": 3407,
+    "generatedAt": "2026-10-23T14:07:30.1329175Z"
+  }
+}

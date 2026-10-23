@@ -10,7 +10,7 @@ namespace Extractor;
 /// </summary>
 public static class PerkExtractor
 {
-    public static JsonObject Extract(GameData game)
+    public static JsonObject Extract(GameData game, Describe d)
     {
         var avifs = game.Winning<IActorValueInformationGetter>();
         var perks = game.Winning<IPerkGetter>();
@@ -39,6 +39,8 @@ public static class PerkExtractor
             trees.Add(new JsonObject
             {
                 ["id"] = avif.EditorID,
+                // Canonical skill id; null for the Vampire Lord / Werewolf trees.
+                ["skill"] = Skills.Normalize(avif.EditorID),
                 ["formKey"] = Json.Key(avif.FormKey),
                 ["name"] = avif.Name?.String,
                 ["description"] = avif.Description?.String,
@@ -68,7 +70,7 @@ public static class PerkExtractor
             {
                 ["editorId"] = perk.EditorID,
                 ["name"] = perk.Name?.String,
-                ["description"] = perk.Description?.String,
+                ["description"] = d.Text(perk.Description?.String),
                 ["plugin"] = from.FileName.String,
                 ["playable"] = perk.Playable,
                 ["hidden"] = perk.Hidden,

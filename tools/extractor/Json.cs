@@ -10,6 +10,9 @@ public static class Json
 {
     public static string Key(FormKey key) => key.ToString(); // "000800:Skyrim.esm"
 
+    /// <summary>Display names for forms referenced from condition args (quest, perk, ...), set once loaded.</summary>
+    public static IReadOnlyDictionary<FormKey, string> Names { get; set; } = new Dictionary<FormKey, string>();
+
     public static JsonNode? Key(IFormLinkGetter link) => link.IsNull ? null : Key(link.FormKey);
 
     public static JsonArray Conditions(IEnumerable<IConditionGetter> conditions)
@@ -41,6 +44,12 @@ public static class Json
             }
             var args = ConditionArgs(c.Data);
             if (args.Count > 0) o["args"] = args;
+            var names = new JsonObject();
+            foreach (var (k, v) in args)
+                if (v is JsonValue jv && jv.TryGetValue<string>(out var s) && FormKey.TryFactory(s, out var fk)
+                    && Names.TryGetValue(fk, out var name))
+                    names[k] = name;
+            if (names.Count > 0) o["argNames"] = names;
             arr.Add(o);
         }
         return arr;
@@ -74,6 +83,7 @@ public static class Json
                 bool b => b,
                 _ => FormLinkOrIndex(v),
             };
+            if (p.Name == "ActorValue" && Skills.Normalize(v?.ToString()) is { } skill) node = skill;
             if (node != null) o[LowerFirst(p.Name)] = node;
         }
         return o;

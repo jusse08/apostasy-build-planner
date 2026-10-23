@@ -1,0 +1,2205 @@
+{
+  "gameSettings": {
+    "fXPLevelUpMult": {
+      "value": 20,
+      "plugin": "APO_Apostasy - Controller.esp"
+    },
+    "fXPLevelUpBase": {
+      "value": 240,
+      "plugin": "APO_Apostasy - Controller.esp"
+    },
+    "iAVDhmsLevelUp": {
+      "value": 10,
+      "plugin": "Skyrim.esm"
+    },
+    "iAVDSkillStart": {
+      "value": 10,
+      "plugin": "NirnsChosen.esp"
+    }
+  },
+  "experience": {
+    "_source": "mods\\Apostasy - INIs and Configs\\SKSE\\Plugins\\Experience.ini",
+    "General": {
+      "bEnableKilling": true,
+      "bEnableReading": false,
+      "bEnableSkillXP": false,
+      "iMaxPlayerLevel": 255,
+      "fSkillCapBase": 18,
+      "fSkillCapMult": 2.75,
+      "bUseRacialCaps": false,
+      "bShowMessages": true,
+      "sMessageFormat": "{:+d} XP",
+      "iMeterMode": 1
+    },
+    "Questing": {
+      "iXPQuestNone": 0,
+      "iXPQuestMain": 40,
+      "iXPQuestCollege": 25,
+      "iXPQuestThieves": 25,
+      "iXPQuestBrotherhood": 25,
+      "iXPQuestCompanions": 25,
+      "iXPQuestDaedric": 40,
+      "iXPQuestSide": 15,
+      "iXPQuestCivilWar": 25,
+      "iXPQuestDawnguard": 30,
+      "iXPQuestDragonborn": 30,
+      "iXPQuestObjectives": 10
+    },
+    "Exploring": {
+      "iXPDiscFort": 5,
+      "iXPDiscNordicRuin": 5,
+      "iXPDiscDwemerRuin": 5,
+      "iXPDiscShipwreck": 10,
+      "iXPDiscDragonLair": 15,
+      "iXPDiscDoomstone": 15,
+      "iXPDiscImperialTower": 5,
+      "iXPDiscOrcStronghold": 10,
+      "iXPDiscGiantCamp": 5,
+      "iXPDiscNordicTower": 5,
+      "iXPDiscNordicDwelling": 5,
+      "iXPDiscDaedricShrine": 15,
+      "iXPDiscDefault": 5
+    },
+    "Clearing": {
+      "iXPClearCave": 10,
+      "iXPClearFort": 20,
+      "iXPClearNordicRuin": 25,
+      "iXPClearDwemerRuin": 25,
+      "iXPClearDragonLair": 30,
+      "iXPClearImperialTower": 20,
+      "iXPClearGiantCamp": 10,
+      "iXPClearNordicTower": 20,
+      "iXPClearDefault": 10
+    },
+    "Killing": {
+      "fLevelFactor": 0.8,
+      "fGroupFactor": 0,
+      "fDamageThreshold": 0.2,
+      "fKillingMult": 1
+    },
+    "Reading": {
+      "fXPReadingMult": 0
+    }
+  },
+  "uncapper": {
+    "_source": "mods\\Apostasy - INIs and Configs\\SKSE\\Plugins\\SkyrimUncapper.ini",
+    "General": {
+      "bUseSkillCaps": true,
+      "bUseSkillFormulaCaps": true,
+      "bUseEnchanterCaps": true,
+      "bUseSkillExpGainMults": true,
+      "bUsePCLevelSkillExpMults": false,
+      "bUsePerksAtLevelUp": true,
+      "bUseAttributesAtLevelUp": true,
+      "bUseLegendarySettings": false
+    },
+    "SkillCaps": {
+      "iOneHanded": 100,
+      "iTwoHanded": 100,
+      "iMarksman": 100,
+      "iBlock": 100,
+      "iSmithing": 100,
+      "iHeavyArmor": 100,
+      "iLightArmor": 100,
+      "iPickpocket": 100,
+      "iLockPicking": 100,
+      "iSneak": 100,
+      "iAlchemy": 100,
+      "iSpeechCraft": 100,
+      "iAlteration": 100,
+      "iConjuration": 100,
+      "iDestruction": 100,
+      "iIllusion": 100,
+      "iRestoration": 100,
+      "iEnchanting": 100
+    },
+    "SkillFormulaCaps": {
+      "iOneHanded": 100,
+      "iTwoHanded": 100,
+      "iMarksman": 100,
+      "iBlock": 100,
+      "iSmithing": 100,
+      "iHeavyArmor": 100,
+      "iLightArmor": 100,
+      "iPickpocket": 100,
+      "iLockPicking": 100,
+      "iSneak": 100,
+      "iAlchemy": 100,
+      "iSpeechCraft": 100,
+      "iAlteration": 100,
+      "iConjuration": 100,
+      "iDestruction": 100,
+      "iIllusion": 100,
+      "iRestoration": 100,
+      "iEnchanting": 100
+    },
+    "Enchanting": {
+      "iMagnitudeLevelCap": 100,
+      "iChargeLevelCap": 199,
+      "bUseLinearChargeFormula": false
+    },
+    "SkillExpGainMults": {
+      "fOneHanded": 0,
+      "fTwoHanded": 0,
+      "fMarksman": 0,
+      "fBlock": 0,
+      "fSmithing": 0,
+      "fHeavyArmor": 0,
+      "fLightArmor": 0,
+      "fPickpocket": 0,
+      "fLockPicking": 0,
+      "fSneak": 0,
+      "fAlchemy": 0,
+      "fSpeechCraft": 0,
+      "fAlteration": 0,
+      "fConjuration": 0,
+      "fDestruction": 0,
+      "fIllusion": 0,
+      "fRestoration": 0,
+      "fEnchanting": 0
+    },
+    "SkillExpGainMults\\BaseSkillLevel\\OneHanded": {
+      "0": 1
+    },
+    "SkillExpGainMults\\BaseSkillLevel\\TwoHanded": {
+      "0": 1
+    },
+    "SkillExpGainMults\\BaseSkillLevel\\Marksman": {
+      "0": 1
+    },
+    "SkillExpGainMults\\BaseSkillLevel\\Block": {
+      "0": 1
+    },
+    "SkillExpGainMults\\BaseSkillLevel\\Smithing": {
+      "0": 1
+    },
+    "SkillExpGainMults\\BaseSkillLevel\\HeavyArmor": {
+      "0": 1
+    },
+    "SkillExpGainMults\\BaseSkillLevel\\LightArmor": {
+      "0": 1
+    },
+    "SkillExpGainMults\\BaseSkillLevel\\Pickpocket": {
+      "0": 1
+    },
+    "SkillExpGainMults\\BaseSkillLevel\\LockPicking": {
+      "0": 1
+    },
+    "SkillExpGainMults\\BaseSkillLevel\\Sneak": {
+      "0": 1
+    },
+    "SkillExpGainMults\\BaseSkillLevel\\Alchemy": {
+      "0": 1
+    },
+    "SkillExpGainMults\\BaseSkillLevel\\SpeechCraft": {
+      "0": 1
+    },
+    "SkillExpGainMults\\BaseSkillLevel\\Alteration": {
+      "0": 1
+    },
+    "SkillExpGainMults\\BaseSkillLevel\\Conjuration": {
+      "0": 1
+    },
+    "SkillExpGainMults\\BaseSkillLevel\\Destruction": {
+      "0": 1
+    },
+    "SkillExpGainMults\\BaseSkillLevel\\Illusion": {
+      "0": 1
+    },
+    "SkillExpGainMults\\BaseSkillLevel\\Restoration": {
+      "0": 1
+    },
+    "SkillExpGainMults\\BaseSkillLevel\\Enchanting": {
+      "0": 1
+    },
+    "SkillExpGainMults\\CharacterLevel\\OneHanded": {
+      "0": 1
+    },
+    "SkillExpGainMults\\CharacterLevel\\TwoHanded": {
+      "0": 1
+    },
+    "SkillExpGainMults\\CharacterLevel\\Marksman": {
+      "0": 1
+    },
+    "SkillExpGainMults\\CharacterLevel\\Block": {
+      "0": 1
+    },
+    "SkillExpGainMults\\CharacterLevel\\Smithing": {
+      "0": 1
+    },
+    "SkillExpGainMults\\CharacterLevel\\HeavyArmor": {
+      "0": 1
+    },
+    "SkillExpGainMults\\CharacterLevel\\LightArmor": {
+      "0": 1
+    },
+    "SkillExpGainMults\\CharacterLevel\\Pickpocket": {
+      "0": 1
+    },
+    "SkillExpGainMults\\CharacterLevel\\LockPicking": {
+      "0": 1
+    },
+    "SkillExpGainMults\\CharacterLevel\\Sneak": {
+      "0": 1
+    },
+    "SkillExpGainMults\\CharacterLevel\\Alchemy": {
+      "0": 1
+    },
+    "SkillExpGainMults\\CharacterLevel\\SpeechCraft": {
+      "0": 1
+    },
+    "SkillExpGainMults\\CharacterLevel\\Alteration": {
+      "0": 1
+    },
+    "SkillExpGainMults\\CharacterLevel\\Conjuration": {
+      "0": 1
+    },
+    "SkillExpGainMults\\CharacterLevel\\Destruction": {
+      "0": 1
+    },
+    "SkillExpGainMults\\CharacterLevel\\Illusion": {
+      "0": 1
+    },
+    "SkillExpGainMults\\CharacterLevel\\Restoration": {
+      "0": 1
+    },
+    "SkillExpGainMults\\CharacterLevel\\Enchanting": {
+      "0": 1
+    },
+    "LevelSkillExpMults": {
+      "fOneHanded": 0,
+      "fTwoHanded": 0,
+      "fMarksman": 0,
+      "fBlock": 0,
+      "fSmithing": 0,
+      "fHeavyArmor": 0,
+      "fLightArmor": 0,
+      "fPickpocket": 0,
+      "fLockPicking": 0,
+      "fSneak": 0,
+      "fAlchemy": 0,
+      "fSpeechCraft": 0,
+      "fAlteration": 0,
+      "fConjuration": 0,
+      "fDestruction": 0,
+      "fIllusion": 0,
+      "fRestoration": 0,
+      "fEnchanting": 0
+    },
+    "LevelSkillExpMults\\BaseSkillLevel\\OneHanded": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\BaseSkillLevel\\TwoHanded": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\BaseSkillLevel\\Marksman": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\BaseSkillLevel\\Block": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\BaseSkillLevel\\Smithing": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\BaseSkillLevel\\HeavyArmor": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\BaseSkillLevel\\LightArmor": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\BaseSkillLevel\\Pickpocket": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\BaseSkillLevel\\LockPicking": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\BaseSkillLevel\\Sneak": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\BaseSkillLevel\\Alchemy": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\BaseSkillLevel\\SpeechCraft": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\BaseSkillLevel\\Alteration": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\BaseSkillLevel\\Conjuration": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\BaseSkillLevel\\Destruction": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\BaseSkillLevel\\Illusion": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\BaseSkillLevel\\Restoration": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\BaseSkillLevel\\Enchanting": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\CharacterLevel\\OneHanded": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\CharacterLevel\\TwoHanded": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\CharacterLevel\\Marksman": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\CharacterLevel\\Block": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\CharacterLevel\\Smithing": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\CharacterLevel\\HeavyArmor": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\CharacterLevel\\LightArmor": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\CharacterLevel\\Pickpocket": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\CharacterLevel\\LockPicking": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\CharacterLevel\\Sneak": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\CharacterLevel\\Alchemy": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\CharacterLevel\\SpeechCraft": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\CharacterLevel\\Alteration": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\CharacterLevel\\Conjuration": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\CharacterLevel\\Destruction": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\CharacterLevel\\Illusion": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\CharacterLevel\\Restoration": {
+      "0": 0
+    },
+    "LevelSkillExpMults\\CharacterLevel\\Enchanting": {
+      "0": 0
+    },
+    "PerksAtLevelUp": {
+      "0": 1,
+      "5": 2,
+      "6": 1,
+      "10": 2,
+      "11": 1,
+      "15": 2,
+      "16": 1,
+      "20": 2,
+      "21": 1,
+      "25": 2,
+      "26": 1,
+      "30": 2,
+      "31": 1,
+      "35": 2,
+      "36": 1,
+      "40": 2,
+      "41": 1,
+      "45": 2,
+      "46": 1,
+      "50": 2,
+      "51": 0
+    },
+    "HealthAtLevelUp": {
+      "0": 20,
+      "3": 10,
+      "101": 0
+    },
+    "HealthAtMagickaLevelUp": {
+      "0": 0
+    },
+    "HealthAtStaminaLevelUp": {
+      "0": 0
+    },
+    "MagickaAtLevelUp": {
+      "0": 20,
+      "3": 10,
+      "101": 0
+    },
+    "MagickaAtHealthLevelUp": {
+      "0": 0
+    },
+    "MagickaAtStaminaLevelUp": {
+      "0": 0
+    },
+    "StaminaAtLevelUp": {
+      "0": 20,
+      "3": 10,
+      "101": 0
+    },
+    "StaminaAtHealthLevelUp": {
+      "0": 0
+    },
+    "StaminaAtMagickaLevelUp": {
+      "0": 0
+    },
+    "CarryWeightAtHealthLevelUp": {
+      "0": 0
+    },
+    "CarryWeightAtMagickaLevelUp": {
+      "0": 0
+    },
+    "CarryWeightAtStaminaLevelUp": {
+      "0": 0
+    },
+    "LegendarySkill": {
+      "bLegendaryKeepSkillLevel": false,
+      "bHideLegendaryButton": false,
+      "iSkillLevelEnableLegendary": 100,
+      "iSkillLevelAfterLegendary": 0
+    }
+  },
+  "staticSkillLeveling": {
+    "_source": [
+      "mods\\Apostasy - MCM Output\\MCM\\Config\\StaticSkillLeveling\\settings.ini",
+      "mods\\Apostasy - MCM Output\\MCM\\Settings\\StaticSkillLeveling.ini"
+    ],
+    "General": {
+      "iMaxLevelsPerSkillPerPlayerLevel": 100,
+      "iSkillPointCost0": 1,
+      "iSkillPointCost25": 2,
+      "iSkillPointCost50": 4,
+      "iSkillPointCost75": 6,
+      "fSkillPointsLevelMultiplier": 1,
+      "iSkillPointsPerLevel": 15,
+      "bSSLDebugEnabled": 0,
+      "bDisableSkillLeveling": 1,
+      "iSkillPointsCap": 60,
+      "sSkillCostProgression": ";"
+    }
+  },
+  "questPerks": [
+    {
+      "id": "MQ104",
+      "quests": [
+        {
+          "formKey": "02610C:Skyrim.esm",
+          "editorId": "MQ104",
+          "name": "Dragon Rising"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": ">=",
+          "or": false,
+          "runOn": "Subject",
+          "value": 160,
+          "args": {
+            "quest": "02610C:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Dragon Rising"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000802:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_MQ104"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MQ105Ustengrav",
+      "quests": [
+        {
+          "formKey": "0713DC:Skyrim.esm",
+          "editorId": "MQ105Ustengrav",
+          "name": "The Horn of Jurgen Windcaller"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 60,
+          "args": {
+            "quest": "0713DC:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "The Horn of Jurgen Windcaller"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "00084C:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_MQ105Ustengrav"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MQ203",
+      "quests": [
+        {
+          "formKey": "036192:Skyrim.esm",
+          "editorId": "MQ203",
+          "name": "Alduin's Wall"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 280,
+          "args": {
+            "quest": "036192:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Alduin's Wall"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000851:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_MQ203"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MQ205",
+      "quests": [
+        {
+          "formKey": "02D516:Skyrim.esm",
+          "editorId": "MQ205",
+          "name": "Elder Knowledge"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 100,
+          "args": {
+            "quest": "02D516:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Elder Knowledge"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000805:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_MQ205"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MQ305",
+      "quests": [
+        {
+          "formKey": "046EF2:Skyrim.esm",
+          "editorId": "MQ305",
+          "name": "Dragonslayer"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": ">=",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "046EF2:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Dragonslayer"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000807:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_MQ305"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MS05",
+      "quests": [
+        {
+          "formKey": "053511:Skyrim.esm",
+          "editorId": "MS05",
+          "name": "Tending the Flames"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 300,
+          "args": {
+            "quest": "053511:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Tending the Flames"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "00084F:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_MS05"
+          }
+        }
+      ]
+    },
+    {
+      "id": "TG09",
+      "quests": [
+        {
+          "formKey": "021555:Skyrim.esm",
+          "editorId": "TG09",
+          "name": "Darkness Returns"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "021555:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Darkness Returns"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000811:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_TG09"
+          }
+        }
+      ]
+    },
+    {
+      "id": "TGLeadership",
+      "quests": [
+        {
+          "formKey": "0D7D69:Skyrim.esm",
+          "editorId": "TGLeadership",
+          "name": "Under New Management"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "0D7D69:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Under New Management"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000812:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_TGLeadership"
+          }
+        }
+      ]
+    },
+    {
+      "id": "C03",
+      "quests": [
+        {
+          "formKey": "01CEF4:Skyrim.esm",
+          "editorId": "C03",
+          "name": "The Silver Hand"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": ">=",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "01CEF4:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "The Silver Hand"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "00080D:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_C03"
+          }
+        }
+      ]
+    },
+    {
+      "id": "C06",
+      "quests": [
+        {
+          "formKey": "01CEF6:Skyrim.esm",
+          "editorId": "C06",
+          "name": "Glory of the Dead"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": ">=",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "01CEF6:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Glory of the Dead"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "00080E:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_C06"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MG06",
+      "quests": [
+        {
+          "formKey": "01F256:Skyrim.esm",
+          "editorId": "mg06",
+          "name": "Revealing the Unseen"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "01F256:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Revealing the Unseen"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "00080F:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_MG06"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MG08",
+      "quests": [
+        {
+          "formKey": "01F258:Skyrim.esm",
+          "editorId": "MG08",
+          "name": "The Eye of Magnus"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "01F258:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "The Eye of Magnus"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000810:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_MG08"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DB05",
+      "quests": [
+        {
+          "formKey": "01EA54:Skyrim.esm",
+          "editorId": "DB05",
+          "name": "Bound Until Death"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "01EA54:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Bound Until Death"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000813:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DB05"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DB11",
+      "quests": [
+        {
+          "formKey": "01EA59:Skyrim.esm",
+          "editorId": "DB11",
+          "name": "Hail Sithis!"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "01EA59:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Hail Sithis!"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000814:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DB11"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DBDestroy_Optional",
+      "quests": [
+        {
+          "formKey": "0934FB:Skyrim.esm",
+          "editorId": "DBDestroy",
+          "name": "Destroy the Dark Brotherhood!"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "0934FB:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Destroy the Dark Brotherhood!"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000815:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DBDestroy_Optional"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "global": "000817:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DBDestroy_Toggle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA01",
+      "quests": [
+        {
+          "formKey": "028AD6:Skyrim.esm",
+          "editorId": "DA01",
+          "name": "The Black Star"
+        },
+        {
+          "formKey": "028AD6:Skyrim.esm",
+          "editorId": "DA01",
+          "name": "The Black Star"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": true,
+          "runOn": "Subject",
+          "value": 100,
+          "args": {
+            "quest": "028AD6:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "The Black Star"
+          }
+        },
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 110,
+          "args": {
+            "quest": "028AD6:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "The Black Star"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "00081D:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DA01"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "global": "00081E:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_Daedric_Toggle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA02",
+      "quests": [
+        {
+          "formKey": "04D8D6:Skyrim.esm",
+          "editorId": "DA02",
+          "name": "Boethiah's Calling"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 100,
+          "args": {
+            "quest": "04D8D6:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Boethiah's Calling"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "00081F:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DA02"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "global": "00081E:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_Daedric_Toggle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA03",
+      "quests": [
+        {
+          "formKey": "01BFC4:Skyrim.esm",
+          "editorId": "DA03",
+          "name": "A Daedra's Best Friend"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "01BFC4:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "A Daedra's Best Friend"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000820:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DA03"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "global": "00081E:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_Daedric_Toggle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA04",
+      "quests": [
+        {
+          "formKey": "02D512:Skyrim.esm",
+          "editorId": "DA04",
+          "name": "Discerning the Transmundane"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 100,
+          "args": {
+            "quest": "02D512:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Discerning the Transmundane"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000821:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DA04"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "global": "00081E:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_Daedric_Toggle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA05",
+      "quests": [
+        {
+          "formKey": "02A49A:Skyrim.esm",
+          "editorId": "DA05",
+          "name": "Ill Met By Moonlight"
+        },
+        {
+          "formKey": "02A49A:Skyrim.esm",
+          "editorId": "DA05",
+          "name": "Ill Met By Moonlight"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": true,
+          "runOn": "Subject",
+          "value": 100,
+          "args": {
+            "quest": "02A49A:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Ill Met By Moonlight"
+          }
+        },
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 105,
+          "args": {
+            "quest": "02A49A:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Ill Met By Moonlight"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000822:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DA05"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "global": "00081E:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_Daedric_Toggle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA06",
+      "quests": [
+        {
+          "formKey": "03B681:Skyrim.esm",
+          "editorId": "DA06",
+          "name": "The Cursed Tribe"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "03B681:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "The Cursed Tribe"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000823:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DA06"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "global": "00081E:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_Daedric_Toggle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA07",
+      "quests": [
+        {
+          "formKey": "0240B8:Skyrim.esm",
+          "editorId": "DA07",
+          "name": "Pieces of the Past"
+        },
+        {
+          "formKey": "0240B8:Skyrim.esm",
+          "editorId": "DA07",
+          "name": "Pieces of the Past"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": true,
+          "runOn": "Subject",
+          "value": 100,
+          "args": {
+            "quest": "0240B8:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Pieces of the Past"
+          }
+        },
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 150,
+          "args": {
+            "quest": "0240B8:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Pieces of the Past"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000824:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DA07"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "global": "00081E:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_Daedric_Toggle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA08",
+      "quests": [
+        {
+          "formKey": "04A37B:Skyrim.esm",
+          "editorId": "DA08",
+          "name": "The Whispering Door"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 60,
+          "args": {
+            "quest": "04A37B:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "The Whispering Door"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000825:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DA08"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "global": "00081E:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_Daedric_Toggle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA09",
+      "quests": [
+        {
+          "formKey": "04E4E1:Skyrim.esm",
+          "editorId": "DA09",
+          "name": "The Break of Dawn"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 500,
+          "args": {
+            "quest": "04E4E1:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "The Break of Dawn"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000826:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DA09"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "global": "00081E:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_Daedric_Toggle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA10",
+      "quests": [
+        {
+          "formKey": "022F08:Skyrim.esm",
+          "editorId": "DA10",
+          "name": "The House of Horrors"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "022F08:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "The House of Horrors"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000827:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DA10"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "global": "00081E:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_Daedric_Toggle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA11",
+      "quests": [
+        {
+          "formKey": "02C358:Skyrim.esm",
+          "editorId": "DA11",
+          "name": "The Taste of Death"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 100,
+          "args": {
+            "quest": "02C358:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "The Taste of Death"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000828:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DA11"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "global": "00081E:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_Daedric_Toggle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA13",
+      "quests": [
+        {
+          "formKey": "08998D:Skyrim.esm",
+          "editorId": "DA13",
+          "name": "The Only Cure"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 100,
+          "args": {
+            "quest": "08998D:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "The Only Cure"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000829:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DA13"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "global": "00081E:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_Daedric_Toggle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA14",
+      "quests": [
+        {
+          "formKey": "01BB9B:Skyrim.esm",
+          "editorId": "DA14",
+          "name": "A Night To Remember"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "01BB9B:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "A Night To Remember"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "00082A:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DA14"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "global": "00081E:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_Daedric_Toggle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA15",
+      "quests": [
+        {
+          "formKey": "02AC68:Skyrim.esm",
+          "editorId": "DA15",
+          "name": "The Mind of Madness"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "02AC68:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "The Mind of Madness"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "00082B:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DA15"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "global": "00081E:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_Daedric_Toggle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA16",
+      "quests": [
+        {
+          "formKey": "0242AF:Skyrim.esm",
+          "editorId": "DA16",
+          "name": "Waking Nightmare"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "0242AF:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Waking Nightmare"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "00082C:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DA16"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "global": "00081E:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_Daedric_Toggle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DLC1LD",
+      "quests": [
+        {
+          "formKey": "005817:Dawnguard.esm",
+          "editorId": "DLC1LD",
+          "name": "Lost to the Ages"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 225,
+          "args": {
+            "quest": "005817:Dawnguard.esm"
+          },
+          "argNames": {
+            "quest": "Lost to the Ages"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000819:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DLC1LD"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DLC1VQ05",
+      "quests": [
+        {
+          "formKey": "002850:Dawnguard.esm",
+          "editorId": "DLC1VQ05",
+          "name": "Beyond Death"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "002850:Dawnguard.esm"
+          },
+          "argNames": {
+            "quest": "Beyond Death"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000816:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DLC1VQ05"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DLC1VQ08",
+      "quests": [
+        {
+          "formKey": "007C25:Dawnguard.esm",
+          "editorId": "DLC1VQ08",
+          "name": "Kindred Judgment"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "007C25:Dawnguard.esm"
+          },
+          "argNames": {
+            "quest": "Kindred Judgment"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000818:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DLC1VQ08"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DLC2MQ02",
+      "quests": [
+        {
+          "formKey": "017F8F:Dragonborn.esm",
+          "editorId": "DLC2MQ02",
+          "name": "The Temple of Miraak"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "017F8F:Dragonborn.esm"
+          },
+          "argNames": {
+            "quest": "The Temple of Miraak"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "00081A:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DLC2MQ02"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DLC2MQ04",
+      "quests": [
+        {
+          "formKey": "016E1F:Dragonborn.esm",
+          "editorId": "DLC2MQ04",
+          "name": "The Path of Knowledge"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 550,
+          "args": {
+            "quest": "016E1F:Dragonborn.esm"
+          },
+          "argNames": {
+            "quest": "The Path of Knowledge"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "00081B:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DLC2MQ04"
+          }
+        }
+      ]
+    },
+    {
+      "id": "DLC2MQ06",
+      "quests": [
+        {
+          "formKey": "0179D7:Dragonborn.esm",
+          "editorId": "DLC2MQ06",
+          "name": "At the Summit of Apocrypha"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 550,
+          "args": {
+            "quest": "0179D7:Dragonborn.esm"
+          },
+          "argNames": {
+            "quest": "At the Summit of Apocrypha"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "00081C:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_DLC2MQ06"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CWObj",
+      "quests": [
+        {
+          "formKey": "029940:Skyrim.esm",
+          "editorId": "CWObj",
+          "name": "<Alias=QuestNameLocation>"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetQuestCompleted",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "quest": "029940:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "<Alias=QuestNameLocation>"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000853:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_CWObj"
+          }
+        }
+      ]
+    },
+    {
+      "id": "CWSiegeObj",
+      "quests": [
+        {
+          "formKey": "096E71:Skyrim.esm",
+          "editorId": "CWSiegeObj",
+          "name": "Battle for <Alias=City>"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetQuestCompleted",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "quest": "096E71:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Battle for <Alias=City>"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000854:Quests Award Perk Points.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_CWSiegeObj"
+          }
+        }
+      ]
+    }
+  ],
+  "questPerkToggles": {
+    "Daedric": 0,
+    "DBDestroy": 1
+  },
+  "meta": {
+    "profile": "Apostasy",
+    "plugins": 3407,
+    "generatedAt": "2026-10-23T14:07:30.1329175Z"
+  }
+}

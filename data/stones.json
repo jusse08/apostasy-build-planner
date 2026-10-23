@@ -1,0 +1,380 @@
+{
+  "items": [
+    {
+      "id": "Apprentice",
+      "name": "The Apprentice Stone",
+      "description": "Those under the sign of The Apprentice regenerate Magicka much faster and randomly cast spells more efficiently, but are more vulnerable to magic.",
+      "abilities": [
+        {
+          "formKey": "10E439:Skyrim.esm",
+          "editorId": "APO_doomApprenticeNegativeAbility",
+          "name": "The Apprentice Stone",
+          "description": null,
+          "plugin": "StonesOfSacrifice.esp",
+          "effects": []
+        },
+        {
+          "formKey": "0E5F4E:Skyrim.esm",
+          "editorId": "APO_doomApprenticeAbility",
+          "name": "The Apprentice Stone",
+          "description": null,
+          "plugin": "StonesOfSacrifice.esp",
+          "effects": [
+            {
+              "name": "Elfborn",
+              "description": "Magicka recovers twice as fast, and spells randomly cost up to 50% less. However, your Magic Resistance is reduced by 25% and you take twice as much Magicka damage.",
+              "magnitude": 3,
+              "duration": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Atronach",
+      "name": "The Atronach Stone",
+      "description": "Those under the sign of The Atronach have more Magicka, and they absorb Magicka from incoming spells, but they cannot regenerate Magicka and restore Magicka less efficiently.",
+      "abilities": [
+        {
+          "formKey": "0E5F51:Skyrim.esm",
+          "editorId": "APO_doomAtronachAbility",
+          "name": "The Atronach Stone",
+          "description": null,
+          "plugin": "StonesOfSacrifice.esp",
+          "effects": [
+            {
+              "name": "Wombburn",
+              "description": "Your Magicka is increased by 200, and you have a 20% chance to absorb the Magicka from incoming spells when you fall below half Magicka. However, You can not regenerate Magicka in combat and potions that fortify or restore Magicka are half as effective.",
+              "magnitude": 200,
+              "duration": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Lady",
+      "name": "The Lady Stone",
+      "description": "Those under the sign of The Lady are able to call upon the Lady to cheat death, in exchange for gold.",
+      "abilities": [
+        {
+          "formKey": "0E5F54:Skyrim.esm",
+          "editorId": "APO_doomLadyAbility",
+          "name": "The Lady Stone",
+          "description": null,
+          "plugin": "StonesOfSacrifice - Lady's mortality.esp",
+          "effects": [
+            {
+              "name": "Lady's Favor",
+              "description": "Your Health, Magicka, and Stamina Regeneration is increased by 25%. When you die, you instead expend 500 gold to avoid any injury. However, if you can not pay this tax, you become affected by all accumulated injuries.",
+              "magnitude": 0,
+              "duration": 0,
+              "perk": {
+                "formKey": "000812:StagesOfSuffering.esp",
+                "editorId": "styy_dummyPerkLadyStone",
+                "name": "Lady's Favor",
+                "description": null,
+                "plugin": "StonesOfSacrifice - Lady's mortality.esp"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Lord",
+      "name": "The Lord Stone",
+      "description": "Those under the sign of The Lord regenerate their Health more quickly and can Rally after being struck by a melee attack. However they are weaker against fire and poison.",
+      "abilities": [
+        {
+          "formKey": "0E5F58:Skyrim.esm",
+          "editorId": "APO_doomLordAbility",
+          "name": "The Lord Stone",
+          "description": null,
+          "plugin": "StonesOfSacrifice.esp",
+          "effects": [
+            {
+              "name": "Rally",
+              "description": "Your Health Regeneration is increased by 100%, and upon receiving a melee hit your melee attacks restore Health for 5 seconds. However, your Fire and Poison Resistance is reduced by 50%.",
+              "magnitude": 0,
+              "duration": 0,
+              "perk": {
+                "formKey": "000A3F:StonesOfSacrifice.esp",
+                "editorId": "APO_doomLordPerk01",
+                "name": "Rally",
+                "description": null,
+                "plugin": "Paragon - StonesOfSacrifice.esp"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Lover",
+      "name": "The Lover Stone",
+      "description": "Those under the sign of The Lover have stronger shouts, but also take longer to recover their voice.",
+      "abilities": [
+        {
+          "formKey": "0E5F5A:Skyrim.esm",
+          "editorId": "APO_doomLoverAbility",
+          "name": "The Lover Stone",
+          "description": null,
+          "plugin": "StonesOfSacrifice.esp",
+          "effects": [
+            {
+              "name": "Lover's Kiss",
+              "description": "Your Shouts are 100% stronger and last 100% longer. However, your Shouts recover 50% slower.",
+              "magnitude": 0,
+              "duration": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Mage",
+      "name": "The Mage Stone",
+      "description": "Those under the sign of The Mage have more Magicka and are able to cast their spells quicker, but are more vulnerable while doing so.",
+      "abilities": [
+        {
+          "formKey": "0E5F47:Skyrim.esm",
+          "editorId": "APO_doomMageAbility",
+          "name": "The Mage Stone",
+          "description": null,
+          "plugin": "StonesOfSacrifice.esp",
+          "effects": [
+            {
+              "name": "Arcane Mastery",
+              "description": "Your Magicka is increased by 50, and you cast spells 20% faster. However, you take 50% more damage when charging or casting a spell.",
+              "magnitude": 50,
+              "duration": 0,
+              "perk": {
+                "formKey": "000804:StonesOfSacrifice.esp",
+                "editorId": "APO_doomMagePerk01",
+                "name": "Arcane Mastery",
+                "description": null,
+                "plugin": "StonesOfSacrifice.esp"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Ritual",
+      "name": "The Ritual Stone",
+      "description": "Those under the sign of The Ritual are more effective when utilizng scrolls and staves. However, they are less effective at traditional forms of spell casting.",
+      "abilities": [
+        {
+          "formKey": "0E7329:Skyrim.esm",
+          "editorId": "APO_doomRitualAbility",
+          "name": "The Ritual Stone",
+          "description": null,
+          "plugin": "StonesOfSacrifice - Alt Ritual.esp",
+          "effects": [
+            {
+              "name": "Elder Knowledge",
+              "description": "Spells cast via scrolls and staves are 50% stronger and last twice as long, however regular spells are half as strong and last half as long.",
+              "magnitude": 0,
+              "duration": 0,
+              "perk": {
+                "formKey": "000801:StonesOfSacrifice - Alt Ritual.esp",
+                "editorId": "APO_doomRitualPerk01Alt",
+                "name": "Elder Knowledge",
+                "description": null,
+                "plugin": "APO_Apostasy - Controller.esp"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Serpent",
+      "name": "The Serpent Stone",
+      "description": "Those under the sign of The Serpent suffer from the Star Curse and take constant damage while in combat. However, they move faster while sneaking and reduce the Poison Resistance of all nearby foes",
+      "abilities": [
+        {
+          "formKey": "0E5F61:Skyrim.esm",
+          "editorId": "APO_doomSerpentAbility",
+          "name": "The Serpent Stone",
+          "description": null,
+          "plugin": "StonesOfSacrifice.esp",
+          "effects": [
+            {
+              "name": "Star Cursed",
+              "description": "You move 20% faster while sneaking and you reduce the Poison Resistance of all nearby enemies by 50%. However, you take 3 Poison Damage per second while in combat.",
+              "magnitude": 0,
+              "duration": 0,
+              "perk": {
+                "formKey": "000C51:StonesOfSacrifice.esp",
+                "editorId": "APO_doomSerpentPerk01",
+                "name": "Star Cursed",
+                "description": null,
+                "plugin": "StonesOfSacrifice.esp"
+              }
+            }
+          ]
+        },
+        {
+          "formKey": "000C52:StonesOfSacrifice.esp",
+          "editorId": "APO_doomSerpentCloakAbility",
+          "name": "Star Cursed",
+          "description": null,
+          "plugin": "StonesOfSacrifice.esp",
+          "effects": []
+        }
+      ]
+    },
+    {
+      "id": "Shadow",
+      "name": "The Shadow Stone",
+      "description": "Those under the sign of The Shadow move faster and their dodges apply Assassin's Mark to nearby enemies, but they are less effective at blocking and bashing.",
+      "abilities": [
+        {
+          "formKey": "0E732A:Skyrim.esm",
+          "editorId": "APO_doomShadowAbility",
+          "name": "The Shadow Stone",
+          "description": null,
+          "plugin": "StonesOfSacrifice.esp",
+          "effects": [
+            {
+              "name": "Assassin's Mark",
+              "description": "You move 20% faster, and performing a dodge marks nearby enemies for 3 seconds. Melee attacks against marked enemies restore Stamina. However, your blocking and bashing are 50% less effective.",
+              "magnitude": 20,
+              "duration": 0,
+              "perk": {
+                "formKey": "00092D:StonesOfSacrifice.esp",
+                "editorId": "APO_doomShadowPerk01",
+                "name": "Assassin's Mark",
+                "description": null,
+                "plugin": "StonesOfSacrifice - Dodge Addon.esp"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Steed",
+      "name": "The Steed Stone",
+      "description": "Those under the sign of The Steed can carry more items and are able to sprint without consuming Stamina while outside of combat.",
+      "abilities": [
+        {
+          "formKey": "0E5F5E:Skyrim.esm",
+          "editorId": "APO_doomSteedAbility",
+          "name": "The Steed Stone",
+          "description": null,
+          "plugin": "APO_StonesOfSacrifice - SMI.esp",
+          "effects": [
+            {
+              "name": "Charioteer",
+              "description": "Your Carry Weight is increased by 100, and sprinting consumes no Stamina out of combat. However, you deal half as much physical damage and spells cost twice as much when you run out of Stamina.",
+              "magnitude": 100,
+              "duration": 0,
+              "perk": {
+                "formKey": "000934:StonesOfSacrifice.esp",
+                "editorId": "APO_doomSteedPerk01",
+                "name": "Charioteer",
+                "description": null,
+                "plugin": "StonesOfSacrifice.esp"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Thief",
+      "name": "The Thief Stone",
+      "description": "Those under the sign of The Thief have more Stamina, and find more valuable items in their travels. However, their shady nature makes them less trustworthy.",
+      "abilities": [
+        {
+          "formKey": "0E5F45:Skyrim.esm",
+          "editorId": "APO_doomThiefAbility",
+          "name": "The Thief Stone",
+          "description": null,
+          "plugin": "StonesOfSacrifice.esp",
+          "effects": [
+            {
+              "name": "Fortune and Folly",
+              "description": "Your Stamina is increased by 50, you deal 25% extra damage with sneak attacks, and you find more gold in your travels. However, you receive 25% worse prices.",
+              "magnitude": 50,
+              "duration": 0,
+              "perk": {
+                "formKey": "000A46:StonesOfSacrifice.esp",
+                "editorId": "APO_doomThiefPerk01",
+                "name": "Fortune and Folly",
+                "description": null,
+                "plugin": "StonesOfSacrifice.esp"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Tower",
+      "name": "The Tower Stone",
+      "description": "Those under the sign of The Tower resist physical damage and stagger, but move slower while in combat.",
+      "abilities": [
+        {
+          "formKey": "0E7328:Skyrim.esm",
+          "editorId": "APO_doomTowerAbility",
+          "name": "The Tower Stone",
+          "description": null,
+          "plugin": "StonesOfSacrifice.esp",
+          "effects": [
+            {
+              "name": "Warden's Wall",
+              "description": "Your Armor Rating is increased by 100, and you resist 20% of incoming poise damage. However, you move 25% slower while in combat.",
+              "magnitude": 100,
+              "duration": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Warrior",
+      "name": "The Warrior Stone",
+      "description": "Those under the sign of The Warrior have more Health and are more resistant to all damage, but consume more Stamina while power attacking or drawing a bow.",
+      "abilities": [
+        {
+          "formKey": "0E5F4C:Skyrim.esm",
+          "editorId": "APO_doomWarriorAbility",
+          "name": "The Warrior Stone",
+          "description": null,
+          "plugin": "StonesOfSacrifice.esp",
+          "effects": [
+            {
+              "name": "Warwyrd",
+              "description": "Your Health is increased by 50, and you resist 10% of incoming weapon and spell damage. However, your power attacks and drawing a bow consume 25% more Stamina.",
+              "magnitude": 50,
+              "duration": 0,
+              "perk": {
+                "formKey": "000807:StonesOfSacrifice.esp",
+                "editorId": "APO_doomWarriorPerk01",
+                "name": "Warwyrd",
+                "description": null,
+                "plugin": "StonesOfSacrifice.esp"
+              }
+            },
+            {
+              "name": "Warwyrd",
+              "description": "You spend 25% more Stamina when power attacking or drawing a bow.",
+              "magnitude": 25,
+              "duration": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "profile": "Apostasy",
+    "plugins": 3407,
+    "generatedAt": "2026-10-23T14:07:30.1329175Z"
+  }
+}

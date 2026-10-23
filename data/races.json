@@ -1,0 +1,647 @@
+{
+  "races": [
+    {
+      "id": "Argonian",
+      "formKey": "013740:Skyrim.esm",
+      "name": "Argonian",
+      "description": "Argonians, or Saxhleel in their native language of Jel, are the reptilian natives of Black Marsh. Foreign racial categorization labels them as \"beasts\", or \"Betmeri\", as opposed to the humanoid races of Mer and Men. The Argonians' alien nature is often commented on; they are called strange, expressionless, reserved peoples, slow to trust and hard to know. Argonians are swift swimmers and can breathe underwater, and their scales provide them a natural resistance to physical damage.",
+      "plugin": "APO_SynHPH.esp",
+      "start": {
+        "Health": 50,
+        "Magicka": 50,
+        "Stamina": 50
+      },
+      "regen": {
+        "Health": 0.7,
+        "Magicka": 3,
+        "Stamina": 5
+      },
+      "baseCarryWeight": 300,
+      "skillBoosts": {
+        "Lockpicking": 10,
+        "Sneak": 10,
+        "Alchemy": 15,
+        "Alteration": 10,
+        "Illusion": 10,
+        "Restoration": 10
+      },
+      "abilities": [
+        {
+          "formKey": "0AA01B:Skyrim.esm",
+          "editorId": "APO_RacialArgonianSpell03",
+          "name": "Argonian Ancestry",
+          "description": null,
+          "plugin": "NirnsChosen.esp",
+          "effects": [
+            {
+              "name": "Amphibious",
+              "description": "You are able to breathe underwater and swim 50% faster.",
+              "magnitude": 0,
+              "duration": 0
+            }
+          ]
+        },
+        {
+          "formKey": "0E40D5:Skyrim.esm",
+          "editorId": "APO_RacialArgonianSpell01",
+          "name": "Argonian Ancestry",
+          "description": null,
+          "plugin": "NirnsChosen.esp",
+          "effects": [
+            {
+              "name": "Hardened Scales",
+              "description": "Your Armor Rating is increased by 100.",
+              "magnitude": 0,
+              "duration": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Breton",
+      "formKey": "013741:Skyrim.esm",
+      "name": "Breton",
+      "description": "Bretons, originating from Ehlnofex \"beratu\" or \"half\", are a hybrid race of both Man and Mer ancestry who primarily reside in their ancestral homeland of High Rock. Bretons are a race obsessed with nobility, status, and lineage, with Bretondom originating from the interbreeding between the Nedes of High Rock and the Aldmer back during the Merethic Era. Bretons have a natural resistance to Magic, often attributed to their elven blood.",
+      "plugin": "APO_SynHPH.esp",
+      "start": {
+        "Health": 50,
+        "Magicka": 50,
+        "Stamina": 50
+      },
+      "regen": {
+        "Health": 0.7,
+        "Magicka": 3,
+        "Stamina": 5
+      },
+      "baseCarryWeight": 300,
+      "skillBoosts": {
+        "Alchemy": 10,
+        "Speechcraft": 10,
+        "Alteration": 15,
+        "Conjuration": 10,
+        "Illusion": 10,
+        "Restoration": 10
+      },
+      "abilities": [
+        {
+          "formKey": "0AA01F:Skyrim.esm",
+          "editorId": "APO_RacialBretonSpell01",
+          "name": "Breton Ancestry",
+          "description": null,
+          "plugin": "NirnsChosen.esp",
+          "effects": [
+            {
+              "name": "Gift of Magnus",
+              "description": "Your Magic Resistance is increased by 25%.",
+              "magnitude": 25,
+              "duration": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "DarkElf",
+      "formKey": "013742:Skyrim.esm",
+      "name": "Dark Elf",
+      "description": "Dark Elves, or Dunmer, originate from the Morrowind. Cursed by Azura with red eyes and ashen skin during the First Era, they have since been displaced from their ancestral homeland by a series of natural and supernatural disasters. Proud, clannish, ruthless, and cruel, the Dunmer value loyalty and family above all else. Dark Elves are naturally resistance to Fire.",
+      "plugin": "APO_SynHPH.esp",
+      "start": {
+        "Health": 50,
+        "Magicka": 50,
+        "Stamina": 50
+      },
+      "regen": {
+        "Health": 0.7,
+        "Magicka": 3,
+        "Stamina": 5
+      },
+      "baseCarryWeight": 300,
+      "skillBoosts": {
+        "OneHanded": 10,
+        "Sneak": 10,
+        "Conjuration": 10,
+        "Destruction": 15,
+        "Illusion": 10,
+        "Enchanting": 10
+      },
+      "abilities": [
+        {
+          "formKey": "0AA021:Skyrim.esm",
+          "editorId": "APO_RacialDarkElfSpell01",
+          "name": "Dark Elf Ancestry",
+          "description": null,
+          "plugin": "NirnsChosen.esp",
+          "effects": [
+            {
+              "name": "Ashborn",
+              "description": "Your Fire Resistance is increased by 50%.",
+              "magnitude": 50,
+              "duration": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HighElf",
+      "formKey": "013743:Skyrim.esm",
+      "name": "High Elf",
+      "description": "High Elves, also known as the Altmer or \"Cultured People\", hail from the Summerset Isles. High Elves consider themselves to be the most civilized culture of Tamriel, and are generally viewed as being proud or snobbish. High Elves are strongly gifted in the arcane arts and have naturally higher Magicka reserves.",
+      "plugin": "APO_SynHPH.esp",
+      "start": {
+        "Health": 50,
+        "Magicka": 100,
+        "Stamina": 50
+      },
+      "regen": {
+        "Health": 0.7,
+        "Magicka": 3,
+        "Stamina": 5
+      },
+      "baseCarryWeight": 300,
+      "skillBoosts": {
+        "Alteration": 10,
+        "Conjuration": 10,
+        "Destruction": 10,
+        "Illusion": 10,
+        "Restoration": 10,
+        "Enchanting": 15
+      },
+      "abilities": [
+        {
+          "formKey": "105F16:Skyrim.esm",
+          "editorId": "APO_RacialHighElfSpell01",
+          "name": "High Elf Ancestry",
+          "description": null,
+          "plugin": "NirnsChosen.esp",
+          "effects": [
+            {
+              "name": "Highborn",
+              "description": "Your Magicka is increased by 50.",
+              "magnitude": 0,
+              "duration": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Imperial",
+      "formKey": "013744:Skyrim.esm",
+      "name": "Imperial",
+      "description": "Imperials, also known as Cyrodils and Imperial Cyrods, are the well-educated and well-spoken natives of Cyrodiil. Imperials are known to be shrewd diplomats and traders, as well as their discipline and training of their citizen armies and their respect for the rule of law. Imperials have a natural talent for bartering and are more likely to find additional gold in their travels. Imperials also begin the game with an additional Perk point.",
+      "plugin": "APO_SynHPH.esp",
+      "start": {
+        "Health": 50,
+        "Magicka": 50,
+        "Stamina": 50
+      },
+      "regen": {
+        "Health": 0.7,
+        "Magicka": 3,
+        "Stamina": 5
+      },
+      "baseCarryWeight": 300,
+      "skillBoosts": {
+        "OneHanded": 10,
+        "Block": 10,
+        "Smithing": 10,
+        "HeavyArmor": 10,
+        "Speechcraft": 15,
+        "Restoration": 10
+      },
+      "abilities": [
+        {
+          "formKey": "0E40CA:Skyrim.esm",
+          "editorId": "APO_RacialImperialSpell02",
+          "name": "Imperial Ancestry",
+          "description": null,
+          "plugin": "NirnsChosen.esp",
+          "effects": [
+            {
+              "name": "Star of the West",
+              "description": "You start with 1 additional Perk point.",
+              "magnitude": 0,
+              "duration": 0
+            }
+          ]
+        },
+        {
+          "formKey": "0EB7EB:Skyrim.esm",
+          "editorId": "APO_RacialImperialSpell01",
+          "name": "Imperial Ancestry",
+          "description": null,
+          "plugin": "NirnsChosen.esp",
+          "effects": [
+            {
+              "name": "Red Diamond",
+              "description": "You receive 10% better prices, and you find extra gold in your travels.",
+              "magnitude": 0,
+              "duration": 0,
+              "perk": {
+                "formKey": "000823:NirnsChosen.esp",
+                "editorId": "APO_RacialImperialPerk01",
+                "name": "Red Diamond",
+                "description": null,
+                "plugin": "NirnsChosen.esp"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Khajiit",
+      "formKey": "013745:Skyrim.esm",
+      "name": "Khajiit",
+      "description": "Khajiit, meaining \"desert-dweller\" in their native Ta'agra, are the cat-like people who hail from Elsweyr. Khajiit are unique from other races due to their highly variable appearances, or \"furstocks\", based on the moon-phase during their birth. The foreign appearance and behavior of Khajiit make them common targets for racial discrimination. Khajiit move faster and take less damage from falling, as well as having improved night vision.",
+      "plugin": "APO_SynHPH.esp",
+      "start": {
+        "Health": 50,
+        "Magicka": 50,
+        "Stamina": 50
+      },
+      "regen": {
+        "Health": 0.7,
+        "Magicka": 3,
+        "Stamina": 5
+      },
+      "baseCarryWeight": 300,
+      "skillBoosts": {
+        "Marksman": 10,
+        "LightArmor": 10,
+        "Pickpocket": 10,
+        "Lockpicking": 15,
+        "Sneak": 10,
+        "Alchemy": 10
+      },
+      "abilities": [
+        {
+          "formKey": "0AA01D:Skyrim.esm",
+          "editorId": "APO_RacialKhajiitRacialPower01",
+          "name": "Night Eye",
+          "description": null,
+          "plugin": "NirnsChosen.esp",
+          "effects": [
+            {
+              "name": "Night Eye",
+              "description": "Your night vision is imporved for 60 seconds.",
+              "magnitude": 0,
+              "duration": 60
+            }
+          ]
+        },
+        {
+          "formKey": "0AA01E:Skyrim.esm",
+          "editorId": "APO_RacialKhajiitSpell01",
+          "name": "Khajiit Ancestry",
+          "description": null,
+          "plugin": "NirnsChosen.esp",
+          "effects": [
+            {
+              "name": "Lunar Blessing",
+              "description": "You move 10% faster, and take 50% less damage from falling.",
+              "magnitude": 10,
+              "duration": 0,
+              "perk": {
+                "formKey": "000805:NirnsChosen.esp",
+                "editorId": "APO_RacialKhajiitPerk01",
+                "name": "Lunar Blessing",
+                "description": null,
+                "plugin": "NirnsChosen.esp"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Nord",
+      "formKey": "013746:Skyrim.esm",
+      "name": "Nord",
+      "description": "Nords are the Children of the Sky, a race of tall and fair-haired humans who originate from the continent of Atmora. During the First Era, the Nords emigrated to Skyrim and drove out the native Mer population. Nords value physical strength and skill, but they have also been known to hold powerful mages to similar esteem. A strong and hardy people, Nords are naturally resistant to frost.",
+      "plugin": "APO_SynHPH.esp",
+      "start": {
+        "Health": 50,
+        "Magicka": 50,
+        "Stamina": 50
+      },
+      "regen": {
+        "Health": 0.7,
+        "Magicka": 3,
+        "Stamina": 5
+      },
+      "baseCarryWeight": 300,
+      "skillBoosts": {
+        "TwoHanded": 15,
+        "Block": 10,
+        "Smithing": 10,
+        "HeavyArmor": 10,
+        "LightArmor": 10,
+        "Speechcraft": 10
+      },
+      "abilities": [
+        {
+          "formKey": "0AA020:Skyrim.esm",
+          "editorId": "APO_RacialNordSpell01",
+          "name": "Nord Ancestry",
+          "description": null,
+          "plugin": "NirnsChosen.esp",
+          "effects": [
+            {
+              "name": "Atmoran Roots",
+              "description": "Your Frost Resistance is increased by 50%.",
+              "magnitude": 50,
+              "duration": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Orc",
+      "formKey": "013747:Skyrim.esm",
+      "name": "Orc",
+      "description": "Orcs, or Orsimer, are the people of the Wrothgarian and Dragontail Mountains. Cursed by Boethiah after the defeat of their patron deity Trinimac, the Orcs now follow the Daedric Prince Malacath, known as the Pariah God. Orcs were once widely hated and feared by the other races of Tamriel, seen as nothing more than uncivilized beasts and savage barbarians. Orcs are known for their robust nature and have naturally higher Health pools.",
+      "plugin": "APO_SynHPH.esp",
+      "start": {
+        "Health": 100,
+        "Magicka": 50,
+        "Stamina": 50
+      },
+      "regen": {
+        "Health": 0.7,
+        "Magicka": 3,
+        "Stamina": 5
+      },
+      "baseCarryWeight": 300,
+      "skillBoosts": {
+        "OneHanded": 10,
+        "TwoHanded": 10,
+        "Block": 10,
+        "Smithing": 15,
+        "HeavyArmor": 10,
+        "Alchemy": 10
+      },
+      "abilities": [
+        {
+          "formKey": "0AA026:Skyrim.esm",
+          "editorId": "APO_RacialOrcSpell02",
+          "name": "Orc Ancestry",
+          "description": null,
+          "plugin": "NirnsChosen.esp",
+          "effects": [
+            {
+              "name": "Pariah Folk",
+              "description": "Your Health is increased by 50.",
+              "magnitude": 0,
+              "duration": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Redguard",
+      "formKey": "013748:Skyrim.esm",
+      "name": "Redguard",
+      "description": "Redguards originally hailed from the continent of Yokuda, which sank into the sea during ancient times. Known for their unique martial culture, they are often reputed as brilliant battlefield tacticians and warriors. Redguards are physically blessed with rugged constitutions, and have naturally higher Stamina reserves.",
+      "plugin": "APO_SynHPH.esp",
+      "start": {
+        "Health": 50,
+        "Magicka": 50,
+        "Stamina": 100
+      },
+      "regen": {
+        "Health": 0.7,
+        "Magicka": 3,
+        "Stamina": 5
+      },
+      "baseCarryWeight": 300,
+      "skillBoosts": {
+        "OneHanded": 15,
+        "TwoHanded": 10,
+        "Marksman": 10,
+        "Block": 10,
+        "Smithing": 10,
+        "LightArmor": 10
+      },
+      "abilities": [
+        {
+          "formKey": "0AA023:Skyrim.esm",
+          "editorId": "APO_RacialRedguardSpell01",
+          "name": "Redguard Ancestry",
+          "description": null,
+          "plugin": "NirnsChosen.esp",
+          "effects": [
+            {
+              "name": "Yokudan Heritage",
+              "description": "Your Stamina is increased by 50.",
+              "magnitude": 50,
+              "duration": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WoodElf",
+      "formKey": "013749:Skyrim.esm",
+      "name": "Wood Elf",
+      "description": "Wood Elves, or Bosmer, are the clan-folk of Valenwood, a forested province in southwestern Tamriel. Most Wood Elves are bound by the Green Pact, and are religiously carnivorous and cannibalistic, refusing to harm the vegetation of their homeland. Wood Elves are naturally resilient to poison and disease.",
+      "plugin": "APO_SynHPH.esp",
+      "start": {
+        "Health": 50,
+        "Magicka": 50,
+        "Stamina": 50
+      },
+      "regen": {
+        "Health": 0.7,
+        "Magicka": 3,
+        "Stamina": 5
+      },
+      "baseCarryWeight": 300,
+      "skillBoosts": {
+        "OneHanded": 10,
+        "Marksman": 15,
+        "LightArmor": 10,
+        "Pickpocket": 10,
+        "Lockpicking": 10,
+        "Sneak": 10
+      },
+      "abilities": [
+        {
+          "formKey": "0E40CF:Skyrim.esm",
+          "editorId": "APO_RacialWoodElfSpell02",
+          "name": "Wood Elf Ancestry",
+          "description": null,
+          "plugin": "NirnsChosen.esp",
+          "effects": [
+            {
+              "name": "Y'ffre's Endurance",
+              "description": "Your Disease and Poison Resistance is increased by 50%.",
+              "magnitude": 0,
+              "duration": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "traits": [
+    {
+      "formKey": "000827:Apostasy Framework.esp",
+      "editorId": "APO_TraitAlertAb",
+      "name": "Alert",
+      "description": null,
+      "plugin": "Apostasy Framework.esp",
+      "effects": [
+        {
+          "name": "Alert",
+          "description": "You take 50% less damage from Sneak Attacks.",
+          "magnitude": 0,
+          "duration": 0,
+          "perk": {
+            "formKey": "000821:Apostasy Framework.esp",
+            "editorId": "APO_TraitAlertPerk",
+            "name": "",
+            "description": null,
+            "plugin": "Apostasy Framework.esp"
+          }
+        }
+      ]
+    },
+    {
+      "formKey": "000828:Apostasy Framework.esp",
+      "editorId": "APO_TraitIntelligentAb",
+      "name": "Intelligent",
+      "description": null,
+      "plugin": "Apostasy Framework.esp",
+      "effects": [
+        {
+          "name": "Intelligent",
+          "description": "Illusion spells and effects are half as effective against you.",
+          "magnitude": 0,
+          "duration": 0,
+          "perk": {
+            "formKey": "000822:Apostasy Framework.esp",
+            "editorId": "APO_TraitIntelligentPerk",
+            "name": "",
+            "description": null,
+            "plugin": "Apostasy Framework.esp"
+          }
+        }
+      ]
+    },
+    {
+      "formKey": "000829:Apostasy Framework.esp",
+      "editorId": "APO_TraitSunlightSensitivityAb",
+      "name": "Sunlight Sensitivity",
+      "description": null,
+      "plugin": "Apostasy Framework.esp",
+      "effects": [
+        {
+          "name": "Sunlight Sensitivity",
+          "description": "Sun spells and effects are 50% more effective against you.",
+          "magnitude": 0,
+          "duration": 0,
+          "perk": {
+            "formKey": "000823:Apostasy Framework.esp",
+            "editorId": "APO_TraitSunlightSensitivityPerk",
+            "name": "",
+            "description": null,
+            "plugin": "Apostasy Framework.esp"
+          }
+        }
+      ]
+    },
+    {
+      "formKey": "00082A:Apostasy Framework.esp",
+      "editorId": "APO_TraitLivingAb",
+      "name": "Living",
+      "description": null,
+      "plugin": "Apostasy Framework.esp",
+      "effects": [
+        {
+          "name": "Living",
+          "description": "Sun spells and effects are half as effective against you.",
+          "magnitude": 50,
+          "duration": 0,
+          "perk": {
+            "formKey": "000824:Apostasy Framework.esp",
+            "editorId": "APO_TraitLivingPerk",
+            "name": "",
+            "description": null,
+            "plugin": "Apostasy Framework.esp"
+          },
+          "conditions": [
+            {
+              "fn": "HasMagicEffectKeyword",
+              "op": "==",
+              "or": false,
+              "runOn": "Subject",
+              "value": 0,
+              "args": {
+                "keyword": "00084D:Apostasy Framework.esp"
+              },
+              "argNames": {
+                "keyword": "APO_SunlightSensitivityKeyword"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "formKey": "00082B:Apostasy Framework.esp",
+      "editorId": "APO_TraitNonLivingAb",
+      "name": "Nonliving",
+      "description": null,
+      "plugin": "Apostasy Framework.esp",
+      "effects": [
+        {
+          "name": "Nonliving",
+          "description": "Drain and Poison spells and effects are half as effective against you.",
+          "magnitude": 0,
+          "duration": 0,
+          "perk": {
+            "formKey": "000825:Apostasy Framework.esp",
+            "editorId": "APO_TraitNonLivingPerk",
+            "name": "",
+            "description": null,
+            "plugin": "Apostasy Framework.esp"
+          }
+        }
+      ]
+    },
+    {
+      "formKey": "00082C:Apostasy Framework.esp",
+      "editorId": "APO_TraitRegenerativeAb",
+      "name": "Regenerative",
+      "description": null,
+      "plugin": "Apostasy Framework.esp",
+      "effects": [
+        {
+          "name": "Regenerative",
+          "description": "You regenerate Health in combat.",
+          "magnitude": 0,
+          "duration": 0,
+          "perk": {
+            "formKey": "000826:Apostasy Framework.esp",
+            "editorId": "APO_TraitRegenerativePerk",
+            "name": "",
+            "description": null,
+            "plugin": "Apostasy Framework.esp"
+          }
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "profile": "Apostasy",
+    "plugins": 3407,
+    "generatedAt": "2026-10-23T14:07:30.1329175Z"
+  }
+}

@@ -16,6 +16,13 @@ public sealed class Mo2Profile
     /// <summary>Enabled plugins in load order, mapped to their absolute file path.</summary>
     public required IReadOnlyList<(string Name, string Path)> Plugins { get; init; }
 
+    /// <summary>Folders that make up the virtual Data folder, highest priority first.</summary>
+    public required IReadOnlyList<string> SearchDirs { get; init; }
+
+    /// <summary>Path of the file the game would actually see at a Data-relative path, or null.</summary>
+    public string? ResolveFile(string relativePath) =>
+        SearchDirs.Select(d => Path.Combine(d, relativePath)).FirstOrDefault(File.Exists);
+
     public static Mo2Profile Load(string instanceDir, string profileName)
     {
         var profileDir = Path.Combine(instanceDir, "profiles", profileName);
@@ -60,6 +67,9 @@ public sealed class Mo2Profile
             else Console.Error.WriteLine($"warn: plugin not found on disk: {name}");
         }
 
-        return new Mo2Profile { InstanceDir = instanceDir, ProfileName = profileName, Plugins = plugins };
+        return new Mo2Profile
+        {
+            InstanceDir = instanceDir, ProfileName = profileName, Plugins = plugins, SearchDirs = searchDirs,
+        };
     }
 }

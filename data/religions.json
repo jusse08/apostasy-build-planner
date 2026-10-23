@@ -1,0 +1,5464 @@
+{
+  "items": [
+    {
+      "id": "Akatosh",
+      "name": "Akatosh",
+      "group": "Nine Divines",
+      "blessing": {
+        "formKey": "000B35:Archon.esp",
+        "editorId": "APO_AltarAbAkatosh",
+        "name": "Blessing of Akatosh",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Spell Absorption",
+            "description": "You have a 10% chance to absorb the Magicka from incoming spells.",
+            "magnitude": 10,
+            "duration": 0
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "00085C:Archon.esp",
+        "editorId": "APO_AcolyteAkatosh",
+        "name": "Acolyte of Akatosh",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "The Voice of Akatosh",
+            "description": "Your Shouts recover 5% faster.",
+            "magnitude": 5,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 4,
+                "args": {
+                  "miscStat": "QuestsCompleted"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 10,
+                "args": {
+                  "miscStat": "QuestsCompleted"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Voice of Akatosh",
+            "description": "Your Shouts recover 10% faster.",
+            "magnitude": 10,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 9,
+                "args": {
+                  "miscStat": "QuestsCompleted"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 20,
+                "args": {
+                  "miscStat": "QuestsCompleted"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Voice of Akatosh",
+            "description": "Your Shouts recover 15% faster.",
+            "magnitude": 15,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 19,
+                "args": {
+                  "miscStat": "QuestsCompleted"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 40,
+                "args": {
+                  "miscStat": "QuestsCompleted"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Voice of Akatosh",
+            "description": "Your Shouts recover 20% faster.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 39,
+                "args": {
+                  "miscStat": "QuestsCompleted"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "000872:Archon.esp",
+        "editorId": "APO_ChampionAkatosh",
+        "name": "Champion of Akatosh",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Dragon Soul",
+            "description": "Your Health, Magicka, and Stamina is increased by 25.",
+            "magnitude": 25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "046EF2:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Dragonslayer"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Dragon Soul",
+            "description": "Your Health, Magicka, and Stamina is increased by 25.",
+            "magnitude": 25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "046EF2:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Dragonslayer"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Dragon Soul",
+            "description": "Your Health, Magicka, and Stamina is increased by 25.",
+            "magnitude": 25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "046EF2:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Dragonslayer"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Arkay",
+      "name": "Arkay",
+      "group": "Nine Divines",
+      "blessing": {
+        "formKey": "000B36:Archon.esp",
+        "editorId": "APO_AltarAbArkay",
+        "name": "Blessing of Arkay",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Health",
+            "description": "Your Health is increased by 50.",
+            "magnitude": 50,
+            "duration": 0,
+            "perk": {
+              "formKey": "000811:Archon.esp",
+              "editorId": "APO_AltarBenevolentHealthPerk",
+              "name": "Fortify Health",
+              "description": null,
+              "plugin": "Archon.esp"
+            }
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "00083B:Archon.esp",
+        "editorId": "APO_AcolyteArkay",
+        "name": "Acolyte of Arkay",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "The Light of Arkay",
+            "description": "Your Armor Rating is increased by 25.",
+            "magnitude": 25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 9,
+                "args": {
+                  "miscStat": "UndeadKilled"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 50,
+                "args": {
+                  "miscStat": "UndeadKilled"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Light of Arkay",
+            "description": "Your Armor Rating is increased by 50.",
+            "magnitude": 50,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 49,
+                "args": {
+                  "miscStat": "UndeadKilled"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 100,
+                "args": {
+                  "miscStat": "UndeadKilled"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Light of Arkay",
+            "description": "Your Armor Rating is increased by 75.",
+            "magnitude": 75,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 99,
+                "args": {
+                  "miscStat": "UndeadKilled"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 250,
+                "args": {
+                  "miscStat": "UndeadKilled"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Light of Arkay",
+            "description": "Your Armor Rating is increased by 100.",
+            "magnitude": 100,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 249,
+                "args": {
+                  "miscStat": "UndeadKilled"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "000878:Archon.esp",
+        "editorId": "APO_ChampionArkay",
+        "name": "Champion of Arkay",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Circle of Life",
+            "description": "Your Health recovers up to 100% faster based on your missing Health.",
+            "magnitude": 0.25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "HasSpell",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "spell": "10FB30:Skyrim.esm"
+                },
+                "argNames": {
+                  "spell": "Vampire Controller Ability"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "026C4D:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "The Wolf Queen Awakened"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "quest": "02C358:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "The Taste of Death"
+                }
+              },
+              {
+                "fn": "GetItemCount",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "itemOrList": "0C891D:Skyrim.esm"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Dibella",
+      "name": "Dibella",
+      "group": "Nine Divines",
+      "blessing": {
+        "formKey": "000B3B:Archon.esp",
+        "editorId": "APO_AltarAbDibella",
+        "name": "Blessing of Dibella",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Stamina Regeneration",
+            "description": "Your Stamina Regeneration is increased by 50%.",
+            "magnitude": 50,
+            "duration": 0
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "00083F:Archon.esp",
+        "editorId": "APO_AcolyteDibella",
+        "name": "Acolyte of Dibella",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "The Beauty of Dibella",
+            "description": "Your Poise Resistance is increased by 5%.",
+            "magnitude": 5,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 2,
+                "args": {
+                  "miscStat": "Persuasions"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 6,
+                "args": {
+                  "miscStat": "Persuasions"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Beauty of Dibella",
+            "description": "Your Poise Resistance is increased by 10%.",
+            "magnitude": 10,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 5,
+                "args": {
+                  "miscStat": "Persuasions"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 12,
+                "args": {
+                  "miscStat": "Persuasions"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Beauty of Dibella",
+            "description": "Your Poise Resistance is increased by 15%.",
+            "magnitude": 15,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 11,
+                "args": {
+                  "miscStat": "Persuasions"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 25,
+                "args": {
+                  "miscStat": "Persuasions"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Beauty of Dibella",
+            "description": "Your Poise Resistance is increased by 20%.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 24,
+                "args": {
+                  "miscStat": "Persuasions"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "00087E:Archon.esp",
+        "editorId": "APO_ChampionDibella",
+        "name": "Champion of Dibella",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Afterglow",
+            "description": "Your Stamina recovers up to 100% faster based on your missing Stamina.",
+            "magnitude": 1.25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "023B6C:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "The Heart of Dibella"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "041F91:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Caught Red Handed"
+                }
+              },
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "quest": "01EA51:Skyrim.esm",
+                  "stage": 200
+                },
+                "argNames": {
+                  "quest": "With Friends Like These..."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Julianos",
+      "name": "Julianos",
+      "group": "Nine Divines",
+      "blessing": {
+        "formKey": "000B3F:Archon.esp",
+        "editorId": "APO_AltarAbJulianos",
+        "name": "Blessing of Julianos",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Magicka",
+            "description": "Your Magicka is increased by 50.",
+            "magnitude": 50,
+            "duration": 0,
+            "perk": {
+              "formKey": "000814:Archon.esp",
+              "editorId": "APO_AltarBenevolentMagickaPerk",
+              "name": "Fortify Magicka",
+              "description": null,
+              "plugin": "Archon.esp"
+            }
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "000843:Archon.esp",
+        "editorId": "APO_AcolyteJulianos",
+        "name": "Acolyte of Julianos",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "The Wisdom of Julianos",
+            "description": "Your spells and enchantments cost 4% less.",
+            "magnitude": 4,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 4,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 10,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Wisdom of Julianos",
+            "description": "Your spells and enchantments cost 6% less.",
+            "magnitude": 6,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 9,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 25,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Wisdom of Julianos",
+            "description": "Your spells and enchantments cost 8% less.",
+            "magnitude": 8,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 24,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 40,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Wisdom of Julianos",
+            "description": "Your spells and enchantments cost 10% less.",
+            "magnitude": 10,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 39,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "000883:Archon.esp",
+        "editorId": "APO_ChampionJulianos",
+        "name": "Champion of Julianos",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Arcane Intellect",
+            "description": "Your Magicka recovers up to 100% faster based on your missing Magicka.",
+            "magnitude": 0.75,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": true,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "0A4E82:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Destruction Ritual Spell"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": true,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "0B3233:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Illusion Ritual Spell"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": true,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "099F27:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Conjuration Ritual Spell"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": true,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "0CD987:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Restoration Ritual Spell"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "0D0755:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Alteration Ritual Spell"
+                }
+              },
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "quest": "01F326:Skyrim.esm",
+                  "stage": 200
+                },
+                "argNames": {
+                  "quest": "Taking Care of Business"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Kynareth",
+      "name": "Kynareth",
+      "group": "Nine Divines",
+      "blessing": {
+        "formKey": "000B41:Archon.esp",
+        "editorId": "APO_AltarAbKynareth",
+        "name": "Blessing of Kynareth",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Stamina",
+            "description": "Your Stamina is increased by 50.",
+            "magnitude": 50,
+            "duration": 0,
+            "perk": {
+              "formKey": "000817:Archon.esp",
+              "editorId": "APO_AltarBenevolentStaminaPerk",
+              "name": "Fortify Stamina",
+              "description": null,
+              "plugin": "Archon.esp"
+            }
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "000847:Archon.esp",
+        "editorId": "APO_AcolyteKynareth",
+        "name": "Acolyte of Kynareth",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "The Way of Kynareth",
+            "description": "Your Stamina Regeneration is increased by 20%.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 24,
+                "args": {
+                  "miscStat": "-1977287198"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 60,
+                "args": {
+                  "miscStat": "-1977287198"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Way of Kynareth",
+            "description": "Your Stamina Regeneration is increased by 30%.",
+            "magnitude": 30,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 59,
+                "args": {
+                  "miscStat": "-1977287198"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 100,
+                "args": {
+                  "miscStat": "-1977287198"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Way of Kynareth",
+            "description": "Your Stamina Regeneration is increased by 40%.",
+            "magnitude": 40,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 99,
+                "args": {
+                  "miscStat": "-1977287198"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 150,
+                "args": {
+                  "miscStat": "-1977287198"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Way of Kynareth",
+            "description": "Your Stamina Regeneration is increased by 50%.",
+            "magnitude": 50,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 149,
+                "args": {
+                  "miscStat": "-1977287198"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "000887:Archon.esp",
+        "editorId": "APO_ChampionKynareth",
+        "name": "Champion of Kynareth",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Song of the Wind",
+            "description": "You move 20% faster.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "quest": "01C48E:Skyrim.esm",
+                  "stage": 100
+                },
+                "argNames": {
+                  "quest": "The Blessings of Nature"
+                }
+              },
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "01C48E:Skyrim.esm",
+                  "stage": 105
+                },
+                "argNames": {
+                  "quest": "The Blessings of Nature"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Mara",
+      "name": "Mara",
+      "group": "Nine Divines",
+      "blessing": {
+        "formKey": "000B45:Archon.esp",
+        "editorId": "APO_AltarAbMara",
+        "name": "Blessing of Mara",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Magicka Regeneration",
+            "description": "Your Magicka Regeneration is increased by 50%.",
+            "magnitude": 50,
+            "duration": 0
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "00084B:Archon.esp",
+        "editorId": "APO_AcolyteMara",
+        "name": "Acolyte of Mara",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "The Benevolence of Mara",
+            "description": "Your Magic Resistance is increased by 10%.",
+            "magnitude": 10,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 4,
+                "args": {
+                  "miscStat": "-1438366059"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 10,
+                "args": {
+                  "miscStat": "-1438366059"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Benevolence of Mara",
+            "description": "Your Magic Resistance is increased by 15%.",
+            "magnitude": 15,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 9,
+                "args": {
+                  "miscStat": "-1438366059"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 25,
+                "args": {
+                  "miscStat": "-1438366059"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Benevolence of Mara",
+            "description": "Your Magic Resistance is increased by 20%.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 24,
+                "args": {
+                  "miscStat": "-1438366059"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 40,
+                "args": {
+                  "miscStat": "-1438366059"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Benevolence of Mara",
+            "description": "Your Magic Resistance is increased by 25%.",
+            "magnitude": 25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 39,
+                "args": {
+                  "miscStat": "-1438366059"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "00088B:Archon.esp",
+        "editorId": "APO_ChampionMara",
+        "name": "Champion of Mara",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Hearth and Heart",
+            "description": "Nearby allies restore 20 Health per second.",
+            "magnitude": 0,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "0211D5:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "The Book of Love"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "0242AF:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Waking Nightmare"
+                }
+              },
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "quest": "01EA51:Skyrim.esm",
+                  "stage": 200
+                },
+                "argNames": {
+                  "quest": "With Friends Like These..."
+                }
+              }
+            ]
+          },
+          {
+            "name": "Hearth and Heart",
+            "description": "Nearby allies restore 20 Health per second.",
+            "magnitude": 40,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "0211D5:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "The Book of Love"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "0242AF:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Waking Nightmare"
+                }
+              },
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "quest": "01EA51:Skyrim.esm",
+                  "stage": 200
+                },
+                "argNames": {
+                  "quest": "With Friends Like These..."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Stendarr",
+      "name": "Stendarr",
+      "group": "Nine Divines",
+      "blessing": {
+        "formKey": "000B51:Archon.esp",
+        "editorId": "APO_AltarAbStendarr",
+        "name": "Blessing of Stendarr",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Health Regeneration",
+            "description": "Your Health Regeneration is increased by 50%.",
+            "magnitude": 50,
+            "duration": 0
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "00084F:Archon.esp",
+        "editorId": "APO_AcolyteStendarr",
+        "name": "Acolyte of Stendarr",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "The Shield of Stendarr",
+            "description": "You are 10% better at blocking and bashing.",
+            "magnitude": 10,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "miscStat": "-1456433137"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 6,
+                "args": {
+                  "miscStat": "-1456433137"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Shield of Stendarr",
+            "description": "You are 15% better at blocking and bashing.",
+            "magnitude": 15,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 5,
+                "args": {
+                  "miscStat": "-1456433137"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 12,
+                "args": {
+                  "miscStat": "-1456433137"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Shield of Stendarr",
+            "description": "You are 20% better at blocking and bashing.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 11,
+                "args": {
+                  "miscStat": "-1456433137"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 20,
+                "args": {
+                  "miscStat": "-1456433137"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Shield of Stendarr",
+            "description": "You are 25% better at blocking and bashing.",
+            "magnitude": 25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 19,
+                "args": {
+                  "miscStat": "-1456433137"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "00088F:Archon.esp",
+        "editorId": "APO_ChampionStendarr",
+        "name": "Champion of Stendarr",
+        "description": null,
+        "plugin": "Archon - HOHQE.esp",
+        "effects": [
+          {
+            "name": "Righteous Might",
+            "description": "Your attacks deal additional Sun damage.",
+            "magnitude": 0,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "HasSpell",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "spell": "0F5BA0:Skyrim.esm"
+                },
+                "argNames": {
+                  "spell": "Beastblood"
+                }
+              },
+              {
+                "fn": "HasSpell",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "spell": "10FB30:Skyrim.esm"
+                },
+                "argNames": {
+                  "spell": "Vampire Controller Ability"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "025F3E:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Laid to Rest"
+                }
+              },
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "022F08:Skyrim.esm",
+                  "stage": 210
+                },
+                "argNames": {
+                  "quest": "The House of Horrors"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Talos",
+      "name": "Talos",
+      "group": "Nine Divines",
+      "blessing": {
+        "formKey": "000B52:Archon.esp",
+        "editorId": "APO_AltarAbTalos",
+        "name": "Blessing of Talos",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Shout Recovery",
+            "description": "Your Shouts recover 20% faster.",
+            "magnitude": 20,
+            "duration": 0
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "000853:Archon.esp",
+        "editorId": "APO_AcolyteTalos",
+        "name": "Acolyte of Talos",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "The Strength of Talos",
+            "description": "You deal 10% extra Poise damage.",
+            "magnitude": 10,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "miscStat": "DragonSoulsCollected"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 5,
+                "args": {
+                  "miscStat": "DragonSoulsCollected"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Strength of Talos",
+            "description": "You deal 15% extra Poise damage.",
+            "magnitude": 15,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 4,
+                "args": {
+                  "miscStat": "DragonSoulsCollected"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 9,
+                "args": {
+                  "miscStat": "DragonSoulsCollected"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Strength of Talos",
+            "description": "You deal 20% extra Poise damage.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 8,
+                "args": {
+                  "miscStat": "DragonSoulsCollected"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 15,
+                "args": {
+                  "miscStat": "DragonSoulsCollected"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Strength of Talos",
+            "description": "You deal 25% extra Poise damage.",
+            "magnitude": 25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 14,
+                "args": {
+                  "miscStat": "DragonSoulsCollected"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "000896:Archon.esp",
+        "editorId": "APO_ChampionTalos",
+        "name": "Champion of Talos",
+        "description": null,
+        "plugin": "Archon - SaSQE.esp",
+        "effects": [
+          {
+            "name": "Stormlord",
+            "description": "Your Shouts are 25% stronger and last 50% longer.",
+            "magnitude": 50,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "029940:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "<Alias=QuestNameLocation>"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": true,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "quest": "064798:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Search and Seizure"
+                }
+              },
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "quest": "064798:Skyrim.esm",
+                  "stage": 19
+                },
+                "argNames": {
+                  "quest": "Search and Seizure"
+                }
+              },
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "quest": "064798:Skyrim.esm",
+                  "stage": 20
+                },
+                "argNames": {
+                  "quest": "Search and Seizure"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Zenithar",
+      "name": "Zenithar",
+      "group": "Nine Divines",
+      "blessing": {
+        "formKey": "000B54:Archon.esp",
+        "editorId": "APO_AltarAbZenithar",
+        "name": "Blessing of Zenithar",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Carry Weight",
+            "description": "Your Carry Weight is increased by 50.",
+            "magnitude": 50,
+            "duration": 0
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "000857:Archon.esp",
+        "editorId": "APO_AcolyteZenithar",
+        "name": "Acolyte of Zenithar",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "The Scales of Zenithar",
+            "description": "You receive 5% better prices.",
+            "magnitude": 5,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 49,
+                "args": {
+                  "miscStat": "-311816462"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 100,
+                "args": {
+                  "miscStat": "-311816462"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Scales of Zenithar",
+            "description": "You receive 10% better prices.",
+            "magnitude": 10,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 99,
+                "args": {
+                  "miscStat": "-311816462"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 250,
+                "args": {
+                  "miscStat": "-311816462"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Scales of Zenithar",
+            "description": "You receive 15% better prices.",
+            "magnitude": 15,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 249,
+                "args": {
+                  "miscStat": "-311816462"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 500,
+                "args": {
+                  "miscStat": "-311816462"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Scales of Zenithar",
+            "description": "You receive 20% better prices.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 499,
+                "args": {
+                  "miscStat": "-311816462"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "00089B:Archon.esp",
+        "editorId": "APO_ChampionZenithar",
+        "name": "Champion of Zenithar",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Master of the Craft",
+            "description": "You can temper all items by two additional tiers.",
+            "magnitude": 0,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "005817:Dawnguard.esm"
+                },
+                "argNames": {
+                  "quest": "Lost to the Ages"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "0209CA:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Unfathomable Depths"
+                }
+              },
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "quest": "01F326:Skyrim.esm",
+                  "stage": 200
+                },
+                "argNames": {
+                  "quest": "Taking Care of Business"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Azura",
+      "name": "Azura",
+      "group": "Daedra",
+      "blessing": {
+        "formKey": "000B38:Archon.esp",
+        "editorId": "APO_AltarAbAzura",
+        "name": "Blessing of Azura",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Magicka",
+            "description": "Your Magicka is increased by 50.",
+            "magnitude": 50,
+            "duration": 0,
+            "perk": {
+              "formKey": "000CB7:Archon.esp",
+              "editorId": "APO_AltarMalevolentMagickaPerk",
+              "name": "Fortify Magicka",
+              "description": null,
+              "plugin": "Archon.esp"
+            }
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "0008A7:Archon.esp",
+        "editorId": "APO_AcolyteAzura",
+        "name": "Acolyte of Azura",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Azura's Twilight",
+            "description": "Your weapon enchantments are 20% stronger.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 24,
+                "args": {
+                  "miscStat": "-1488142717"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 50,
+                "args": {
+                  "miscStat": "-1488142717"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Azura's Twilight",
+            "description": "Your weapon enchantments are 30% stronger.",
+            "magnitude": 30,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 49,
+                "args": {
+                  "miscStat": "-1488142717"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 100,
+                "args": {
+                  "miscStat": "-1488142717"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Azura's Twilight",
+            "description": "Your weapon enchantments are 40% stronger.",
+            "magnitude": 40,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 99,
+                "args": {
+                  "miscStat": "-1488142717"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 175,
+                "args": {
+                  "miscStat": "-1488142717"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Azura's Twilight",
+            "description": "Your weapon enchantments are 50% stronger.",
+            "magnitude": 50,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 174,
+                "args": {
+                  "miscStat": "-1488142717"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "0008EF:Archon.esp",
+        "editorId": "APO_ChampionAzura",
+        "name": "Champion of Azura",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Dawn and Dusk",
+            "description": "You have a 20% chance to absorb the Magicka from incoming spells.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "028AD6:Skyrim.esm",
+                  "stage": 100
+                },
+                "argNames": {
+                  "quest": "The Black Star"
+                }
+              },
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "quest": "028AD6:Skyrim.esm",
+                  "stage": 110
+                },
+                "argNames": {
+                  "quest": "The Black Star"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Boethiah",
+      "name": "Boethiah",
+      "group": "Daedra",
+      "blessing": {
+        "formKey": "000B39:Archon.esp",
+        "editorId": "APO_AltarAbBoethiah",
+        "name": "Blessing of Boethiah",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Stamina",
+            "description": "Your Stamina is increased by 50.",
+            "magnitude": 50,
+            "duration": 0,
+            "perk": {
+              "formKey": "000CB8:Archon.esp",
+              "editorId": "APO_AltarMalevolentStaminaPerk",
+              "name": "Fortify Stamina",
+              "description": null,
+              "plugin": "Archon.esp"
+            }
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "0008AB:Archon.esp",
+        "editorId": "APO_AcolyteBoethiah",
+        "name": "Acolyte of Boethiah",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Boethiah's Cruelty",
+            "description": "You spend 5% less Stamina when power attacking or drawing a bow.",
+            "magnitude": 5,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 39,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 100,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Boethiah's Cruelty",
+            "description": "You spend 10% less Stamina when power attacking or drawing a bow.",
+            "magnitude": 10,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 99,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 175,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Boethiah's Cruelty",
+            "description": "You spend 15% less Stamina when power attacking or drawing a bow.",
+            "magnitude": 15,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 174,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 350,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Boethiah's Cruelty",
+            "description": "You spend 20% less Stamina when power attacking or drawing a bow.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 349,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "0008F3:Archon.esp",
+        "editorId": "APO_ChampionBoethiah",
+        "name": "Champion of Boethiah",
+        "description": null,
+        "plugin": "Archon - HOHQE.esp",
+        "effects": [
+          {
+            "name": "Dark Warrior's Vigor",
+            "description": "Killing an enemy with a melee or ranged weapon restores 100 Health.",
+            "magnitude": 100,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "HasSpell",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "spell": "10FB30:Skyrim.esm"
+                },
+                "argNames": {
+                  "spell": "Vampire Controller Ability"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "04D8D6:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Boethiah's Calling"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "quest": "03B681:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "The Cursed Tribe"
+                }
+              },
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "quest": "022F08:Skyrim.esm",
+                  "stage": 200
+                },
+                "argNames": {
+                  "quest": "The House of Horrors"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "ClavicusVile",
+      "name": "Clavicus Vile",
+      "group": "Daedra",
+      "blessing": {
+        "formKey": "000B3A:Archon.esp",
+        "editorId": "APO_AltarAbClavicusVile",
+        "name": "Blessing of Clavicus Vile",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Barter",
+            "description": "You receive 20% better prices.",
+            "magnitude": 20,
+            "duration": 0
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "0008AF:Archon.esp",
+        "editorId": "APO_AcolyteClavicusVile",
+        "name": "Acolyte of Clavicus Vile",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Vile's Bargain",
+            "description": "Your Conjuration spells cost 10% less.",
+            "magnitude": 10,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 2,
+                "args": {
+                  "miscStat": "Persuasions"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 6,
+                "args": {
+                  "miscStat": "Persuasions"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Vile's Bargain",
+            "description": "Your Conjuration spells cost 15% less.",
+            "magnitude": 15,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 5,
+                "args": {
+                  "miscStat": "Persuasions"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 12,
+                "args": {
+                  "miscStat": "Persuasions"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Vile's Bargain",
+            "description": "Your Conjuration spells cost 20% less.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 11,
+                "args": {
+                  "miscStat": "Persuasions"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 25,
+                "args": {
+                  "miscStat": "Persuasions"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Vile's Bargain",
+            "description": "Your Conjuration spells cost 25% less.",
+            "magnitude": 25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 24,
+                "args": {
+                  "miscStat": "Persuasions"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "0008F7:Archon.esp",
+        "editorId": "APO_ChampionClavicusVile",
+        "name": "Champion of Clavicus Vile",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Pact of the Morningstar",
+            "description": "You can summon or reanimate one additional minion.",
+            "magnitude": 1,
+            "duration": 0,
+            "perk": {
+              "formKey": "000DBE:Archon.esp",
+              "editorId": "APO_ChampionClavicusVileSummonPerk",
+              "name": "Champion of Clavicus Vile",
+              "description": null,
+              "plugin": "Archon.esp"
+            },
+            "conditions": [
+              {
+                "fn": "HasSpell",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "spell": "0F5BA0:Skyrim.esm"
+                },
+                "argNames": {
+                  "spell": "Beastblood"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "01BFC4:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "A Daedra's Best Friend"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "HermaeusMora",
+      "name": "Hermaeus Mora",
+      "group": "Daedra",
+      "blessing": {
+        "formKey": "000B3D:Archon.esp",
+        "editorId": "APO_AltarAbHermaeusMora",
+        "name": "Blessing of Hermaeus Mora",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Spell Absorption",
+            "description": "You have a 10% chance to absorb the Magicka from incoming spells.",
+            "magnitude": 10,
+            "duration": 0
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "0008B3:Archon.esp",
+        "editorId": "APO_AcolyteHermaeusMora",
+        "name": "Acolyte of Hermaeus Mora",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Mora's Omniscience",
+            "description": "You cast spells 5% faster",
+            "magnitude": 5,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 4,
+                "args": {
+                  "miscStat": "-860269874"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 20,
+                "args": {
+                  "miscStat": "-860269874"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Mora's Omniscience",
+            "description": "You cast spells 10% faster",
+            "magnitude": 10,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 19,
+                "args": {
+                  "miscStat": "-860269874"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 40,
+                "args": {
+                  "miscStat": "-860269874"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Mora's Omniscience",
+            "description": "You cast spells 15% faster",
+            "magnitude": 15,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 39,
+                "args": {
+                  "miscStat": "-860269874"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 75,
+                "args": {
+                  "miscStat": "-860269874"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Mora's Omniscience",
+            "description": "You cast spells 20% faster",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 74,
+                "args": {
+                  "miscStat": "-860269874"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "0008FB:Archon.esp",
+        "editorId": "APO_ChampionHermaeusMora",
+        "name": "Champion of Hermaeus Mora",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Forbidden Knowledge",
+            "description": "Your spells cost 25% less Magicka.",
+            "magnitude": 25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetGlobalValue",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "global": "0009DE:Update.esm"
+                },
+                "argNames": {
+                  "global": "OghmaInfiniumBookHasBeenRead"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": true,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "0179DE:Dragonborn.esm"
+                },
+                "argNames": {
+                  "quest": "The Gardener of Men"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": true,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "03216C:Dragonborn.esm"
+                },
+                "argNames": {
+                  "quest": "Black Book: Untold Legends"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": true,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "03216E:Dragonborn.esm"
+                },
+                "argNames": {
+                  "quest": "Black Book: The Winds of Change"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": true,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "03216D:Dragonborn.esm"
+                },
+                "argNames": {
+                  "quest": "Black Book: The Sallow Regent"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": true,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "03216F:Dragonborn.esm"
+                },
+                "argNames": {
+                  "quest": "Black Book: Filament and Filigree"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": true,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "032170:Dragonborn.esm"
+                },
+                "argNames": {
+                  "quest": "Black Book: The Hidden Twilight"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Hircine",
+      "name": "Hircine",
+      "group": "Daedra",
+      "blessing": {
+        "formKey": "000B3E:Archon.esp",
+        "editorId": "APO_AltarAbHircine",
+        "name": "Blessing of Hircine",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Movement Speed",
+            "description": "Your Movement Speed is increased by 10%.",
+            "magnitude": 10,
+            "duration": 0
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "0008B7:Archon.esp",
+        "editorId": "APO_AcolyteHircine",
+        "name": "Acolyte of Hircine",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Hircine's Hunt",
+            "description": "Your Stamina Regeneration is increased by 20%.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 24,
+                "args": {
+                  "miscStat": "CreaturesKilled"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 75,
+                "args": {
+                  "miscStat": "CreaturesKilled"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Hircine's Hunt",
+            "description": "Your Stamina Regeneration is increased by 30%.",
+            "magnitude": 30,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 74,
+                "args": {
+                  "miscStat": "CreaturesKilled"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 150,
+                "args": {
+                  "miscStat": "CreaturesKilled"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Hircine's Hunt",
+            "description": "Your Stamina Regeneration is increased by 40%.",
+            "magnitude": 40,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 149,
+                "args": {
+                  "miscStat": "CreaturesKilled"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 300,
+                "args": {
+                  "miscStat": "CreaturesKilled"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Hircine's Hunt",
+            "description": "Your Stamina Regeneration is increased by 50%.",
+            "magnitude": 50,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 299,
+                "args": {
+                  "miscStat": "CreaturesKilled"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "0008FF:Archon.esp",
+        "editorId": "APO_ChampionHircine",
+        "name": "Champion of Hircine",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Bitter Mercy",
+            "description": "Your attacks deal additional Bleeding damage.",
+            "magnitude": 1,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "HasSpell",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "spell": "0F5BA0:Skyrim.esm"
+                },
+                "argNames": {
+                  "spell": "Beastblood"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "02A49A:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Ill Met By Moonlight"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Jyggalag",
+      "name": "Jyggalag",
+      "group": "Daedra",
+      "blessing": {
+        "formKey": "000B40:Archon.esp",
+        "editorId": "APO_AltarAbJyggalag",
+        "name": "Blessing of Jyggalag",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Armor Rating",
+            "description": "Your Armor Rating is increased by 100.",
+            "magnitude": 100,
+            "duration": 0
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "0008BB:Archon.esp",
+        "editorId": "APO_AcolyteJyggalag",
+        "name": "Acolyte of Jyggalag",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Jyggalag's Order",
+            "description": "Your Magic Resistance is increased by 10%.",
+            "magnitude": 10,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "miscStat": "-1456433137"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 6,
+                "args": {
+                  "miscStat": "-1456433137"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Jyggalag's Order",
+            "description": "Your Magic Resistance is increased by 15%.",
+            "magnitude": 15,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 5,
+                "args": {
+                  "miscStat": "-1456433137"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 12,
+                "args": {
+                  "miscStat": "-1456433137"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Jyggalag's Order",
+            "description": "Your Magic Resistance is increased by 20%.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 11,
+                "args": {
+                  "miscStat": "-1456433137"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 20,
+                "args": {
+                  "miscStat": "-1456433137"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Jyggalag's Order",
+            "description": "Your Magic Resistance is increased by 25%.",
+            "magnitude": 25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 19,
+                "args": {
+                  "miscStat": "-1456433137"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "000903:Archon.esp",
+        "editorId": "APO_ChampionJyggalag",
+        "name": "Champion of Jyggalag",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Stasis",
+            "description": "You resist 25% of incoming weapon and spell damage when below half Health.",
+            "magnitude": 0,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "HasSpell",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "spell": "0F5BA0:Skyrim.esm"
+                },
+                "argNames": {
+                  "spell": "Beastblood"
+                }
+              },
+              {
+                "fn": "HasSpell",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "spell": "10FB30:Skyrim.esm"
+                },
+                "argNames": {
+                  "spell": "Vampire Controller Ability"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "02AC68:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "The Mind of Madness"
+                }
+              },
+              {
+                "fn": "GetItemCount",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "itemOrList": "02AC6F:Skyrim.esm"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Malacath",
+      "name": "Malacath",
+      "group": "Daedra",
+      "blessing": {
+        "formKey": "000B44:Archon.esp",
+        "editorId": "APO_AltarAbMalacath",
+        "name": "Blessing of Malacath",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Stamina",
+            "description": "Your Stamina is increased by 50.",
+            "magnitude": 50,
+            "duration": 0,
+            "perk": {
+              "formKey": "000CB8:Archon.esp",
+              "editorId": "APO_AltarMalevolentStaminaPerk",
+              "name": "Fortify Stamina",
+              "description": null,
+              "plugin": "Archon.esp"
+            }
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "0008BF:Archon.esp",
+        "editorId": "APO_AcolyteMalacath",
+        "name": "Acolyte of Malacath",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Malacath's Curse",
+            "description": "You deal 10% more damage with power attacks.",
+            "magnitude": 10,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 39,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 100,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Malacath's Curse",
+            "description": "You deal 15% more damage with power attacks.",
+            "magnitude": 15,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 99,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 175,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Malacath's Curse",
+            "description": "You deal 20% more damage with power attacks.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 174,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 350,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Malacath's Curse",
+            "description": "You deal 25% more damage with power attacks.",
+            "magnitude": 25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 349,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "000907:Archon.esp",
+        "editorId": "APO_ChampionMalacath",
+        "name": "Champion of Malacath",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Oathbreaker",
+            "description": "Killing an enemy with a melee or ranged weapon restores 100 Stamina.",
+            "magnitude": 100,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "03B681:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "The Cursed Tribe"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "quest": "04D8D6:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Boethiah's Calling"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "MehrunesDagon",
+      "name": "Mehrunes Dagon",
+      "group": "Daedra",
+      "blessing": {
+        "formKey": "000B46:Archon.esp",
+        "editorId": "APO_AltarAbMehrunesDagon",
+        "name": "Blessing of Mehrunes Dagon",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Magicka Regeneration",
+            "description": "Your Magicka Regeneration is increased by 50%.",
+            "magnitude": 50,
+            "duration": 0
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "0008C3:Archon.esp",
+        "editorId": "APO_AcolyteMehrunesDagon",
+        "name": "Acolyte of Mehrunes Dagon",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Dagon's Ambition",
+            "description": "Your Destruction spells cost 10% less.",
+            "magnitude": 10,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 39,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 100,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Dagon's Ambition",
+            "description": "Your Destruction spells cost 15% less.",
+            "magnitude": 15,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 99,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 175,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Dagon's Ambition",
+            "description": "Your Destruction spells cost 20% less.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 174,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 350,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Dagon's Ambition",
+            "description": "Your Destruction spells cost 25% less.",
+            "magnitude": 25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 349,
+                "args": {
+                  "miscStat": "-232095437"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "00090B:Archon.esp",
+        "editorId": "APO_ChampionMehrunesDagon",
+        "name": "Champion of Mehrunes Dagon",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Great Cataclysm",
+            "description": "You reduce the Fire, Frost, and Shock Resistance of all nearby enemies by 25%.",
+            "magnitude": 0,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "0240B8:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Pieces of the Past"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Mephala",
+      "name": "Mephala",
+      "group": "Daedra",
+      "blessing": {
+        "formKey": "000B47:Archon.esp",
+        "editorId": "APO_AltarAbMephala",
+        "name": "Blessing of Mephala",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Health",
+            "description": "Your Health is increased by 50.",
+            "magnitude": 50,
+            "duration": 0,
+            "perk": {
+              "formKey": "000CB6:Archon.esp",
+              "editorId": "APO_AltarMalevolentHealthPerk",
+              "name": "Fortify Health",
+              "description": null,
+              "plugin": "Archon.esp"
+            }
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "0008CB:Archon.esp",
+        "editorId": "APO_AcolyteMephala",
+        "name": "Acolyte of Mephala",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Mephala's Whispers",
+            "description": "Your Health Regeneration is increased by 20%.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "miscStat": "-746821367"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 6,
+                "args": {
+                  "miscStat": "-746821367"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Mephala's Whispers",
+            "description": "Your Health Regeneration is increased by 30%.",
+            "magnitude": 30,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 5,
+                "args": {
+                  "miscStat": "-746821367"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 12,
+                "args": {
+                  "miscStat": "-746821367"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Mephala's Whispers",
+            "description": "Your Health Regeneration is increased by 40%.",
+            "magnitude": 40,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 11,
+                "args": {
+                  "miscStat": "-746821367"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 20,
+                "args": {
+                  "miscStat": "-746821367"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Mephala's Whispers",
+            "description": "Your Health Regeneration is increased by 50%.",
+            "magnitude": 50,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 19,
+                "args": {
+                  "miscStat": "-746821367"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "000914:Archon.esp",
+        "editorId": "APO_ChampionMephala",
+        "name": "Champion of Mephala",
+        "description": null,
+        "plugin": "Archon - TWDQE.esp",
+        "effects": [
+          {
+            "name": "Eight Shadows of Murder",
+            "description": "You deal 50% extra damage against targets who are attacking or when striking targets from behind.",
+            "magnitude": 0,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "04A37B:Skyrim.esm",
+                  "stage": 80
+                },
+                "argNames": {
+                  "quest": "The Whispering Door"
+                }
+              },
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": true,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "04A37B:Skyrim.esm",
+                  "stage": 60
+                },
+                "argNames": {
+                  "quest": "The Whispering Door"
+                }
+              },
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "quest": "04A37B:Skyrim.esm",
+                  "stage": 45
+                },
+                "argNames": {
+                  "quest": "The Whispering Door"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Meridia",
+      "name": "Meridia",
+      "group": "Daedra",
+      "blessing": {
+        "formKey": "000B48:Archon.esp",
+        "editorId": "APO_AltarAbMeridia",
+        "name": "Blessing of Meridia",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Magicka Regeneration",
+            "description": "Your Magicka Regeneration is increased by 50%.",
+            "magnitude": 50,
+            "duration": 0
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "0008C7:Archon.esp",
+        "editorId": "APO_AcolyteMeridia",
+        "name": "Acolyte of Meridia",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Meridia's Radiance",
+            "description": "Your Restoration spells cost 10% less.",
+            "magnitude": 10,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 9,
+                "args": {
+                  "miscStat": "UndeadKilled"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 50,
+                "args": {
+                  "miscStat": "UndeadKilled"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Meridia's Radiance",
+            "description": "Your Restoration spells cost 15% less.",
+            "magnitude": 15,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 49,
+                "args": {
+                  "miscStat": "UndeadKilled"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 100,
+                "args": {
+                  "miscStat": "UndeadKilled"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Meridia's Radiance",
+            "description": "Your Restoration spells cost 20% less.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 99,
+                "args": {
+                  "miscStat": "UndeadKilled"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 250,
+                "args": {
+                  "miscStat": "UndeadKilled"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Meridia's Radiance",
+            "description": "Your Restoration spells cost 25% less.",
+            "magnitude": 25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 249,
+                "args": {
+                  "miscStat": "UndeadKilled"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "000918:Archon.esp",
+        "editorId": "APO_ChampionMeridia",
+        "name": "Champion of Meridia",
+        "description": null,
+        "plugin": "Archon - HOHQE.esp",
+        "effects": [
+          {
+            "name": "Harbinger of Dawn",
+            "description": "While in combat, periodically grant a nearby target <Meridia’s Favor> or <Meridia’s Retribution>.",
+            "magnitude": 0,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "HasSpell",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "spell": "10FB30:Skyrim.esm"
+                },
+                "argNames": {
+                  "spell": "Vampire Controller Ability"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "04E4E1:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "The Break of Dawn"
+                }
+              },
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "quest": "022F08:Skyrim.esm",
+                  "stage": 200
+                },
+                "argNames": {
+                  "quest": "The House of Horrors"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "MolagBal",
+      "name": "Molag Bal",
+      "group": "Daedra",
+      "blessing": {
+        "formKey": "000B49:Archon.esp",
+        "editorId": "APO_AltarAbMolagBal",
+        "name": "Blessing of Molag Bal",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Magicka",
+            "description": "Your Magicka is increased by 50.",
+            "magnitude": 50,
+            "duration": 0,
+            "perk": {
+              "formKey": "000CB7:Archon.esp",
+              "editorId": "APO_AltarMalevolentMagickaPerk",
+              "name": "Fortify Magicka",
+              "description": null,
+              "plugin": "Archon.esp"
+            }
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "0008CF:Archon.esp",
+        "editorId": "APO_AcolyteMolagBal",
+        "name": "Acolyte of Molag Bal",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Molag's Domination",
+            "description": "Your Magicka Regeneration is increased by 20%.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 19,
+                "args": {
+                  "miscStat": "-1026956749"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 40,
+                "args": {
+                  "miscStat": "-1026956749"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Molag's Domination",
+            "description": "Your Magicka Regeneration is increased by 30%.",
+            "magnitude": 30,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 39,
+                "args": {
+                  "miscStat": "-1026956749"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 60,
+                "args": {
+                  "miscStat": "-1026956749"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Molag's Domination",
+            "description": "Your Magicka Regeneration is increased by 40%.",
+            "magnitude": 40,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 59,
+                "args": {
+                  "miscStat": "-1026956749"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 100,
+                "args": {
+                  "miscStat": "-1026956749"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Molag's Domination",
+            "description": "Your Magicka Regeneration is increased by 50%.",
+            "magnitude": 50,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 99,
+                "args": {
+                  "miscStat": "-1026956749"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "00091C:Archon.esp",
+        "editorId": "APO_ChampionMolagBal",
+        "name": "Champion of Molag Bal",
+        "description": null,
+        "plugin": "Archon - HOHQE.esp",
+        "effects": [
+          {
+            "name": "Covenant of Coldharbour",
+            "description": "You deal 50% extra damage to enemies who fall below half Health.",
+            "magnitude": 0,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "HasSpell",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "spell": "10FB30:Skyrim.esm"
+                },
+                "argNames": {
+                  "spell": "Vampire Controller Ability"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "quest": "04D8D6:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Boethiah's Calling"
+                }
+              },
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "022F08:Skyrim.esm",
+                  "stage": 200
+                },
+                "argNames": {
+                  "quest": "The House of Horrors"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Namira",
+      "name": "Namira",
+      "group": "Daedra",
+      "blessing": {
+        "formKey": "000B4A:Archon.esp",
+        "editorId": "APO_AltarAbNamira",
+        "name": "Blessing of Namira",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Health Regeneration",
+            "description": "Your Health Regeneration is increased by 50%.",
+            "magnitude": 50,
+            "duration": 0
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "0008D3:Archon.esp",
+        "editorId": "APO_AcolyteNamira",
+        "name": "Acolyte of Namira",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Namira's Decay",
+            "description": "You reflect 20% of incoming melee damage back at your attacker.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "miscStat": "-746821367"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 6,
+                "args": {
+                  "miscStat": "-746821367"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Namira's Decay",
+            "description": "You reflect 30% of incoming melee damage back at your attacker.",
+            "magnitude": 30,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 5,
+                "args": {
+                  "miscStat": "-746821367"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 12,
+                "args": {
+                  "miscStat": "-746821367"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Namira's Decay",
+            "description": "You reflect 40% of incoming melee damage back at your attacker.",
+            "magnitude": 40,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 11,
+                "args": {
+                  "miscStat": "-746821367"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 20,
+                "args": {
+                  "miscStat": "-746821367"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Namira's Decay",
+            "description": "You reflect 50% of incoming melee damage back at your attacker.",
+            "magnitude": 50,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 19,
+                "args": {
+                  "miscStat": "-746821367"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "000920:Archon.esp",
+        "editorId": "APO_ChampionNamira",
+        "name": "Champion of Namira",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Primordial Hunger",
+            "description": "After consuming a corpse, you reduce the Armor Rating of all nearby enemies by 150.",
+            "magnitude": 0,
+            "duration": 0,
+            "perk": {
+              "formKey": "000942:Archon.esp",
+              "editorId": "APO_ChampionNamiraCannibalPerk",
+              "name": "Cannibalism",
+              "description": "Allows feeding from corpses.",
+              "plugin": "Archon.esp"
+            },
+            "conditions": [
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "02C358:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "The Taste of Death"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Nocturnal",
+      "name": "Nocturnal",
+      "group": "Daedra",
+      "blessing": {
+        "formKey": "000B4B:Archon.esp",
+        "editorId": "APO_AltarAbNocturnal",
+        "name": "Blessing of Nocturnal",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Sneak",
+            "description": "You are 20% harder to detect while sneaking.",
+            "magnitude": 20,
+            "duration": 0
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "0008D7:Archon.esp",
+        "editorId": "APO_AcolyteNocturnal",
+        "name": "Acolyte of Nocturnal",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Nocturnal's Luck",
+            "description": "Your Carry Weight is increased by 20.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 9,
+                "args": {
+                  "miscStat": "-222641612"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 25,
+                "args": {
+                  "miscStat": "-222641612"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Nocturnal's Luck",
+            "description": "Your Carry Weight is increased by 30.",
+            "magnitude": 30,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 24,
+                "args": {
+                  "miscStat": "-222641612"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 50,
+                "args": {
+                  "miscStat": "-222641612"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Nocturnal's Luck",
+            "description": "Your Carry Weight is increased by 40.",
+            "magnitude": 40,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 49,
+                "args": {
+                  "miscStat": "-222641612"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 100,
+                "args": {
+                  "miscStat": "-222641612"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Nocturnal's Luck",
+            "description": "Your Carry Weight is increased by 50.",
+            "magnitude": 50,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 99,
+                "args": {
+                  "miscStat": "-222641612"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "000924:Archon.esp",
+        "editorId": "APO_ChampionNocturnal",
+        "name": "Champion of Nocturnal",
+        "description": null,
+        "plugin": "Archon - TG Alt Endings.esp",
+        "effects": [
+          {
+            "name": "Unfathomable Shadow",
+            "description": "You move 20% faster while sneaking.",
+            "magnitude": 0,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetGlobalValue",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "global": "00081C:TG Alternative Endings.esp"
+                },
+                "argNames": {
+                  "global": "TGAEEnding"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Peryite",
+      "name": "Peryite",
+      "group": "Daedra",
+      "blessing": {
+        "formKey": "000B4C:Archon.esp",
+        "editorId": "APO_AltarAbPeryite",
+        "name": "Blessing of Peryite",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Stamina Regeneration",
+            "description": "Your Stamina Regeneration is increased by 50%.",
+            "magnitude": 50,
+            "duration": 0
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "0008DB:Archon.esp",
+        "editorId": "APO_AcolytePeryite",
+        "name": "Acolyte of Peryite",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Peryite's Pestilence",
+            "description": "Your poisons last for 20% more hits.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 19,
+                "args": {
+                  "miscStat": "AutomationsKilled"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 60,
+                "args": {
+                  "miscStat": "AutomationsKilled"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Peryite's Pestilence",
+            "description": "Your poisons last for 30% more hits.",
+            "magnitude": 30,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 59,
+                "args": {
+                  "miscStat": "AutomationsKilled"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 120,
+                "args": {
+                  "miscStat": "AutomationsKilled"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Peryite's Pestilence",
+            "description": "Your poisons last for 40% more hits.",
+            "magnitude": 40,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 119,
+                "args": {
+                  "miscStat": "AutomationsKilled"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 200,
+                "args": {
+                  "miscStat": "AutomationsKilled"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Peryite's Pestilence",
+            "description": "Your poisons last for 50% more hits.",
+            "magnitude": 50,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 199,
+                "args": {
+                  "miscStat": "AutomationsKilled"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "00092A:Archon.esp",
+        "editorId": "APO_ChampionPeryite",
+        "name": "Champion of Peryite",
+        "description": null,
+        "plugin": "Archon - TOCQE.esp",
+        "effects": [
+          {
+            "name": "Blighted Task",
+            "description": "You reduce the Poison Resistance of all nearby enemies by 50%.",
+            "magnitude": 0,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "08998D:Skyrim.esm",
+                  "stage": 75
+                },
+                "argNames": {
+                  "quest": "The Only Cure"
+                }
+              },
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "quest": "08998D:Skyrim.esm",
+                  "stage": 101
+                },
+                "argNames": {
+                  "quest": "The Only Cure"
+                }
+              },
+              {
+                "fn": "GetStageDone",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "quest": "08998D:Skyrim.esm",
+                  "stage": 102
+                },
+                "argNames": {
+                  "quest": "The Only Cure"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Sanguine",
+      "name": "Sanguine",
+      "group": "Daedra",
+      "blessing": {
+        "formKey": "000B4D:Archon.esp",
+        "editorId": "APO_AltarAbSanguine",
+        "name": "Blessing of Sanguine",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Stamina Regeneration",
+            "description": "Your Stamina Regeneration is increased by 50%.",
+            "magnitude": 50,
+            "duration": 0
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "0008DF:Archon.esp",
+        "editorId": "APO_AcolyteSanguine",
+        "name": "Acolyte of Sanguine",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Sanguine's Revelry",
+            "description": "You deal 10% extra unarmed damage.",
+            "magnitude": 10,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "miscStat": "BrawlsWon"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 3,
+                "args": {
+                  "miscStat": "BrawlsWon"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Sanguine's Revelry",
+            "description": "You deal 15% extra unarmed damage.",
+            "magnitude": 15,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 2,
+                "args": {
+                  "miscStat": "BrawlsWon"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 6,
+                "args": {
+                  "miscStat": "BrawlsWon"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Sanguine's Revelry",
+            "description": "You deal 20% extra unarmed damage.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 5,
+                "args": {
+                  "miscStat": "BrawlsWon"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 9,
+                "args": {
+                  "miscStat": "BrawlsWon"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Sanguine's Revelry",
+            "description": "You deal 25% extra unarmed damage.",
+            "magnitude": 25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 8,
+                "args": {
+                  "miscStat": "BrawlsWon"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "000931:Archon.esp",
+        "editorId": "APO_ChampionSanguine",
+        "name": "Champion of Sanguine",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Revelry and Debauchery",
+            "description": "Your potions last 100% longer.",
+            "magnitude": 100,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "01BB9B:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "A Night To Remember"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Sheogorath",
+      "name": "Sheogorath",
+      "group": "Daedra",
+      "blessing": {
+        "formKey": "000B4E:Archon.esp",
+        "editorId": "APO_AltarAbSheogorath",
+        "name": "Blessing of Sheogorath",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Health",
+            "description": "Your Health is increased by 50.",
+            "magnitude": 50,
+            "duration": 0,
+            "perk": {
+              "formKey": "000CB6:Archon.esp",
+              "editorId": "APO_AltarMalevolentHealthPerk",
+              "name": "Fortify Health",
+              "description": null,
+              "plugin": "Archon.esp"
+            }
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "0008E3:Archon.esp",
+        "editorId": "APO_AcolyteSheogorath",
+        "name": "Acolyte of Sheogorath",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Sheogorath's Madness",
+            "description": "Your potions last 20% longer.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 5,
+                "args": {
+                  "miscStat": "-1839835289"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 12,
+                "args": {
+                  "miscStat": "-1839835289"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Sheogorath's Madness",
+            "description": "Your potions last 30% longer.",
+            "magnitude": 30,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 11,
+                "args": {
+                  "miscStat": "-1839835289"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 36,
+                "args": {
+                  "miscStat": "-1839835289"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Sheogorath's Madness",
+            "description": "Your potions last 40% longer.",
+            "magnitude": 40,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 35,
+                "args": {
+                  "miscStat": "-1839835289"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 72,
+                "args": {
+                  "miscStat": "-1839835289"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Sheogorath's Madness",
+            "description": "Your potions last 50% longer.",
+            "magnitude": 50,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 71,
+                "args": {
+                  "miscStat": "-1839835289"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "000935:Archon.esp",
+        "editorId": "APO_ChampionSheogorath",
+        "name": "Champion of Sheogorath",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Touch of Madness",
+            "description": "Your attacks and spells randomly deal between 1% and 1000% of their total damage.",
+            "magnitude": 1,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "02AC68:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "The Mind of Madness"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Vaermina",
+      "name": "Vaermina",
+      "group": "Daedra",
+      "blessing": {
+        "formKey": "000B53:Archon.esp",
+        "editorId": "APO_AltarAbVaermina",
+        "name": "Blessing of Vaermina",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Magicka Regeneration",
+            "description": "Your Magicka Regeneration is increased by 50%.",
+            "magnitude": 50,
+            "duration": 0
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "0008EB:Archon.esp",
+        "editorId": "APO_AcolyteVaermina",
+        "name": "Acolyte of Vaermina",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Vaermina's Nightmare",
+            "description": "Your Illusion spells cost 25% less.",
+            "magnitude": 25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 24,
+                "args": {
+                  "miscStat": "-1488142717"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 50,
+                "args": {
+                  "miscStat": "-1488142717"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Vaermina's Nightmare",
+            "description": "Your Illusion spells cost 50% less.",
+            "magnitude": 50,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 49,
+                "args": {
+                  "miscStat": "-1488142717"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 100,
+                "args": {
+                  "miscStat": "-1488142717"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Vaermina's Nightmare",
+            "description": "Your Illusion spells cost 75% less.",
+            "magnitude": 75,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 99,
+                "args": {
+                  "miscStat": "-1488142717"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 175,
+                "args": {
+                  "miscStat": "-1488142717"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Vaermina's Nightmare",
+            "description": "Your Illusion spells cost 100% less.",
+            "magnitude": 100,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 174,
+                "args": {
+                  "miscStat": "-1488142717"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "00093D:Archon.esp",
+        "editorId": "APO_ChampionVaermina",
+        "name": "Champion of Vaermina",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Dreamweaver's Omen",
+            "description": "You absorb 20 Magicka per second from nearby enemies affected by an Illusion spell.",
+            "magnitude": 0,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "HasSpell",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 0,
+                "args": {
+                  "spell": "0F5BA0:Skyrim.esm"
+                },
+                "argNames": {
+                  "spell": "Beastblood"
+                }
+              },
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "0242AF:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Waking Nightmare"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Auriel",
+      "name": "Auriel",
+      "group": "Miscellaneous",
+      "blessing": {
+        "formKey": "000B37:Archon.esp",
+        "editorId": "APO_AltarAbAuriel",
+        "name": "Blessing of Auriel",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Magicka",
+            "description": "Your Magicka is increased by 50.",
+            "magnitude": 50,
+            "duration": 0,
+            "perk": {
+              "formKey": "000814:Archon.esp",
+              "editorId": "APO_AltarBenevolentMagickaPerk",
+              "name": "Fortify Magicka",
+              "description": null,
+              "plugin": "Archon.esp"
+            }
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "000861:Archon.esp",
+        "editorId": "APO_AcolyteAuriel",
+        "name": "Acolyte of Auriel",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "The Light of Auriel",
+            "description": "Your Restoration spells cost 10% less.",
+            "magnitude": 10,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 4,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 10,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Light of Auriel",
+            "description": "Your Restoration spells cost 15% less.",
+            "magnitude": 15,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 9,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 25,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Light of Auriel",
+            "description": "Your Restoration spells cost 20% less.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 24,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 40,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Light of Auriel",
+            "description": "Your Restoration spells cost 25% less.",
+            "magnitude": 25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 39,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "00089F:Archon.esp",
+        "editorId": "APO_ChampionAuriel",
+        "name": "Champion of Auriel",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Divine Spark",
+            "description": "Your Restoration spells are 50% stronger against targets below half Health.",
+            "magnitude": 50,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "002853:Dawnguard.esm"
+                },
+                "argNames": {
+                  "quest": "Touching the Sky"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Magnus",
+      "name": "Magnus",
+      "group": "Miscellaneous",
+      "blessing": {
+        "formKey": "000B43:Archon.esp",
+        "editorId": "APO_AltarAbMagnus",
+        "name": "Blessing of Magnus",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Spell Absorption",
+            "description": "You have a 10% chance to absorb the Magicka from incoming spells.",
+            "magnitude": 10,
+            "duration": 0
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "000865:Archon.esp",
+        "editorId": "APO_AcolyteMagnus",
+        "name": "Acolyte of Magnus",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "The Insight of Magnus",
+            "description": "Your Alteration spells cost 10% less.",
+            "magnitude": 10,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 4,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 10,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Insight of Magnus",
+            "description": "Your Alteration spells cost 15% less.",
+            "magnitude": 15,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 9,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 25,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Insight of Magnus",
+            "description": "Your Alteration spells cost 20% less.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 24,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 40,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Insight of Magnus",
+            "description": "Your Alteration spells cost 25% less.",
+            "magnitude": 25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 39,
+                "args": {
+                  "miscStat": "SpellsLearned"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "0008A3:Archon.esp",
+        "editorId": "APO_ChampionMagnus",
+        "name": "Champion of Magnus",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Touch of Aetherius",
+            "description": "Your Magic Resistance is increased by 25%.",
+            "magnitude": 25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "01F258:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "The Eye of Magnus"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "Sithis",
+      "name": "Sithis",
+      "group": "Miscellaneous",
+      "blessing": {
+        "formKey": "000B4F:Archon.esp",
+        "editorId": "APO_AltarAbSithis",
+        "name": "Blessing of Sithis",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Fortify Sneak",
+            "description": "You are 20% harder to detect while sneaking.",
+            "magnitude": 20,
+            "duration": 0
+          }
+        ]
+      },
+      "acolyte": {
+        "formKey": "0008E7:Archon.esp",
+        "editorId": "APO_AcolyteSithis",
+        "name": "Acolyte of Sithis",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "The Dread of Sithis",
+            "description": "You deal 10% more damage with sneak attacks.",
+            "magnitude": 10,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 19,
+                "args": {
+                  "miscStat": "-1252602798"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 50,
+                "args": {
+                  "miscStat": "-1252602798"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Dread of Sithis",
+            "description": "You deal 15% more damage with sneak attacks.",
+            "magnitude": 15,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 49,
+                "args": {
+                  "miscStat": "-1252602798"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 90,
+                "args": {
+                  "miscStat": "-1252602798"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Dread of Sithis",
+            "description": "You deal 20% more damage with sneak attacks.",
+            "magnitude": 20,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 89,
+                "args": {
+                  "miscStat": "-1252602798"
+                }
+              },
+              {
+                "fn": "GetPCMiscStat",
+                "op": "<",
+                "or": false,
+                "runOn": "Subject",
+                "value": 150,
+                "args": {
+                  "miscStat": "-1252602798"
+                }
+              }
+            ]
+          },
+          {
+            "name": "The Dread of Sithis",
+            "description": "You deal 25% more damage with sneak attacks.",
+            "magnitude": 25,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetPCMiscStat",
+                "op": ">",
+                "or": false,
+                "runOn": "Subject",
+                "value": 149,
+                "args": {
+                  "miscStat": "-1252602798"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "champion": {
+        "formKey": "000939:Archon.esp",
+        "editorId": "APO_ChampionSithis",
+        "name": "Champion of Sithis",
+        "description": null,
+        "plugin": "Archon.esp",
+        "effects": [
+          {
+            "name": "Serpent of Chaos",
+            "description": "You spend 50% less Stamina while sneaking.",
+            "magnitude": 50,
+            "duration": 0,
+            "conditions": [
+              {
+                "fn": "GetQuestCompleted",
+                "op": "==",
+                "or": false,
+                "runOn": "Subject",
+                "value": 1,
+                "args": {
+                  "quest": "01EA59:Skyrim.esm"
+                },
+                "argNames": {
+                  "quest": "Hail Sithis!"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "profile": "Apostasy",
+    "plugins": 3407,
+    "generatedAt": "2026-10-23T14:07:30.1329175Z"
+  }
+}
