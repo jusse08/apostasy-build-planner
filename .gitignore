@@ -1,0 +1,7 @@
+bin/
+obj/
+node_modules/
+.svelte-kit/
+build/
+*.sqlite
+.env
