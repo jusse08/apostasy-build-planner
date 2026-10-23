@@ -1,0 +1,304 @@
+{
+  "groups": [
+    {
+      "group": "Rules that shape a build",
+      "items": [
+        {
+          "mod": "Paragon - A Modern Perk Overhaul",
+          "what": "Combat and stealth perk trees, plus stamina costs for light attacks, sprinting, jumping, drawing a bow and sneaking, an exhaustion debuff at 0 Stamina, and its own armor rating scaling.",
+          "build": "Stamina is the limiting resource for melee and archery builds; stamina regeneration and cost reduction perks matter more than in vanilla.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/120398"
+        },
+        {
+          "mod": "Stances NG",
+          "what": "Wolf, Hawk and Bear stances for melee. Paragon's weapon and unarmed trees branch by stance: Wolf bleeds, Hawk crits, Bear shreds armor and poise.",
+          "build": "Pick one stance branch per weapon tree; perks from other branches do nothing while you fight in a different stance.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/117986"
+        },
+        {
+          "mod": "TK Dodge RE",
+          "what": "A dodge on a key. Heavy armor and clothing give a short step with fewer invulnerability frames, light armor a longer roll with more.",
+          "build": "Light Armor builds get the better dodge; Paragon's Acrobat and Edgerunner and the Shadow stone build on it.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/56956"
+        },
+        {
+          "mod": "Maxsu Poise AE",
+          "what": "Poise: hits drain a poise bar and stagger when it breaks; shown on TrueHUD.",
+          "build": "Poise damage and poise resistance perks (Hawk/Bear branches, Unstoppable, Tower stone, Talos) decide who staggers first.",
+          "enabled": true,
+          "url": null
+        },
+        {
+          "mod": "Moder Stagger Lock",
+          "what": "Limits repeated staggering so neither side can be stun-locked forever.",
+          "build": "Stagger is strong but not infinite; plan a follow-up, not a loop.",
+          "enabled": true,
+          "url": null
+        },
+        {
+          "mod": "Block Commitment Overhaul SKSE",
+          "what": "Blocking commits you: you can't cancel attacks into a block freely.",
+          "build": "Timed blocks matter more than holding block; see Paragon's Block tree.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/171898"
+        },
+        {
+          "mod": "Maxsu Block Overhaul",
+          "what": "Reworks block behaviour and block hit reactions.",
+          "build": "Pairs with Paragon's timed block (330 ms window) and its Block perks.",
+          "enabled": true,
+          "url": null
+        },
+        {
+          "mod": "Precision",
+          "what": "Real weapon collision instead of the vanilla hit cone; weapon length and swing arcs decide hits.",
+          "build": "Reach matters: Paragon edits reach settings, and long weapons hit from further away.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/72347"
+        },
+        {
+          "mod": "Stages of Suffering - An SKSE Death Alternative",
+          "what": "Dying gives Minor, Moderate or Severe injuries instead of a reload; sleep 8+ hours somewhere safe to heal.",
+          "build": "Injuries stack and weaken you; the Lady stone lets you pay gold to skip them.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/146568"
+        },
+        {
+          "mod": "Apostasy (APO_Apostasy - Controller.esp)",
+          "url": "https://github.com/Oghma-Infinium/Apostasy/blob/main/GAMEPLAY.md",
+          "enabled": true,
+          "what": "Apostasy's own rules: difficulty damage multipliers, Attacks of Opportunity (+50% against power attacking, casting, drawing or staggered targets), Massive Targets, Bloodied enemies and Confusion for mages hit in melee.",
+          "build": "Punish openings: attacks of opportunity and backstabs carry extra damage and poise damage; giants and dragons resist it."
+        },
+        {
+          "mod": "Experience",
+          "what": "Character XP comes from quests, discovery, clearing and kills, not from using skills.",
+          "build": "Skill levels are bought with points on level up (Static Skill Leveling), so you plan skills instead of grinding them.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/17751"
+        }
+      ]
+    },
+    {
+      "group": "How enemies fight",
+      "items": [
+        {
+          "mod": "Modern Combat AI",
+          "what": "Edits combat styles so NPCs are more aggressive and press attacks.",
+          "build": "Expect sustained pressure; defensive perks and stamina management pay off.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/74716"
+        },
+        {
+          "mod": "SCAR - Skyrim Combos AI Revolution",
+          "what": "Lets NPCs chain attack combos with modern movesets.",
+          "build": "Enemy strings are longer; timed blocks and dodges beat trading hits.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/72014"
+        },
+        {
+          "mod": "Combat Pathing Revolution",
+          "what": "Smarter melee positioning and circling for NPCs.",
+          "build": "Enemies flank more; area control and staggers help in groups.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/86950"
+        },
+        {
+          "mod": "Project Gap Close",
+          "what": "Melee NPCs close distance with lunges instead of chasing slowly.",
+          "build": "Kiting is harder; ranged builds need slows, roots or a way to stagger.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/130830"
+        },
+        {
+          "mod": "Ultimate NPC dodging",
+          "what": "NPCs dodge based on their skill and situation.",
+          "build": "Skilled enemies avoid some attacks; ranged and spell builds see more misses.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/120738"
+        },
+        {
+          "mod": "NPCs Learn to Aim",
+          "what": "Enemy archers and casters lead their shots.",
+          "build": "Strafing no longer dodges arrows reliably; shields and the Block tree's arrow reduction help.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/117908"
+        },
+        {
+          "mod": "NPCs Take Cover - Smarter Anti-Cheese AI",
+          "what": "NPCs retreat and take cover when you exploit terrain they can't reach.",
+          "build": "Perching out of reach doesn't win fights.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/111890"
+        },
+        {
+          "mod": "Smart NPC Potions",
+          "what": "NPCs drink potions from their inventory when hurt.",
+          "build": "Burst damage and poison (Overdose, Intensity) shorten fights before they heal.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/40102"
+        },
+        {
+          "mod": "Smarter Conjuration Minions",
+          "what": "Better behaviour for summons and thralls.",
+          "build": "Summoner builds are more reliable.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/144366"
+        },
+        {
+          "mod": "Flinching",
+          "what": "Player and NPCs flinch briefly when hit by melee without being fully staggered.",
+          "build": "Getting hit interrupts more; Heavy Armor's defensive perks soften it.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/42550/"
+        },
+        {
+          "mod": "Knockback SKSE",
+          "what": "Melee hits push targets back so modern movesets don't clip into enemies.",
+          "build": "Spacing shifts during combos.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/171277"
+        }
+      ]
+    },
+    {
+      "group": "Who you fight",
+      "items": [
+        {
+          "mod": "Lawless - A Bandit Overhaul",
+          "what": "Bandits get varied archetypes, gear and behaviour.",
+          "build": "Bandit camps hit harder than vanilla early on.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/88080"
+        },
+        {
+          "mod": "Madmen - A Forsworn Overhaul",
+          "what": "Forsworn get new archetypes and abilities.",
+          "build": "The Reach is a step up in danger.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/98579"
+        },
+        {
+          "mod": "The Dragon Cult - A Draugr Overhaul",
+          "what": "Draugr get new types, ranks and tactics.",
+          "build": "Nordic ruins test sustained fights; Sun and fire damage are useful against undead.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/81422"
+        },
+        {
+          "mod": "Draugr MCO Improved",
+          "what": "Draugr use modern attack movesets.",
+          "build": "Draugr combos punish standing still.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/77569"
+        },
+        {
+          "mod": "Hokoron - Enemy Overhaul",
+          "what": "Overhauls many enemy types and their stats.",
+          "build": "Enemy toughness differs from vanilla expectations.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/89212"
+        },
+        {
+          "mod": "Dragon War - A Dragon Overhaul",
+          "what": "Reworked dragon combat and variety.",
+          "build": "Dragons are Massive Targets: reduced attack-of-opportunity damage, no backstabs. Dragonrend and ranged damage matter.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/51310"
+        },
+        {
+          "mod": "Humanoid Dragon Priests",
+          "what": "Dragon priests become humanoid boss fights.",
+          "build": "Boss fights reward burst and stagger resistance.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/122320"
+        },
+        {
+          "mod": "Locational Encounter Zones",
+          "what": "Areas have fixed level ranges instead of scaling with you.",
+          "build": "Some places are much harder at low level; plan a route that matches your level.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/85212"
+        }
+      ]
+    },
+    {
+      "group": "Consumables, magic and survival",
+      "items": [
+        {
+          "mod": "Ultimate Animated Potions NG",
+          "what": "Drinking potions plays an animation and slows you.",
+          "build": "Healing mid-fight takes time; regeneration and on-hit healing are more valuable.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/97674"
+        },
+        {
+          "mod": "Swift Potion NG",
+          "what": "Hotkeys and auto-use for potions.",
+          "build": "Convenience; doesn't remove the drinking animation.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/78272"
+        },
+        {
+          "mod": "Skyrim Souls RE - Updated",
+          "what": "Menus don't pause the game.",
+          "build": "Inventory juggling during combat is dangerous; set up favourites and the wheel beforehand.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/27859"
+        },
+        {
+          "mod": "Apothecary - An Alchemy Overhaul",
+          "what": "Alchemy overhaul; Apostasy makes restore potions short (4 s) but strong.",
+          "build": "Potions are bursts, not long heals.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/52130"
+        },
+        {
+          "mod": "Mysticism - A Magic Overhaul",
+          "what": "Magic overhaul adding Poison and Sun spells and rebalancing schools.",
+          "build": "Paragon's Corrupted Catalyst and Adamant's Destruction perks also apply to Mysticism's Poison and Sun spells.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/27839"
+        },
+        {
+          "mod": "Ascension",
+          "what": "Destruction perks apply to non-elemental spells too (Desecration, Natura).",
+          "build": "More spell choices count for Destruction perks.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/89223"
+        },
+        {
+          "mod": "Sorcerer - A Staff and Scroll Overhaul",
+          "what": "Staves and scrolls become a real playstyle.",
+          "build": "Pairs with the Ritual stone (scrolls and staves stronger, regular spells weaker) and Enchanting's Sage perks.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/95196"
+        },
+        {
+          "mod": "Thaumaturgy - An Enchanting Overhaul",
+          "what": "Enchanting overhaul.",
+          "build": "Weapon and armor enchantment strength follows the Enchanting tree.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/57138"
+        },
+        {
+          "mod": "Artificer - An Artifact Overhaul",
+          "what": "Reworks artifacts and unique items.",
+          "build": "Unique items can carry a build; the Oghma Infinium also gives 2 perk points.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/99619"
+        },
+        {
+          "mod": "Starfrost - A Survival Overhaul",
+          "what": "Hunger, exhaustion and warmth.",
+          "build": "Needs carry penalties into fights; frost resistance (Nords) and food buffs (Gourmet) help.",
+          "enabled": true,
+          "url": "https://www.nexusmods.com/skyrimspecialedition/mods/97536"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+.git
+.claude
+**/node_modules
+web/.svelte-kit
+web/build
+**/*.sqlite
+**/*.sqlite-shm
+**/*.sqlite-wal
+tools/extractor/bin
+tools/extractor/obj

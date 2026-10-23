@@ -1,0 +1,19 @@
+services:
+  planner:
+    build: .
+    image: apo-char-planner
+    container_name: apo-char-planner
+    restart: unless-stopped
+    environment:
+      # Caddy's reverse_proxy sends these; SvelteKit needs them to see the real https origin,
+      # otherwise its cross-site check rejects deleting builds.
+      PROTOCOL_HEADER: x-forwarded-proto
+      HOST_HEADER: x-forwarded-host
+    ports:
+      # Point Caddy at this port (or drop it and put the container on Caddy's network).
+      - "3000:3000"
+    volumes:
+      - planner-db:/var/lib/planner
+
+volumes:
+  planner-db:

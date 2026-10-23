@@ -153,6 +153,8 @@ export interface GameModel {
 	shouts: Shout[];
 	traits: Spell[];
 	leveling: Leveling;
+	/** Hand-written notes on combat-related mods (data/combat.json). */
+	combat: { group: string; items: { mod: string; what: string; build: string; url: string | null }[] }[];
 	defaultPerks: string[];
 	dataVersion: string;
 }

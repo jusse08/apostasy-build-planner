@@ -269,6 +269,10 @@ function build(): GameModel {
 			attributeAtLevel: table(unc.HealthAtLevelUp),
 			maxLevel: 81
 		},
+		combat: read('combat.json').groups.map((g: Raw) => ({
+			group: g.group,
+			items: g.items.map((i: Raw) => ({ mod: i.mod, what: i.what, build: i.build, url: i.url }))
+		})),
 		defaultPerks: manual.paragon?.defaultPerks ?? [],
 		dataVersion: perksRaw.meta?.generatedAt ?? 'unknown'
 	};
