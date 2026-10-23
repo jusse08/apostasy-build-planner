@@ -13,6 +13,10 @@ public static class Json
     /// <summary>Display names for forms referenced from condition args (quest, perk, ...), set once loaded.</summary>
     public static IReadOnlyDictionary<FormKey, string> Names { get; set; } = new Dictionary<FormKey, string>();
 
+    /// <summary>Journal text of each quest stage, so a stage condition can say what that stage means.</summary>
+    public static IReadOnlyDictionary<(FormKey Quest, int Stage), string> StageLogs { get; set; } =
+        new Dictionary<(FormKey, int), string>();
+
     public static JsonNode? Key(IFormLinkGetter link) => link.IsNull ? null : Key(link.FormKey);
 
     public static JsonArray Conditions(IEnumerable<IConditionGetter> conditions)
@@ -50,6 +54,10 @@ public static class Json
                     && Names.TryGetValue(fk, out var name))
                     names[k] = name;
             if (names.Count > 0) o["argNames"] = names;
+            if (args["quest"] is JsonValue qv && qv.TryGetValue<string>(out var qs) && FormKey.TryFactory(qs, out var quest)
+                && args["stage"] is JsonValue sv && sv.TryGetValue<int>(out var stage)
+                && StageLogs.TryGetValue((quest, stage), out var log))
+                o["stageLog"] = log;
             arr.Add(o);
         }
         return arr;

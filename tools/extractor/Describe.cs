@@ -26,23 +26,39 @@ public sealed class Describe
         foreach (var (g, _) in game.Winning<IGlobalGetter>().Values)
             if (g.EditorID != null && GlobalValue(g) is { } v) _globalsByEditorId[g.EditorID] = v;
 
-        // Names for condition args: quest / perk / spell / race / faction names, else editor id.
+        // Names for condition args: quest / perk / spell / race / faction / item names, else editor id.
+        // Quest names built from aliases ("<Alias=...>") only make sense in game, so they count as missing.
         var names = new Dictionary<FormKey, string>();
         void Add<T>(Dictionary<FormKey, (T Record, ModKey From)> recs) where T : ISkyrimMajorRecordGetter
         {
             foreach (var (k, (r, _)) in recs)
             {
                 var n = (r as Mutagen.Bethesda.Plugins.Aspects.INamedGetter)?.Name;
-                names[k] = string.IsNullOrEmpty(n) ? r.EditorID ?? "" : n;
+                names[k] = string.IsNullOrEmpty(n) || n.Contains("<Alias") ? r.EditorID ?? "" : n;
             }
         }
-        Add(game.Winning<IQuestGetter>());
+        var quests = game.Winning<IQuestGetter>();
+        Add(quests);
+        var stageLogs = new Dictionary<(FormKey, int), string>();
+        foreach (var (k, (q, _)) in quests)
+            foreach (var stage in q.Stages)
+                if (stage.LogEntries.Select(e => e.Entry?.String).FirstOrDefault(s => !string.IsNullOrWhiteSpace(s)) is { } log)
+                    stageLogs[(k, stage.Index)] = log.Trim();
+        Json.StageLogs = stageLogs;
         Add(_perks);
         Add(_spells);
         Add(game.Winning<IRaceGetter>());
         Add(game.Winning<IFactionGetter>());
         Add(game.Winning<IKeywordGetter>());
         Add(game.Winning<IGlobalGetter>());
+        Add(game.Winning<IArmorGetter>());
+        Add(game.Winning<IWeaponGetter>());
+        Add(game.Winning<IMiscItemGetter>());
+        Add(game.Winning<IBookGetter>());
+        Add(game.Winning<IIngestibleGetter>());
+        Add(game.Winning<IIngredientGetter>());
+        Add(game.Winning<IKeyGetter>());
+        Add(game.Winning<IFormListGetter>());
         Json.Names = names;
     }
 

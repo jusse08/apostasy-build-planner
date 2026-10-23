@@ -187,8 +187,35 @@ function compare(a: number, op: string, b: number): boolean {
 	}
 }
 
+/**
+ * For yes/no functions (quest completed, has spell...): true if the condition asks for "yes",
+ * false if it asks for "no", null if the comparison doesn't reduce to either.
+ */
+function asksYes(c: Condition): boolean | null {
+	const v = c.value ?? 0;
+	const yes = compare(1, c.op, v);
+	const no = compare(0, c.op, v);
+	return yes === no ? null : yes;
+}
+
+/** Spells whose presence means something better said in words. */
+const STATE_SPELLS: Record<FormKey, [string, string]> = {
+	'0F5BA0:Skyrim.esm': ['Be a werewolf', 'Not be a werewolf'],
+	'10FB30:Skyrim.esm': ['Be a vampire', 'Not be a vampire']
+};
+
+/** Globals with a known meaning, keyed by editor id. */
+const STATE_GLOBALS: Record<string, [string, string]> = {
+	OghmaInfiniumBookHasBeenRead: ['Read the Oghma Infinium', 'Not read the Oghma Infinium']
+};
+
+function argName(c: Condition, arg: string): string {
+	return c.argNames?.[arg] ?? String(c.args?.[arg] ?? '?');
+}
+
 export function describeCondition(game: GameModel, c: Condition): string {
 	const v = c.value ?? 0;
+	const yes = asksYes(c);
 	if (c.fn === 'GetBaseActorValue') {
 		const skill = String(c.args?.actorValue ?? '');
 		const name = game.skills.find((s) => s.id === skill)?.name ?? skill;
@@ -199,8 +226,67 @@ export function describeCondition(game: GameModel, c: Condition): string {
 		const name = game.perks[key]?.name ?? c.argNames?.perk ?? key;
 		return v >= 1 && c.op === '==' ? `Has ${name}` : `Lacks ${name}`;
 	}
+	if (c.fn === 'GetQuestCompleted' && yes !== null) {
+		return `${yes ? 'Complete' : "Don't complete"} ${argName(c, 'quest')}`;
+	}
+	if (c.fn === 'GetStageDone' && yes !== null) {
+		// With the stage's journal entry shown below, the number adds nothing.
+		const where = c.stageLog ? 'this point in' : `stage ${c.args?.stage} of`;
+		return `${yes ? 'Reach' : "Don't reach"} ${where} ${argName(c, 'quest')}`;
+	}
+	if (c.fn === 'HasSpell' && yes !== null) {
+		const state = STATE_SPELLS[String(c.args?.spell)];
+		if (state) return state[yes ? 0 : 1];
+		return `${yes ? 'Know' : "Don't know"} ${argName(c, 'spell')}`;
+	}
+	if (c.fn === 'GetGlobalValue') {
+		const state = STATE_GLOBALS[c.argNames?.global ?? ''];
+		if (state && yes !== null) return state[yes ? 0 : 1];
+	}
+	if (c.fn === 'GetItemCount') {
+		const item = argName(c, 'itemOrList');
+		if (c.op === '==' && v === 0) return `Don't carry ${item}`;
+		if ((c.op === '>=' && v === 1) || (c.op === '>' && v === 0)) return `Carry ${item}`;
+		return `Carry ${item}: count ${c.op} ${v}`;
+	}
 	const args = Object.values(c.argNames ?? c.args ?? {}).join(', ');
 	return `${c.fn}(${args}) ${c.op} ${v}`;
+}
+
+/**
+ * Skyrim condition lists: an OR flag joins a condition with the next one; OR groups are then
+ * ANDed together ((a OR b) AND c ...).
+ */
+export function groupConditions(conditions: Condition[]): Condition[][] {
+	const groups: Condition[][] = [];
+	let current: Condition[] = [];
+	for (const c of conditions) {
+		current.push(c);
+		if (!c.or) {
+			groups.push(current);
+			current = [];
+		}
+	}
+	if (current.length) groups.push(current);
+	return groups;
+}
+
+export interface ConditionLine {
+	text: string;
+	/** The journal entry of a checked quest stage, which says what the stage number means. */
+	note?: string;
+}
+
+/**
+ * Words for one OR group: a single line, or a lead-in plus the options.
+ * "Complete one of" when every option is finishing a quest.
+ */
+export function describeConditionGroup(game: GameModel, group: Condition[]): ConditionLine & { options: ConditionLine[] } {
+	const line = (c: Condition): ConditionLine => ({ text: describeCondition(game, c), note: c.stageLog });
+	if (group.length === 1) return { ...line(group[0]), options: [] };
+	if (group.every((c) => c.fn === 'GetQuestCompleted' && asksYes(c) === true))
+		return { text: 'Complete one of:', options: group.map((c) => ({ text: argName(c, 'quest') })) };
+	return { text: 'One of:', options: group.map(line) };
 }
 
 export function evalCondition(
@@ -222,26 +308,13 @@ export function evalCondition(
 	return { condition: c, ok: true, known: false, label };
 }
 
-/**
- * Skyrim condition lists: an OR flag joins a condition with the next one; OR groups are then
- * ANDed together ((a OR b) AND c ...).
- */
 export function evalConditions(
 	game: GameModel,
 	conditions: Condition[],
 	skills: Record<SkillId, number>,
 	perks: Set<FormKey>
 ): { ok: boolean; groups: ConditionResult[][] } {
-	const groups: ConditionResult[][] = [];
-	let current: ConditionResult[] = [];
-	for (const c of conditions) {
-		current.push(evalCondition(game, c, skills, perks));
-		if (!c.or) {
-			groups.push(current);
-			current = [];
-		}
-	}
-	if (current.length) groups.push(current);
+	const groups = groupConditions(conditions).map((g) => g.map((c) => evalCondition(game, c, skills, perks)));
 	return { ok: groups.every((g) => g.some((r) => r.ok)), groups };
 }
 

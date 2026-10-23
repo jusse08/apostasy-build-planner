@@ -414,6 +414,9 @@
                 "value": 0,
                 "args": {
                   "itemOrList": "0C891D:Skyrim.esm"
+                },
+                "argNames": {
+                  "itemOrList": "Necromancer's Amulet"
                 }
               }
             ]
@@ -602,7 +605,8 @@
                 },
                 "argNames": {
                   "quest": "With Friends Like These..."
-                }
+                },
+                "stageLog": "I have killed an innocent person, gained entrance into the Dark Brotherhood Sanctuary, and been officially welcomed into the Dark Brotherhood by Astrid. There's no turning back now."
               }
             ]
           }
@@ -850,7 +854,8 @@
                 },
                 "argNames": {
                   "quest": "Taking Care of Business"
-                }
+                },
+                "stageLog": "I've dealt with the three troublesome business owners in Riften as Brynjolf had specified. Perhaps now that I've proven my worth to Brynjolf, I can discover more about this mysterious organization that he represents."
               }
             ]
           }
@@ -1033,7 +1038,8 @@
                 },
                 "argNames": {
                   "quest": "The Blessings of Nature"
-                }
+                },
+                "stageLog": "I helped Danica Pure-Spring repair the Gildergreen, a large tree central to the worship of Kynareth in Skyrim."
               },
               {
                 "fn": "GetStageDone",
@@ -1047,7 +1053,8 @@
                 },
                 "argNames": {
                   "quest": "The Blessings of Nature"
-                }
+                },
+                "stageLog": "I brought a sapling to Whiterun that will one day be the new Gildergreen, a tree sacred to the Temple of Kynareth."
               }
             ]
           }
@@ -1235,7 +1242,8 @@
                 },
                 "argNames": {
                   "quest": "With Friends Like These..."
-                }
+                },
+                "stageLog": "I have killed an innocent person, gained entrance into the Dark Brotherhood Sanctuary, and been officially welcomed into the Dark Brotherhood by Astrid. There's no turning back now."
               }
             ]
           },
@@ -1283,7 +1291,8 @@
                 },
                 "argNames": {
                   "quest": "With Friends Like These..."
-                }
+                },
+                "stageLog": "I have killed an innocent person, gained entrance into the Dark Brotherhood Sanctuary, and been officially welcomed into the Dark Brotherhood by Astrid. There's no turning back now."
               }
             ]
           }
@@ -1484,7 +1493,8 @@
                 },
                 "argNames": {
                   "quest": "The House of Horrors"
-                }
+                },
+                "stageLog": "I helped Tyranus destroy Molag Bal's altar. The house is now safe."
               }
             ]
           }
@@ -1644,7 +1654,7 @@
                   "quest": "029940:Skyrim.esm"
                 },
                 "argNames": {
-                  "quest": "<Alias=QuestNameLocation>"
+                  "quest": "CWObj"
                 }
               },
               {
@@ -1672,7 +1682,8 @@
                 },
                 "argNames": {
                   "quest": "Search and Seizure"
-                }
+                },
+                "stageLog": "I testified to Ondolemar that Ogmund openly admitted to Talos worship and have been rewarded."
               },
               {
                 "fn": "GetStageDone",
@@ -1686,7 +1697,8 @@
                 },
                 "argNames": {
                   "quest": "Search and Seizure"
-                }
+                },
+                "stageLog": "I gave Ondolemar Ogmund's Talos amulet as proof of his Talos worship and have been rewarded."
               }
             ]
           }
@@ -1874,7 +1886,8 @@
                 },
                 "argNames": {
                   "quest": "Taking Care of Business"
-                }
+                },
+                "stageLog": "I've dealt with the three troublesome business owners in Riften as Brynjolf had specified. Perhaps now that I've proven my worth to Brynjolf, I can discover more about this mysterious organization that he represents."
               }
             ]
           }
@@ -2057,7 +2070,8 @@
                 },
                 "argNames": {
                   "quest": "The Black Star"
-                }
+                },
+                "stageLog": "I have cleansed Azura's Star, the infinite Soul Gem. It is mine to do with as I see fit."
               },
               {
                 "fn": "GetStageDone",
@@ -2071,7 +2085,8 @@
                 },
                 "argNames": {
                   "quest": "The Black Star"
-                }
+                },
+                "stageLog": "I have completed the Black Star, an infinite Black Soul Gem. It is now mine to do with as I please."
               }
             ]
           }
@@ -2293,7 +2308,8 @@
                 },
                 "argNames": {
                   "quest": "The House of Horrors"
-                }
+                },
+                "stageLog": "Logrolf is dead, and the Mace of Molag Bal is mine."
               }
             ]
           }
@@ -3093,6 +3109,9 @@
                 "value": 0,
                 "args": {
                   "itemOrList": "02AC6F:Skyrim.esm"
+                },
+                "argNames": {
+                  "itemOrList": "Wabbajack"
                 }
               }
             ]
@@ -3632,7 +3651,8 @@
                 },
                 "argNames": {
                   "quest": "The Whispering Door"
-                }
+                },
+                "stageLog": "I have restored Mephala's Ebony Blade to its full potential."
               },
               {
                 "fn": "GetStageDone",
@@ -3646,7 +3666,8 @@
                 },
                 "argNames": {
                   "quest": "The Whispering Door"
-                }
+                },
+                "stageLog": "I have received Mephala's Ebony Blade, I should use it to slay those who are close to me."
               },
               {
                 "fn": "GetStageDone",
@@ -3660,7 +3681,8 @@
                 },
                 "argNames": {
                   "quest": "The Whispering Door"
-                }
+                },
+                "stageLog": "I decided to give Mephala's Ebony Blade to the Vigilant of Stendarr for safekeeping."
               }
             ]
           }
@@ -3848,7 +3870,8 @@
                 },
                 "argNames": {
                   "quest": "The House of Horrors"
-                }
+                },
+                "stageLog": "Logrolf is dead, and the Mace of Molag Bal is mine."
               }
             ]
           }
@@ -4057,7 +4080,8 @@
                 },
                 "argNames": {
                   "quest": "The House of Horrors"
-                }
+                },
+                "stageLog": "Logrolf is dead, and the Mace of Molag Bal is mine."
               }
             ]
           }
@@ -4225,6 +4249,9 @@
                       "value": 0,
                       "args": {
                         "itemOrList": "02C37B:Skyrim.esm"
+                      },
+                      "argNames": {
+                        "itemOrList": "Ring of Namira"
                       }
                     },
                     {
@@ -4617,7 +4644,8 @@
                 },
                 "argNames": {
                   "quest": "The Only Cure"
-                }
+                },
+                "stageLog": "I have killed Orchendor and put a stop to his plans."
               },
               {
                 "fn": "GetStageDone",
@@ -4631,7 +4659,8 @@
                 },
                 "argNames": {
                   "quest": "The Only Cure"
-                }
+                },
+                "stageLog": "I met Peryite, the daedric prince of Pestilence. I simply refused to help him. Good riddance, I say."
               },
               {
                 "fn": "GetStageDone",
@@ -4645,7 +4674,8 @@
                 },
                 "argNames": {
                   "quest": "The Only Cure"
-                }
+                },
+                "stageLog": "I killed Orchendor, stopped the plague from spreading and destroyed Peryite's altar."
               }
             ]
           }
@@ -5677,6 +5707,6 @@
   "meta": {
     "profile": "Apostasy",
     "plugins": 3407,
-    "generatedAt": "2026-10-23T14:31:18.5842315Z"
+    "generatedAt": "2026-10-23T20:23:09.9441900Z"
   }
 }

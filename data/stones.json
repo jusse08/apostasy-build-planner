@@ -378,6 +378,9 @@
                         "value": 1,
                         "args": {
                           "itemOrList": "0001F4:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "itemOrList": "APO_VALOR_UnarmedWeapon"
                         }
                       },
                       {
@@ -742,6 +745,9 @@
                         "value": 1,
                         "args": {
                           "formList": "0000BA:ParagonPerks.esp"
+                        },
+                        "argNames": {
+                          "formList": "APO_VALOR_StaffFormList"
                         }
                       },
                       {
@@ -811,6 +817,9 @@
                         "value": 0,
                         "args": {
                           "formList": "0000BA:ParagonPerks.esp"
+                        },
+                        "argNames": {
+                          "formList": "APO_VALOR_StaffFormList"
                         }
                       },
                       {
@@ -893,6 +902,9 @@
                         "value": 1,
                         "args": {
                           "formList": "0000BA:ParagonPerks.esp"
+                        },
+                        "argNames": {
+                          "formList": "APO_VALOR_StaffFormList"
                         }
                       },
                       {
@@ -1014,6 +1026,9 @@
                         "value": 0,
                         "args": {
                           "formList": "0000BA:ParagonPerks.esp"
+                        },
+                        "argNames": {
+                          "formList": "APO_VALOR_StaffFormList"
                         }
                       },
                       {
@@ -1372,6 +1387,9 @@
                         "value": 1,
                         "args": {
                           "itemOrList": "0001F4:Skyrim.esm"
+                        },
+                        "argNames": {
+                          "itemOrList": "APO_VALOR_UnarmedWeapon"
                         }
                       },
                       {
@@ -1877,6 +1895,6 @@
   "meta": {
     "profile": "Apostasy",
     "plugins": 3407,
-    "generatedAt": "2026-10-23T14:31:18.5842315Z"
+    "generatedAt": "2026-10-23T20:23:09.9441900Z"
   }
 }

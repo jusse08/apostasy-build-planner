@@ -2210,7 +2210,7 @@
             "quest": "029940:Skyrim.esm"
           },
           "argNames": {
-            "quest": "<Alias=QuestNameLocation>"
+            "quest": "CWObj"
           }
         },
         {
@@ -2250,7 +2250,7 @@
             "quest": "096E71:Skyrim.esm"
           },
           "argNames": {
-            "quest": "Battle for <Alias=City>"
+            "quest": "CWSiegeObj"
           }
         },
         {
@@ -2785,6 +2785,6 @@
   "meta": {
     "profile": "Apostasy",
     "plugins": 3407,
-    "generatedAt": "2026-10-23T14:31:18.5842315Z"
+    "generatedAt": "2026-10-23T20:23:09.9441900Z"
   }
 }

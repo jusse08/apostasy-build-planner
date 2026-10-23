@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { BuildEditor } from '#lib/editor.svelte.ts';
-	import { describeCondition, skillName, startingSkills } from '#lib/rules/engine.ts';
+	import { describeConditionGroup, groupConditions, skillName, startingSkills } from '#lib/rules/engine.ts';
 	import SpellText from './SpellText.svelte';
 
 	let { ed }: { ed: BuildEditor } = $props();
@@ -134,9 +134,22 @@
 					<h3>Champion</h3>
 					<SpellText spell={deity.champion} showName={false} />
 					{#if deity.championRequirements.length}
-						<p class="when">Conditions in the game data:</p>
+						<p class="when">Unlocks once all of these are true:</p>
 						<ul class="req">
-							{#each deity.championRequirements as c}<li>{describeCondition(g, c)}</li>{/each}
+							{#each groupConditions(deity.championRequirements) as grp}
+								{@const d = describeConditionGroup(g, grp)}
+								<li>
+									{d.text}
+									{#if d.note}<span class="journal">“{d.note}”</span>{/if}
+									{#if d.options.length}
+										<ul>
+											{#each d.options as o}
+												<li>{o.text}{#if o.note}<span class="journal">“{o.note}”</span>{/if}</li>
+											{/each}
+										</ul>
+									{/if}
+								</li>
+							{/each}
 						</ul>
 					{/if}
 				</div>
@@ -336,6 +349,20 @@
 		margin: 0;
 		padding-left: 1.1rem;
 		font-size: var(--t-sm);
+		line-height: 1.55;
+	}
+
+	.req ul {
+		padding-left: 1.1rem;
+		color: var(--muted);
+	}
+
+	.journal {
+		display: block;
+		font-size: var(--t-xs);
+		font-style: italic;
+		color: var(--muted);
+		margin-bottom: 0.3rem;
 	}
 
 	.start {

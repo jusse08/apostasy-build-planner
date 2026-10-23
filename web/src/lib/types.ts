@@ -13,6 +13,8 @@ export interface Condition {
 	global?: string;
 	args?: Record<string, string | number | boolean>;
 	argNames?: Record<string, string>;
+	/** Journal text of the quest stage a stage condition checks. */
+	stageLog?: string;
 }
 
 export interface Perk {
