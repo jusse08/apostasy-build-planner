@@ -32,9 +32,6 @@ public static class CharacterExtractor
         ("Miscellaneous", ["Auriel", "Magnus", "Sithis"]),
     ];
 
-    // Apostasy Framework traits assigned to races (Living, Regenerative, ...).
-    private static readonly string[] TraitIds = ["Alert", "Intelligent", "SunlightSensitivity", "Living", "NonLiving", "Regenerative"];
-
     public static JsonObject Races(GameData game, Describe d)
     {
         var races = game.Winning<IRaceGetter>();
@@ -65,11 +62,7 @@ public static class CharacterExtractor
             });
         }
 
-        var traits = new JsonArray();
-        foreach (var t in TraitIds)
-            if (d.Spell($"APO_Trait{t}Ab") is { } s) traits.Add(s);
-
-        return new JsonObject { ["races"] = arr, ["traits"] = traits };
+        return new JsonObject { ["races"] = arr };
     }
 
     private static readonly Regex StartGear = new(@"begin the game with (?<gear>.+?)\.\s", RegexOptions.IgnoreCase);

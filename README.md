@@ -96,7 +96,7 @@ condition with the next one). Dragonborn, Vampire Lord and Werewolf perks don't 
 
 - `perks.json` — `trees[]` (skills, Vampire Lord, Werewolf, Stormcrown's Dragonborn custom skill: node positions
   and links) and `perks{formKey}` (name, description, rank chain `nextPerk`, conditions).
-- `races.json` — playable races (Nirn's Chosen): starting attributes, racial abilities, Apostasy traits.
+- `races.json` — playable races (Nirn's Chosen): starting attributes, racial abilities.
 - `classes.json` — Nirn's Chosen classes. Major/minor skills come from `APO_AddClassScript` properties;
   `warnings` lists where that disagrees with the class description (six classes do).
 - `stones.json` — Stones of Sacrifice standing stones with their abilities.
@@ -105,4 +105,4 @@ condition with the next one). Dragonborn, Vampire Lord and Werewolf perks don't 
   quest and scripted perk point sources, Vampire Lord / Werewolf perk caps.
 - `shouts.json` — Stormcrown shouts, Dragonborn perks, meditations (text from the mod page: the game has none).
 - `mods.json` — cached Nexus descriptions of the key mods, for reference.
-- `manual.json` — facts not in the plugins (Paragon's default perks, civil war quest names).
+- `manual.json` — facts not in the plugins (Paragon notes, civil war quest names).

@@ -255,7 +255,6 @@ function build(): GameModel {
 		perkSources,
 		shouts: shoutList,
 		maxMeditations: shouts.dragonbornSettings.maxMeditations,
-		traits: races.traits.map(spell),
 		leveling: {
 			xpBase: gs.fXPLevelUpBase.value,
 			xpMult: gs.fXPLevelUpMult.value,
@@ -273,7 +272,6 @@ function build(): GameModel {
 			attributeAtLevel: table(unc.HealthAtLevelUp),
 			maxLevel: 81
 		},
-		defaultPerks: manual.paragon?.defaultPerks ?? [],
 		dataVersion: perksRaw.meta?.generatedAt ?? 'unknown'
 	};
 }

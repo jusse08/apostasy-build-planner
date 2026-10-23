@@ -153,9 +153,7 @@ export interface GameModel {
 	shouts: Shout[];
 	/** Stormcrown's cap on meditations at Paarthurnax. */
 	maxMeditations: number;
-	traits: Spell[];
 	leveling: Leveling;
-	defaultPerks: string[];
 	dataVersion: string;
 }
 

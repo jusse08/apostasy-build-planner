@@ -151,9 +151,6 @@
 		<p class="list num">
 			{#each g.skills as s (s.id)}<span class:hi={start[s.id] > cs.base}>{s.name} {start[s.id]}</span>{/each}
 		</p>
-		<p class="note">
-			Paragon also grants these vanilla perks by default: {g.defaultPerks.join(', ')}. Apostasy race traits: {g.traits.map((t) => t.name).join(', ')}.
-		</p>
 	</footer>
 </div>
 

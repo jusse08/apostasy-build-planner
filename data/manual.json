@@ -2,7 +2,6 @@
   "_comment": "Hand-maintained facts that are not in the plugins. Sources are listed per entry.",
   "paragon": {
     "source": "https://www.nexusmods.com/skyrimspecialedition/mods/120398",
-    "defaultPerks": ["Critical Charge", "Critical Rush", "Arcane Blacksmith", "Eagle Eye", "Sweep", "Power Bash", "Physician"],
     "notes": [
       "Combat trees use stances (Stances NG): Wolf builds bleeding, Hawk builds critical hits, Bear builds armor shred and poise.",
       "Armor perks only need a chest piece of the matching armor type.",
