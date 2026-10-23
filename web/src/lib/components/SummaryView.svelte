@@ -10,6 +10,7 @@
 			.filter((x) => x.perks.length || x.issues.length)
 	);
 	let topSkills = $derived([...ed.game.skills].sort((a, b) => last.skills[b.id] - last.skills[a.id]));
+	let meditations = $derived(ed.game.shouts.filter((s) => s.meditation && ed.build.meditations.includes(s.id)));
 </script>
 
 <div class="summary">
@@ -56,6 +57,17 @@
 			</ol>
 		</section>
 	</div>
+
+	{#if meditations.length}
+		<section>
+			<h3>Meditations · {meditations.length} of {ed.game.maxMeditations}</h3>
+			<ul class="meds">
+				{#each meditations as s (s.id)}
+					<li><span>{s.name}</span><span class="muted">{s.meditation}</span></li>
+				{/each}
+			</ul>
+		</section>
+	{/if}
 
 	<section>
 		<h3>Notes</h3>
@@ -169,6 +181,22 @@
 
 	.small {
 		font-size: var(--t-sm);
+	}
+
+	.meds {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: grid;
+		gap: 0.3rem;
+		font-size: var(--t-sm);
+		max-width: 60rem;
+	}
+
+	.meds li {
+		display: grid;
+		grid-template-columns: 11rem 1fr;
+		gap: 0.7rem;
 	}
 
 	textarea {

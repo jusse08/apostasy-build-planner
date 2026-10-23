@@ -2,6 +2,7 @@ import { DatabaseSync } from 'node:sqlite';
 import { mkdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { randomBytes } from 'node:crypto';
+import { newBuildState } from '#lib/rules/engine.ts';
 import type { BuildRecord, BuildState, BuildSummary } from '#lib/types.ts';
 
 // Builds live in one SQLite file; in the container it sits on a mounted volume.
@@ -47,7 +48,8 @@ function toRecord(row: Row): BuildRecord {
 	return {
 		id: row.id,
 		name: row.name,
-		state: JSON.parse(row.state),
+		// Builds saved before a field existed get its default.
+		state: { ...newBuildState(), ...JSON.parse(row.state) },
 		dataVersion: row.data_version,
 		createdAt: row.created_at,
 		updatedAt: row.updated_at

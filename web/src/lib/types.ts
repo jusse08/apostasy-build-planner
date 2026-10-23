@@ -151,10 +151,10 @@ export interface GameModel {
 	deities: Deity[];
 	perkSources: PerkPointSource[];
 	shouts: Shout[];
+	/** Stormcrown's cap on meditations at Paarthurnax. */
+	maxMeditations: number;
 	traits: Spell[];
 	leveling: Leveling;
-	/** Hand-written notes on combat-related mods (data/combat.json). */
-	combat: { group: string; items: { mod: string; what: string; build: string; url: string | null }[] }[];
 	defaultPerks: string[];
 	dataVersion: string;
 }
@@ -173,6 +173,8 @@ export interface BuildState {
 	targetLevel: number;
 	levels: Record<number, LevelPlan>;
 	perkSources: string[]; // ids of quests / items whose perk points are counted
+	shoutWords: Record<string, number>; // shout id -> words learned (0-3, learned in order)
+	meditations: string[]; // shout ids meditated on at Paarthurnax
 	notes: string;
 }
 

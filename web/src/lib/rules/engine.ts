@@ -29,6 +29,8 @@ export function newBuildState(): BuildState {
 		targetLevel: 30,
 		levels: {},
 		perkSources: [],
+		shoutWords: {},
+		meditations: [],
 		notes: ''
 	};
 }

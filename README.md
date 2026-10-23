@@ -8,7 +8,6 @@ the server (SQLite) and shared with everyone who can reach it.
 ## Layout
 
 - `tools/extractor` — C# / Mutagen tool that reads the local MO2 install and writes game data to `data/`.
-- `tools/combat-notes.json`, `tools/build-combat.mjs` — hand-written notes on combat-related mods → `data/combat.json`.
 - `data/` — extracted JSON, committed and baked into the Docker image.
 - `web/` — SvelteKit app (Svelte 5, adapter-node) with the rules engine, API and SQLite storage.
 
@@ -62,7 +61,6 @@ Run on the machine with Apostasy installed (needs .NET 10 SDK):
 cd tools/extractor
 dotnet run -c Release -- "C:\Games\Apostasy" Apostasy
 cd ../..
-node tools/build-combat.mjs
 cd web && npm run fonts
 ```
 
@@ -106,4 +104,3 @@ condition with the next one). Dragonborn, Vampire Lord and Werewolf perks don't 
 - `shouts.json` — Stormcrown shouts, Dragonborn perks, meditations (text from the mod page: the game has none).
 - `mods.json` — cached Nexus descriptions of the key mods, for reference.
 - `manual.json` — facts not in the plugins (Paragon's default perks, civil war quest names).
-- `combat.json` — notes on mods that shape combat beyond perks.

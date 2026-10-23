@@ -109,6 +109,21 @@ export class BuildEditor {
 		this.changed();
 	}
 
+	/** Words are learned in order: ticking word n marks 1..n, unticking it leaves 1..n-1. */
+	toggleWord(shout: string, n: number) {
+		const have = this.build.shoutWords[shout] ?? 0;
+		const next = have >= n ? n - 1 : n;
+		if (next === 0) delete this.build.shoutWords[shout];
+		else this.build.shoutWords[shout] = next;
+		this.changed();
+	}
+
+	toggleMeditation(shout: string) {
+		const m = this.build.meditations;
+		this.build.meditations = m.includes(shout) ? m.filter((x) => x !== shout) : [...m, shout];
+		this.changed();
+	}
+
 	rename(name: string) {
 		this.name = name;
 		this.changed();

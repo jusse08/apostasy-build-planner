@@ -25,6 +25,12 @@ export async function readBuild(request: Request): Promise<{ name: string; state
 		targetLevel: Math.max(1, Math.min(81, Math.floor(Number(s.targetLevel) || 30))),
 		levels: s.levels as BuildState['levels'],
 		perkSources: Array.isArray(s.perkSources) ? s.perkSources.filter((x) => typeof x === 'string') : [],
+		shoutWords: Object.fromEntries(
+			Object.entries(s.shoutWords && typeof s.shoutWords === 'object' ? s.shoutWords : {})
+				.map(([k, v]) => [k, Math.max(0, Math.min(3, Math.floor(Number(v) || 0)))] as const)
+				.filter(([, v]) => v > 0)
+		),
+		meditations: Array.isArray(s.meditations) ? s.meditations.filter((x) => typeof x === 'string') : [],
 		notes: typeof s.notes === 'string' ? s.notes.slice(0, 20000) : ''
 	};
 	return { name, state };

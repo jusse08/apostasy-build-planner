@@ -1,6 +1,5 @@
 <script lang="ts">
 	import CharacterView from './CharacterView.svelte';
-	import CombatView from './CombatView.svelte';
 	import LevelRibbon from './LevelRibbon.svelte';
 	import PerksView from './PerksView.svelte';
 	import ShoutsView from './ShoutsView.svelte';
@@ -16,7 +15,7 @@
 	// svelte-ignore state_referenced_locally
 	const ed = new BuildEditor(game, record);
 
-	type View = 'perks' | 'character' | 'sources' | 'shouts' | 'combat' | 'summary';
+	type View = 'perks' | 'character' | 'sources' | 'shouts' | 'summary';
 	let view = $state<View>(ed.build.race ? 'perks' : 'character');
 	let treeId = $state(ed.game.trees.find((t) => t.skill === 'OneHanded')?.id ?? ed.game.trees[0].id);
 
@@ -25,7 +24,6 @@
 		{ id: 'perks', label: 'Perks' },
 		{ id: 'sources', label: 'Quest perk points' },
 		{ id: 'shouts', label: 'Shouts' },
-		{ id: 'combat', label: 'Combat' },
 		{ id: 'summary', label: 'Summary' }
 	];
 
@@ -90,9 +88,7 @@
 			{:else if view === 'sources'}
 				<SourcesView {ed} />
 			{:else if view === 'shouts'}
-				<ShoutsView game={ed.game} />
-			{:else if view === 'combat'}
-				<CombatView game={ed.game} />
+				<ShoutsView {ed} />
 			{:else}
 				<SummaryView
 					{ed}
