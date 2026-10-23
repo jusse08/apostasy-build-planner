@@ -8,7 +8,7 @@
 		{ id: 'main', label: 'Main quest' },
 		{ id: 'guild', label: 'Guilds and the civil war' },
 		{ id: 'side', label: 'Side quests' },
-		{ id: 'dlc', label: 'Dawnguard and Dragonborn' },
+		{ id: 'dlc', label: 'Dawnguard, Dragonborn and Wyrmstooth' },
 		{ id: 'other', label: 'Items and other sources' },
 		{ id: 'daedric', label: 'Daedric quests' }
 	];

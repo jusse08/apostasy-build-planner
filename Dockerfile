@@ -6,7 +6,7 @@ WORKDIR /app/web
 COPY web/package.json web/package-lock.json ./
 RUN npm ci
 COPY web/ ./
-RUN npm run build && npm prune --omit=dev
+RUN npm run build
 
 FROM node:24-slim
 ENV NODE_ENV=production \
@@ -15,8 +15,8 @@ ENV NODE_ENV=production \
     DB_PATH=/var/lib/planner/builds.sqlite \
     NODE_NO_WARNINGS=1
 WORKDIR /app/web
+# adapter-node bundles the server, so the runtime needs no node_modules.
 COPY --from=build /app/web/build ./build
-COPY --from=build /app/web/node_modules ./node_modules
 COPY --from=build /app/web/package.json ./
 COPY data /app/data
 RUN mkdir -p /var/lib/planner && chown node:node /var/lib/planner

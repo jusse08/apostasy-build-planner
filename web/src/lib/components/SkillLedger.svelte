@@ -217,7 +217,7 @@
 
 	.group li {
 		display: grid;
-		grid-template-columns: 7.2rem 1fr 3rem auto;
+		grid-template-columns: 7.2rem minmax(0, 1fr) 3rem auto;
 		gap: 0.6rem;
 		align-items: center;
 		min-height: 1.75rem;

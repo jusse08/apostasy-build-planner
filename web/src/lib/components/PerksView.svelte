@@ -334,13 +334,29 @@
 
 	@media (max-width: 1100px) {
 		.perks {
-			grid-template-columns: 1fr;
+			grid-template-columns: minmax(0, 1fr);
 		}
 		.sky-wrap {
 			min-height: 640px;
 		}
 		.horizon {
-			grid-template-columns: 1fr 1fr;
+			grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		}
+	}
+
+	@media (max-width: 600px) {
+		.sky-wrap {
+			min-height: 520px;
+		}
+		.caption h2 {
+			font-size: 2.2rem;
+		}
+		.horizon {
+			grid-template-columns: minmax(0, 1fr);
+			padding: 0.8rem 1rem;
+		}
+		.keys {
+			margin-left: 0;
 		}
 	}
 </style>

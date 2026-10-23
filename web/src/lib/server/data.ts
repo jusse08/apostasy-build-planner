@@ -60,7 +60,7 @@ function table(raw: Record<string, number> | undefined): [number, number][] {
 
 function questGroup(id: string): PerkPointSource['group'] {
 	if (id.startsWith('MQ')) return 'main';
-	if (id.startsWith('DLC')) return 'dlc';
+	if (id.startsWith('DLC') || id.startsWith('WT_')) return 'dlc'; // WT_ = Wyrmstooth
 	if (id.startsWith('DA')) return 'daedric';
 	if (/^(C0|MG|TG|DB|CW|MS05)/.test(id)) return 'guild';
 	if (/^(T0|MS|dun)/i.test(id)) return 'side';
@@ -213,14 +213,17 @@ function build(): GameModel {
 				enabled
 			};
 		}),
-		...leveling.otherPerkPoints.map((o: Raw) => ({
-			id: o.script,
-			name: o.sources.map((s: Raw) => s.name).filter(Boolean)[0] ?? o.script,
-			group: 'other' as const,
-			points: o.points,
-			enabled: true,
-			note: [o.note, o.sources.map((s: Raw) => s.name).filter(Boolean).join(', ')].filter(Boolean).join(' ')
-		}))
+		...leveling.otherPerkPoints.map((o: Raw) => {
+			const names = [...new Set<string>(o.sources.map((s: Raw) => s.name).filter(Boolean))];
+			return {
+				id: o.script,
+				name: names[0] ?? o.script,
+				group: 'other' as const,
+				points: o.points,
+				enabled: true,
+				note: [o.note, names.length > 1 ? `Found on: ${names.join(', ')}.` : null].filter(Boolean).join(' ')
+			};
+		})
 	];
 
 	const ssl = leveling.staticSkillLeveling.General;

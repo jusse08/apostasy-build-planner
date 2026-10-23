@@ -369,6 +369,12 @@
 
 	@media (max-width: 760px) {
 		.body {
+			grid-template-columns: minmax(0, 1fr);
+		}
+		.about {
+			padding: 1.2rem 1rem;
+		}
+		.skills div {
 			grid-template-columns: 1fr;
 		}
 		.parts {

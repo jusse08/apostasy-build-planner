@@ -109,6 +109,7 @@
 <style>
 	.planner {
 		display: grid;
+		grid-template-columns: minmax(0, 1fr);
 		grid-template-rows: auto auto 1fr;
 		height: 100vh;
 	}
@@ -170,6 +171,7 @@
 		border-radius: 0;
 		padding: 0.3rem 0;
 		color: var(--muted);
+		white-space: nowrap;
 		border-bottom: 2px solid transparent;
 	}
 
@@ -220,7 +222,11 @@
 			height: auto;
 		}
 		.work {
-			grid-template-columns: 1fr;
+			grid-template-columns: minmax(0, 1fr);
+		}
+		.save {
+			min-width: 0;
+			margin-left: auto;
 		}
 		.top {
 			flex-wrap: wrap;
