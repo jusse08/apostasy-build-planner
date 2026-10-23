@@ -4,5 +4,7 @@ node_modules/
 .svelte-kit/
 build/
 *.sqlite
+*.sqlite-shm
+*.sqlite-wal
 .env
 
