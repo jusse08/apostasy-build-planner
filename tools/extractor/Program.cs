@@ -49,3 +49,4 @@ Write("classes.json", CharacterExtractor.Classes(game, d));
 Write("stones.json", CharacterExtractor.Stones(game, d));
 Write("religions.json", CharacterExtractor.Religions(game, d));
 Write("leveling.json", LevelingExtractor.Extract(game, profile, d));
+Write("shouts.json", ShoutExtractor.Extract(game, d));

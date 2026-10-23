@@ -488,6 +488,7 @@
   "questPerks": [
     {
       "id": "MQ104",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "02610C:Skyrim.esm",
@@ -526,6 +527,7 @@
     },
     {
       "id": "MQ105Ustengrav",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "0713DC:Skyrim.esm",
@@ -564,6 +566,7 @@
     },
     {
       "id": "MQ203",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "036192:Skyrim.esm",
@@ -602,6 +605,7 @@
     },
     {
       "id": "MQ205",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "02D516:Skyrim.esm",
@@ -640,6 +644,7 @@
     },
     {
       "id": "MQ305",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "046EF2:Skyrim.esm",
@@ -678,6 +683,7 @@
     },
     {
       "id": "MS05",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "053511:Skyrim.esm",
@@ -716,6 +722,7 @@
     },
     {
       "id": "TG09",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "021555:Skyrim.esm",
@@ -754,6 +761,7 @@
     },
     {
       "id": "TGLeadership",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "0D7D69:Skyrim.esm",
@@ -792,6 +800,7 @@
     },
     {
       "id": "C03",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "01CEF4:Skyrim.esm",
@@ -830,6 +839,7 @@
     },
     {
       "id": "C06",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "01CEF6:Skyrim.esm",
@@ -868,6 +878,7 @@
     },
     {
       "id": "MG06",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "01F256:Skyrim.esm",
@@ -906,6 +917,7 @@
     },
     {
       "id": "MG08",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "01F258:Skyrim.esm",
@@ -944,6 +956,7 @@
     },
     {
       "id": "DB05",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "01EA54:Skyrim.esm",
@@ -982,6 +995,7 @@
     },
     {
       "id": "DB11",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "01EA59:Skyrim.esm",
@@ -1020,6 +1034,7 @@
     },
     {
       "id": "DBDestroy_Optional",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "0934FB:Skyrim.esm",
@@ -1071,6 +1086,7 @@
     },
     {
       "id": "DA01",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "028AD6:Skyrim.esm",
@@ -1140,6 +1156,7 @@
     },
     {
       "id": "DA02",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "04D8D6:Skyrim.esm",
@@ -1191,6 +1208,7 @@
     },
     {
       "id": "DA03",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "01BFC4:Skyrim.esm",
@@ -1242,6 +1260,7 @@
     },
     {
       "id": "DA04",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "02D512:Skyrim.esm",
@@ -1293,6 +1312,7 @@
     },
     {
       "id": "DA05",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "02A49A:Skyrim.esm",
@@ -1362,6 +1382,7 @@
     },
     {
       "id": "DA06",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "03B681:Skyrim.esm",
@@ -1413,6 +1434,7 @@
     },
     {
       "id": "DA07",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "0240B8:Skyrim.esm",
@@ -1482,6 +1504,7 @@
     },
     {
       "id": "DA08",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "04A37B:Skyrim.esm",
@@ -1533,6 +1556,7 @@
     },
     {
       "id": "DA09",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "04E4E1:Skyrim.esm",
@@ -1584,6 +1608,7 @@
     },
     {
       "id": "DA10",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "022F08:Skyrim.esm",
@@ -1635,6 +1660,7 @@
     },
     {
       "id": "DA11",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "02C358:Skyrim.esm",
@@ -1686,6 +1712,7 @@
     },
     {
       "id": "DA13",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "08998D:Skyrim.esm",
@@ -1737,6 +1764,7 @@
     },
     {
       "id": "DA14",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "01BB9B:Skyrim.esm",
@@ -1788,6 +1816,7 @@
     },
     {
       "id": "DA15",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "02AC68:Skyrim.esm",
@@ -1839,6 +1868,7 @@
     },
     {
       "id": "DA16",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "0242AF:Skyrim.esm",
@@ -1890,6 +1920,7 @@
     },
     {
       "id": "DLC1LD",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "005817:Dawnguard.esm",
@@ -1928,6 +1959,7 @@
     },
     {
       "id": "DLC1VQ05",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "002850:Dawnguard.esm",
@@ -1966,6 +1998,7 @@
     },
     {
       "id": "DLC1VQ08",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "007C25:Dawnguard.esm",
@@ -2004,6 +2037,7 @@
     },
     {
       "id": "DLC2MQ02",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "017F8F:Dragonborn.esm",
@@ -2042,6 +2076,7 @@
     },
     {
       "id": "DLC2MQ04",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "016E1F:Dragonborn.esm",
@@ -2080,6 +2115,7 @@
     },
     {
       "id": "DLC2MQ06",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "0179D7:Dragonborn.esm",
@@ -2118,6 +2154,7 @@
     },
     {
       "id": "CWObj",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "029940:Skyrim.esm",
@@ -2156,6 +2193,7 @@
     },
     {
       "id": "CWSiegeObj",
+      "plugin": "APO_Apostasy - Controller.esp",
       "quests": [
         {
           "formKey": "096E71:Skyrim.esm",
@@ -2191,8 +2229,472 @@
           }
         }
       ]
+    },
+    {
+      "id": "dunHunterQST",
+      "plugin": "APO_Apostasy - Controller.esp",
+      "quests": [
+        {
+          "formKey": "018601:Skyrim.esm",
+          "editorId": "dunHunterQST",
+          "name": "Kyne's Sacred Trials"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": ">=",
+          "or": false,
+          "runOn": "Subject",
+          "value": 100,
+          "args": {
+            "quest": "018601:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Kyne's Sacred Trials"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000800:QAPP - More Vanilla Sidequests.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_dunHunterQST"
+          }
+        }
+      ]
+    },
+    {
+      "id": "T03",
+      "plugin": "APO_Apostasy - Controller.esp",
+      "quests": [
+        {
+          "formKey": "01C48E:Skyrim.esm",
+          "editorId": "T03",
+          "name": "The Blessings of Nature"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": ">=",
+          "or": false,
+          "runOn": "Subject",
+          "value": 100,
+          "args": {
+            "quest": "01C48E:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "The Blessings of Nature"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000804:QAPP - More Vanilla Sidequests.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_T03"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MS11",
+      "plugin": "APO_Apostasy - Controller.esp",
+      "quests": [
+        {
+          "formKey": "01F7A3:Skyrim.esm",
+          "editorId": "MS11",
+          "name": "Blood on the Ice"
+        },
+        {
+          "formKey": "020556:Skyrim.esm",
+          "editorId": "MS11b",
+          "name": "Blood on the Ice"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": ">=",
+          "or": true,
+          "runOn": "Subject",
+          "value": 250,
+          "args": {
+            "quest": "01F7A3:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Blood on the Ice"
+          }
+        },
+        {
+          "fn": "GetStage",
+          "op": ">=",
+          "or": false,
+          "runOn": "Subject",
+          "value": 20,
+          "args": {
+            "quest": "020556:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "Blood on the Ice"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000801:QAPP - More Vanilla Sidequests.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_MS11"
+          }
+        }
+      ]
+    },
+    {
+      "id": "T02",
+      "plugin": "APO_Apostasy - Controller.esp",
+      "quests": [
+        {
+          "formKey": "0211D5:Skyrim.esm",
+          "editorId": "t02",
+          "name": "The Book of Love"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "0211D5:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "The Book of Love"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000802:QAPP - More Vanilla Sidequests.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_T02"
+          }
+        }
+      ]
+    },
+    {
+      "id": "T01",
+      "plugin": "APO_Apostasy - Controller.esp",
+      "quests": [
+        {
+          "formKey": "023B6C:Skyrim.esm",
+          "editorId": "T01",
+          "name": "The Heart of Dibella"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 200,
+          "args": {
+            "quest": "023B6C:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "The Heart of Dibella"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000803:QAPP - More Vanilla Sidequests.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_T01"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MS02",
+      "plugin": "APO_Apostasy - Controller.esp",
+      "quests": [
+        {
+          "formKey": "040A5E:Skyrim.esm",
+          "editorId": "MS02",
+          "name": "No One Escapes Cidhna Mine"
+        },
+        {
+          "formKey": "040A5E:Skyrim.esm",
+          "editorId": "MS02",
+          "name": "No One Escapes Cidhna Mine"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": true,
+          "runOn": "Subject",
+          "value": 100,
+          "args": {
+            "quest": "040A5E:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "No One Escapes Cidhna Mine"
+          }
+        },
+        {
+          "fn": "GetStage",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 250,
+          "args": {
+            "quest": "040A5E:Skyrim.esm"
+          },
+          "argNames": {
+            "quest": "No One Escapes Cidhna Mine"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000805:QAPP - More Vanilla Sidequests.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_MS02"
+          }
+        }
+      ]
+    },
+    {
+      "id": "WT_WTBarrowOfTheWyrm",
+      "plugin": "QAPP - Wyrmstooth Patch.esp",
+      "quests": [
+        {
+          "formKey": "028F01:Wyrmstooth.esp",
+          "editorId": "WTBarrowOfTheWyrm",
+          "name": "Barrow of the Wyrm"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": ">=",
+          "or": false,
+          "runOn": "Subject",
+          "value": 270,
+          "args": {
+            "quest": "028F01:Wyrmstooth.esp"
+          },
+          "argNames": {
+            "quest": "Barrow of the Wyrm"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000800:QAPP - Wyrmstooth Patch.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_WT_WTBarrowOfTheWyrm"
+          }
+        }
+      ]
+    },
+    {
+      "id": "WT_WTUberEncounter",
+      "plugin": "QAPP - Wyrmstooth Patch.esp",
+      "quests": [
+        {
+          "formKey": "2F1A74:Wyrmstooth.esp",
+          "editorId": "WTUberEncounter",
+          "name": "Someone with Backbone"
+        }
+      ],
+      "conditions": [
+        {
+          "fn": "GetStage",
+          "op": ">=",
+          "or": false,
+          "runOn": "Subject",
+          "value": 50,
+          "args": {
+            "quest": "2F1A74:Wyrmstooth.esp"
+          },
+          "argNames": {
+            "quest": "Someone with Backbone"
+          }
+        },
+        {
+          "fn": "GetGlobalValue",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 0,
+          "args": {
+            "global": "000804:QAPP - Wyrmstooth Patch.esp"
+          },
+          "argNames": {
+            "global": "ANDR_QAPP_GLOB_WT_WTUberEncounter"
+          }
+        }
+      ]
     }
   ],
+  "otherPerkPoints": [
+    {
+      "script": "OghmaInfiniumScript",
+      "points": 2,
+      "note": "Reading the Oghma Infinium (Artificer), whichever path is chosen.",
+      "sources": [
+        {
+          "type": "book",
+          "formKey": "01A332:Skyrim.esm",
+          "editorId": "DA04OghmaInfinium",
+          "name": "Oghma Infinium",
+          "plugin": "Artificer.esp"
+        }
+      ]
+    },
+    {
+      "script": "DcdAlchAddPerkPointsScript",
+      "points": 1,
+      "note": "Consuming this item (DAc0da).",
+      "sources": []
+    },
+    {
+      "script": "CRBSQ01_TIF__0302299C",
+      "points": 1,
+      "note": "Dialogue reward in Unslaad.",
+      "sources": [
+        {
+          "type": "dialogue",
+          "formKey": "02299C:Unslaad.esm",
+          "editorId": null,
+          "name": null,
+          "plugin": "Unslaad.esm"
+        }
+      ]
+    },
+    {
+      "script": "aoMapConvertObjScript",
+      "points": 1,
+      "note": "One of the conversion choices (Vigilant).",
+      "sources": []
+    },
+    {
+      "script": "chAlchStatusUpEffectScript",
+      "points": 1,
+      "note": "Status-up item of type 3 (Vigilant).",
+      "sources": [
+        {
+          "type": "item",
+          "formKey": "0E2592:Vigilant.esm",
+          "editorId": "zzzCHRelicPotionIncHealth",
+          "name": "Ashes of St. Sard",
+          "plugin": "Vigilant.esm"
+        },
+        {
+          "type": "spell",
+          "formKey": "1EA213:Vigilant.esm",
+          "editorId": "zzzCHBlackHandHealth",
+          "name": "Black Hand Health",
+          "plugin": "Vigilant.esm"
+        },
+        {
+          "type": "item",
+          "formKey": "0E2593:Vigilant.esm",
+          "editorId": "zzzCHRelicPotionIncStamina",
+          "name": "Hide of Abbot Silorn",
+          "plugin": "Vigilant.esm"
+        },
+        {
+          "type": "spell",
+          "formKey": "1EA214:Vigilant.esm",
+          "editorId": "zzzCHBlackHandStamina",
+          "name": "Black Hand Stamina",
+          "plugin": "Vigilant.esm"
+        },
+        {
+          "type": "item",
+          "formKey": "0E2595:Vigilant.esm",
+          "editorId": "zzzCHRelicPotionIncMagicka",
+          "name": "Bone of Jhunal",
+          "plugin": "Vigilant.esm"
+        },
+        {
+          "type": "spell",
+          "formKey": "1EA216:Vigilant.esm",
+          "editorId": "zzzCHBlackHandMagicka",
+          "name": "Black Hand Magicka",
+          "plugin": "Vigilant.esm"
+        },
+        {
+          "type": "item",
+          "formKey": "0E2597:Vigilant.esm",
+          "editorId": "zzzCHRelicPotionIncPerk",
+          "name": "Nail of St. Dulsa",
+          "plugin": "Vigilant.esm"
+        },
+        {
+          "type": "spell",
+          "formKey": "1EA218:Vigilant.esm",
+          "editorId": "zzzCHBlackHandPerkPoint",
+          "name": "Black Hand Perk Point",
+          "plugin": "Vigilant.esm"
+        },
+        {
+          "type": "item",
+          "formKey": "0E8D2F:Vigilant.esm",
+          "editorId": "zzzCHRelicPotionIncDragonSouls",
+          "name": "Dragon Soul Stone",
+          "plugin": "Vigilant.esm"
+        }
+      ]
+    }
+  ],
+  "transformationPerks": {
+    "vampireLordMaxPerks": 24,
+    "werewolfMaxPerks": 27
+  },
   "questPerkToggles": {
     "Daedric": 0,
     "DBDestroy": 1
@@ -2200,6 +2702,6 @@
   "meta": {
     "profile": "Apostasy",
     "plugins": 3407,
-    "generatedAt": "2026-10-23T14:07:30.1329175Z"
+    "generatedAt": "2026-10-23T14:21:02.7659197Z"
   }
 }

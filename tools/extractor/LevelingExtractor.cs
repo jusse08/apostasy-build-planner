@@ -41,6 +41,13 @@ public static class LevelingExtractor
                 Ini(profile, @"MCM\Config\StaticSkillLeveling\settings.ini"),
                 Ini(profile, @"MCM\Settings\StaticSkillLeveling.ini")),
             ["questPerks"] = QuestPerks(game, d),
+            ["otherPerkPoints"] = ScriptedPerkPoints(game),
+            // Vampire Lord / Werewolf trees fill from kills and feeding, separately from character perks.
+            ["transformationPerks"] = new JsonObject
+            {
+                ["vampireLordMaxPerks"] = d.Global("DLC1VampireMaxPerks"),
+                ["werewolfMaxPerks"] = d.Global("DLC1WerewolfMaxPerksFeeding"),
+            },
             // Quest groups Quests Award Perk Points can switch off (1 = awards enabled).
             ["questPerkToggles"] = new JsonObject
             {
@@ -50,14 +57,14 @@ public static class LevelingExtractor
         };
     }
 
-    // Quests Award Perk Points: one spell whose effects each fire once a quest stage is done.
+    // Quests Award Perk Points (+ its addon plugins): spells whose effects each fire once a quest stage is done.
     private static JsonArray QuestPerks(GameData game, Describe d)
     {
         var quests = game.Winning<IQuestGetter>();
         var arr = new JsonArray();
-        var spell = d.SpellByEditorId("ANDR_QAPP_SPEL");
-        if (spell == null) return arr;
         var effects = game.Winning<IMagicEffectGetter>();
+        var spells = d.Spells.Values.Where(s => s.Record.EditorID?.StartsWith("ANDR_QAPP_SPEL", StringComparison.Ordinal) == true);
+        foreach (var (spell, from) in spells)
         foreach (var e in spell.Effects)
         {
             var mgef = effects.TryGetValue(e.BaseEffect.FormKey, out var m) ? m.Record : null;
@@ -78,9 +85,62 @@ public static class LevelingExtractor
             arr.Add(new JsonObject
             {
                 ["id"] = id,
+                ["plugin"] = from.FileName.String,
                 ["quests"] = questRefs,
                 ["conditions"] = Json.Conditions(e.Conditions.Concat(mgef?.Conditions ?? [])),
             });
+        }
+        return arr;
+    }
+
+    // Scripts that call Game.AddPerkPoints outside Quests Award Perk Points, found by scanning every
+    // .pex in the modlist's archives; amounts read from their bytecode.
+    private static readonly (string Script, int Points, string Note)[] PerkPointScripts =
+    [
+        ("OghmaInfiniumScript", 2, "Reading the Oghma Infinium (Artificer), whichever path is chosen."),
+        ("DcdAlchAddPerkPointsScript", 1, "Consuming this item (DAc0da)."),
+        ("CRBSQ01_TIF__0302299C", 1, "Dialogue reward in Unslaad."),
+        ("aoMapConvertObjScript", 1, "One of the conversion choices (Vigilant)."),
+        ("chAlchStatusUpEffectScript", 1, "Status-up item of type 3 (Vigilant)."),
+    ];
+
+    private static JsonArray ScriptedPerkPoints(GameData game)
+    {
+        var arr = new JsonArray();
+        var effects = game.Winning<IMagicEffectGetter>();
+        var books = game.Winning<IBookGetter>();
+        var responses = game.Winning<IDialogResponsesGetter>();
+        var ingestibles = game.Winning<IIngestibleGetter>();
+        var spells = game.Winning<ISpellGetter>();
+
+        static bool Has(IAVirtualMachineAdapterGetter? vmad, string script) =>
+            vmad?.Scripts.Any(s => string.Equals(s.Name, script, StringComparison.OrdinalIgnoreCase)) == true;
+
+        foreach (var (script, points, note) in PerkPointScripts)
+        {
+            var sources = new JsonArray();
+            void Add(string type, Mutagen.Bethesda.Plugins.Records.IMajorRecordGetter r, Mutagen.Bethesda.Plugins.ModKey from) =>
+                sources.Add(new JsonObject
+                {
+                    ["type"] = type,
+                    ["formKey"] = Json.Key(r.FormKey),
+                    ["editorId"] = r.EditorID,
+                    ["name"] = (r as Mutagen.Bethesda.Plugins.Aspects.INamedGetter)?.Name,
+                    ["plugin"] = from.FileName.String,
+                });
+
+            foreach (var (b, from) in books.Values.Where(b => Has(b.Record.VirtualMachineAdapter, script))) Add("book", b, from);
+            foreach (var (r, from) in responses.Values.Where(r =>
+                         r.Record.VirtualMachineAdapter?.ScriptFragments?.FileName.Equals(script, StringComparison.OrdinalIgnoreCase) == true
+                         || Has(r.Record.VirtualMachineAdapter, script)))
+                Add("dialogue", r, from);
+            foreach (var (m, _) in effects.Values.Where(m => Has(m.Record.VirtualMachineAdapter, script)))
+            {
+                foreach (var (i, from) in ingestibles.Values.Where(i => i.Record.Effects.Any(e => e.BaseEffect.FormKey == m.FormKey))) Add("item", i, from);
+                foreach (var (s, from) in spells.Values.Where(s => s.Record.Effects.Any(e => e.BaseEffect.FormKey == m.FormKey))) Add("spell", s, from);
+            }
+
+            arr.Add(new JsonObject { ["script"] = script, ["points"] = points, ["note"] = note, ["sources"] = sources });
         }
         return arr;
     }

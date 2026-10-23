@@ -38,4 +38,8 @@ Apostasy repurposes `Lockpicking` as Hand to Hand and `Pickpocket` as Security.
 - `stones.json` — Stones of Sacrifice standing stones with their abilities.
 - `religions.json` — Archon deities: blessing, acolyte (tiers by quests completed), champion (requirements in conditions).
 - `leveling.json` — XP game settings, Experience / Static Skill Leveling / Skyrim Uncapper final config
-  (perks per level, attribute gains, skill caps) and quests that award perk points.
+  (perks per level, attribute gains, skill caps), quests that award perk points (Quests Award Perk Points
+  and addons; Daedric quests are toggled off), other scripted perk point sources (Oghma Infinium, ...)
+  and Vampire Lord / Werewolf perk caps.
+- `shouts.json` — Stormcrown shouts with words, cooldowns and spells; Dragonborn perks (bought with
+  dragon souls) and per-shout meditation perks (the game has no text describing meditation effects).

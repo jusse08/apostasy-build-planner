@@ -1,0 +1,3361 @@
+{
+  "shouts": [
+    {
+      "id": "Subdue",
+      "formKey": "070981:Skyrim.esm",
+      "name": "Subdue",
+      "description": "Shout defies steel, as you weaken your opponents' weapons in their grasp.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "Zun",
+          "translation": "Weapon",
+          "cooldown": 60,
+          "spell": {
+            "formKey": "08BB27:Skyrim.esm",
+            "editorId": "MAG_VoiceSubdue01",
+            "name": "Subdue",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Subdue",
+                "description": null,
+                "magnitude": 25,
+                "duration": 20
+              }
+            ]
+          }
+        },
+        {
+          "word": "H1l",
+          "translation": "Hand",
+          "cooldown": 90,
+          "spell": {
+            "formKey": "08BB28:Skyrim.esm",
+            "editorId": "MAG_VoiceSubdue02",
+            "name": "Subdue",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Subdue",
+                "description": null,
+                "magnitude": 25,
+                "duration": 40
+              }
+            ]
+          }
+        },
+        {
+          "word": "V3k",
+          "translation": "Defeat",
+          "cooldown": 120,
+          "spell": {
+            "formKey": "08BB29:Skyrim.esm",
+            "editorId": "MAG_VoiceSubdue03",
+            "name": "Subdue",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Subdue",
+                "description": null,
+                "magnitude": 25,
+                "duration": 60
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": {
+        "perk": {
+          "formKey": "000943:Stormcrown.esp",
+          "editorId": "MAG_MeditationSubduePerk",
+          "name": "Subdue Meditation Perk",
+          "description": null,
+          "plugin": "Stormcrown.esp"
+        },
+        "text": null
+      }
+    },
+    {
+      "id": "IceForm",
+      "formKey": "070980:Skyrim.esm",
+      "name": "Ice Form",
+      "description": "Your Thu'um encases an opponent in freezing ice, slowing their movement.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "3z",
+          "translation": "Ice",
+          "cooldown": 60,
+          "spell": {
+            "formKey": "09CAF0:Skyrim.esm",
+            "editorId": "MAG_VoiceIceForm01",
+            "name": "Ice Form",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Ice Form",
+                "description": null,
+                "magnitude": 25,
+                "duration": 20
+              },
+              {
+                "name": "Ice Form",
+                "description": null,
+                "magnitude": 0,
+                "duration": 10
+              }
+            ]
+          }
+        },
+        {
+          "word": "Slen",
+          "translation": "Flesh",
+          "cooldown": 90,
+          "spell": {
+            "formKey": "09CAF1:Skyrim.esm",
+            "editorId": "MAG_VoiceIceForm02",
+            "name": "Ice Form",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Ice Form",
+                "description": null,
+                "magnitude": 25,
+                "duration": 40
+              },
+              {
+                "name": "Ice Form",
+                "description": null,
+                "magnitude": 0,
+                "duration": 10
+              }
+            ]
+          }
+        },
+        {
+          "word": "Nus",
+          "translation": "Statue",
+          "cooldown": 120,
+          "spell": {
+            "formKey": "09CAF2:Skyrim.esm",
+            "editorId": "MAG_VoiceIceForm03",
+            "name": "Ice Form",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Ice Form",
+                "description": null,
+                "magnitude": 25,
+                "duration": 60
+              },
+              {
+                "name": "Ice Form",
+                "description": null,
+                "magnitude": 0,
+                "duration": 10
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": {
+        "perk": {
+          "formKey": "000935:Stormcrown.esp",
+          "editorId": "MAG_MeditationIceFormPerk",
+          "name": "Ice Form Meditation Perk",
+          "description": null,
+          "plugin": "Stormcrown.esp"
+        },
+        "text": null
+      }
+    },
+    {
+      "id": "ThrowVoice",
+      "formKey": "07097F:Skyrim.esm",
+      "name": "Throw Voice",
+      "description": "The Thu'um is heard, but its source unknown, fooling those into seeking it out.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "Zul",
+          "translation": "Voice",
+          "cooldown": 30,
+          "spell": {
+            "formKey": "07430F:Skyrim.esm",
+            "editorId": "MAG_VoiceThrowVoice",
+            "name": "Throw Voice",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Throw Voice Effect",
+                "description": null,
+                "magnitude": 1,
+                "duration": 0
+              }
+            ]
+          }
+        },
+        {
+          "word": "M9",
+          "translation": "Fool",
+          "cooldown": 20,
+          "spell": {
+            "formKey": "07430F:Skyrim.esm",
+            "editorId": "MAG_VoiceThrowVoice",
+            "name": "Throw Voice",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Throw Voice Effect",
+                "description": null,
+                "magnitude": 1,
+                "duration": 0
+              }
+            ]
+          }
+        },
+        {
+          "word": "Gut",
+          "translation": "Far",
+          "cooldown": 10,
+          "spell": {
+            "formKey": "07430F:Skyrim.esm",
+            "editorId": "MAG_VoiceThrowVoice",
+            "name": "Throw Voice",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Throw Voice Effect",
+                "description": null,
+                "magnitude": 1,
+                "duration": 0
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": null
+    },
+    {
+      "id": "KynesPeace",
+      "formKey": "07097E:Skyrim.esm",
+      "name": "Kyne's Peace",
+      "description": "The Voice soothes the minds of foes, who lose their desire to fight or flee.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "K1n",
+          "translation": "Kyne",
+          "cooldown": 60,
+          "spell": {
+            "formKey": "082A34:Skyrim.esm",
+            "editorId": "MAG_VoiceKynesPeace01",
+            "name": "Kyne's Peace",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Kyne's Peace",
+                "description": null,
+                "magnitude": 20,
+                "duration": 30
+              }
+            ]
+          }
+        },
+        {
+          "word": "Drem",
+          "translation": "Peace",
+          "cooldown": 90,
+          "spell": {
+            "formKey": "082A39:Skyrim.esm",
+            "editorId": "MAG_VoiceKynesPeace02",
+            "name": "Kyne's Peace",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Kyne's Peace",
+                "description": "",
+                "magnitude": 30,
+                "duration": 30
+              },
+              {
+                "name": "Kyne's Peace",
+                "description": null,
+                "magnitude": 30,
+                "duration": 30
+              }
+            ]
+          }
+        },
+        {
+          "word": "Ov",
+          "translation": "Trust",
+          "cooldown": 120,
+          "spell": {
+            "formKey": "082A3A:Skyrim.esm",
+            "editorId": "MAG_VoiceKynesPeace03",
+            "name": "Kyne's Peace",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Kyne's Peace",
+                "description": null,
+                "magnitude": 40,
+                "duration": 30
+              },
+              {
+                "name": "Kyne's Peace",
+                "description": null,
+                "magnitude": 40,
+                "duration": 30
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": {
+        "perk": {
+          "formKey": "00093A:Stormcrown.esp",
+          "editorId": "MAG_MeditationKynesPeacePerk",
+          "name": "Kyne's Peace Meditation Perk",
+          "description": null,
+          "plugin": "Stormcrown.esp"
+        },
+        "text": null
+      }
+    },
+    {
+      "id": "StormCall",
+      "formKey": "07097D:Skyrim.esm",
+      "name": "Storm Call",
+      "description": "A Shout to the skies, a cry to the clouds, that awakens the destructive force of Skyrim's lightning.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "Strun",
+          "translation": "Storm",
+          "cooldown": 180,
+          "spell": {
+            "formKey": "018609:Skyrim.esm",
+            "editorId": "MAG_VoiceStormCall01",
+            "name": "Storm Call",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Storm Call",
+                "description": "Calls a storm for 30 seconds with lightning that strikes friend and foe alike.",
+                "magnitude": 1,
+                "duration": 30
+              }
+            ]
+          }
+        },
+        {
+          "word": "B4",
+          "translation": "Wrath",
+          "cooldown": 240,
+          "spell": {
+            "formKey": "01860A:Skyrim.esm",
+            "editorId": "MAG_VoiceStormCall02",
+            "name": "Storm Call",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Storm Call",
+                "description": "Calls a storm for 45 seconds with lightning that strikes friend and foe alike.",
+                "magnitude": 1,
+                "duration": 45
+              }
+            ]
+          }
+        },
+        {
+          "word": "Qo",
+          "translation": "Lightning",
+          "cooldown": 300,
+          "spell": {
+            "formKey": "01860D:Skyrim.esm",
+            "editorId": "MAG_VoiceStormCall03",
+            "name": "Storm Call",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Storm Call",
+                "description": "Calls a storm for 60 seconds with lightning that strikes friend and foe alike.",
+                "magnitude": 1,
+                "duration": 60
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": null
+    },
+    {
+      "id": "MarkedforDeath",
+      "formKey": "07097C:Skyrim.esm",
+      "name": "Marked for Death",
+      "description": "Speak, and let your Voice herald doom, as an opponent's armor and lifeforce are weakened.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "Kr3",
+          "translation": "Kill",
+          "cooldown": 60,
+          "spell": {
+            "formKey": "01861F:Skyrim.esm",
+            "editorId": "MAG_VoiceMarkedForDeath01",
+            "name": "Marked for Death",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Marked For Death",
+                "description": null,
+                "magnitude": 50,
+                "duration": 30
+              },
+              {
+                "name": "Marked for Death",
+                "description": null,
+                "magnitude": 50,
+                "duration": 30
+              },
+              {
+                "name": "Marked For Death",
+                "description": null,
+                "magnitude": 15,
+                "duration": 30
+              }
+            ]
+          }
+        },
+        {
+          "word": "Lun",
+          "translation": "Leech",
+          "cooldown": 90,
+          "spell": {
+            "formKey": "018627:Skyrim.esm",
+            "editorId": "MAG_VoiceMarkedForDeath02",
+            "name": "Marked for Death",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Marked For Death",
+                "description": null,
+                "magnitude": 75,
+                "duration": 30
+              },
+              {
+                "name": "Marked for Death",
+                "description": null,
+                "magnitude": 100,
+                "duration": 30
+              },
+              {
+                "name": "Marked For Death",
+                "description": null,
+                "magnitude": 20,
+                "duration": 30
+              }
+            ]
+          }
+        },
+        {
+          "word": "Aus",
+          "translation": "Suffer",
+          "cooldown": 120,
+          "spell": {
+            "formKey": "01862B:Skyrim.esm",
+            "editorId": "MAG_VoiceMarkedForDeath03",
+            "name": "Marked for Death",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Marked For Death",
+                "description": null,
+                "magnitude": 100,
+                "duration": 30
+              },
+              {
+                "name": "Marked for Death",
+                "description": null,
+                "magnitude": 150,
+                "duration": 30
+              },
+              {
+                "name": "Marked For Death",
+                "description": null,
+                "magnitude": 25,
+                "duration": 30
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": {
+        "perk": {
+          "formKey": "00093C:Stormcrown.esp",
+          "editorId": "MAG_MeditationMarkedForDeathPerk",
+          "name": "Marked for Death Meditation Perk",
+          "description": null,
+          "plugin": "Stormcrown.esp"
+        },
+        "text": null
+      }
+    },
+    {
+      "id": "AuraWhisper",
+      "formKey": "07097B:Skyrim.esm",
+      "name": "Aura Whisper",
+      "description": "Your Voice is not a Shout, but a whisper, revealing the life forces of any and all.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "L1s",
+          "translation": "Life",
+          "cooldown": 30,
+          "spell": {
+            "formKey": "08AFCC:Skyrim.esm",
+            "editorId": "MAG_VoiceAuraWhisper01",
+            "name": "Aura Whisper",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Aura Whisper",
+                "description": "You detect all nearby living creatures for 30 seconds.",
+                "magnitude": 250,
+                "duration": 30
+              }
+            ]
+          }
+        },
+        {
+          "word": "Y4",
+          "translation": "Seek",
+          "cooldown": 45,
+          "spell": {
+            "formKey": "08AFCD:Skyrim.esm",
+            "editorId": "MAG_VoiceAuraWhisper02",
+            "name": "Aura Whisper",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Aura Whisper",
+                "description": "You detect all nearby living and dead creatures for 30 seconds.",
+                "magnitude": 250,
+                "duration": 30
+              }
+            ]
+          }
+        },
+        {
+          "word": "N7",
+          "translation": "Hunt",
+          "cooldown": 60,
+          "spell": {
+            "formKey": "08AFCE:Skyrim.esm",
+            "editorId": "MAG_VoiceAuraWhisper03",
+            "name": "Aura Whisper",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Aura Whisper",
+                "description": "You detect all nearby creatures for 30 seconds.",
+                "magnitude": 250,
+                "duration": 30
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": null
+    },
+    {
+      "id": "AnimalAlly",
+      "formKey": "05FC77:Skyrim.esm",
+      "name": "Animal Ally",
+      "description": "A Shout for help from the beasts of the wild, who come to fight in your defense.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "R1n",
+          "translation": "Animal",
+          "cooldown": 60,
+          "spell": {
+            "formKey": "09E0CC:Skyrim.esm",
+            "editorId": "MAG_VoiceAnimalAlly01",
+            "name": "Animal Ally",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Animal Ally",
+                "description": "Summons a Dire Wolf for 60 seconds.",
+                "magnitude": 0,
+                "duration": 60
+              },
+              {
+                "name": "Animal Ally",
+                "description": "Summons a Dire Wolf for 60 seconds.",
+                "magnitude": 0,
+                "duration": 60
+              }
+            ]
+          }
+        },
+        {
+          "word": "M7",
+          "translation": "Allegiance",
+          "cooldown": 90,
+          "spell": {
+            "formKey": "09E0CD:Skyrim.esm",
+            "editorId": "MAG_VoiceAnimalAlly02",
+            "name": "Animal Ally",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Animal Ally",
+                "description": "Summons a Sabre Cat for 60 seconds.",
+                "magnitude": 0,
+                "duration": 60
+              },
+              {
+                "name": "Animal Ally",
+                "description": "Summons a Sabre Cat for 60 seconds.",
+                "magnitude": 0,
+                "duration": 60
+              }
+            ]
+          }
+        },
+        {
+          "word": "T4",
+          "translation": "Pack",
+          "cooldown": 120,
+          "spell": {
+            "formKey": "09E0CE:Skyrim.esm",
+            "editorId": "MAG_VoiceAnimalAlly03",
+            "name": "Animal Ally",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Animal Ally",
+                "description": "Summons a Bear for 60 seconds.",
+                "magnitude": 0,
+                "duration": 60
+              },
+              {
+                "name": "Animal Ally",
+                "description": "Summons a Bear for 60 seconds.",
+                "magnitude": 0,
+                "duration": 60
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": {
+        "perk": {
+          "formKey": "000927:Stormcrown.esp",
+          "editorId": "MAG_MeditationAnimalAllyPerk",
+          "name": "Animal Ally",
+          "description": null,
+          "plugin": "Stormcrown.esp"
+        },
+        "text": null
+      }
+    },
+    {
+      "id": "FrostBreath",
+      "formKey": "05D16B:Skyrim.esm",
+      "name": "Frost Breath",
+      "description": "Your breath is winter, your Thu'um a blizzard.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "Fo",
+          "translation": "Frost",
+          "cooldown": 30,
+          "spell": {
+            "formKey": "05D172:Skyrim.esm",
+            "editorId": "MAG_VoiceFrostBreath01",
+            "name": "Frost Breath",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Frost Breath",
+                "description": null,
+                "magnitude": 50,
+                "duration": 0
+              },
+              {
+                "name": "Frost Breath",
+                "description": null,
+                "magnitude": 5,
+                "duration": 30
+              }
+            ]
+          }
+        },
+        {
+          "word": "Kr4",
+          "translation": "Cold",
+          "cooldown": 45,
+          "spell": {
+            "formKey": "05D173:Skyrim.esm",
+            "editorId": "MAG_VoiceFrostBreath02",
+            "name": "Frost Breath",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Frost Breath",
+                "description": null,
+                "magnitude": 75,
+                "duration": 0
+              },
+              {
+                "name": "Frost Breath",
+                "description": null,
+                "magnitude": 7.5,
+                "duration": 30
+              }
+            ]
+          }
+        },
+        {
+          "word": "D3n",
+          "translation": "Freeze",
+          "cooldown": 60,
+          "spell": {
+            "formKey": "05D174:Skyrim.esm",
+            "editorId": "MAG_VoiceFrostBreath03",
+            "name": "Frost Breath",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Frost Breath",
+                "description": null,
+                "magnitude": 100,
+                "duration": 0
+              },
+              {
+                "name": "Frost Breath",
+                "description": null,
+                "magnitude": 10,
+                "duration": 30
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": {
+        "perk": {
+          "formKey": "000933:Stormcrown.esp",
+          "editorId": "MAG_MeditationFrostBreathPerk",
+          "name": "Frost Breath Meditation Perk",
+          "description": null,
+          "plugin": "Stormcrown.esp"
+        },
+        "text": null
+      }
+    },
+    {
+      "id": "CallofValor",
+      "formKey": "05196A:Skyrim.esm",
+      "name": "Call of Valor",
+      "description": "The valiant of Sovngarde hear your Voice, and journey beyond space and time to lend aid.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "Hun",
+          "translation": "Hero",
+          "cooldown": 180,
+          "spell": {
+            "formKey": "051967:Skyrim.esm",
+            "editorId": "MAG_VoiceCallOfValor01",
+            "name": "Call of Valor",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Call of Valor",
+                "description": "Calls Gormlaith Golden-Hilt from Sovngarde for 60 seconds.",
+                "magnitude": 0,
+                "duration": 60
+              }
+            ]
+          }
+        },
+        {
+          "word": "K1l",
+          "translation": "Champion",
+          "cooldown": 180,
+          "spell": {
+            "formKey": "051964:Skyrim.esm",
+            "editorId": "MAG_VoiceCallOfValor02",
+            "name": "Call of Valor",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Call of Valor",
+                "description": "Calls Felldir the Old from Sovngarde for 60 seconds.",
+                "magnitude": 0,
+                "duration": 60
+              }
+            ]
+          }
+        },
+        {
+          "word": "Z8r",
+          "translation": "Legend",
+          "cooldown": 180,
+          "spell": {
+            "formKey": "051969:Skyrim.esm",
+            "editorId": "MAG_VoiceCallOfValor03",
+            "name": "Call of Valor",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Call of Valor",
+                "description": "Calls Hakon One-Eye from Sovngarde for 60 seconds.",
+                "magnitude": 0,
+                "duration": 60
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": null
+    },
+    {
+      "id": "SlowTime",
+      "formKey": "048AC9:Skyrim.esm",
+      "name": "Slow Time",
+      "description": "Shout at time, and command it to obey, as the world around you stands still.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "T3d",
+          "translation": "Time",
+          "cooldown": 180,
+          "spell": {
+            "formKey": "048AD0:Skyrim.esm",
+            "editorId": "MAG_VoiceSlowTime01",
+            "name": "Slow Time",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Slow Time",
+                "description": "Slows time for 10 seconds.",
+                "magnitude": 0.5,
+                "duration": 10
+              },
+              {
+                "name": "Slow Time",
+                "description": "Slows time for 10 seconds.",
+                "magnitude": 0.25,
+                "duration": 10
+              }
+            ]
+          }
+        },
+        {
+          "word": "Klo",
+          "translation": "Sand",
+          "cooldown": 240,
+          "spell": {
+            "formKey": "048AD1:Skyrim.esm",
+            "editorId": "MAG_VoiceSlowTime02",
+            "name": "Slow Time",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Slow Time",
+                "description": "Slows time for 20 seconds.",
+                "magnitude": 0.5,
+                "duration": 20
+              },
+              {
+                "name": "Slow Time",
+                "description": "Slows time for 20 seconds.",
+                "magnitude": 0.25,
+                "duration": 20
+              }
+            ]
+          }
+        },
+        {
+          "word": "Ul",
+          "translation": "Eternity",
+          "cooldown": 300,
+          "spell": {
+            "formKey": "048AD2:Skyrim.esm",
+            "editorId": "MAG_VoiceSlowTime03",
+            "name": "Slow Time",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Slow Time",
+                "description": "Slows time for 30 seconds.",
+                "magnitude": 0.5,
+                "duration": 30
+              },
+              {
+                "name": "Slow Time",
+                "description": "Slows time for 30 seconds.",
+                "magnitude": 0.25,
+                "duration": 30
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": {
+        "perk": {
+          "formKey": "000940:Stormcrown.esp",
+          "editorId": "MAG_MeditationSlowTimePerk",
+          "name": "Slow Time Meditation Perk",
+          "description": null,
+          "plugin": "Stormcrown.esp"
+        },
+        "text": null
+      }
+    },
+    {
+      "id": "CallDragon",
+      "formKey": "046B8C:Skyrim.esm",
+      "name": "Call Dragon",
+      "description": "Odahviing! Hear my Voice and come forth. I summon you in my time of need.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "Od",
+          "translation": "Snow",
+          "cooldown": 5,
+          "spell": {
+            "formKey": "0FEAD2:Skyrim.esm",
+            "editorId": "MAG_VoiceCallDragon01",
+            "name": "Call Dragon",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Call Dragon",
+                "description": null,
+                "magnitude": 10,
+                "duration": 0
+              }
+            ]
+          }
+        },
+        {
+          "word": "4",
+          "translation": "Hunter",
+          "cooldown": 5,
+          "spell": {
+            "formKey": "0FEAD2:Skyrim.esm",
+            "editorId": "MAG_VoiceCallDragon01",
+            "name": "Call Dragon",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Call Dragon",
+                "description": null,
+                "magnitude": 10,
+                "duration": 0
+              }
+            ]
+          }
+        },
+        {
+          "word": "V3ng",
+          "translation": "Wing",
+          "cooldown": 300,
+          "spell": {
+            "formKey": "046B85:Skyrim.esm",
+            "editorId": "MAG_VoiceCallDragon03",
+            "name": "Call Dragon",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Call Dragon",
+                "description": null,
+                "magnitude": 10,
+                "duration": 0
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": null
+    },
+    {
+      "id": "Dragonrend",
+      "formKey": "044250:Skyrim.esm",
+      "name": "Dragonrend",
+      "description": "Your Voice lashes out at a dragon's very soul, forcing the beast to land.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "J8r",
+          "translation": "Mortal",
+          "cooldown": 30,
+          "spell": {
+            "formKey": "044254:Skyrim.esm",
+            "editorId": "MAG_VoiceDragonrend01",
+            "name": "Dragonrend",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Dragonrend",
+                "description": null,
+                "magnitude": 100,
+                "duration": 20,
+                "conditions": [
+                  {
+                    "fn": "GetInFaction",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "faction": "028347:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "faction": "Used by dragonrend shout"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "Dragonrend",
+                "description": null,
+                "magnitude": 25,
+                "duration": 20,
+                "conditions": [
+                  {
+                    "fn": "GetInFaction",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "faction": "028347:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "faction": "Used by dragonrend shout"
+                    }
+                  },
+                  {
+                    "fn": "GetGlobalValue",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "global": "0CAF93:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "global": "MQAlduinIgnoreDragonrend"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "Dragonrend",
+                "description": null,
+                "magnitude": 0,
+                "duration": 20,
+                "conditions": [
+                  {
+                    "fn": "GetInFaction",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "faction": "028347:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "faction": "Used by dragonrend shout"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "Dragonrend",
+                "description": null,
+                "magnitude": 0,
+                "duration": 20,
+                "conditions": [
+                  {
+                    "fn": "GetInFaction",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "faction": "028347:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "faction": "Used by dragonrend shout"
+                    }
+                  },
+                  {
+                    "fn": "GetGlobalValue",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "global": "0CAF93:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "global": "MQAlduinIgnoreDragonrend"
+                    }
+                  },
+                  {
+                    "fn": "GetIsID",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "object": "04377F:Skyrim.esm"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "Dragonrend",
+                "description": null,
+                "magnitude": 150,
+                "duration": 20
+              },
+              {
+                "name": "Dragonrend",
+                "description": null,
+                "magnitude": 25,
+                "duration": 20
+              }
+            ]
+          }
+        },
+        {
+          "word": "Z4",
+          "translation": "Finite",
+          "cooldown": 45,
+          "spell": {
+            "formKey": "028315:Skyrim.esm",
+            "editorId": "MAG_VoiceDragonrend02",
+            "name": "Dragonrend",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Dragonrend",
+                "description": null,
+                "magnitude": 100,
+                "duration": 40,
+                "conditions": [
+                  {
+                    "fn": "GetInFaction",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "faction": "028347:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "faction": "Used by dragonrend shout"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "Dragonrend",
+                "description": null,
+                "magnitude": 50,
+                "duration": 40,
+                "conditions": [
+                  {
+                    "fn": "GetInFaction",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "faction": "028347:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "faction": "Used by dragonrend shout"
+                    }
+                  },
+                  {
+                    "fn": "GetGlobalValue",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "global": "0CAF93:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "global": "MQAlduinIgnoreDragonrend"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "Dragonrend",
+                "description": null,
+                "magnitude": 0,
+                "duration": 40,
+                "conditions": [
+                  {
+                    "fn": "GetInFaction",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "faction": "028347:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "faction": "Used by dragonrend shout"
+                    }
+                  },
+                  {
+                    "fn": "GetGlobalValue",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "global": "0CAF93:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "global": "MQAlduinIgnoreDragonrend"
+                    }
+                  },
+                  {
+                    "fn": "GetIsID",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "object": "04377F:Skyrim.esm"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "Dragonrend",
+                "description": null,
+                "magnitude": 0,
+                "duration": 40,
+                "conditions": [
+                  {
+                    "fn": "GetInFaction",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "faction": "028347:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "faction": "Used by dragonrend shout"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "Dragonrend",
+                "description": null,
+                "magnitude": 150,
+                "duration": 40
+              },
+              {
+                "name": "Dragonrend",
+                "description": null,
+                "magnitude": 25,
+                "duration": 40
+              }
+            ]
+          }
+        },
+        {
+          "word": "Frul",
+          "translation": "Temporary",
+          "cooldown": 60,
+          "spell": {
+            "formKey": "028345:Skyrim.esm",
+            "editorId": "MAG_VoiceDragonrend03",
+            "name": "Dragonrend",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Dragonrend",
+                "description": null,
+                "magnitude": 100,
+                "duration": 60,
+                "conditions": [
+                  {
+                    "fn": "GetInFaction",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "faction": "028347:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "faction": "Used by dragonrend shout"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "Dragonrend",
+                "description": null,
+                "magnitude": 50,
+                "duration": 60,
+                "conditions": [
+                  {
+                    "fn": "GetInFaction",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "faction": "028347:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "faction": "Used by dragonrend shout"
+                    }
+                  },
+                  {
+                    "fn": "GetGlobalValue",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "global": "0CAF93:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "global": "MQAlduinIgnoreDragonrend"
+                    }
+                  },
+                  {
+                    "fn": "GetIsID",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "object": "04377F:Skyrim.esm"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "Dragonrend",
+                "description": null,
+                "magnitude": 0,
+                "duration": 60,
+                "conditions": [
+                  {
+                    "fn": "GetInFaction",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "faction": "028347:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "faction": "Used by dragonrend shout"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "Dragonrend",
+                "description": null,
+                "magnitude": 0,
+                "duration": 60,
+                "conditions": [
+                  {
+                    "fn": "GetInFaction",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "faction": "028347:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "faction": "Used by dragonrend shout"
+                    }
+                  },
+                  {
+                    "fn": "GetGlobalValue",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "global": "0CAF93:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "global": "MQAlduinIgnoreDragonrend"
+                    }
+                  },
+                  {
+                    "fn": "GetIsID",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "object": "04377F:Skyrim.esm"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "Dragonrend",
+                "description": null,
+                "magnitude": 50,
+                "duration": 60,
+                "conditions": [
+                  {
+                    "fn": "GetIsID",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "object": "04377F:Skyrim.esm"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "Dragonrend",
+                "description": null,
+                "magnitude": 150,
+                "duration": 60
+              },
+              {
+                "name": "Dragonrend",
+                "description": null,
+                "magnitude": 25,
+                "duration": 60
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": {
+        "perk": {
+          "formKey": "00095E:Stormcrown.esp",
+          "editorId": "MAG_MeditationDragonrendPerk",
+          "name": "Dragonrend Meditation Perk",
+          "description": null,
+          "plugin": "Stormcrown.esp"
+        },
+        "text": null
+      }
+    },
+    {
+      "id": "FireBreath",
+      "formKey": "03F9EA:Skyrim.esm",
+      "name": "Fire Breath",
+      "description": "Inhale air, exhale flame, and behold the Thu'um as inferno.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "Yol",
+          "translation": "Fire",
+          "cooldown": 30,
+          "spell": {
+            "formKey": "03F9EB:Skyrim.esm",
+            "editorId": "MAG_VoiceFireBreath01",
+            "name": "Fire Breath",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Fire Breath",
+                "description": null,
+                "magnitude": 50,
+                "duration": 0
+              },
+              {
+                "name": "Fire Breath",
+                "description": null,
+                "magnitude": 0,
+                "duration": 1
+              }
+            ]
+          }
+        },
+        {
+          "word": "T8r",
+          "translation": "Inferno",
+          "cooldown": 45,
+          "spell": {
+            "formKey": "03F9EC:Skyrim.esm",
+            "editorId": "MAG_VoiceFireBreath02",
+            "name": "Fire Breath",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Fire Breath",
+                "description": null,
+                "magnitude": 75,
+                "duration": 0
+              },
+              {
+                "name": "Fire Breath",
+                "description": null,
+                "magnitude": 0,
+                "duration": 1
+              }
+            ]
+          }
+        },
+        {
+          "word": "Shul",
+          "translation": "Sun",
+          "cooldown": 60,
+          "spell": {
+            "formKey": "03F9ED:Skyrim.esm",
+            "editorId": "MAG_VoiceFireBreath03",
+            "name": "Fire Breath",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Fire Breath",
+                "description": null,
+                "magnitude": 100,
+                "duration": 0
+              },
+              {
+                "name": "Fire Breath",
+                "description": null,
+                "magnitude": 0,
+                "duration": 1
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": {
+        "perk": {
+          "formKey": "000962:Stormcrown.esp",
+          "editorId": "MAG_MeditationFireBreathPerk",
+          "name": "Fire Breath Meditation Perk",
+          "description": null,
+          "plugin": "Stormcrown.esp"
+        },
+        "text": null
+      }
+    },
+    {
+      "id": "ClearSkies",
+      "formKey": "03CD34:Skyrim.esm",
+      "name": "Clear Skies",
+      "description": "Skyrim itself yields before the Thu'um, as you clear away fog and inclement weather.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "Lok",
+          "translation": "Sky",
+          "cooldown": 10,
+          "spell": {
+            "formKey": "078BA2:Skyrim.esm",
+            "editorId": "MAG_VoiceClearSkiesSelf01",
+            "name": "Clear Skies",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": []
+          }
+        },
+        {
+          "word": "V4",
+          "translation": "Spring",
+          "cooldown": 20,
+          "spell": {
+            "formKey": "078BA3:Skyrim.esm",
+            "editorId": "MAG_VoiceClearSkiesSelf02",
+            "name": "Clear Skies",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": []
+          }
+        },
+        {
+          "word": "K8r",
+          "translation": "Summer",
+          "cooldown": 30,
+          "spell": {
+            "formKey": "078BA4:Skyrim.esm",
+            "editorId": "MAG_VoiceClearSkiesSelf03",
+            "name": "Clear Skies",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": []
+          }
+        }
+      ],
+      "meditation": null
+    },
+    {
+      "id": "BecomeEthereal",
+      "formKey": "032920:Skyrim.esm",
+      "name": "Become Ethereal",
+      "description": "The Thu'um reaches out to the Void, changing your form to one that cannot harm, or be harmed.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "F2m",
+          "translation": "Fade",
+          "cooldown": 60,
+          "spell": {
+            "formKey": "05F6EB:Skyrim.esm",
+            "editorId": "MAG_VoiceBecomeEthereal01",
+            "name": "Become Ethereal",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Become Ethereal",
+                "description": "You become ethereal for 10 seconds. Activating an object or attacking will break this spell.",
+                "magnitude": 0,
+                "duration": 10
+              }
+            ]
+          }
+        },
+        {
+          "word": "Z3",
+          "translation": "Spirit",
+          "cooldown": 90,
+          "spell": {
+            "formKey": "05F6EC:Skyrim.esm",
+            "editorId": "MAG_VoiceBecomeEthereal02",
+            "name": "Become Ethereal",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Become Ethereal",
+                "description": "You become ethereal for 20 seconds. Activating an object or attacking will break this spell.",
+                "magnitude": 0,
+                "duration": 20
+              }
+            ]
+          }
+        },
+        {
+          "word": "Gron",
+          "translation": "Bind",
+          "cooldown": 120,
+          "spell": {
+            "formKey": "05F6ED:Skyrim.esm",
+            "editorId": "MAG_VoiceBecomeEthereal03",
+            "name": "Become Ethereal",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Become Ethereal",
+                "description": "You become ethereal for 30 seconds. Activating an object or attacking will break this spell.",
+                "magnitude": 0,
+                "duration": 30
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": {
+        "perk": {
+          "formKey": "000928:Stormcrown.esp",
+          "editorId": "MAG_MeditationBecomeEtherealPerk",
+          "name": "Become Ethereal Meditation Perk",
+          "description": null,
+          "plugin": "Stormcrown.esp"
+        },
+        "text": null
+      }
+    },
+    {
+      "id": "WhirlwindSprint",
+      "formKey": "02F7BA:Skyrim.esm",
+      "name": "Whirlwind Sprint",
+      "description": "The Thu'um rushes forward, carrying you in its wake with the speed of a tempest.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "Wuld",
+          "translation": "Whirlwind",
+          "cooldown": 10,
+          "spell": {
+            "formKey": "02F7BE:Skyrim.esm",
+            "editorId": "MAG_VoiceWhirlwindSprint01",
+            "name": "Whirlwind Sprint",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Sprint Effect",
+                "description": null,
+                "magnitude": 10,
+                "duration": 0
+              }
+            ]
+          }
+        },
+        {
+          "word": "N4",
+          "translation": "Fury",
+          "cooldown": 20,
+          "spell": {
+            "formKey": "02F7BF:Skyrim.esm",
+            "editorId": "MAG_VoiceWhirlwindSprint02",
+            "name": "Whirlwind Sprint",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Sprint Effect",
+                "description": null,
+                "magnitude": 10,
+                "duration": 0
+              }
+            ]
+          }
+        },
+        {
+          "word": "Kest",
+          "translation": "Tempest",
+          "cooldown": 30,
+          "spell": {
+            "formKey": "02F7C0:Skyrim.esm",
+            "editorId": "MAG_VoiceWhirlwindSprint03",
+            "name": "Whirlwind Sprint",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Sprint Effect",
+                "description": null,
+                "magnitude": 10,
+                "duration": 0
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": null
+    },
+    {
+      "id": "UnrelentingForce",
+      "formKey": "013E07:Skyrim.esm",
+      "name": "Unrelenting Force",
+      "description": "Your Voice is raw power, pushing aside anything - or anyone - who stands in your path.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "Fus",
+          "translation": "Force",
+          "cooldown": 10,
+          "spell": {
+            "formKey": "013E09:Skyrim.esm",
+            "editorId": "MAG_VoiceUnrelentingForce01",
+            "name": "Unrelenting Force",
+            "description": null,
+            "plugin": "APO_Apostasy - Stormcrown Tweaks.esp",
+            "effects": [
+              {
+                "name": "Unrelenting Force",
+                "description": null,
+                "magnitude": 5,
+                "duration": 0
+              },
+              {
+                "name": "Force Damage",
+                "description": null,
+                "magnitude": 5,
+                "duration": 0
+              },
+              {
+                "name": "Force Damage",
+                "description": null,
+                "magnitude": 10,
+                "duration": 0
+              }
+            ]
+          }
+        },
+        {
+          "word": "Ro",
+          "translation": "Balance",
+          "cooldown": 20,
+          "spell": {
+            "formKey": "013F39:Skyrim.esm",
+            "editorId": "MAG_VoiceUnrelentingForce02",
+            "name": "Unrelenting Force",
+            "description": null,
+            "plugin": "APO_Apostasy - Stormcrown Tweaks.esp",
+            "effects": [
+              {
+                "name": "Unrelenting Force",
+                "description": null,
+                "magnitude": 7.5,
+                "duration": 0
+              },
+              {
+                "name": "Force Damage",
+                "description": null,
+                "magnitude": 10,
+                "duration": 0
+              },
+              {
+                "name": "Force Damage",
+                "description": null,
+                "magnitude": 25,
+                "duration": 0
+              }
+            ]
+          }
+        },
+        {
+          "word": "D4",
+          "translation": "Push",
+          "cooldown": 30,
+          "spell": {
+            "formKey": "013F3A:Skyrim.esm",
+            "editorId": "MAG_VoiceUnrelentingForce03",
+            "name": "Unrelenting Force",
+            "description": null,
+            "plugin": "APO_Apostasy - Stormcrown Tweaks.esp",
+            "effects": [
+              {
+                "name": "Unrelenting Force",
+                "description": null,
+                "magnitude": 10,
+                "duration": 0
+              },
+              {
+                "name": "Unrelenting Force",
+                "description": null,
+                "magnitude": 10,
+                "duration": 0
+              },
+              {
+                "name": "Force Damage",
+                "description": null,
+                "magnitude": 25,
+                "duration": 0
+              },
+              {
+                "name": "Force Damage",
+                "description": null,
+                "magnitude": 50,
+                "duration": 0
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": {
+        "perk": {
+          "formKey": "000944:Stormcrown.esp",
+          "editorId": "MAG_MeditationUnrelentingForcePerk",
+          "name": "Unrelenting Force Meditation Perk",
+          "description": null,
+          "plugin": "Stormcrown.esp"
+        },
+        "text": null
+      }
+    },
+    {
+      "id": "DrainVitality",
+      "formKey": "008A62:Dawnguard.esm",
+      "name": "Drain Vitality",
+      "description": "Coax both magical and mortal energies from your hapless opponent.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "G1n",
+          "translation": "Stamina",
+          "cooldown": 60,
+          "spell": {
+            "formKey": "008A61:Dawnguard.esm",
+            "editorId": "MAG_VoiceDrainVitality01",
+            "name": "Drain Vitality",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Drain Vitality - Stamina",
+                "description": "Drains 5 points of Stamina per second for 30 seconds.",
+                "magnitude": 5,
+                "duration": 30
+              }
+            ]
+          }
+        },
+        {
+          "word": "L4",
+          "translation": "Magicka",
+          "cooldown": 90,
+          "spell": {
+            "formKey": "008A5F:Dawnguard.esm",
+            "editorId": "MAG_VoiceDrainVitality02",
+            "name": "Drain Vitality",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Drain Vitality - Stamina",
+                "description": "Drains 5 points of Stamina per second for 30 seconds.",
+                "magnitude": 5,
+                "duration": 30
+              },
+              {
+                "name": "Drain Vitality - Magicka",
+                "description": "Drains 5 points of Magicka per second for 30 seconds.",
+                "magnitude": 5,
+                "duration": 30
+              }
+            ]
+          }
+        },
+        {
+          "word": "H1s",
+          "translation": "Health",
+          "cooldown": 120,
+          "spell": {
+            "formKey": "008A5E:Dawnguard.esm",
+            "editorId": "MAG_VoiceDrainVitality03",
+            "name": "Drain Vitality",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Drain Vitality - Stamina",
+                "description": "Drains 5 points of Stamina per second for 30 seconds.",
+                "magnitude": 5,
+                "duration": 30
+              },
+              {
+                "name": "Drain Vitality - Magicka",
+                "description": "Drains 5 points of Magicka per second for 30 seconds.",
+                "magnitude": 5,
+                "duration": 30
+              },
+              {
+                "name": "Drain Vitality - Health",
+                "description": "Drains 5 points of Health per second for 30 seconds.",
+                "magnitude": 5,
+                "duration": 30
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": {
+        "perk": {
+          "formKey": "000931:Stormcrown.esp",
+          "editorId": "MAG_MeditationDrainVitalityPerk",
+          "name": "Drain Vitality Meditation Perk",
+          "description": null,
+          "plugin": "Stormcrown.esp"
+        },
+        "text": null
+      }
+    },
+    {
+      "id": "SoulTear",
+      "formKey": "007CB6:Dawnguard.esm",
+      "name": "Soul Tear",
+      "description": "Your Thu'um cuts through flesh and shatters soul, commanding the will of the fallen.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "R3",
+          "translation": "Essence",
+          "cooldown": 60,
+          "spell": {
+            "formKey": "015716:Dawnguard.esm",
+            "editorId": "MAG_VoiceSoulTear01",
+            "name": "Soul Tear",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Soul Tear Damage",
+                "description": null,
+                "magnitude": 5,
+                "duration": 10
+              },
+              {
+                "name": "Soul Tear Damage",
+                "description": null,
+                "magnitude": 5,
+                "duration": 10
+              }
+            ]
+          }
+        },
+        {
+          "word": "V1z",
+          "translation": "Tear",
+          "cooldown": 90,
+          "spell": {
+            "formKey": "015715:Dawnguard.esm",
+            "editorId": "MAG_VoiceSoulTear02",
+            "name": "Soul Tear",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Soul Tear Damage",
+                "description": null,
+                "magnitude": 7.5,
+                "duration": 10
+              },
+              {
+                "name": "Soul Tear Damage",
+                "description": null,
+                "magnitude": 7.5,
+                "duration": 10
+              }
+            ]
+          }
+        },
+        {
+          "word": "Zol",
+          "translation": "Zombie",
+          "cooldown": 120,
+          "spell": {
+            "formKey": "0038BD:Dawnguard.esm",
+            "editorId": "MAG_VoiceSoulTear03",
+            "name": "Soul Tear",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Soul Tear Damage",
+                "description": null,
+                "magnitude": 10,
+                "duration": 10
+              },
+              {
+                "name": "Soul Tear Damage",
+                "description": null,
+                "magnitude": 10,
+                "duration": 10
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": {
+        "perk": {
+          "formKey": "000941:Stormcrown.esp",
+          "editorId": "MAG_MeditationSoulTearPerk",
+          "name": "Soul Tear Meditation Perk",
+          "description": null,
+          "plugin": "Stormcrown.esp"
+        },
+        "text": null
+      }
+    },
+    {
+      "id": "SummonDurnehviir",
+      "formKey": "0030D2:Dawnguard.esm",
+      "name": "Summon Durnehviir",
+      "description": "Durnehviir! Hear my Voice and come forth from the Soul Cairn. I summon you in my time of need.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "D6",
+          "translation": "Curse",
+          "cooldown": 5,
+          "spell": {
+            "formKey": "0FEAD2:Skyrim.esm",
+            "editorId": "MAG_VoiceCallDragon01",
+            "name": "Call Dragon",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Call Dragon",
+                "description": null,
+                "magnitude": 10,
+                "duration": 0
+              }
+            ]
+          }
+        },
+        {
+          "word": "Neh",
+          "translation": "Never",
+          "cooldown": 5,
+          "spell": {
+            "formKey": "0FEAD2:Skyrim.esm",
+            "editorId": "MAG_VoiceCallDragon01",
+            "name": "Call Dragon",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Call Dragon",
+                "description": null,
+                "magnitude": 10,
+                "duration": 0
+              }
+            ]
+          }
+        },
+        {
+          "word": "V3r",
+          "translation": "Dying",
+          "cooldown": 300,
+          "spell": {
+            "formKey": "0030D5:Dawnguard.esm",
+            "editorId": "MAG_SummonDurnehviir01",
+            "name": "Summon Durnehviir",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Summon Durnehviir",
+                "description": "Summon Durnehviir from the Soul Cairn to fight for you.",
+                "magnitude": 0,
+                "duration": 86313600
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": null
+    },
+    {
+      "id": "BattleFury",
+      "formKey": "02AD09:Dragonborn.esm",
+      "name": "Battle Fury",
+      "description": "Your Thu'um invigorates yourself and nearby allies, restoring your attributes.",
+      "plugin": "Better Battle Fury.esp",
+      "words": [
+        {
+          "word": "Mid",
+          "translation": "Loyal",
+          "cooldown": 60,
+          "spell": {
+            "formKey": "0200C6:Dragonborn.esm",
+            "editorId": "MAG_VoiceBattleFury01",
+            "name": "Battle Fury",
+            "description": null,
+            "plugin": "Better Battle Fury.esp",
+            "effects": [
+              {
+                "name": "Battle Fury",
+                "description": null,
+                "magnitude": 50,
+                "duration": 0
+              },
+              {
+                "name": "Battle Fury",
+                "description": null,
+                "magnitude": 2.5,
+                "duration": 30
+              }
+            ]
+          }
+        },
+        {
+          "word": "V6",
+          "translation": "Valor",
+          "cooldown": 90,
+          "spell": {
+            "formKey": "02AD0A:Dragonborn.esm",
+            "editorId": "MAG_VoiceBattleFury02",
+            "name": "Battle Fury",
+            "description": null,
+            "plugin": "Better Battle Fury.esp",
+            "effects": [
+              {
+                "name": "Battle Fury",
+                "description": null,
+                "magnitude": 50,
+                "duration": 0
+              },
+              {
+                "name": "Battle Fury",
+                "description": null,
+                "magnitude": 50,
+                "duration": 0
+              },
+              {
+                "name": "Battle Fury",
+                "description": null,
+                "magnitude": 2.5,
+                "duration": 30
+              },
+              {
+                "name": "Battle Fury",
+                "description": null,
+                "magnitude": 1.5,
+                "duration": 30
+              }
+            ]
+          }
+        },
+        {
+          "word": "Sh1n",
+          "translation": "Inspire",
+          "cooldown": 120,
+          "spell": {
+            "formKey": "02AD0B:Dragonborn.esm",
+            "editorId": "MAG_VoiceBattleFury03",
+            "name": "Battle Fury",
+            "description": null,
+            "plugin": "Better Battle Fury.esp",
+            "effects": [
+              {
+                "name": "Battle Fury",
+                "description": null,
+                "magnitude": 50,
+                "duration": 0
+              },
+              {
+                "name": "Battle Fury",
+                "description": null,
+                "magnitude": 50,
+                "duration": 0
+              },
+              {
+                "name": "Battle Fury",
+                "description": null,
+                "magnitude": 50,
+                "duration": 0
+              },
+              {
+                "name": "Battle Fury",
+                "description": null,
+                "magnitude": 2.5,
+                "duration": 30
+              },
+              {
+                "name": "Battle Fury",
+                "description": null,
+                "magnitude": 1.5,
+                "duration": 30
+              },
+              {
+                "name": "Battle Fury",
+                "description": null,
+                "magnitude": 0.5,
+                "duration": 30
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": {
+        "perk": {
+          "formKey": "000947:Stormcrown.esp",
+          "editorId": "MAG_MeditationBattleFuryPerk",
+          "name": "Battle Fury Meditation Perk",
+          "description": null,
+          "plugin": "Stormcrown.esp"
+        },
+        "text": null
+      }
+    },
+    {
+      "id": "Cyclone",
+      "formKey": "0200C0:Dragonborn.esm",
+      "name": "Cyclone",
+      "description": "Your Thu'um creates a whirling cyclone that sows chaos among your enemies.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "Ven",
+          "translation": "Wind",
+          "cooldown": 120,
+          "spell": {
+            "formKey": "0200BC:Dragonborn.esm",
+            "editorId": "MAG_VoiceCyclone01",
+            "name": "Cyclone",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Cyclone",
+                "description": "A cyclone that does 50 points of damage per second and may fling victims into the air.",
+                "magnitude": 50,
+                "duration": 0
+              }
+            ]
+          }
+        },
+        {
+          "word": "G1r",
+          "translation": "Unleash",
+          "cooldown": 150,
+          "spell": {
+            "formKey": "0200BE:Dragonborn.esm",
+            "editorId": "MAG_VoiceCyclone02",
+            "name": "Cyclone",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Cyclone",
+                "description": "A cyclone that does 75 points of damage per second and may fling victims into the air.",
+                "magnitude": 75,
+                "duration": 0
+              }
+            ]
+          }
+        },
+        {
+          "word": "Nos",
+          "translation": "Strike",
+          "cooldown": 180,
+          "spell": {
+            "formKey": "0200C1:Dragonborn.esm",
+            "editorId": "MAG_VoiceCyclone03",
+            "name": "Cyclone",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Cyclone",
+                "description": "A cyclone that does 100 points of damage per second and may fling victims into the air.",
+                "magnitude": 100,
+                "duration": 0
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": {
+        "perk": {
+          "formKey": "00092B:Stormcrown.esp",
+          "editorId": "MAG_MeditationCyclonePerk",
+          "name": "Cyclone Meditation Perk",
+          "description": null,
+          "plugin": "Stormcrown.esp"
+        },
+        "text": null
+      }
+    },
+    {
+      "id": "DragonAspect",
+      "formKey": "01DF92:Dragonborn.esm",
+      "name": "Dragon Aspect",
+      "description": "Take on the mighty aspect of a dragon, with an armored hide and increased resistance to magic.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "Mul",
+          "translation": "Strength",
+          "cooldown": 180,
+          "spell": {
+            "formKey": "01DF91:Dragonborn.esm",
+            "editorId": "MAG_VoiceDragonAspect01",
+            "name": "Dragon Aspect",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Dragon Aspect",
+                "description": "Your Armor Rating is increased by 50 for 600 seconds.",
+                "magnitude": 50,
+                "duration": 600
+              }
+            ]
+          }
+        },
+        {
+          "word": "Q4",
+          "translation": "Armor",
+          "cooldown": 240,
+          "spell": {
+            "formKey": "01DF96:Dragonborn.esm",
+            "editorId": "MAG_VoiceDragonAspect02",
+            "name": "Dragon Aspect",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Dragon Aspect",
+                "description": "Your Armor Rating is increased by 100 for 600 seconds.",
+                "magnitude": 100,
+                "duration": 600
+              }
+            ]
+          }
+        },
+        {
+          "word": "D3v",
+          "translation": "Wyrm",
+          "cooldown": 300,
+          "spell": {
+            "formKey": "01DF99:Dragonborn.esm",
+            "editorId": "MAG_VoiceDragonAspect03",
+            "name": "Dragon Aspect",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Dragon Aspect",
+                "description": "Your Armor Rating is increased by 100, and your Magic Resistance is increased by 25% for 600 seconds.",
+                "magnitude": 100,
+                "duration": 600
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": {
+        "perk": {
+          "formKey": "000930:Stormcrown.esp",
+          "editorId": "MAG_MeditationDragonAspectPerk",
+          "name": "Dragon Aspect Meditation Perk",
+          "description": null,
+          "plugin": "Stormcrown.esp"
+        },
+        "text": null
+      }
+    },
+    {
+      "id": "BendWill",
+      "formKey": "0179D8:Dragonborn.esm",
+      "name": "Bend Will",
+      "description": "Your Voice bends the very stones to your will. As it gains power, animals, people and even dragons must do your bidding.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "Gol",
+          "translation": "Earth",
+          "cooldown": 30,
+          "spell": {
+            "formKey": "0179DC:Dragonborn.esm",
+            "editorId": "MAG_VoiceBendWill01",
+            "name": "Bend Will",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Bend Will",
+                "description": null,
+                "magnitude": 0.25,
+                "duration": 0
+              }
+            ]
+          }
+        },
+        {
+          "word": "H4",
+          "translation": "Mind",
+          "cooldown": 60,
+          "spell": {
+            "formKey": "01FF1E:Dragonborn.esm",
+            "editorId": "MAG_VoiceBendWill02",
+            "name": "Bend Will",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Bend Will",
+                "description": null,
+                "magnitude": 0.25,
+                "duration": 0
+              },
+              {
+                "name": "Bend Will",
+                "description": null,
+                "magnitude": 99,
+                "duration": 30,
+                "conditions": [
+                  {
+                    "fn": "IsCommandedActor",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0
+                  },
+                  {
+                    "fn": "HasKeyword",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "keyword": "013796:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "keyword": "ActorTypeUndead"
+                    }
+                  },
+                  {
+                    "fn": "HasKeyword",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "keyword": "013797:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "keyword": "ActorTypeDaedra"
+                    }
+                  },
+                  {
+                    "fn": "HasKeyword",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "keyword": "035D59:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "keyword": "ActorTypeDragon"
+                    }
+                  },
+                  {
+                    "fn": "HasKeyword",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "keyword": "01397A:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "keyword": "ActorTypeDwarven"
+                    }
+                  },
+                  {
+                    "fn": "IsUndead",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0
+                  },
+                  {
+                    "fn": "GetInFaction",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "faction": "0200E7:Dragonborn.esm"
+                    },
+                    "argNames": {
+                      "faction": "Immune to Bend Will shout"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "word": "Dov",
+          "translation": "Dragon",
+          "cooldown": 120,
+          "spell": {
+            "formKey": "0179E1:Dragonborn.esm",
+            "editorId": "MAG_VoiceBendWill03",
+            "name": "Bend Will",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Tame Dragon",
+                "description": null,
+                "magnitude": 0,
+                "duration": 2,
+                "conditions": [
+                  {
+                    "fn": "HasKeyword",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 1,
+                    "args": {
+                      "keyword": "035D59:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "keyword": "ActorTypeDragon"
+                    }
+                  },
+                  {
+                    "fn": "GetInFaction",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "faction": "028347:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "faction": "Used by dragonrend shout"
+                    }
+                  },
+                  {
+                    "fn": "GetInFaction",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "faction": "03F9EE:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "faction": "PaarthurnaxFaction"
+                    }
+                  },
+                  {
+                    "fn": "GetInFaction",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "faction": "0200E7:Dragonborn.esm"
+                    },
+                    "argNames": {
+                      "faction": "Immune to Bend Will shout"
+                    }
+                  },
+                  {
+                    "fn": "GetInFaction",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "faction": "07A0DF:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "faction": "Dragons in this faction will ignore death sequence"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "Bend Will",
+                "description": null,
+                "magnitude": 99,
+                "duration": 30,
+                "conditions": [
+                  {
+                    "fn": "IsCommandedActor",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0
+                  },
+                  {
+                    "fn": "HasKeyword",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "keyword": "013796:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "keyword": "ActorTypeUndead"
+                    }
+                  },
+                  {
+                    "fn": "HasKeyword",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "keyword": "013797:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "keyword": "ActorTypeDaedra"
+                    }
+                  },
+                  {
+                    "fn": "HasKeyword",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "keyword": "035D59:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "keyword": "ActorTypeDragon"
+                    }
+                  },
+                  {
+                    "fn": "HasKeyword",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "keyword": "01397A:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "keyword": "ActorTypeDwarven"
+                    }
+                  },
+                  {
+                    "fn": "IsUndead",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0
+                  },
+                  {
+                    "fn": "GetInFaction",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "faction": "0200E7:Dragonborn.esm"
+                    },
+                    "argNames": {
+                      "faction": "Immune to Bend Will shout"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "Bend Will",
+                "description": null,
+                "magnitude": 0.25,
+                "duration": 0,
+                "conditions": [
+                  {
+                    "fn": "GetInFaction",
+                    "op": "==",
+                    "or": false,
+                    "runOn": "Subject",
+                    "value": 0,
+                    "args": {
+                      "faction": "028347:Skyrim.esm"
+                    },
+                    "argNames": {
+                      "faction": "Used by dragonrend shout"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": null
+    },
+    {
+      "id": "LightningBreath",
+      "formKey": "00082C:Stormcrown.esp",
+      "name": "Lightning Breath",
+      "description": "Your Thu'um commands the very storms.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "Strun",
+          "translation": "Storm",
+          "cooldown": 30,
+          "spell": {
+            "formKey": "0008A2:Stormcrown.esp",
+            "editorId": "MAG_VoiceLightningBreath01",
+            "name": "Lightning Breath",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Lightning Breath",
+                "description": null,
+                "magnitude": 50,
+                "duration": 0
+              },
+              {
+                "name": "Lightning Breath",
+                "description": null,
+                "magnitude": 5,
+                "duration": 30
+              }
+            ]
+          }
+        },
+        {
+          "word": "Gaar",
+          "translation": "Unleash",
+          "cooldown": 45,
+          "spell": {
+            "formKey": "0008A5:Stormcrown.esp",
+            "editorId": "MAG_VoiceLightningBreath02",
+            "name": "Lightning Breath",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Lightning Breath",
+                "description": null,
+                "magnitude": 75,
+                "duration": 0
+              },
+              {
+                "name": "Lightning Breath",
+                "description": null,
+                "magnitude": 7.5,
+                "duration": 30
+              }
+            ]
+          }
+        },
+        {
+          "word": "Kest",
+          "translation": "Tempest",
+          "cooldown": 60,
+          "spell": {
+            "formKey": "0008A6:Stormcrown.esp",
+            "editorId": "MAG_VoiceLightningBreath03",
+            "name": "Lightning Breath",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Lightning Breath",
+                "description": null,
+                "magnitude": 100,
+                "duration": 0
+              },
+              {
+                "name": "Lightning Breath",
+                "description": null,
+                "magnitude": 10,
+                "duration": 30
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": {
+        "perk": {
+          "formKey": "000938:Stormcrown.esp",
+          "editorId": "MAG_MeditationLightningBreathPerk",
+          "name": "Lightning Breath Meditation Perk",
+          "description": null,
+          "plugin": "Stormcrown.esp"
+        },
+        "text": null
+      }
+    },
+    {
+      "id": "PoisonBreath",
+      "formKey": "000833:Stormcrown.esp",
+      "name": "Poison Breath",
+      "description": "Your Voice spreads plague to all who hear it.",
+      "plugin": "Stormcrown.esp",
+      "words": [
+        {
+          "word": "L1s",
+          "translation": "Life",
+          "cooldown": 30,
+          "spell": {
+            "formKey": "0008AB:Stormcrown.esp",
+            "editorId": "MAG_VoicePoisonBreath01",
+            "name": "Poison Breath",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Poison Breath",
+                "description": null,
+                "magnitude": 7.5,
+                "duration": 10
+              }
+            ]
+          }
+        },
+        {
+          "word": "Slen",
+          "translation": "Flesh",
+          "cooldown": 45,
+          "spell": {
+            "formKey": "0008AC:Stormcrown.esp",
+            "editorId": "MAG_VoicePoisonBreath02",
+            "name": "Poison Breath",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Poison Breath",
+                "description": null,
+                "magnitude": 11.25,
+                "duration": 10
+              }
+            ]
+          }
+        },
+        {
+          "word": "Aus",
+          "translation": "Suffer",
+          "cooldown": 60,
+          "spell": {
+            "formKey": "0008AD:Stormcrown.esp",
+            "editorId": "MAG_VoicePoisonBreath03",
+            "name": "Poison Breath",
+            "description": null,
+            "plugin": "Stormcrown.esp",
+            "effects": [
+              {
+                "name": "Poison Breath",
+                "description": null,
+                "magnitude": 15,
+                "duration": 10
+              }
+            ]
+          }
+        }
+      ],
+      "meditation": {
+        "perk": {
+          "formKey": "00093F:Stormcrown.esp",
+          "editorId": "MAG_MeditationPoisonBreathPerk",
+          "name": "Poison Breath Meditation Perk",
+          "description": null,
+          "plugin": "Stormcrown.esp"
+        },
+        "text": null
+      }
+    }
+  ],
+  "dragonbornPerks": [
+    {
+      "formKey": "000F1C:Stormcrown.esp",
+      "editorId": "MAG_AncientVoice01",
+      "name": "Ancient Voice",
+      "description": "Your Shouts have a 50% chance to stagger enemies.",
+      "plugin": "Stormcrown.esp",
+      "nextPerk": "000811:Stormcrown.esp",
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "00081D:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Deep Breath"
+          }
+        }
+      ]
+    },
+    {
+      "formKey": "000811:Stormcrown.esp",
+      "editorId": "MAG_AncientVoice02",
+      "name": "Ancient Voice",
+      "description": "Your Shouts are guaranteed to stagger enemies.",
+      "plugin": "Stormcrown.esp",
+      "nextPerk": null,
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "000F1C:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Ancient Voice"
+          }
+        }
+      ]
+    },
+    {
+      "formKey": "00081D:Stormcrown.esp",
+      "editorId": "MAG_DeepBreath01",
+      "name": "Deep Breath",
+      "description": "Your Shouts have a 25% chance to deal double damage.",
+      "plugin": "Stormcrown.esp",
+      "nextPerk": "000813:Stormcrown.esp",
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "00080F:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Dragonborn"
+          }
+        }
+      ]
+    },
+    {
+      "formKey": "000813:Stormcrown.esp",
+      "editorId": "MAG_DeepBreath02",
+      "name": "Deep Breath",
+      "description": "Your Shouts have a 50% chance to deal double damage.",
+      "plugin": "Stormcrown.esp",
+      "nextPerk": null,
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "00081D:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Deep Breath"
+          }
+        }
+      ]
+    },
+    {
+      "formKey": "00080F:Stormcrown.esp",
+      "editorId": "MAG_Dragonborn01",
+      "name": "Dragonborn",
+      "description": "Your Shouts are 25% stronger.",
+      "plugin": "Stormcrown.esp",
+      "nextPerk": "00080D:Stormcrown.esp",
+      "conditions": []
+    },
+    {
+      "formKey": "00080D:Stormcrown.esp",
+      "editorId": "MAG_Dragonborn02",
+      "name": "Dragonborn",
+      "description": "Your Shouts are 50% stronger.",
+      "plugin": "Stormcrown.esp",
+      "nextPerk": null,
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "00080F:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Dragonborn"
+          }
+        }
+      ]
+    },
+    {
+      "formKey": "000825:Stormcrown.esp",
+      "editorId": "MAG_DragonoftheNorth",
+      "name": "Dragon of the North",
+      "description": "You resist 10% of incoming Poise damage, and take 10% less damage while staggered.",
+      "plugin": "APO_Apostasy - Stormcrown Tweaks.esp",
+      "nextPerk": null,
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "00080F:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Dragonborn"
+          }
+        }
+      ]
+    },
+    {
+      "formKey": "000F19:Stormcrown.esp",
+      "editorId": "MAG_SharpTongue01",
+      "name": "Sharp Tongue",
+      "description": "Your Shouts do 50% extra damage to enemies who fall below half Health.",
+      "plugin": "Stormcrown.esp",
+      "nextPerk": "000814:Stormcrown.esp",
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "000F1C:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Ancient Voice"
+          }
+        }
+      ]
+    },
+    {
+      "formKey": "000814:Stormcrown.esp",
+      "editorId": "MAG_SharpTongue02",
+      "name": "Sharp Tongue",
+      "description": "Your Shouts do double damage to enemies who fall below half Health.",
+      "plugin": "Stormcrown.esp",
+      "nextPerk": null,
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "000F19:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Sharp Tongue"
+          }
+        }
+      ]
+    },
+    {
+      "formKey": "000824:Stormcrown.esp",
+      "editorId": "MAG_SkyAbove01",
+      "name": "Sky Above",
+      "description": "Your Shouts last 50% longer.",
+      "plugin": "Stormcrown.esp",
+      "nextPerk": "000810:Stormcrown.esp",
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "00080F:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Dragonborn"
+          }
+        }
+      ]
+    },
+    {
+      "formKey": "000810:Stormcrown.esp",
+      "editorId": "MAG_SkyAbove02",
+      "name": "Sky Above",
+      "description": "Your Shouts last twice as long.",
+      "plugin": "Stormcrown.esp",
+      "nextPerk": null,
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "000824:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Sky Above"
+          }
+        }
+      ]
+    },
+    {
+      "formKey": "00081E:Stormcrown.esp",
+      "editorId": "MAG_Stormcrown",
+      "name": "Stormcrown",
+      "description": "Your Shouts have a 25% chance to have no cooldown in combat.",
+      "plugin": "Stormcrown.esp",
+      "nextPerk": null,
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "000F19:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Sharp Tongue"
+          }
+        }
+      ]
+    },
+    {
+      "formKey": "000830:Stormcrown.esp",
+      "editorId": "MAG_VoiceWithin",
+      "name": "Voice Within",
+      "description": "Your Shouts are silent to others.",
+      "plugin": "Stormcrown.esp",
+      "nextPerk": null,
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "000824:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Sky Above"
+          }
+        }
+      ]
+    },
+    {
+      "formKey": "000C3F:Stormcrown.esp",
+      "editorId": "MAG_WayoftheVoice",
+      "name": "Way of the Voice",
+      "description": "Once an hour, when you fall below 25% Health, your Shout cooldown is reset, and your Shouts have no cooldown for 10 seconds.",
+      "plugin": "Stormcrown.esp",
+      "nextPerk": null,
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "00082D:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Windcaller"
+          }
+        }
+      ]
+    },
+    {
+      "formKey": "00082D:Stormcrown.esp",
+      "editorId": "MAG_Windcaller01",
+      "name": "Windcaller",
+      "description": "Your Shout cooldown is reduced by 25%.",
+      "plugin": "Stormcrown.esp",
+      "nextPerk": "000812:Stormcrown.esp",
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "000830:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Voice Within"
+          }
+        }
+      ]
+    },
+    {
+      "formKey": "000812:Stormcrown.esp",
+      "editorId": "MAG_Windcaller02",
+      "name": "Windcaller",
+      "description": "Your Shout cooldown is reduced by 50%.",
+      "plugin": "Stormcrown.esp",
+      "nextPerk": null,
+      "conditions": [
+        {
+          "fn": "HasPerk",
+          "op": "==",
+          "or": false,
+          "runOn": "Subject",
+          "value": 1,
+          "args": {
+            "perk": "00082D:Stormcrown.esp"
+          },
+          "argNames": {
+            "perk": "Windcaller"
+          }
+        }
+      ]
+    }
+  ],
+  "dragonbornSettings": {
+    "maxPerks": 16,
+    "requiredSouls": [
+      2,
+      3,
+      4
+    ],
+    "maxMeditations": 20
+  },
+  "meta": {
+    "profile": "Apostasy",
+    "plugins": 3407,
+    "generatedAt": "2026-10-23T14:21:02.7659197Z"
+  }
+}
