@@ -109,6 +109,7 @@
 
 	.facts {
 		display: flex;
+		align-items: baseline;
 		flex-wrap: wrap;
 		gap: 0.4rem 1.6rem;
 		margin-top: 0.6rem;
