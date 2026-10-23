@@ -1,0 +1,27 @@
+# Runs the rules engine tests and builds the Docker image on every push.
+# Needs a Forgejo Actions runner with Docker available (label: docker).
+name: build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: docker
+    container: node:24-slim
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci
+        working-directory: web
+      - run: npx svelte-kit sync && npx svelte-check --tsconfig ./tsconfig.json
+        working-directory: web
+      - run: npm test
+        working-directory: web
+
+  image:
+    runs-on: docker
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t apo-char-planner:${{ github.sha }} .
