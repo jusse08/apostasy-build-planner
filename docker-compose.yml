@@ -9,11 +9,28 @@ services:
       # otherwise its cross-site check rejects deleting builds.
       PROTOCOL_HEADER: x-forwarded-proto
       HOST_HEADER: x-forwarded-host
+      # GoatCounter's count endpoint (the stats host below + /count). Leave unset to count nothing.
+      PUBLIC_GOATCOUNTER: ${PUBLIC_GOATCOUNTER:-}
     ports:
       # Point Caddy at this port (or drop it and put the container on Caddy's network).
       - "3000:3000"
     volumes:
       - planner-db:/var/lib/planner
 
+  # Visit counter: one Go binary with SQLite, a few tens of MB of memory. Caddy serves it on its own
+  # host (stats.example.com { reverse_proxy localhost:8081 }). Create the site and login once with
+  #   docker compose run --rm -it goatcounter db create site -vhost stats.example.com -user.email you@example.com
+  goatcounter:
+    image: arp242/goatcounter:2.7
+    container_name: goatcounter
+    restart: unless-stopped
+    command: ["serve", "-listen", ":8080", "-tls", "none", "-automigrate"]
+    ports:
+      - "127.0.0.1:8081:8080"
+    volumes:
+      - goatcounter-data:/home/goatcounter/goatcounter-data
+    mem_limit: 128m
+
 volumes:
   planner-db:
+  goatcounter-data:
