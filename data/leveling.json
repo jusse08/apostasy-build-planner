@@ -2782,9 +2782,29 @@
     "Daedric": 0,
     "DBDestroy": 1
   },
+  "trainers": {
+    "Marksman": 90,
+    "Pickpocket": 90,
+    "Restoration": 90,
+    "LightArmor": 90,
+    "Illusion": 90,
+    "OneHanded": 90,
+    "Block": 90,
+    "Smithing": 90,
+    "TwoHanded": 90,
+    "HeavyArmor": 90,
+    "Conjuration": 90,
+    "Enchanting": 90,
+    "Destruction": 90,
+    "Alteration": 90,
+    "Speechcraft": 90,
+    "Alchemy": 90,
+    "Sneak": 90,
+    "Lockpicking": 90
+  },
   "meta": {
     "profile": "Apostasy",
     "plugins": 3407,
-    "generatedAt": "2026-10-23T21:09:49.8574984Z"
+    "generatedAt": "2026-10-24T08:56:37.2443884Z"
   }
 }

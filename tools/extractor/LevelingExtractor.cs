@@ -54,7 +54,26 @@ public static class LevelingExtractor
                 ["Daedric"] = d.Global("ANDR_QAPP_GLOB_Daedric_Toggle"),
                 ["DBDestroy"] = d.Global("ANDR_QAPP_GLOB_DBDestroy_Toggle"),
             },
+            ["trainers"] = Trainers(game),
         };
+    }
+
+    // Highest level a trainer can raise each skill to. The rank lives on the trainer's class
+    // (Journeyman 50, Expert 75, Master 90), so individual trainers don't matter.
+    private static JsonObject Trainers(GameData game)
+    {
+        var max = new JsonObject();
+        var classes = game.Winning<IClassGetter>().Values
+            .Where(c => c.Record.MaxTrainingLevel > 0 && c.Record.EditorID?.Contains("Trainer", StringComparison.OrdinalIgnoreCase) == true);
+        foreach (var (c, _) in classes)
+        {
+            // Mutagen's Skill enum is offset; the raw value indexes the skills in actor value order.
+            var i = (int)c.Teaches;
+            if (i < 0 || i >= Skills.Ids.Length) continue;
+            var id = Skills.Ids[i];
+            max[id] = Math.Max(max[id]?.GetValue<int>() ?? 0, c.MaxTrainingLevel);
+        }
+        return max;
     }
 
     // Quests Award Perk Points (+ its addon plugins): spells whose effects each fire once a quest stage is done.

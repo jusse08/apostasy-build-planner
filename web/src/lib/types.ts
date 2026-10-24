@@ -71,6 +71,7 @@ export interface Race {
 	id: string;
 	name: string;
 	description: string | null;
+	/** Attributes at level 1: the race's values plus the Player record's offsets. */
 	start: Record<Attribute, number>;
 	skillBoosts: Record<SkillId, number>;
 	abilities: Spell[];
@@ -138,6 +139,8 @@ export interface Leveling {
 	skillPoints: { perLevel: number; levelMult: number; cap: number; costs: [number, number, number, number] };
 	maxSkillGainPerLevel: number;
 	skillCap: { base: number; mult: number; max: number };
+	/** Trainer sessions: at most `sessionsPerLevel` per character level, each skill up to its trainer's `maxLevel`. */
+	training: { sessionsPerLevel: number; maxLevel: Record<SkillId, number> };
 	perksAtLevel: [number, number][]; // [fromLevel, perks], value applies until the next key
 	attributeAtLevel: [number, number][];
 	maxLevel: number;
@@ -161,6 +164,7 @@ export interface GameModel {
 
 export interface LevelPlan {
 	skills: Record<SkillId, number>; // skill increases bought at this level
+	trained?: Record<SkillId, number>; // trainer sessions during this level, after the skill points
 	perks: FormKey[]; // perks (or perk ranks) taken at this level
 	attribute: Attribute | null; // attribute raised on reaching this level
 }

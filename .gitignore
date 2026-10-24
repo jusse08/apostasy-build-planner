@@ -9,6 +9,10 @@ build/
 .env
 /.claude/
 
+# Docs and agent notes stay local; neither branch tracks them.
+README.md
+AGENTS.md
+
 
 # Licensed font files used only to draw web/static/logo.svg; never commit them.
 /fonts/

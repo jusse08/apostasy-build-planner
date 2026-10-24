@@ -145,13 +145,19 @@ function build(): GameModel {
 	skillTrees.sort((a, b) => order.indexOf(a.skill!) - order.indexOf(b.skill!));
 	const skills = skillTrees.map((t) => ({ id: t.skill!, name: t.name, tree: t.id }));
 
+	// Race values plus the Player record's offsets: what the game shows at level 1.
+	const offsets = races.playerOffsets;
 	const raceList: Race[] = races.races.map((r: Raw) => {
 		const abilities = r.abilities.map(spell) as Spell[];
 		return {
 			id: r.id,
 			name: r.name,
 			description: r.description,
-			start: r.start,
+			start: {
+				Health: r.start.Health + offsets.Health,
+				Magicka: r.start.Magicka + offsets.Magicka,
+				Stamina: r.start.Stamina + offsets.Stamina
+			},
 			skillBoosts: r.skillBoosts,
 			abilities,
 			startingPerkPoints: startingPerkPoints(abilities)
@@ -268,6 +274,8 @@ function build(): GameModel {
 			},
 			maxSkillGainPerLevel: ssl.iMaxLevelsPerSkillPerPlayerLevel,
 			skillCap: { base: exp.fSkillCapBase, mult: exp.fSkillCapMult, max: 100 },
+			// Five sessions per level is the engine default; no plugin sets iTrainingNumAllowedPerLevel.
+			training: { sessionsPerLevel: 5, maxLevel: leveling.trainers },
 			perksAtLevel: table(unc.PerksAtLevelUp),
 			attributeAtLevel: table(unc.HealthAtLevelUp),
 			maxLevel: 81
