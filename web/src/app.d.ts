@@ -8,6 +8,11 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+
+	interface Window {
+		/** GoatCounter's count.js, loaded only when PUBLIC_GOATCOUNTER is set. */
+		goatcounter?: { count?: (vars: { path: string }) => void };
+	}
 }
 
 export {};
