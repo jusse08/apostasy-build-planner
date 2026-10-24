@@ -71,6 +71,7 @@ export interface Race {
 	id: string;
 	name: string;
 	description: string | null;
+	/** Attributes at level 1: the race's values plus the Player record's offsets. */
 	start: Record<Attribute, number>;
 	skillBoosts: Record<SkillId, number>;
 	abilities: Spell[];

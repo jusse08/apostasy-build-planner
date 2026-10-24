@@ -79,6 +79,12 @@ describe('character creation', () => {
 		expect(game.classes.find((c) => c.id === 'Crusader')!.warnings.length).toBeGreaterThan(0);
 	});
 
+	it('starting attributes add the Player record offsets to the race', () => {
+		const start = (id: string) => game.races.find((r) => r.id === id)!.start;
+		expect(start('Nord')).toEqual({ Health: 100, Magicka: 100, Stamina: 100 });
+		expect(start('HighElf').Magicka).toBe(150);
+	});
+
 	it('Imperial and Prisoner start with an extra perk point', () => {
 		expect(game.races.find((r) => r.id === 'Imperial')!.startingPerkPoints).toBe(1);
 		expect(game.classes.find((c) => c.id === 'Prisoner')!.startingPerkPoints).toBe(1);

@@ -62,7 +62,18 @@ public static class CharacterExtractor
             });
         }
 
-        return new JsonObject { ["races"] = arr };
+        // The player's own record adds its offsets on top of the race's starting values.
+        var (player, playerFrom) = game.Winning<INpcGetter>()[Mutagen.Bethesda.Plugins.FormKey.Factory("000007:Skyrim.esm")];
+        var c = player.Configuration;
+        var playerOffsets = new JsonObject
+        {
+            ["Health"] = c.HealthOffset,
+            ["Magicka"] = c.MagickaOffset,
+            ["Stamina"] = c.StaminaOffset,
+            ["plugin"] = playerFrom.FileName.String,
+        };
+
+        return new JsonObject { ["playerOffsets"] = playerOffsets, ["races"] = arr };
     }
 
     private static readonly Regex StartGear = new(@"begin the game with (?<gear>.+?)\.\s", RegexOptions.IgnoreCase);

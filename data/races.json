@@ -1,4 +1,10 @@
 {
+  "playerOffsets": {
+    "Health": 50,
+    "Magicka": 50,
+    "Stamina": 50,
+    "plugin": "APO_SynHPH.esp"
+  },
   "races": [
     {
       "id": "Argonian",
@@ -623,6 +629,6 @@
   "meta": {
     "profile": "Apostasy",
     "plugins": 3407,
-    "generatedAt": "2026-10-23T21:09:49.8574984Z"
+    "generatedAt": "2026-10-24T08:43:03.8506863Z"
   }
 }
