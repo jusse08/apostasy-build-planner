@@ -274,6 +274,8 @@ function build(): GameModel {
 			},
 			maxSkillGainPerLevel: ssl.iMaxLevelsPerSkillPerPlayerLevel,
 			skillCap: { base: exp.fSkillCapBase, mult: exp.fSkillCapMult, max: 100 },
+			// Five sessions per level is the engine default; no plugin sets iTrainingNumAllowedPerLevel.
+			training: { sessionsPerLevel: 5, maxLevel: leveling.trainers },
 			perksAtLevel: table(unc.PerksAtLevelUp),
 			attributeAtLevel: table(unc.HealthAtLevelUp),
 			maxLevel: 81

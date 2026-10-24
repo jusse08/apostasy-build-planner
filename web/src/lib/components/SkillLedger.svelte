@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { BuildEditor } from '#lib/editor.svelte.ts';
-	import { ATTRIBUTES, atLevel, stepCost } from '#lib/rules/engine.ts';
+	import { ATTRIBUTES, atLevel, stepCost, trainingCost } from '#lib/rules/engine.ts';
 	import type { SkillId } from '#lib/types.ts';
 	import type { Attachment } from 'svelte/attachments';
 
@@ -21,12 +21,28 @@
 	let st = $derived(ed.current);
 	let plan = $derived(ed.build.levels[ed.level]);
 	let canBuy = $derived(ed.level >= 2);
+	// The +/− buttons and the wheel either spend skill points or book trainer sessions.
+	let mode = $state<'points' | 'train'>('points');
+	let training = $derived(mode === 'train');
+	let editable = $derived(training || canBuy);
+	let tr = $derived(ed.game.leveling.training);
+	let sessionsLeft = $derived(tr.sessionsPerLevel - st.trainingSessions);
+	const gold = (n: number) => n.toLocaleString('en-US');
 	let attrGain = $derived(atLevel(ed.game.leveling.attributeAtLevel, ed.level));
 	let perksLeft = $derived(st.perkPointsTotal - st.perkPointsSpent);
 	let name = (id: SkillId) => ed.game.skills.find((s) => s.id === id)?.name ?? id;
 
 	function canRaise(skill: SkillId): boolean {
-		return canBuy && st.skills[skill] < st.skillCap && st.skillPointsLeft >= stepCost(ed.game.leveling, st.skills[skill]);
+		const v = st.skills[skill];
+		if (training) return sessionsLeft > 0 && v < st.skillCap && v < (tr.maxLevel[skill] ?? 0);
+		return canBuy && v < st.skillCap && st.skillPointsLeft >= stepCost(ed.game.leveling, v);
+	}
+
+	const added = (skill: SkillId) => (training ? plan?.trained?.[skill] : plan?.skills[skill]) ?? 0;
+
+	function change(skill: SkillId, delta: number) {
+		if (training) ed.addTraining(skill, delta);
+		else ed.addSkill(skill, delta);
 	}
 
 	// Wheel over a skill's bar, value or buttons raises (up) or lowers (down) it. Attached by hand
@@ -36,8 +52,8 @@
 			const on = (e: WheelEvent) => {
 				if (!e.deltaY) return;
 				e.preventDefault();
-				if (e.deltaY < 0 && canRaise(skill)) ed.addSkill(skill, 1);
-				if (e.deltaY > 0 && (plan?.skills[skill] ?? 0) > 0) ed.addSkill(skill, -1);
+				if (e.deltaY < 0 && canRaise(skill)) change(skill, 1);
+				if (e.deltaY > 0 && added(skill) > 0) change(skill, -1);
 			};
 			node.addEventListener('wheel', on, { passive: false });
 			return () => node.removeEventListener('wheel', on);
@@ -58,10 +74,17 @@
 	</header>
 
 	<div class="budget">
-		<div class:bad={st.skillPointsSpent > st.skillPointsAvailable}>
-			<p class="big num">{st.skillPointsLeft}</p>
-			<p class="what">skill points left<br /><span class="num">of {st.skillPointsAvailable}{st.skillPointsGained ? `, +${st.skillPointsGained} now` : ''}</span></p>
-		</div>
+		{#if training}
+			<div class:bad={sessionsLeft < 0} title="{gold(st.trainingGold)} gold at this level, {gold(st.trainingGoldTotal)} by level {ed.level}">
+				<p class="big num">{sessionsLeft}</p>
+				<p class="what">trainer sessions left<br /><span class="num">of {tr.sessionsPerLevel} this level</span></p>
+			</div>
+		{:else}
+			<div class:bad={st.skillPointsSpent > st.skillPointsAvailable}>
+				<p class="big num">{st.skillPointsLeft}</p>
+				<p class="what">skill points left<br /><span class="num">of {st.skillPointsAvailable}{st.skillPointsGained ? `, +${st.skillPointsGained} now` : ''}</span></p>
+			</div>
+		{/if}
 		<div class:bad={perksLeft < 0}>
 			<p class="big num">{perksLeft}</p>
 			<p class="what">perk points free<br /><span class="num">{st.perkPointsSpent} of {st.perkPointsTotal} used{st.perkPointsGained ? `, +${st.perkPointsGained} now` : ''}</span></p>
@@ -85,26 +108,37 @@
 		<p class="hint">Level 1 is set by race and class. Skill and perk points arrive with each level up.</p>
 	{/if}
 
+	<div class="mode" role="group" aria-label="What the skill buttons do">
+		<button class:on={!training} aria-pressed={!training} onclick={() => (mode = 'points')}>Skill points</button>
+		<button class:on={training} aria-pressed={training} onclick={() => (mode = 'train')}>Trainers</button>
+	</div>
+
 	{#each groups as g (g.label)}
 		<section class="group">
 			<h3>{g.label}</h3>
 			<ul>
 				{#each g.skills as id (id)}
 					{@const bought = plan?.skills[id] ?? 0}
+					{@const taught = st.trained[id] ?? 0}
 					{@const v = st.skills[id]}
-					<li class:bought={bought > 0} class:over={v > st.skillCap}>
+					<li class:bought={bought + taught > 0} class:over={v > st.skillCap}>
 						<button class="name" onclick={() => onpick(id)}>{name(id)}</button>
-						<span class="dial" {@attach canBuy && wheel(id)}>
+						<span class="dial" {@attach editable && wheel(id)}>
 							<span class="bar" aria-hidden="true">
-								<i class="was" style="width: {v - bought}%"></i>
+								<i class="was" style="width: {v - bought - taught}%"></i>
 								<i class="add" style="width: {bought}%"></i>
+								<i class="taught" style="width: {taught}%"></i>
 								<b style="left: {st.skillCap}%"></b>
 							</span>
-							<span class="v num">{v}{#if bought}<small>+{bought}</small>{/if}</span>
-							{#if canBuy}
+							<span class="v num">{v}{#if bought}<small>+{bought}</small>{/if}{#if taught}<small class="taught">+{taught}</small>{/if}</span>
+							{#if editable}
 								<span class="ctl">
-									<button onclick={() => ed.addSkill(id, -1)} disabled={!bought} aria-label="Lower {name(id)}">−</button>
-									<button onclick={() => ed.addSkill(id, 1)} disabled={!canRaise(id)} aria-label="Raise {name(id)}, costs {stepCost(ed.game.leveling, v)}">+</button>
+									<button onclick={() => change(id, -1)} disabled={!added(id)} aria-label="{training ? 'Untrain' : 'Lower'} {name(id)}">−</button>
+									{#if training}
+										<button onclick={() => change(id, 1)} disabled={!canRaise(id)} aria-label="Train {name(id)}" title="{gold(trainingCost(v))} gold">+</button>
+									{:else}
+										<button onclick={() => change(id, 1)} disabled={!canRaise(id)} aria-label="Raise {name(id)}, costs {stepCost(ed.game.leveling, v)}">+</button>
+									{/if}
 								</span>
 							{/if}
 						</span>
@@ -114,7 +148,11 @@
 		</section>
 	{/each}
 
-	{#if canBuy}
+	{#if training}
+		<p class="hint">
+			Up to {tr.sessionsPerLevel} trainer sessions per level, up to skill {Math.max(...Object.values(tr.maxLevel))}. They don't spend skill points; hover + for the price in gold.
+		</p>
+	{:else if canBuy}
 		<p class="hint">
 			One skill level costs {ed.game.leveling.skillPoints.costs.join(' / ')} points in the 0–25 / 26–50 / 51–75 / 76–100 ranges.
 			The tick on each bar is the level {ed.level} cap ({st.skillCap}). Unspent points carry over, up to {ed.game.leveling.skillPoints.cap}.
@@ -255,6 +293,25 @@
 		border-color: #9cc48d;
 	}
 
+	.mode {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.35rem;
+	}
+
+	.mode button {
+		padding: 0.3rem 0.5rem;
+		font-size: var(--t-xs);
+		background: var(--surface-2);
+		border: 1px solid transparent;
+		color: var(--muted);
+	}
+
+	.mode button.on {
+		border-color: var(--line);
+		color: var(--text);
+	}
+
 	.attrs {
 		display: flex;
 		gap: 1rem;
@@ -288,7 +345,7 @@
 
 	.group li {
 		display: grid;
-		grid-template-columns: 7.2rem minmax(0, 1fr) 3rem auto;
+		grid-template-columns: 7.2rem minmax(0, 1fr) 4.4rem auto;
 		gap: 0.6rem;
 		align-items: center;
 		min-height: 1.75rem;
@@ -337,6 +394,10 @@
 		background: var(--aurora);
 	}
 
+	.bar .taught {
+		background: var(--gold);
+	}
+
 	.bar b {
 		position: absolute;
 		top: -3px;
@@ -355,6 +416,10 @@
 		font-size: var(--t-xs);
 		color: var(--aurora);
 		margin-left: 0.15rem;
+	}
+
+	.v small.taught {
+		color: var(--gold);
 	}
 
 	.over .v {

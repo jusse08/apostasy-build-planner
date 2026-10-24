@@ -20,7 +20,7 @@ export class BuildEditor {
 	/** Last open level: the stored one, but never below a level that already has choices (older builds). */
 	reached = $derived.by(() => {
 		const planned = Object.entries(this.build.levels)
-			.filter(([, p]) => p.perks.length || p.attribute || Object.keys(p.skills).length)
+			.filter(([, p]) => p.perks.length || p.attribute || Object.keys(p.skills).length || Object.keys(p.trained ?? {}).length)
 			.map(([l]) => Number(l));
 		return Math.min(this.build.targetLevel, Math.max(this.build.reachedLevel ?? 2, 2, ...planned));
 	});
@@ -91,6 +91,16 @@ export class BuildEditor {
 		const next = Math.max(0, (p.skills[skill] ?? 0) + delta);
 		if (next === 0) delete p.skills[skill];
 		else p.skills[skill] = next;
+		this.changed();
+	}
+
+	/** Add (+) or remove (-) trainer sessions at the current level; training works from level 1. */
+	addTraining(skill: SkillId, delta: number) {
+		const p = this.plan(this.level);
+		const t = (p.trained ??= {});
+		const next = Math.max(0, (t[skill] ?? 0) + delta);
+		if (next === 0) delete t[skill];
+		else t[skill] = next;
 		this.changed();
 	}
 

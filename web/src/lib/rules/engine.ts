@@ -105,7 +105,23 @@ export function startingSkills(game: GameModel, build: BuildState): Record<Skill
 	return out;
 }
 
-export type IssueKind = 'skillPoints' | 'skillCap' | 'skillGain' | 'perkPoints' | 'perkRequirement' | 'perkRank' | 'perkUnknown';
+/**
+ * Gold for one trainer session at skill level `value` (the level before training). Vanilla formula, which
+ * nothing in Apostasy changes; Speech and Barter don't affect it (UESP Skyrim:Trainers).
+ */
+export function trainingCost(value: number): number {
+	if (value <= 50) return 10 * value + 50;
+	if (value <= 75) return 30 * value + 50;
+	return 50 * value + 50;
+}
+
+export function trainCost(from: number, by: number): number {
+	let c = 0;
+	for (let v = from; v < from + by; v++) c += trainingCost(v);
+	return c;
+}
+
+export type IssueKind = 'skillPoints' | 'skillCap' | 'skillGain' | 'training' | 'perkPoints' | 'perkRequirement' | 'perkRank' | 'perkUnknown';
 
 export interface Issue {
 	level: number;
@@ -124,6 +140,11 @@ export interface LevelState {
 	skillPointsAvailable: number; // carried + gained, before spending
 	skillPointsSpent: number;
 	skillPointsLeft: number;
+	/** Skill levels from trainers at this level, per skill. */
+	trained: Record<SkillId, number>;
+	trainingSessions: number;
+	trainingGold: number;
+	trainingGoldTotal: number; // cumulative
 	perkPointsGained: number;
 	perkPointsTotal: number; // cumulative earned up to this level
 	perksTaken: Set<FormKey>; // cumulative, including this level
@@ -388,6 +409,7 @@ export function simulate(game: GameModel, build: BuildState): Simulation {
 	let carry = 0;
 	let perkTotal = bonus;
 	let perkSpent = 0;
+	let goldTotal = 0;
 
 	for (let level = 1; level <= build.targetLevel; level++) {
 		const plan = build.levels[level] ?? emptyLevel();
@@ -407,12 +429,32 @@ export function simulate(game: GameModel, build: BuildState): Simulation {
 			skills[skill] += by;
 			if (by > l.maxSkillGainPerLevel)
 				issues.push({ level, kind: 'skillGain', skill, message: `${skillName(game, skill)}: more than +${l.maxSkillGainPerLevel} in one level` });
-			if (skills[skill] > cap)
-				issues.push({ level, kind: 'skillCap', skill, message: `${skillName(game, skill)} ${skills[skill]} is above the level ${level} cap of ${cap}` });
 		}
 		if (spent > available)
 			issues.push({ level, kind: 'skillPoints', message: `Spent ${spent} skill points, only ${available} available` });
 		carry = Math.max(0, available - spent);
+
+		// Trainers, during the level and so after the level-up's skill points; priced from the level reached.
+		const trained: Record<SkillId, number> = {};
+		let sessions = 0;
+		let gold = 0;
+		for (const [skill, by] of Object.entries(plan.trained ?? {})) {
+			if (!by || !(skill in skills)) continue;
+			gold += trainCost(skills[skill], by);
+			skills[skill] += by;
+			trained[skill] = by;
+			sessions += by;
+			const max = l.training.maxLevel[skill] ?? 0;
+			if (skills[skill] > max)
+				issues.push({ level, kind: 'training', skill, message: `${skillName(game, skill)}: trainers teach only up to ${max}` });
+		}
+		if (sessions > l.training.sessionsPerLevel)
+			issues.push({ level, kind: 'training', message: `${sessions} trainer sessions at level ${level}, only ${l.training.sessionsPerLevel} allowed` });
+		goldTotal += gold;
+
+		for (const skill of new Set([...Object.keys(plan.skills), ...Object.keys(trained)]))
+			if (skills[skill] > cap)
+				issues.push({ level, kind: 'skillCap', skill, message: `${skillName(game, skill)} ${skills[skill]} is above the level ${level} cap of ${cap}` });
 
 		// Perks: earned points are cumulative; requirements use skills after this level's raises.
 		const perkGained = perksGained(l, level);
@@ -450,6 +492,10 @@ export function simulate(game: GameModel, build: BuildState): Simulation {
 			skillPointsAvailable: available,
 			skillPointsSpent: spent,
 			skillPointsLeft: carry,
+			trained,
+			trainingSessions: sessions,
+			trainingGold: gold,
+			trainingGoldTotal: goldTotal,
 			perkPointsGained: perkGained,
 			perkPointsTotal: perkTotal,
 			perksTaken: new Set(taken),
