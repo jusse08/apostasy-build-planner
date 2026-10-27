@@ -143,6 +143,8 @@
 					{@const taught = st.trained[id] ?? 0}
 					{@const read = st.booksRead[id] ?? 0}
 					{@const v = st.skills[id]}
+					<!-- The bar shows every source; the number only the current mode's. -->
+					{@const gain = reading ? read : training ? taught : bought}
 					<li class:bought={bought + taught + read > 0} class:over={v > st.skillCap}>
 						{#if reading}
 							<button class="name toggle" class:on={open === id} aria-expanded={open === id} onclick={() => (open = open === id ? null : id)}>
@@ -159,7 +161,7 @@
 								<i class="read" style="width: {read}%"></i>
 								<b style="left: {tick}%"></b>
 							</span>
-							<span class="v num">{v}{#if bought}<small>+{bought}</small>{/if}{#if taught}<small class="taught">+{taught}</small>{/if}{#if read}<small class="read">+{read}</small>{/if}</span>
+							<span class="v num">{v}{#if gain}<small class:taught={training} class:read={reading}>+{gain}</small>{/if}</span>
 							{#if editable}
 								<span class="ctl">
 									<button onclick={() => change(id, -1)} disabled={!added(id)} aria-label="{reading ? 'Unread a book for' : training ? 'Untrain' : 'Lower'} {name(id)}">−</button>
@@ -422,9 +424,9 @@
 	.bar {
 		position: relative;
 		display: flex;
-		height: 4px;
+		height: 6px;
 		background: rgba(255, 255, 255, 0.06);
-		border-radius: 2px;
+		border-radius: 3px;
 	}
 
 	.bar i {
@@ -434,7 +436,7 @@
 
 	.bar .was {
 		background: rgba(255, 255, 255, 0.55);
-		border-radius: 2px 0 0 2px;
+		border-radius: 3px 0 0 3px;
 	}
 
 	.bar .add {
@@ -453,7 +455,7 @@
 		position: absolute;
 		top: -3px;
 		width: 1px;
-		height: 10px;
+		height: 12px;
 		background: var(--starlight);
 		opacity: 0.5;
 	}
