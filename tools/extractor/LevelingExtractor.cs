@@ -55,7 +55,28 @@ public static class LevelingExtractor
                 ["DBDestroy"] = d.Global("ANDR_QAPP_GLOB_DBDestroy_Toggle"),
             },
             ["trainers"] = Trainers(game),
+            ["skillBooks"] = SkillBooks(game),
         };
+    }
+
+    // Books that teach a skill: +1 the first time each is read, if the skill is below Experience's cap.
+    private static JsonArray SkillBooks(GameData game)
+    {
+        var arr = new JsonArray();
+        var books = game.Winning<IBookGetter>()
+            .Select(b => (Key: b.Key, b.Value.Record, From: b.Value.From, Skill: b.Value.Record.Teaches is IBookSkillGetter s ? Skills.Normalize(s.Skill?.ToString()) : null))
+            .Where(b => b.Skill != null)
+            .OrderBy(b => b.Skill).ThenBy(b => b.Record.Name?.String, StringComparer.Ordinal);
+        foreach (var b in books)
+            arr.Add(new JsonObject
+            {
+                ["formKey"] = Json.Key(b.Key),
+                ["editorId"] = b.Record.EditorID,
+                ["name"] = b.Record.Name?.String,
+                ["skill"] = b.Skill,
+                ["plugin"] = b.Key.ModKey.FileName.String,
+            });
+        return arr;
     }
 
     // Highest level a trainer can raise each skill to. The rank lives on the trainer's class

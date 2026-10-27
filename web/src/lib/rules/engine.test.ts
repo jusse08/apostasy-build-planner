@@ -147,6 +147,23 @@ describe('perk requirements', () => {
 		expect(simulate(game, many).issues.some((i) => i.kind === 'training')).toBe(true);
 	});
 
+	it('skill books: +1 each, once, up to the current level cap', () => {
+		const oneHanded = game.books.filter((b) => b.skill === 'OneHanded');
+		expect(oneHanded.length).toBeGreaterThanOrEqual(5);
+		expect(game.books.some((b) => b.name === 'The Importance of Where')).toBe(true);
+		const [a, b, c, d] = oneHanded.map((x) => x.key);
+		const plan = (books: string[]) => ({ skills: {}, books, perks: [], attribute: null });
+		const at = (levels: Record<number, ReturnType<typeof plan>>) =>
+			simulate(game, { ...newBuildState(), class: 'Rogue', targetLevel: 2, levels });
+		const ok = at({ 2: plan([a, b, c]) });
+		expect(ok.levels[1].skills.OneHanded).toBe(23); // 20 + 3 books, the level 2 cap
+		expect(ok.levels[1].booksRead.OneHanded).toBe(3);
+		expect(ok.readAt.get(a)).toBe(2);
+		expect(ok.issues).toEqual([]);
+		expect(at({ 2: plan([a, b, c, d]) }).issues.some((i) => i.kind === 'skillCap')).toBe(true);
+		expect(at({ 1: plan([a]), 2: plan([a]) }).issues.some((i) => i.kind === 'book')).toBe(true);
+	});
+
 	it('stances are tagged and inherited down the branch', () => {
 		expect(byName('Grievous Wounds').stance).toBe('Wolf');
 		expect(byName('Carve and Spit').stance).toBe('Wolf');

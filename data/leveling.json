@@ -2802,9 +2802,774 @@
     "Sneak": 90,
     "Lockpicking": 90
   },
+  "skillBooks": [
+    {
+      "formKey": "01AFC4:Skyrim.esm",
+      "editorId": "SkillAlchemy1",
+      "name": "A Game at Dinner",
+      "skill": "Alchemy",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFC7:Skyrim.esm",
+      "editorId": "SkillAlchemy4",
+      "name": "De Rerum Dirennis",
+      "skill": "Alchemy",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFC8:Skyrim.esm",
+      "editorId": "SkillAlchemy5",
+      "name": "Herbalist's Guide to Skyrim",
+      "skill": "Alchemy",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFC5:Skyrim.esm",
+      "editorId": "SkillAlchemy2",
+      "name": "Mannimarco, King of Worms",
+      "skill": "Alchemy",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFC6:Skyrim.esm",
+      "editorId": "SkillAlchemy3",
+      "name": "Song of the Alchemists",
+      "skill": "Alchemy",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B236:Skyrim.esm",
+      "editorId": "SkillAlteration2",
+      "name": "Breathing Water",
+      "skill": "Alteration",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFC9:Skyrim.esm",
+      "editorId": "SkillAlteration1",
+      "name": "Daughter of the Niben",
+      "skill": "Alteration",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "1CB872:Vigilant.esm",
+      "editorId": "zzzCHBookHumptyCat02",
+      "name": "Ja'bal and the Chicks",
+      "skill": "Alteration",
+      "plugin": "Vigilant.esm"
+    },
+    {
+      "formKey": "01AFCC:Skyrim.esm",
+      "editorId": "SkillAlteration4",
+      "name": "Reality & Other Falsehoods",
+      "skill": "Alteration",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "06DC99:AX ValSerano.esp",
+      "editorId": "AX_ShalidorBook",
+      "name": "Shalidor's Unexpected Insights",
+      "skill": "Alteration",
+      "plugin": "AX ValSerano.esp"
+    },
+    {
+      "formKey": "01AFCB:Skyrim.esm",
+      "editorId": "SkillAlteration3",
+      "name": "Sithis",
+      "skill": "Alteration",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "376BED:Unslaad.esm",
+      "editorId": "zzzCrbBookMKSermon37",
+      "name": "The 36 Lessons of Vivec: Sermon 37",
+      "skill": "Alteration",
+      "plugin": "Unslaad.esm"
+    },
+    {
+      "formKey": "000545:Unmarked Locations Pack - All In One.esp",
+      "editorId": "ULPAPOTheEssenceofTime",
+      "name": "The Essence of Time",
+      "skill": "Alteration",
+      "plugin": "Unmarked Locations Pack - All In One.esp"
+    },
+    {
+      "formKey": "01AFCD:Skyrim.esm",
+      "editorId": "SkillAlteration5",
+      "name": "The Lunar Lorkhan",
+      "skill": "Alteration",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFDF:Skyrim.esm",
+      "editorId": "SkillBlock3",
+      "name": "A Dance in Fire, Vol. 2",
+      "skill": "Block",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "02F83C:Skyrim.esm",
+      "editorId": "SkillBlock5",
+      "name": "Battle of Red Mountain",
+      "skill": "Block",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFDD:Skyrim.esm",
+      "editorId": "SkillBlock1",
+      "name": "Death Blow of Ebernanit",
+      "skill": "Block",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFDE:Skyrim.esm",
+      "editorId": "SkillBlock2",
+      "name": "The Mirror",
+      "skill": "Block",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFE0:Skyrim.esm",
+      "editorId": "SkillBlock4",
+      "name": "Warrior",
+      "skill": "Block",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFEA:Skyrim.esm",
+      "editorId": "SkillConjuration4",
+      "name": "2920, Vol. 10: Frostfall",
+      "skill": "Conjuration",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFE9:Skyrim.esm",
+      "editorId": "SkillConjuration3",
+      "name": "2920, Vol. 9: Hearth Fire",
+      "skill": "Conjuration",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "087347:AX ValSerano.esp",
+      "editorId": "AX_ValEthicsBook",
+      "name": "Conjuration Ethics",
+      "skill": "Conjuration",
+      "plugin": "AX ValSerano.esp"
+    },
+    {
+      "formKey": "01AFE8:Skyrim.esm",
+      "editorId": "SkillConjuration2",
+      "name": "Liminal Bridges",
+      "skill": "Conjuration",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFE7:Skyrim.esm",
+      "editorId": "SkillConjuration1",
+      "name": "The Doors of Oblivion",
+      "skill": "Conjuration",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFEB:Skyrim.esm",
+      "editorId": "SkillConjuration5",
+      "name": "The Warrior's Charge",
+      "skill": "Conjuration",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFEE:Skyrim.esm",
+      "editorId": "SkillDestruction3",
+      "name": "A Hypothetical Treachery",
+      "skill": "Destruction",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "00040C:Unmarked Locations Pack - All In One.esp",
+      "editorId": "ULPAPOUnexpectedDefense",
+      "name": "An Unexpected Defense",
+      "skill": "Destruction",
+      "plugin": "Unmarked Locations Pack - All In One.esp"
+    },
+    {
+      "formKey": "01AFEC:Skyrim.esm",
+      "editorId": "SkillDestruction1",
+      "name": "Horror of Castle Xyr",
+      "skill": "Destruction",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "1CB871:Vigilant.esm",
+      "editorId": "zzzCHBookHumptyCat01",
+      "name": "Ja'bal and the Chickens",
+      "skill": "Destruction",
+      "plugin": "Vigilant.esm"
+    },
+    {
+      "formKey": "01AFF0:Skyrim.esm",
+      "editorId": "SkillDestruction5",
+      "name": "Mystery of Talara, Vol. 3",
+      "skill": "Destruction",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFED:Skyrim.esm",
+      "editorId": "SkillDestruction2",
+      "name": "Response to Bero's Speech",
+      "skill": "Destruction",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFEF:Skyrim.esm",
+      "editorId": "SkillDestruction4",
+      "name": "The Art of War Magic",
+      "skill": "Destruction",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "02F838:Skyrim.esm",
+      "editorId": "SkillEnchanting2",
+      "name": "A Tragedy in Black",
+      "skill": "Enchanting",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "02F83B:Skyrim.esm",
+      "editorId": "SkillEnchanting5",
+      "name": "Catalogue of Armor Enchantments",
+      "skill": "Enchanting",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "02F83A:Skyrim.esm",
+      "editorId": "SkillEnchanting4",
+      "name": "Catalogue of Weapon Enchantments",
+      "skill": "Enchanting",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "000408:Unmarked Locations Pack - All In One.esp",
+      "editorId": "ULPAPOEnchanterPracticum",
+      "name": "Enchanter Practicum",
+      "skill": "Enchanting",
+      "plugin": "Unmarked Locations Pack - All In One.esp"
+    },
+    {
+      "formKey": "02F837:Skyrim.esm",
+      "editorId": "SkillEnchanting1",
+      "name": "Enchanter's Primer",
+      "skill": "Enchanting",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "02F839:Skyrim.esm",
+      "editorId": "SkillEnchanting3",
+      "name": "Twin Secrets",
+      "skill": "Enchanting",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFF7:Skyrim.esm",
+      "editorId": "SkillHeavyArmor2",
+      "name": "2920, Vol. 6: MidYear",
+      "skill": "HeavyArmor",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFF8:Skyrim.esm",
+      "editorId": "SkillHeavyArmor3",
+      "name": "Chimarvamidium",
+      "skill": "HeavyArmor",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFF6:Skyrim.esm",
+      "editorId": "SkillHeavyArmor1",
+      "name": "Hallgerd's Tale",
+      "skill": "HeavyArmor",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFF9:Skyrim.esm",
+      "editorId": "SkillHeavyArmor4",
+      "name": "Orsinium and the Orcs",
+      "skill": "HeavyArmor",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFFA:Skyrim.esm",
+      "editorId": "SkillHeavyArmor5",
+      "name": "The Knights of the Nine",
+      "skill": "HeavyArmor",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B010:Skyrim.esm",
+      "editorId": "SkillIllusion2",
+      "name": "2920, Vol. 2: Sun's Dawn",
+      "skill": "Illusion",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B012:Skyrim.esm",
+      "editorId": "SkillIllusion4",
+      "name": "Before the Ages of Man",
+      "skill": "Illusion",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "A1C43E:AX ValSerano.esp",
+      "editorId": "AX_BlackBookSailorsBargain",
+      "name": "Black Book: Sailor's Bargain",
+      "skill": "Illusion",
+      "plugin": "AX ValSerano.esp"
+    },
+    {
+      "formKey": "01B00F:Skyrim.esm",
+      "editorId": "SkillIllusion1",
+      "name": "Incident at Necrom",
+      "skill": "Illusion",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "1CB873:Vigilant.esm",
+      "editorId": "zzzCHBookHumptyCat03",
+      "name": "Ja'bal and the Eggs",
+      "skill": "Illusion",
+      "plugin": "Vigilant.esm"
+    },
+    {
+      "formKey": "01B013:Skyrim.esm",
+      "editorId": "SkillIllusion5",
+      "name": "Mystery of Talara, Vol. 4",
+      "skill": "Illusion",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "D4485C:AX ValSerano.esp",
+      "editorId": "AX_JournalFathisMolagBal",
+      "name": "Tattered Journal",
+      "skill": "Illusion",
+      "plugin": "AX ValSerano.esp"
+    },
+    {
+      "formKey": "376BEE:Unslaad.esm",
+      "editorId": "zzzCrbBookDGSermon0",
+      "name": "The 36&9 Lessons of Vivec: Sermon 0",
+      "skill": "Illusion",
+      "plugin": "Unslaad.esm"
+    },
+    {
+      "formKey": "01B011:Skyrim.esm",
+      "editorId": "SkillIllusion3",
+      "name": "The Black Arts On Trial",
+      "skill": "Illusion",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B001:Skyrim.esm",
+      "editorId": "SkillLightArmor2",
+      "name": "Ice and Chitin",
+      "skill": "LightArmor",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B002:Skyrim.esm",
+      "editorId": "SkillLightArmor3",
+      "name": "Jornibret's Last Dance",
+      "skill": "LightArmor",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B004:Skyrim.esm",
+      "editorId": "SkillLightArmor5",
+      "name": "Rislav the Righteous",
+      "skill": "LightArmor",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B000:Skyrim.esm",
+      "editorId": "SkillLightArmor1",
+      "name": "The Rear Guard",
+      "skill": "LightArmor",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B003:Skyrim.esm",
+      "editorId": "SkillLightArmor4",
+      "name": "The Refugees",
+      "skill": "LightArmor",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFF1:Skyrim.esm",
+      "editorId": "MAG_SkillHandtoHand2",
+      "name": "Immortal Blood",
+      "skill": "Lockpicking",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "000800:H2HBooksandTrainers.esp",
+      "editorId": "MAG_SkillHandtoHand3",
+      "name": "Master Zoaraym's Tale",
+      "skill": "Lockpicking",
+      "plugin": "H2HBooksandTrainers.esp"
+    },
+    {
+      "formKey": "000801:H2HBooksandTrainers.esp",
+      "editorId": "MAG_SkillHandtoHand5",
+      "name": "The Prayers of Baranat",
+      "skill": "Lockpicking",
+      "plugin": "H2HBooksandTrainers.esp"
+    },
+    {
+      "formKey": "01AFF2:Skyrim.esm",
+      "editorId": "MAG_SkillHandtoHand1",
+      "name": "The Wolf Queen, Vol. 2",
+      "skill": "Lockpicking",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "000802:H2HBooksandTrainers.esp",
+      "editorId": "MAG_SkillHandtoHand4",
+      "name": "Way of the Exposed Palm",
+      "skill": "Lockpicking",
+      "plugin": "H2HBooksandTrainers.esp"
+    },
+    {
+      "formKey": "01B008:Skyrim.esm",
+      "editorId": "SkillMarksman4",
+      "name": "Father of the Niben",
+      "skill": "Marksman",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "00080C:Indigo.esp",
+      "editorId": "InigosJournal",
+      "name": "Indigo's Journal",
+      "skill": "Marksman",
+      "plugin": "Indigo.esp"
+    },
+    {
+      "formKey": "01B009:Skyrim.esm",
+      "editorId": "SkillMarksman5",
+      "name": "The Black Arrow, Vol. 2",
+      "skill": "Marksman",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B005:Skyrim.esm",
+      "editorId": "SkillMarksman1",
+      "name": "The Gold Ribbon of Merit",
+      "skill": "Marksman",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B26D:Skyrim.esm",
+      "editorId": "SkillMarksman2",
+      "name": "The Marksmanship Lesson",
+      "skill": "Marksman",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B007:Skyrim.esm",
+      "editorId": "SkillMarksman3",
+      "name": "Vernaccus and Bourlor",
+      "skill": "Marksman",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFD9:Skyrim.esm",
+      "editorId": "SkillOneHanded2",
+      "name": "2920, Vol. 1: Morning Star",
+      "skill": "OneHanded",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFDA:Skyrim.esm",
+      "editorId": "SkillOneHanded3",
+      "name": "Fire and Darkness",
+      "skill": "OneHanded",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFE6:Skyrim.esm",
+      "editorId": "SkillOneHanded5",
+      "name": "Mace Etiquette",
+      "skill": "OneHanded",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "4E1317:Vigilant.esm",
+      "editorId": "zzzAomRqBook01",
+      "name": "Mazoga the Hardened",
+      "skill": "OneHanded",
+      "plugin": "Vigilant.esm"
+    },
+    {
+      "formKey": "00066D:Unmarked Locations Pack - All In One.esp",
+      "editorId": "ULPAPONaughtyRhymes",
+      "name": "Naughty Rhymes",
+      "skill": "OneHanded",
+      "plugin": "Unmarked Locations Pack - All In One.esp"
+    },
+    {
+      "formKey": "01AFE4:Skyrim.esm",
+      "editorId": "SkillOneHanded4",
+      "name": "Night Falls on Sentinel",
+      "skill": "OneHanded",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFE3:Skyrim.esm",
+      "editorId": "SkillOneHanded1",
+      "name": "The Importance of Where",
+      "skill": "OneHanded",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B01C:Skyrim.esm",
+      "editorId": "MAG_SkillSecurity2",
+      "name": "Advances in Lockpicking",
+      "skill": "Pickpocket",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "02F836:Skyrim.esm",
+      "editorId": "MAG_SkillSecurity5",
+      "name": "Guide to Better Thieving",
+      "skill": "Pickpocket",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B01B:Skyrim.esm",
+      "editorId": "MAG_SkillSecurity1",
+      "name": "Proper Lock Design",
+      "skill": "Pickpocket",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B01D:Skyrim.esm",
+      "editorId": "MAG_SkillSecurity3",
+      "name": "Surfeit of Thieves",
+      "skill": "Pickpocket",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFBF:Skyrim.esm",
+      "editorId": "MAG_SkillSecurity4",
+      "name": "Thief",
+      "skill": "Pickpocket",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B017:Skyrim.esm",
+      "editorId": "SkillRestoration4",
+      "name": "2920, Vol. 4: Rain's Hand",
+      "skill": "Restoration",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B018:Skyrim.esm",
+      "editorId": "SkillRestoration5",
+      "name": "Mystery of Talara, Vol. 2",
+      "skill": "Restoration",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B015:Skyrim.esm",
+      "editorId": "SkillRestoration2",
+      "name": "Racial Phylogeny",
+      "skill": "Restoration",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B016:Skyrim.esm",
+      "editorId": "SkillRestoration3",
+      "name": "The Exodus",
+      "skill": "Restoration",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B014:Skyrim.esm",
+      "editorId": "SkillRestoration1",
+      "name": "Withershins",
+      "skill": "Restoration",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFD1:Skyrim.esm",
+      "editorId": "SkillSmithing4",
+      "name": "Cherim's Heart",
+      "skill": "Smithing",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFD2:Skyrim.esm",
+      "editorId": "SkillSmithing5",
+      "name": "Heavy Armor Forging",
+      "skill": "Smithing",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFCF:Skyrim.esm",
+      "editorId": "SkillSmithing2",
+      "name": "Last Scabbard of Akrash",
+      "skill": "Smithing",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFD0:Skyrim.esm",
+      "editorId": "SkillSmithing3",
+      "name": "Light Armor Forging",
+      "skill": "Smithing",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFCE:Skyrim.esm",
+      "editorId": "SkillSmithing1",
+      "name": "The Armorer's Challenge",
+      "skill": "Smithing",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B01F:Skyrim.esm",
+      "editorId": "SkillSneak2",
+      "name": "2920, Vol. 8: Last Seed",
+      "skill": "Sneak",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B021:Skyrim.esm",
+      "editorId": "SkillSneak4",
+      "name": "Legend of Krately House",
+      "skill": "Sneak",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B020:Skyrim.esm",
+      "editorId": "SkillSneak3",
+      "name": "Sacred Witness",
+      "skill": "Sneak",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFD5:Skyrim.esm",
+      "editorId": "SkillSneak5",
+      "name": "The Red Kitchen Reader",
+      "skill": "Sneak",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B276:Skyrim.esm",
+      "editorId": "SkillSneak1",
+      "name": "Three Thieves",
+      "skill": "Sneak",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B025:Skyrim.esm",
+      "editorId": "SkillSpeechcraft3",
+      "name": "2920, Vol. 5: Second Seed",
+      "skill": "Speechcraft",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B00D:Skyrim.esm",
+      "editorId": "SkillSpeechcraft1",
+      "name": "A Dance in Fire, Vol. 6",
+      "skill": "Speechcraft",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B00E:Skyrim.esm",
+      "editorId": "SkillSpeechcraft2",
+      "name": "A Dance in Fire, Vol. 7",
+      "skill": "Speechcraft",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01B023:Skyrim.esm",
+      "editorId": "SkillSpeechcraft5",
+      "name": "Biography of the Wolf Queen",
+      "skill": "Speechcraft",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "000904:Northern Scenery _Tundra.esp",
+      "editorId": "Cus_KnightPoem01",
+      "name": "Scented letter",
+      "skill": "Speechcraft",
+      "plugin": "Northern Scenery _Tundra.esp"
+    },
+    {
+      "formKey": "01B00A:Skyrim.esm",
+      "editorId": "SkillSpeechcraft4",
+      "name": "The Buying Game",
+      "skill": "Speechcraft",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "060B50:AX ValSerano.esp",
+      "editorId": "AX_JournalVal",
+      "name": "Val's Journal",
+      "skill": "Speechcraft",
+      "plugin": "AX ValSerano.esp"
+    },
+    {
+      "formKey": "00040A:Unmarked Locations Pack - All In One.esp",
+      "editorId": "ULPAPOVerse",
+      "name": "Verse",
+      "skill": "Speechcraft",
+      "plugin": "Unmarked Locations Pack - All In One.esp"
+    },
+    {
+      "formKey": "01AFDC:Skyrim.esm",
+      "editorId": "SkillTwoHanded5",
+      "name": "Battle of Sancre Tor",
+      "skill": "TwoHanded",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFE5:Skyrim.esm",
+      "editorId": "SkillTwoHanded3",
+      "name": "King",
+      "skill": "TwoHanded",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFDB:Skyrim.esm",
+      "editorId": "SkillTwoHanded4",
+      "name": "Song of Hrormir",
+      "skill": "TwoHanded",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "01AFE2:Skyrim.esm",
+      "editorId": "SkillTwoHanded2",
+      "name": "The Legendary Sancre Tor",
+      "skill": "TwoHanded",
+      "plugin": "Skyrim.esm"
+    },
+    {
+      "formKey": "376BF3:Unslaad.esm",
+      "editorId": "zzzCrbBookVivecAndMolagBal",
+      "name": "Vivec and Molag Bal",
+      "skill": "TwoHanded",
+      "plugin": "Unslaad.esm"
+    },
+    {
+      "formKey": "01AFD8:Skyrim.esm",
+      "editorId": "SkillTwoHanded1",
+      "name": "Words and Philosophy",
+      "skill": "TwoHanded",
+      "plugin": "Skyrim.esm"
+    }
+  ],
   "meta": {
     "profile": "Apostasy",
     "plugins": 3407,
-    "generatedAt": "2026-10-24T08:56:37.2443884Z"
+    "generatedAt": "2026-10-27T04:55:53.6027106Z"
   }
 }

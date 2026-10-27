@@ -24,7 +24,7 @@ export async function readBuild(request: Request): Promise<{ name: string; state
 		deity: typeof s.deity === 'string' ? s.deity : null,
 		targetLevel: Math.max(1, Math.min(81, Math.floor(Number(s.targetLevel) || 30))),
 		reachedLevel: Math.max(1, Math.min(81, Math.floor(Number(s.reachedLevel) || 2))),
-		levels: s.levels as BuildState['levels'],
+		levels: levels(s.levels as BuildState['levels']),
 		perkSources: Array.isArray(s.perkSources) ? s.perkSources.filter((x) => typeof x === 'string') : [],
 		shoutWords: Object.fromEntries(
 			Object.entries(s.shoutWords && typeof s.shoutWords === 'object' ? s.shoutWords : {})
@@ -35,4 +35,15 @@ export async function readBuild(request: Request): Promise<{ name: string; state
 		notes: typeof s.notes === 'string' ? s.notes.slice(0, 20000) : ''
 	};
 	return { name, state };
+}
+
+// Book lists hold form keys only, each once.
+function levels(raw: BuildState['levels']): BuildState['levels'] {
+	for (const plan of Object.values(raw ?? {})) {
+		if (!plan || typeof plan !== 'object' || plan.books === undefined) continue;
+		const books = Array.isArray(plan.books) ? plan.books.filter((k) => typeof k === 'string' && k.length <= 80) : [];
+		if (books.length) plan.books = [...new Set(books)];
+		else delete plan.books;
+	}
+	return raw;
 }

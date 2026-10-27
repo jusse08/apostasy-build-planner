@@ -21,10 +21,17 @@
 	let st = $derived(ed.current);
 	let plan = $derived(ed.build.levels[ed.level]);
 	let canBuy = $derived(ed.level >= 2);
-	// The +/− buttons and the wheel either spend skill points or book trainer sessions.
-	let mode = $state<'points' | 'train'>('points');
+	// The +/− buttons and the wheel spend skill points, book trainer sessions or read skill books.
+	let mode = $state<'points' | 'train' | 'books'>('points');
 	let training = $derived(mode === 'train');
-	let editable = $derived(training || canBuy);
+	let reading = $derived(mode === 'books');
+	let editable = $derived(training || reading || canBuy);
+	// Skill whose books are listed in Books mode.
+	let open = $state<SkillId | null>(null);
+	const booksOf = (skill: SkillId) => ed.game.books.filter((b) => b.skill === skill);
+	const unread = (skill: SkillId) => booksOf(skill).filter((b) => ed.readAt(b.key) === undefined);
+	const readHere = (skill: SkillId) => (plan?.books ?? []).filter((k) => ed.game.books.some((b) => b.key === k && b.skill === skill));
+	let booksHere = $derived(Object.values(st.booksRead).reduce((a, n) => a + n, 0));
 	let tr = $derived(ed.game.leveling.training);
 	let sessionsLeft = $derived(tr.sessionsPerLevel - st.trainingSessions);
 	const gold = (n: number) => n.toLocaleString('en-US');
@@ -35,16 +42,21 @@
 	function canRaise(skill: SkillId): boolean {
 		const v = st.skills[skill];
 		if (training) return sessionsLeft > 0 && v < st.skillCap && v < (tr.maxLevel[skill] ?? 0);
+		if (reading) return v < st.skillCap && unread(skill).length > 0;
 		// Skill points go in before this level's trainer sessions.
-		const before = v - (st.trained[skill] ?? 0);
+		const before = v - (st.trained[skill] ?? 0) - (st.booksRead[skill] ?? 0);
 		return canBuy && before < st.skillPointCap && st.skillPointsLeft >= stepCost(ed.game.leveling, before);
 	}
-	let tick = $derived(training ? st.skillCap : st.skillPointCap);
+	let tick = $derived(mode === 'points' ? st.skillPointCap : st.skillCap);
 
-	const added = (skill: SkillId) => (training ? plan?.trained?.[skill] : plan?.skills[skill]) ?? 0;
+	const added = (skill: SkillId) => (reading ? readHere(skill).length : (training ? plan?.trained?.[skill] : plan?.skills[skill]) ?? 0);
 
 	function change(skill: SkillId, delta: number) {
-		if (training) ed.addTraining(skill, delta);
+		if (reading) {
+			// + reads the next unread book, − unreads the last one read at this level.
+			const key = delta > 0 ? unread(skill)[0]?.key : readHere(skill).at(-1);
+			if (key) ed.toggleBook(key);
+		} else if (training) ed.addTraining(skill, delta);
 		else ed.addSkill(skill, delta);
 	}
 
@@ -77,7 +89,12 @@
 	</header>
 
 	<div class="budget">
-		{#if training}
+		{#if reading}
+			<div>
+				<p class="big num">{booksHere}</p>
+				<p class="what">books read this level<br /><span class="num">{ed.sim.readAt.size} of {ed.game.books.length} so far</span></p>
+			</div>
+		{:else if training}
 			<div class:bad={sessionsLeft < 0} title="{gold(st.trainingGold)} gold at this level, {gold(st.trainingGoldTotal)} by level {ed.level}">
 				<p class="big num">{sessionsLeft}</p>
 				<p class="what">trainer sessions left<br /><span class="num">of {tr.sessionsPerLevel} this level</span></p>
@@ -112,8 +129,9 @@
 	{/if}
 
 	<div class="mode" role="group" aria-label="What the skill buttons do">
-		<button class:on={!training} aria-pressed={!training} onclick={() => (mode = 'points')}>Skill points</button>
+		<button class:on={mode === 'points'} aria-pressed={mode === 'points'} onclick={() => (mode = 'points')}>Skill points</button>
 		<button class:on={training} aria-pressed={training} onclick={() => (mode = 'train')}>Trainers</button>
+		<button class:on={reading} aria-pressed={reading} onclick={() => (mode = 'books')}>Books</button>
 	</div>
 
 	{#each groups as g (g.label)}
@@ -123,21 +141,31 @@
 				{#each g.skills as id (id)}
 					{@const bought = plan?.skills[id] ?? 0}
 					{@const taught = st.trained[id] ?? 0}
+					{@const read = st.booksRead[id] ?? 0}
 					{@const v = st.skills[id]}
-					<li class:bought={bought + taught > 0} class:over={v > st.skillCap}>
-						<button class="name" onclick={() => onpick(id)}>{name(id)}</button>
+					<li class:bought={bought + taught + read > 0} class:over={v > st.skillCap}>
+						{#if reading}
+							<button class="name toggle" class:on={open === id} aria-expanded={open === id} onclick={() => (open = open === id ? null : id)}>
+								<span class="caret" aria-hidden="true"></span>{name(id)}
+							</button>
+						{:else}
+							<button class="name" onclick={() => onpick(id)}>{name(id)}</button>
+						{/if}
 						<span class="dial" {@attach editable && wheel(id)}>
 							<span class="bar" aria-hidden="true">
-								<i class="was" style="width: {v - bought - taught}%"></i>
+								<i class="was" style="width: {v - bought - taught - read}%"></i>
 								<i class="add" style="width: {bought}%"></i>
 								<i class="taught" style="width: {taught}%"></i>
+								<i class="read" style="width: {read}%"></i>
 								<b style="left: {tick}%"></b>
 							</span>
-							<span class="v num">{v}{#if bought}<small>+{bought}</small>{/if}{#if taught}<small class="taught">+{taught}</small>{/if}</span>
+							<span class="v num">{v}{#if bought}<small>+{bought}</small>{/if}{#if taught}<small class="taught">+{taught}</small>{/if}{#if read}<small class="read">+{read}</small>{/if}</span>
 							{#if editable}
 								<span class="ctl">
-									<button onclick={() => change(id, -1)} disabled={!added(id)} aria-label="{training ? 'Untrain' : 'Lower'} {name(id)}">−</button>
-									{#if training}
+									<button onclick={() => change(id, -1)} disabled={!added(id)} aria-label="{reading ? 'Unread a book for' : training ? 'Untrain' : 'Lower'} {name(id)}">−</button>
+									{#if reading}
+										<button onclick={() => change(id, 1)} disabled={!canRaise(id)} aria-label="Read a {name(id)} book" title={unread(id)[0]?.name}>+</button>
+									{:else if training}
 										<button onclick={() => change(id, 1)} disabled={!canRaise(id)} aria-label="Train {name(id)}" title="{gold(trainingCost(v))} gold">+</button>
 									{:else}
 										<button onclick={() => change(id, 1)} disabled={!canRaise(id)} aria-label="Raise {name(id)}, costs {stepCost(ed.game.leveling, v - taught)}">+</button>
@@ -146,12 +174,27 @@
 							{/if}
 						</span>
 					</li>
+					{#if reading && open === id}
+						<li class="books">
+							{#each booksOf(id) as b (b.key)}
+								{@const at = ed.readAt(b.key)}
+								<button class:here={at === ed.level} class:earlier={at !== undefined && at !== ed.level} disabled={at === undefined && v >= st.skillCap} onclick={() => ed.toggleBook(b.key)} title={b.plugin}>
+									<span>{b.name}</span>
+									{#if at !== undefined}<span class="num">level {at}</span>{/if}
+								</button>
+							{/each}
+						</li>
+					{/if}
 				{/each}
 			</ul>
 		</section>
 	{/each}
 
-	{#if training}
+	{#if reading}
+		<p class="hint">
+			Each book gives +1 the first time it is read, up to the level {ed.level} cap ({st.skillCap}).
+		</p>
+	{:else if training}
 		<p class="hint">
 			Up to {tr.sessionsPerLevel} trainer sessions per level, up to skill {Math.max(...Object.values(tr.maxLevel))}. They don't spend skill points; hover + for the price in gold.
 		</p>
@@ -299,7 +342,7 @@
 
 	.mode {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: repeat(3, 1fr);
 		gap: 0.35rem;
 	}
 
@@ -402,6 +445,10 @@
 		background: var(--gold);
 	}
 
+	.bar .read {
+		background: var(--starlight);
+	}
+
 	.bar b {
 		position: absolute;
 		top: -3px;
@@ -424,6 +471,79 @@
 
 	.v small.taught {
 		color: var(--gold);
+	}
+
+	.v small.read {
+		color: var(--starlight);
+	}
+
+	.name.on {
+		color: var(--starlight);
+	}
+
+	/* Books mode: the name opens the skill's book list. */
+	.toggle {
+		display: flex;
+		align-items: center;
+		gap: 0.35rem;
+	}
+
+	.caret {
+		flex: none;
+		width: 0;
+		height: 0;
+		border-left: 5px solid currentColor;
+		border-top: 4px solid transparent;
+		border-bottom: 4px solid transparent;
+		opacity: 0.7;
+		transition: transform 120ms;
+	}
+
+	.toggle.on .caret {
+		transform: rotate(90deg);
+	}
+
+	/* The open skill's books, read ones lit. */
+	.group li.books {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0;
+		padding: 0.15rem 0 0.45rem 0.8rem;
+		background: none;
+	}
+
+	.books button {
+		display: flex;
+		justify-content: space-between;
+		gap: 0.6rem;
+		padding: 0.15rem 0.4rem;
+		background: none;
+		border: none;
+		text-align: left;
+		font-size: var(--t-sm);
+		color: var(--muted);
+	}
+
+	.books button:hover:not(:disabled) {
+		background: var(--hover);
+		color: var(--text);
+	}
+
+	.books button.here {
+		color: var(--starlight);
+	}
+
+	.books button.earlier {
+		color: var(--faint);
+	}
+
+	.books button:disabled {
+		opacity: 0.4;
+	}
+
+	.books .num {
+		font-size: var(--t-xs);
+		white-space: nowrap;
 	}
 
 	.over .v {

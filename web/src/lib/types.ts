@@ -131,6 +131,14 @@ export interface Shout {
 	meditation: string | null;
 }
 
+/** A book that raises its skill by 1 the first time it is read. */
+export interface SkillBook {
+	key: FormKey;
+	name: string;
+	skill: SkillId;
+	plugin: string;
+}
+
 export interface Leveling {
 	xpBase: number;
 	xpMult: number;
@@ -156,6 +164,7 @@ export interface GameModel {
 	deities: Deity[];
 	perkSources: PerkPointSource[];
 	shouts: Shout[];
+	books: SkillBook[];
 	/** Stormcrown's cap on meditations at Paarthurnax. */
 	maxMeditations: number;
 	leveling: Leveling;
@@ -165,6 +174,7 @@ export interface GameModel {
 export interface LevelPlan {
 	skills: Record<SkillId, number>; // skill increases bought at this level
 	trained?: Record<SkillId, number>; // trainer sessions during this level, after the skill points
+	books?: FormKey[]; // skill books read during this level, after the trainers
 	perks: FormKey[]; // perks (or perk ranks) taken at this level
 	attribute: Attribute | null; // attribute raised on reaching this level
 }

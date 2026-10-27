@@ -121,7 +121,7 @@ export function trainCost(from: number, by: number): number {
 	return c;
 }
 
-export type IssueKind = 'skillPoints' | 'skillCap' | 'skillGain' | 'training' | 'perkPoints' | 'perkRequirement' | 'perkRank' | 'perkUnknown';
+export type IssueKind = 'skillPoints' | 'skillCap' | 'skillGain' | 'training' | 'book' | 'perkPoints' | 'perkRequirement' | 'perkRank' | 'perkUnknown';
 
 export interface Issue {
 	level: number;
@@ -147,6 +147,8 @@ export interface LevelState {
 	trainingSessions: number;
 	trainingGold: number;
 	trainingGoldTotal: number; // cumulative
+	/** Skill books read at this level, per skill. */
+	booksRead: Record<SkillId, number>;
 	perkPointsGained: number;
 	perkPointsTotal: number; // cumulative earned up to this level
 	perksTaken: Set<FormKey>; // cumulative, including this level
@@ -161,6 +163,8 @@ export interface Simulation {
 	bonusPerkPoints: number;
 	/** Level at which each perk was taken. */
 	takenAt: Map<FormKey, number>;
+	/** Level at which each skill book was read. */
+	readAt: Map<FormKey, number>;
 }
 
 /** Perk points that don't come from leveling: race/class abilities and checked quests/items. */
@@ -406,6 +410,8 @@ export function simulate(game: GameModel, build: BuildState): Simulation {
 	};
 	const taken = new Set<FormKey>();
 	const takenAt = new Map<FormKey, number>();
+	const readAt = new Map<FormKey, number>();
+	const books = new Map(game.books.map((b) => [b.key, b]));
 	const levels: LevelState[] = [];
 	const all: Issue[] = [];
 	let carry = 0;
@@ -458,7 +464,24 @@ export function simulate(game: GameModel, build: BuildState): Simulation {
 			issues.push({ level, kind: 'training', message: `${sessions} trainer sessions at level ${level}, only ${l.training.sessionsPerLevel} allowed` });
 		goldTotal += gold;
 
-		for (const skill of new Set([...Object.keys(plan.skills), ...Object.keys(trained)]))
+		// Skill books, after the trainers: +1 each, once per book.
+		const booksRead: Record<SkillId, number> = {};
+		for (const key of plan.books ?? []) {
+			const book = books.get(key);
+			if (!book || !(book.skill in skills)) {
+				issues.push({ level, kind: 'book', message: `Book ${key} is not in the game data` });
+				continue;
+			}
+			if (readAt.has(key)) {
+				issues.push({ level, kind: 'book', skill: book.skill, message: `${book.name} was already read at level ${readAt.get(key)}` });
+				continue;
+			}
+			readAt.set(key, level);
+			skills[book.skill] += 1;
+			booksRead[book.skill] = (booksRead[book.skill] ?? 0) + 1;
+		}
+
+		for (const skill of new Set([...Object.keys(plan.skills), ...Object.keys(trained), ...Object.keys(booksRead)]))
 			if (skills[skill] > cap)
 				issues.push({ level, kind: 'skillCap', skill, message: `${skillName(game, skill)} ${skills[skill]} is above the level ${level} cap of ${cap}` });
 
@@ -503,6 +526,7 @@ export function simulate(game: GameModel, build: BuildState): Simulation {
 			trainingSessions: sessions,
 			trainingGold: gold,
 			trainingGoldTotal: goldTotal,
+			booksRead,
 			perkPointsGained: perkGained,
 			perkPointsTotal: perkTotal,
 			perksTaken: new Set(taken),
@@ -513,7 +537,7 @@ export function simulate(game: GameModel, build: BuildState): Simulation {
 		levels.push(state);
 		all.push(...issues);
 	}
-	return { levels, issues: all, bonusPerkPoints: bonus, takenAt };
+	return { levels, issues: all, bonusPerkPoints: bonus, takenAt, readAt };
 }
 
 export function skillName(game: GameModel, id: SkillId): string {

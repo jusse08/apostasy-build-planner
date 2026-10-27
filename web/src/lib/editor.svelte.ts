@@ -20,7 +20,7 @@ export class BuildEditor {
 	/** Last open level: the stored one, but never below a level that already has choices (older builds). */
 	reached = $derived.by(() => {
 		const planned = Object.entries(this.build.levels)
-			.filter(([, p]) => p.perks.length || p.attribute || Object.keys(p.skills).length || Object.keys(p.trained ?? {}).length)
+			.filter(([, p]) => p.perks.length || p.attribute || Object.keys(p.skills).length || Object.keys(p.trained ?? {}).length || p.books?.length)
 			.map(([l]) => Number(l));
 		return Math.min(this.build.targetLevel, Math.max(this.build.reachedLevel ?? 2, 2, ...planned));
 	});
@@ -101,6 +101,22 @@ export class BuildEditor {
 		const next = Math.max(0, (t[skill] ?? 0) + delta);
 		if (next === 0) delete t[skill];
 		else t[skill] = next;
+		this.changed();
+	}
+
+	/** Level at which a skill book was read, if it was. */
+	readAt(key: FormKey): number | undefined {
+		return this.sim.readAt.get(key);
+	}
+
+	/** Reads a skill book at the current level, or unreads it wherever it was read. */
+	toggleBook(key: FormKey) {
+		const at = this.readAt(key);
+		const p = this.plan(at ?? this.level);
+		const books = (p.books ?? []).filter((k) => k !== key);
+		if (at === undefined) books.push(key);
+		if (books.length) p.books = books;
+		else delete p.books;
 		this.changed();
 	}
 
