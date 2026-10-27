@@ -3,6 +3,7 @@
 	import { ATTRIBUTES, atLevel, stepCost, trainingCost } from '#lib/rules/engine.ts';
 	import type { SkillId } from '#lib/types.ts';
 	import type { Attachment } from 'svelte/attachments';
+	import { slide } from 'svelte/transition';
 
 	let { ed, onpick }: { ed: BuildEditor; onpick: (skill: SkillId) => void } = $props();
 
@@ -31,6 +32,8 @@
 	const booksOf = (skill: SkillId) => ed.game.books.filter((b) => b.skill === skill);
 	const unread = (skill: SkillId) => booksOf(skill).filter((b) => ed.readAt(b.key) === undefined);
 	const readHere = (skill: SkillId) => (plan?.books ?? []).filter((k) => ed.game.books.some((b) => b.key === k && b.skill === skill));
+	// Svelte transitions run in script, so app.css's reduced-motion rule doesn't reach them.
+	const slideMs = matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 180;
 	let booksHere = $derived(Object.values(st.booksRead).reduce((a, n) => a + n, 0));
 	let tr = $derived(ed.game.leveling.training);
 	let sessionsLeft = $derived(tr.sessionsPerLevel - st.trainingSessions);
@@ -83,7 +86,7 @@
 			<p class="who">{who || 'No race or class yet'}</p>
 		</div>
 		<div class="where">
-			<p class="lvl"><span class="word">Level</span> <span class="num">{ed.level}</span></p>
+			<p class="lvl"><span class="word">Level</span> <span class="num" class:flash={ed.leveledUp === ed.level}>{ed.level}</span></p>
 			<p class="xp num">{st.xpTotal.toLocaleString('en-US')} XP</p>
 		</div>
 	</header>
@@ -177,7 +180,7 @@
 						</span>
 					</li>
 					{#if reading && open === id}
-						<li class="books">
+						<li class="books" transition:slide={{ duration: slideMs }}>
 							{#each booksOf(id) as b (b.key)}
 								{@const at = ed.readAt(b.key)}
 								<button class:here={at === ed.level} class:earlier={at !== undefined && at !== ed.level} disabled={at === undefined && v >= st.skillCap} onclick={() => ed.toggleBook(b.key)} title={b.plugin}>
@@ -270,6 +273,17 @@
 	.lvl .word {
 		font-size: 1.3rem;
 		color: var(--muted);
+	}
+
+	.lvl .flash {
+		animation: level-glow 900ms ease-out;
+	}
+
+	@keyframes level-glow {
+		from {
+			color: var(--gold);
+			text-shadow: 0 0 18px color-mix(in srgb, var(--gold) 60%, transparent);
+		}
 	}
 
 	.xp {
@@ -432,6 +446,7 @@
 	.bar i {
 		display: block;
 		height: 100%;
+		transition: width 200ms ease-out;
 	}
 
 	.bar .was {
@@ -458,6 +473,7 @@
 		height: 12px;
 		background: var(--starlight);
 		opacity: 0.5;
+		transition: left 200ms ease-out;
 	}
 
 	.v {

@@ -13,6 +13,8 @@ export class BuildEditor {
 	level = $state(1); // level the user is planning right now
 	saveStatus = $state<SaveStatus>('saved');
 	saveError = $state<string | null>(null);
+	/** Level just reached by "level up", for a second, so the UI can mark the moment. */
+	leveledUp = $state<number | null>(null);
 
 	sim: Simulation = $derived.by(() => simulate(this.game, this.build));
 	current = $derived(this.sim.levels[this.level - 1] ?? this.sim.levels.at(-1)!);
@@ -26,6 +28,7 @@ export class BuildEditor {
 	});
 
 	private timer: ReturnType<typeof setTimeout> | null = null;
+	private flashTimer: ReturnType<typeof setTimeout> | null = null;
 
 	constructor(game: GameModel, record: BuildRecord) {
 		this.game = game;
@@ -81,6 +84,9 @@ export class BuildEditor {
 		if (this.reached >= this.build.targetLevel) return;
 		this.build.reachedLevel = this.reached + 1;
 		this.level = this.build.reachedLevel;
+		this.leveledUp = this.level;
+		if (this.flashTimer) clearTimeout(this.flashTimer);
+		this.flashTimer = setTimeout(() => (this.leveledUp = null), 1000);
 		this.changed();
 	}
 
