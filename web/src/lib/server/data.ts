@@ -260,6 +260,7 @@ function build(): GameModel {
 		deities,
 		perkSources,
 		shouts: shoutList,
+		books: (leveling.skillBooks ?? []).map((b: Raw) => ({ key: b.formKey, name: b.name ?? b.editorId, skill: b.skill, plugin: b.plugin })),
 		maxMeditations: shouts.dragonbornSettings.maxMeditations,
 		leveling: {
 			xpBase: gs.fXPLevelUpBase.value,
