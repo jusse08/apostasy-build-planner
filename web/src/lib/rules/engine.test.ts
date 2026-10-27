@@ -122,15 +122,26 @@ describe('perk requirements', () => {
 		expect(simulate(game, over).issues.some((i) => i.kind === 'skillCap')).toBe(true);
 	});
 
+	it('skill points reach only the previous level cap, trainers the current one', () => {
+		const at = (level: number, skills: Record<string, number>, trained: Record<string, number> = {}) => {
+			const levels = { [level]: { skills, trained, perks: [], attribute: null } };
+			return simulate(game, { ...newBuildState(), class: 'Rogue', targetLevel: level, levels });
+		};
+		expect(at(2, {}).levels[1].skillPointCap).toBe(20);
+		expect(at(2, { OneHanded: 1 }).issues.some((i) => i.kind === 'skillCap')).toBe(true); // 21 > 20
+		expect(at(2, {}, { OneHanded: 3 }).issues).toEqual([]); // 23, the level 2 cap
+		expect(at(3, { OneHanded: 3 }).issues).toEqual([]); // 23, the level 2 cap
+	});
+
 	it('trainers: priced from the current level, five sessions a level, on top of skill points', () => {
 		expect(trainCost(20, 30)).toBe(11850); // UESP's worked example, 20 to 50
 		expect(trainCost(51, 1)).toBe(30 * 51 + 50);
 		expect(trainCost(80, 1)).toBe(50 * 80 + 50);
-		const b = { ...newBuildState(), class: 'Rogue', targetLevel: 2, levels: { 2: { skills: { OneHanded: 1 }, trained: { OneHanded: 2 }, perks: [], attribute: null } } };
+		const b = { ...newBuildState(), class: 'Rogue', targetLevel: 2, levels: { 2: { skills: { Sneak: 1 }, trained: { OneHanded: 3 }, perks: [], attribute: null } } };
 		const st = simulate(game, b).levels[1];
-		expect(st.skills.OneHanded).toBe(23); // 20 + 1 point + 2 sessions, the level 2 cap
+		expect(st.skills.OneHanded).toBe(23); // 20 + 3 sessions, the level 2 cap
 		expect(st.skillPointsSpent).toBe(1);
-		expect(st.trainingGold).toBe(trainCost(21, 2));
+		expect(st.trainingGold).toBe(trainCost(20, 3));
 		expect(simulate(game, b).issues).toEqual([]);
 		const many = { ...b, levels: { 2: { skills: {}, trained: { OneHanded: 3, Sneak: 3 }, perks: [], attribute: null } } };
 		expect(simulate(game, many).issues.some((i) => i.kind === 'training')).toBe(true);

@@ -35,8 +35,11 @@
 	function canRaise(skill: SkillId): boolean {
 		const v = st.skills[skill];
 		if (training) return sessionsLeft > 0 && v < st.skillCap && v < (tr.maxLevel[skill] ?? 0);
-		return canBuy && v < st.skillCap && st.skillPointsLeft >= stepCost(ed.game.leveling, v);
+		// Skill points go in before this level's trainer sessions.
+		const before = v - (st.trained[skill] ?? 0);
+		return canBuy && before < st.skillPointCap && st.skillPointsLeft >= stepCost(ed.game.leveling, before);
 	}
+	let tick = $derived(training ? st.skillCap : st.skillPointCap);
 
 	const added = (skill: SkillId) => (training ? plan?.trained?.[skill] : plan?.skills[skill]) ?? 0;
 
@@ -128,7 +131,7 @@
 								<i class="was" style="width: {v - bought - taught}%"></i>
 								<i class="add" style="width: {bought}%"></i>
 								<i class="taught" style="width: {taught}%"></i>
-								<b style="left: {st.skillCap}%"></b>
+								<b style="left: {tick}%"></b>
 							</span>
 							<span class="v num">{v}{#if bought}<small>+{bought}</small>{/if}{#if taught}<small class="taught">+{taught}</small>{/if}</span>
 							{#if editable}
@@ -137,7 +140,7 @@
 									{#if training}
 										<button onclick={() => change(id, 1)} disabled={!canRaise(id)} aria-label="Train {name(id)}" title="{gold(trainingCost(v))} gold">+</button>
 									{:else}
-										<button onclick={() => change(id, 1)} disabled={!canRaise(id)} aria-label="Raise {name(id)}, costs {stepCost(ed.game.leveling, v)}">+</button>
+										<button onclick={() => change(id, 1)} disabled={!canRaise(id)} aria-label="Raise {name(id)}, costs {stepCost(ed.game.leveling, v - taught)}">+</button>
 									{/if}
 								</span>
 							{/if}
@@ -155,7 +158,8 @@
 	{:else if canBuy}
 		<p class="hint">
 			One skill level costs {ed.game.leveling.skillPoints.costs.join(' / ')} points in the 0–25 / 26–50 / 51–75 / 76–100 ranges.
-			The tick on each bar is the level {ed.level} cap ({st.skillCap}). Unspent points carry over, up to {ed.game.leveling.skillPoints.cap}.
+			Skill points raise a skill up to the level {ed.level - 1} cap ({st.skillPointCap}), the tick on each bar; trainers and books reach {st.skillCap}.
+			Unspent points carry over, up to {ed.game.leveling.skillPoints.cap}.
 		</p>
 	{/if}
 </aside>

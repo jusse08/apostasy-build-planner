@@ -136,6 +136,8 @@ export interface LevelState {
 	xpTotal: number;
 	skills: Record<SkillId, number>; // after this level's increases
 	skillCap: number;
+	/** Highest skill that skill points reach at this level: the previous level's cap. */
+	skillPointCap: number;
 	skillPointsGained: number;
 	skillPointsAvailable: number; // carried + gained, before spending
 	skillPointsSpent: number;
@@ -415,6 +417,8 @@ export function simulate(game: GameModel, build: BuildState): Simulation {
 		const plan = build.levels[level] ?? emptyLevel();
 		const issues: Issue[] = [];
 		const cap = skillCap(l, level);
+		// The level-up menu stops at the cap of the level being left; trainers and books reach the new one.
+		const pointCap = skillCap(l, Math.max(1, level - 1));
 
 		// Attribute chosen on reaching this level.
 		if (level >= 2 && plan.attribute) attributes[plan.attribute] += atLevel(l.attributeAtLevel, level);
@@ -429,6 +433,8 @@ export function simulate(game: GameModel, build: BuildState): Simulation {
 			skills[skill] += by;
 			if (by > l.maxSkillGainPerLevel)
 				issues.push({ level, kind: 'skillGain', skill, message: `${skillName(game, skill)}: more than +${l.maxSkillGainPerLevel} in one level` });
+			if (skills[skill] > pointCap && skills[skill] <= cap)
+				issues.push({ level, kind: 'skillCap', skill, message: `${skillName(game, skill)}: skill points reach only ${pointCap} at level ${level}, the rest needs trainers or books` });
 		}
 		if (spent > available)
 			issues.push({ level, kind: 'skillPoints', message: `Spent ${spent} skill points, only ${available} available` });
@@ -488,6 +494,7 @@ export function simulate(game: GameModel, build: BuildState): Simulation {
 			xpTotal: xpTotal(l, level),
 			skills: { ...skills },
 			skillCap: cap,
+			skillPointCap: pointCap,
 			skillPointsGained: gained,
 			skillPointsAvailable: available,
 			skillPointsSpent: spent,
