@@ -192,6 +192,17 @@
 		overflow: hidden;
 	}
 
+	/* Each tab's view mounts afresh, so it fades in on every switch. */
+	main > :global(*) {
+		animation: view-in 160ms ease-out;
+	}
+
+	@keyframes view-in {
+		from {
+			opacity: 0;
+		}
+	}
+
 	@media (max-width: 900px) {
 		.planner {
 			height: auto;

@@ -23,6 +23,7 @@
 					disabled={st.level > ed.reached + 1}
 					title={next ? `Level up to ${st.level}` : undefined}
 					class:current={st.level === ed.level}
+					class:flash={st.level === ed.leveledUp}
 					class:issue={st.issues.length > 0}
 					class:planned={perks > 0 || Object.keys(plan?.skills ?? {}).length > 0}
 					onclick={() => (next ? ed.levelUp() : ed.setLevel(st.level))}
@@ -136,6 +137,19 @@
 
 	.cell.current.issue .n {
 		color: var(--error);
+	}
+
+	/* A level just reached glows gold and settles. */
+	.cell.flash {
+		animation: level-flash 900ms ease-out;
+	}
+
+	@keyframes level-flash {
+		from {
+			color: var(--gold);
+			background: color-mix(in srgb, var(--gold) 22%, transparent);
+			box-shadow: inset 0 -2px 0 var(--gold), 0 0 14px color-mix(in srgb, var(--gold) 45%, transparent);
+		}
 	}
 
 
